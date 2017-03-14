@@ -1303,7 +1303,7 @@ Label_1:
 	.line 329
 	   58| new-instance v1, android.content.Intent
 	   60| array-length v2, v0
-	   61| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   61| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   63| aget-object v2, v0, v2
 	   65| invoke-direct {v1,v2}, android.content.Intent.<init>
 	.line 330
@@ -5584,7 +5584,7 @@ method android.support.v4.util.SimpleArrayMap.allocArrays(int) : void
 	   35| aput-object v1, v0, v3
 	.line 146
 	   37| sget v1, android.support.v4.util.SimpleArrayMap.mTwiceBaseCacheSize
-	   39| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   39| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   41| sput v1, android.support.v4.util.SimpleArrayMap.mTwiceBaseCacheSize
 	.try_end_1
 	  catch(...) : Label_3
@@ -5647,7 +5647,7 @@ Label_4:
 	   94| aput-object v1, v0, v3
 	.line 160
 	   96| sget v1, android.support.v4.util.SimpleArrayMap.mBaseCacheSize
-	   98| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   98| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	  100| sput v1, android.support.v4.util.SimpleArrayMap.mBaseCacheSize
 	.try_end_2
 	  catch(...) : Label_5
@@ -5691,7 +5691,7 @@ method android.support.v4.util.SimpleArrayMap.freeArrays(int[], java.lang.Object
 	   21| aput-object v5, v6, v1
 	.line 178
 	   23| shl-int/lit8 v1, v7, #+1 (0x00000001 | 0.000000)
-	   25| add-int/lit8 v0, v1, #-1 (0xffffffff | -nan)
+	   25| add-int/lit8 v0, v1, #-1 (0xffffffff | NaN)
 Label_1:
 	.local v0, "i", int
 	   27| if-lt v0, v4, Label_2
@@ -5699,7 +5699,7 @@ Label_1:
 	   29| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   30| aput-object v1, v6, v0
 	.line 178
-	   32| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   34| goto Label_1
 Label_2:
 	.line 181
@@ -5745,7 +5745,7 @@ Label_6:
 	   65| aput-object v5, v6, v1
 	.line 192
 	   67| shl-int/lit8 v1, v7, #+1 (0x00000001 | 0.000000)
-	   69| add-int/lit8 v0, v1, #-1 (0xffffffff | -nan)
+	   69| add-int/lit8 v0, v1, #-1 (0xffffffff | NaN)
 Label_7:
 	.restart_local v0
 	   71| if-lt v0, v4, Label_8
@@ -5753,7 +5753,7 @@ Label_7:
 	   73| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   74| aput-object v1, v6, v0
 	.line 192
-	   76| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   76| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   78| goto Label_7
 Label_8:
 	.line 195
@@ -6145,7 +6145,7 @@ method android.support.v4.util.SimpleArrayMap.indexOf(java.lang.Object, int) : i
 	.local v0, "N", int
 	    2| if-nez v0, Label_1
 	.line 66
-	    4| const/4 v4, #-1 (0xffffffff | -nan)
+	    4| const/4 v4, #-1 (0xffffffff | NaN)
 	    5| return v4
 Label_1:
 	.line 69
@@ -6190,7 +6190,7 @@ Label_5:
 	   53| goto Label_4
 Label_6:
 	.line 88
-	   54| add-int/lit8 v2, v3, #-1 (0xffffffff | -nan)
+	   54| add-int/lit8 v2, v3, #-1 (0xffffffff | NaN)
 Label_7:
 	.local v2, "i", int
 	   56| if-ltz v2, Label_9
@@ -6207,7 +6207,7 @@ Label_7:
 	   76| return v2
 Label_8:
 	.line 88
-	   77| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   77| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   79| goto Label_7
 Label_9:
 	.line 96
@@ -6247,7 +6247,7 @@ method android.support.v4.util.SimpleArrayMap.indexOfNull() : int
 	.local v0, "N", int
 	    3| if-nez v0, Label_1
 	.line 104
-	    5| const/4 v4, #-1 (0xffffffff | -nan)
+	    5| const/4 v4, #-1 (0xffffffff | NaN)
 	    6| return v4
 Label_1:
 	.line 107
@@ -6288,7 +6288,7 @@ Label_5:
 	   46| goto Label_4
 Label_6:
 	.line 126
-	   47| add-int/lit8 v2, v3, #-1 (0xffffffff | -nan)
+	   47| add-int/lit8 v2, v3, #-1 (0xffffffff | NaN)
 Label_7:
 	.local v2, "i", int
 	   49| if-ltz v2, Label_9
@@ -6303,7 +6303,7 @@ Label_7:
 	   65| return v2
 Label_8:
 	.line 126
-	   66| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   66| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   68| goto Label_7
 Label_9:
 	.line 134
@@ -6362,7 +6362,7 @@ Label_5:
 	   37| goto Label_4
 Label_6:
 	.line 302
-	   38| const/4 v3, #-1 (0xffffffff | -nan)
+	   38| const/4 v3, #-1 (0xffffffff | NaN)
 	   39| return v3
 }
 
@@ -6630,7 +6630,7 @@ Label_3:
 	   67| invoke-direct {v10,v0}, android.support.v4.util.SimpleArrayMap.allocArrays
 	.line 486
 	   70| iget v4, v10, android.support.v4.util.SimpleArrayMap.mSize
-	   72| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   72| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	   74| iput v4, v10, android.support.v4.util.SimpleArrayMap.mSize
 	.line 487
 	   76| if-lez v11, Label_4
@@ -6677,7 +6677,7 @@ Label_6:
 	.line 500
 	.end_local v0
 	  124| iget v4, v10, android.support.v4.util.SimpleArrayMap.mSize
-	  126| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  126| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	  128| iput v4, v10, android.support.v4.util.SimpleArrayMap.mSize
 	.line 501
 	  130| iget v4, v10, android.support.v4.util.SimpleArrayMap.mSize
@@ -6992,7 +6992,7 @@ method android.support.v4.util.ContainerHelpers.binarySearch(int[], int, int) : 
 	    0| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 47
 	.local v1, "lo", int
-	    1| add-int/lit8 v0, v6, #-1 (0xffffffff | -nan)
+	    1| add-int/lit8 v0, v6, #-1 (0xffffffff | NaN)
 Label_1:
 	.line 49
 	.local v0, "hi", int
@@ -7013,7 +7013,7 @@ Label_2:
 	.line 55
 	   16| if-le v3, v7, Label_3
 	.line 56
-	   18| add-int/lit8 v0, v2, #-1 (0xffffffff | -nan)
+	   18| add-int/lit8 v0, v2, #-1 (0xffffffff | NaN)
 	   20| goto Label_1
 Label_3:
 	.line 58
@@ -7585,11 +7585,11 @@ method android.support.v4.util.MapCollections$ArrayIterator.remove() : void
 Label_1:
 	.line 64
 	   10| iget v0, v2, android.support.v4.util.MapCollections$ArrayIterator.mIndex
-	   12| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   12| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   14| iput v0, v2, android.support.v4.util.MapCollections$ArrayIterator.mIndex
 	.line 65
 	   16| iget v0, v2, android.support.v4.util.MapCollections$ArrayIterator.mSize
-	   18| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   18| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   20| iput v0, v2, android.support.v4.util.MapCollections$ArrayIterator.mSize
 	.line 66
 	   22| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -7801,7 +7801,7 @@ method android.support.v4.util.MapCollections$EntrySet.hashCode() : int
 	    2| iget-object v4, v7, android.support.v4.util.MapCollections$EntrySet.this$0
 	    4| invoke-virtual {v4}, android.support.v4.util.MapCollections.colGetSize
 	    7| move-result v4
-	    8| add-int/lit8 v0, v4, #-1 (0xffffffff | -nan)
+	    8| add-int/lit8 v0, v4, #-1 (0xffffffff | NaN)
 Label_1:
 	.local v0, "i", int
 	   10| if-ltz v0, Label_6
@@ -7828,7 +7828,7 @@ Label_3:
 	   31| xor-int/2addr v4, v6
 	   32| add-int/2addr v2, v4
 	.line 255
-	   33| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   33| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   35| goto Label_1
 Label_4:
 	.line 258
@@ -8059,7 +8059,7 @@ method android.support.v4.util.MapCollections$KeySet.hashCode() : int
 	    2| iget-object v3, v5, android.support.v4.util.MapCollections$KeySet.this$0
 	    4| invoke-virtual {v3}, android.support.v4.util.MapCollections.colGetSize
 	    7| move-result v3
-	    8| add-int/lit8 v0, v3, #-1 (0xffffffff | -nan)
+	    8| add-int/lit8 v0, v3, #-1 (0xffffffff | NaN)
 Label_1:
 	.local v0, "i", int
 	   10| if-ltz v0, Label_4
@@ -8074,7 +8074,7 @@ Label_1:
 Label_2:
 	   21| add-int/2addr v2, v3
 	.line 345
-	   22| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   22| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   24| goto Label_1
 Label_3:
 	.line 347
@@ -8229,10 +8229,10 @@ method android.support.v4.util.MapCollections$MapIterator.<init>(android.support
 	.line 77
 	    8| invoke-virtual {v2}, android.support.v4.util.MapCollections.colGetSize
 	   11| move-result v0
-	   12| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   12| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   14| iput v0, v1, android.support.v4.util.MapCollections$MapIterator.mEnd
 	.line 78
-	   16| const/4 v0, #-1 (0xffffffff | -nan)
+	   16| const/4 v0, #-1 (0xffffffff | NaN)
 	   17| iput v0, v1, android.support.v4.util.MapCollections$MapIterator.mIndex
 	.line 79
 	   19| return-void
@@ -8455,11 +8455,11 @@ Label_1:
 	   14| invoke-virtual {v0,v1}, android.support.v4.util.MapCollections.colRemoveAt
 	.line 99
 	   17| iget v0, v2, android.support.v4.util.MapCollections$MapIterator.mIndex
-	   19| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   19| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   21| iput v0, v2, android.support.v4.util.MapCollections$MapIterator.mIndex
 	.line 100
 	   23| iget v0, v2, android.support.v4.util.MapCollections$MapIterator.mEnd
-	   25| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   25| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   27| iput v0, v2, android.support.v4.util.MapCollections$MapIterator.mEnd
 	.line 101
 	   29| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -8705,9 +8705,9 @@ Label_1:
 	   23| iget-object v4, v6, android.support.v4.util.MapCollections$ValuesCollection.this$0
 	   25| invoke-virtual {v4,v3}, android.support.v4.util.MapCollections.colRemoveAt
 	.line 414
-	   28| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   28| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	.line 415
-	   30| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   30| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	.line 416
 	.line 410
 	   32| const/4 v1, #+1 (0x00000001 | 0.000000)
@@ -8755,9 +8755,9 @@ Label_1:
 	   23| iget-object v4, v6, android.support.v4.util.MapCollections$ValuesCollection.this$0
 	   25| invoke-virtual {v4,v3}, android.support.v4.util.MapCollections.colRemoveAt
 	.line 430
-	   28| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   28| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	.line 431
-	   30| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   30| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	.line 432
 	.line 426
 	   32| const/4 v1, #+1 (0x00000001 | 0.000000)
@@ -15833,7 +15833,7 @@ method android.support.v4.widget.ExploreByTouchHelper.<clinit>() : void
 	.src "ExploreByTouchHelper.java"
 	.line 102
 	.prologue_end
-	    0| const v2, #+2147483647 (0x7fffffff | nan)
+	    0| const v2, #+2147483647 (0x7fffffff | NaN)
 	    3| const/high16 v1, #-2147483648 (0x80000000 | -0.000000)
 	.line 102
 	.line 337
@@ -16400,7 +16400,7 @@ method android.support.v4.widget.ExploreByTouchHelper.obtainAccessibilityNodeInf
 	.line 721
 	.prologue_end
 	.line 721
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	    1| if-ne v2, v0, Label_1
 	.line 722
 	    3| invoke-direct {v1}, android.support.v4.widget.ExploreByTouchHelper.createNodeForHost
@@ -16727,7 +16727,7 @@ method android.support.v4.widget.ExploreByTouchHelper.invalidateRoot() : void
 	.line 527
 	.prologue_end
 	.line 527
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	    1| const/4 v1, #+1 (0x00000001 | 0.000000)
 	    2| invoke-virtual {v2,v0,v1}, android.support.v4.widget.ExploreByTouchHelper.invalidateVirtualView
 	.line 528
@@ -17421,7 +17421,7 @@ method com.android.calendar.AllInOneActivity$2.run() : void
 	   14| invoke-static {v0,v1}, com.android.calendar.AllInOneActivity.-set1
 	.line 249
 	   17| iget-object v0, v4, com.android.calendar.AllInOneActivity$2.this$0
-	   19| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   19| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   21| invoke-static {v0,v2,v3}, com.android.calendar.AllInOneActivity.-wrap0
 	.line 250
 	   24| iget-object v0, v4, com.android.calendar.AllInOneActivity$2.this$0
@@ -17799,7 +17799,7 @@ method com.android.calendar.AllInOneActivity.<init>() : void
 	.src "AllInOneActivity.java"
 	.line 85
 	.prologue_end
-	    0| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    2| const/4 v1, #+1 (0x00000001 | 0.000000)
 	    3| const/4 v0, #+0 (0x00000000 | 0.000000)
 	.line 85
@@ -18078,7 +18078,7 @@ Label_3:
 	  121| move-object/from16 v0, v27
 	  123| iput v4, v0, com.android.calendar.AllInOneActivity.mPreviousView
 	.line 647
-	  125| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	  125| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	.line 648
 	.local v22, "eventId", long
 	  127| invoke-virtual/range {v27..v27}, com.android.calendar.AllInOneActivity.getIntent
@@ -18101,14 +18101,14 @@ Label_3:
 Label_4:
 	.line 662
 	  145| const-string/jumbo v4, "beginTime"
-	  148| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  148| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  150| move-object/from16 v0, v24
 	  152| invoke-virtual {v0,v4,v6,v7}, android.content.Intent.getLongExtra
 	  155| move-result-wide v16
 	.line 663
 	.local v16, "begin", long
 	  156| const-string/jumbo v4, "endTime"
-	  159| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  159| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  161| move-object/from16 v0, v24
 	  163| invoke-virtual {v0,v4,v6,v7}, android.content.Intent.getLongExtra
 	  166| move-result-wide v20
@@ -18119,7 +18119,7 @@ Label_4:
 	  169| invoke-direct/range {v19..v19}, com.android.calendar.CalendarController$EventInfo.<init>
 	.line 665
 	.local v19, "info", com.android.calendar.CalendarController$EventInfo
-	  172| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  172| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  174| cmp-long v4, v20, v6
 	  176| if-eqz v4, Label_5
 	.line 666
@@ -18134,7 +18134,7 @@ Label_4:
 	  193| invoke-virtual {v4,v0,v1}, android.text.format.Time.set
 Label_5:
 	.line 669
-	  196| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  196| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  198| cmp-long v4, v16, v6
 	  200| if-eqz v4, Label_6
 	.line 670
@@ -18197,7 +18197,7 @@ Label_7:
 	  283| iget-object v6, v0, com.android.calendar.AllInOneActivity.mController
 	.line 690
 	  285| const-string/jumbo v4, "key_event_id"
-	  288| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	  288| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	  290| move-object/from16 v0, v31
 	  292| invoke-virtual {v0,v4,v8,v9}, android.os.Bundle.getLong
 	  295| move-result-wide v12
@@ -18252,7 +18252,7 @@ Label_11:
 	.line 653
 	  343| move-object/from16 v0, v27
 	  345| iget-object v6, v0, com.android.calendar.AllInOneActivity.mController
-	  347| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	  347| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	  349| const-wide/16 v8, #+32 (0x00000020 | 0.000000)
 	  351| const/4 v11, #+0 (0x00000000 | 0.000000)
 	  352| move-object/from16 v7, v27
@@ -18279,7 +18279,7 @@ method com.android.calendar.AllInOneActivity.parseViewAction(android.content.Int
 	.prologue_end
 	    0| const/4 v7, #+0 (0x00000000 | 0.000000)
 	.line 438
-	    1| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    1| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	.line 439
 	.local v4, "timeMillis", long
 	    3| invoke-virtual {v11}, android.content.Intent.getData
@@ -18317,7 +18317,7 @@ method com.android.calendar.AllInOneActivity.parseViewAction(android.content.Int
 	   53| iput-wide v6, v10, com.android.calendar.AllInOneActivity.mViewEventId
 	.line 445
 	   55| iget-wide v6, v10, com.android.calendar.AllInOneActivity.mViewEventId
-	   57| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	   57| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	   59| cmp-long v3, v6, v8
 	   61| if-eqz v3, Label_1
 	.line 446
@@ -18841,7 +18841,7 @@ method com.android.calendar.AllInOneActivity.updateSecondaryTitleFields(long) : 
 	   18| move-object/from16 v0, v23
 	   20| iput-object v5, v0, com.android.calendar.AllInOneActivity.mTimeZone
 	.line 1027
-	   22| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	   22| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	   24| cmp-long v5, v24, v8
 	   26| if-eqz v5, Label_1
 	.line 1028
@@ -19032,7 +19032,7 @@ Label_6:
 	  283| return-void
 Label_7:
 	.line 1038
-	  284| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	  284| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	  286| cmp-long v5, v24, v8
 	  288| if-eqz v5, Label_8
 	  290| move-object/from16 v0, v23
@@ -19147,7 +19147,7 @@ method com.android.calendar.AllInOneActivity.eventsChanged() : void
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 1232
 	    1| iget-object v0, v9, com.android.calendar.AllInOneActivity.mController
-	    3| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    5| const-wide/16 v2, #+128 (0x00000080 | 0.000000)
 	    7| const/4 v8, #+0 (0x00000000 | 0.000000)
 	    8| move-object v1, v9
@@ -19174,7 +19174,7 @@ method com.android.calendar.AllInOneActivity.handleEvent(com.android.calendar.Ca
 	.line 1089
 	.prologue_end
 	.line 1089
-	    0| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	.line 1090
 	.local v20, "displayTime", long
 	    2| move-object/from16 v0, v29
@@ -19589,7 +19589,7 @@ Label_22:
 	.line 1176
 	  577| move-object/from16 v0, v29
 	  579| iget-object v9, v0, com.android.calendar.CalendarController$EventInfo.selectedTime
-	  581| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  581| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	.line 1175
 	  583| const-wide/16 v6, #+32 (0x00000020 | 0.000000)
 	.line 1176
@@ -19825,7 +19825,7 @@ method com.android.calendar.AllInOneActivity.onBackPressed() : void
 Label_1:
 	.line 699
 	   10| iget-object v0, v9, com.android.calendar.AllInOneActivity.mController
-	   12| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	   12| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	   14| iget v8, v9, com.android.calendar.AllInOneActivity.mPreviousView
 	   16| const-wide/16 v2, #+32 (0x00000020 | 0.000000)
 	   18| move-object v1, v9
@@ -19922,10 +19922,10 @@ Label_3:
 	  111| move-object/from16 v0, v22
 	  113| iput-object v6, v0, com.android.calendar.AllInOneActivity.mController
 	.line 329
-	  115| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	  115| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	.line 330
 	.local v20, "timeMillis", long
-	  117| const/16 v19, #-1 (0xffffffff | -nan)
+	  117| const/16 v19, #-1 (0xffffffff | NaN)
 	.line 331
 	.local v19, "viewType", int
 	  119| invoke-virtual/range {v22..v22}, com.android.calendar.AllInOneActivity.getIntent
@@ -19941,13 +19941,13 @@ Label_3:
 	.line 334
 	.line 347
 	  134| const-string/jumbo v6, "key_restore_view"
-	  137| const/4 v7, #-1 (0xffffffff | -nan)
+	  137| const/4 v7, #-1 (0xffffffff | NaN)
 	  138| move-object/from16 v0, v23
 	  140| invoke-virtual {v0,v6,v7}, android.os.Bundle.getInt
 	  143| move-result v19
 Label_4:
 	.line 347
-	  144| const/4 v6, #-1 (0xffffffff | -nan)
+	  144| const/4 v6, #-1 (0xffffffff | NaN)
 	  145| move/from16 v0, v19
 	  147| if-eq v0, v6, Label_5
 	  149| const/4 v6, #+5 (0x00000005 | 0.000000)
@@ -20241,7 +20241,7 @@ Label_11:
 	  616| move-result-wide v20
 Label_12:
 	.line 342
-	  617| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  617| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  619| cmp-long v6, v20, v6
 	  621| if-nez v6, Label_4
 	.line 343
@@ -20476,7 +20476,7 @@ method com.android.calendar.AllInOneActivity.onNavigationItemSelected(int, long)
 	    0| const/4 v8, #+2 (0x00000002 | 0.000000)
 	    1| const/4 v9, #+1 (0x00000001 | 0.000000)
 	    2| const-wide/16 v2, #+32 (0x00000020 | 0.000000)
-	    4| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    6| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 1278
 	.line 1300
@@ -20618,7 +20618,7 @@ method com.android.calendar.AllInOneActivity.onNewIntent(android.content.Intent)
 	.line 284
 	.prologue_end
 	    0| const/4 v8, #+0 (0x00000000 | 0.000000)
-	    1| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    1| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 284
 	    3| invoke-virtual {v13}, android.content.Intent.getAction
 	    6| move-result-object v9
@@ -20729,7 +20729,7 @@ Label_1:
 	.line 810
 	   46| move-object/from16 v0, v19
 	   48| iget-object v2, v0, com.android.calendar.AllInOneActivity.mController
-	   50| const-wide/16 v9, #-1 (0xffffffff | -nan)
+	   50| const-wide/16 v9, #-1 (0xffffffff | NaN)
 	   52| const-wide/16 v4, #+32 (0x00000020 | 0.000000)
 	   54| const/4 v7, #+0 (0x00000000 | 0.000000)
 	   55| const/4 v14, #+0 (0x00000000 | 0.000000)
@@ -20779,13 +20779,13 @@ Label_3:
 	  113| move-object/from16 v0, v19
 	  115| iget-object v2, v0, com.android.calendar.AllInOneActivity.mController
 	.line 779
-	  117| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  117| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  119| const/4 v3, #+1 (0x00000001 | 0.000000)
 	  120| move-object/from16 v0, v18
 	  122| invoke-virtual {v0,v3}, android.text.format.Time.toMillis
 	  125| move-result-wide v8
 	  126| const-wide/16 v10, #+0 (0x00000000 | 0.000000)
-	  128| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	  128| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	  130| const-wide/16 v4, #+1 (0x00000001 | 0.000000)
 	  132| const/4 v12, #+0 (0x00000000 | 0.000000)
 	  133| const/4 v13, #+0 (0x00000000 | 0.000000)
@@ -21070,7 +21070,7 @@ method com.android.calendar.AllInOneActivity.onQueryTextSubmit(java.lang.String)
 	    3| invoke-interface {v0}, android.view.MenuItem.collapseActionView
 	.line 1243
 	    6| iget-object v0, v13, com.android.calendar.AllInOneActivity.mController
-	    8| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    8| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	   10| const-wide/16 v9, #+0 (0x00000000 | 0.000000)
 	.line 1244
 	   12| invoke-virtual {v13}, com.android.calendar.AllInOneActivity.getComponentName
@@ -21152,7 +21152,7 @@ Label_1:
 	.line 527
 	   88| move-object/from16 v0, v26
 	   90| iget-object v2, v0, com.android.calendar.AllInOneActivity.mController
-	   92| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	   92| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	.line 528
 	   94| move-object/from16 v0, v26
 	   96| iget-object v3, v0, com.android.calendar.AllInOneActivity.mController
@@ -21200,17 +21200,17 @@ Label_4:
 	.line 539
 	  156| move-object/from16 v0, v26
 	  158| iget-wide v2, v0, com.android.calendar.AllInOneActivity.mViewEventId
-	  160| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  160| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  162| cmp-long v2, v2, v4
 	  164| if-eqz v2, Label_6
 	  166| move-object/from16 v0, v26
 	  168| iget-wide v2, v0, com.android.calendar.AllInOneActivity.mIntentEventStartMillis
-	  170| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  170| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  172| cmp-long v2, v2, v4
 	  174| if-eqz v2, Label_6
 	  176| move-object/from16 v0, v26
 	  178| iget-wide v2, v0, com.android.calendar.AllInOneActivity.mIntentEventEndMillis
-	  180| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  180| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  182| cmp-long v2, v2, v4
 	  184| if-eqz v2, Label_6
 	.line 540
@@ -21218,7 +21218,7 @@ Label_4:
 	  189| move-result-wide v24
 	.line 541
 	.local v24, "currentMillis", long
-	  190| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	  190| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	.line 542
 	.local v22, "selectedTime", long
 	  192| move-object/from16 v0, v26
@@ -21253,21 +21253,21 @@ Label_5:
 	.line 545
 	  240| const-wide/16 v10, #+2 (0x00000002 | 0.000000)
 	.line 546
-	  242| const/16 v18, #-1 (0xffffffff | -nan)
-	  244| const/16 v19, #-1 (0xffffffff | -nan)
+	  242| const/16 v18, #-1 (0xffffffff | NaN)
+	  244| const/16 v19, #-1 (0xffffffff | NaN)
 	  246| move-object/from16 v9, v26
 	.line 545
 	  248| invoke-virtual/range {v8..v23}, com.android.calendar.CalendarController.sendEventRelatedEventWithExtra
 	.line 549
-	  251| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  251| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  253| move-object/from16 v0, v26
 	  255| iput-wide v2, v0, com.android.calendar.AllInOneActivity.mViewEventId
 	.line 550
-	  257| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  257| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  259| move-object/from16 v0, v26
 	  261| iput-wide v2, v0, com.android.calendar.AllInOneActivity.mIntentEventStartMillis
 	.line 551
-	  263| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  263| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  265| move-object/from16 v0, v26
 	  267| iput-wide v2, v0, com.android.calendar.AllInOneActivity.mIntentEventEndMillis
 	.line 552
@@ -21464,7 +21464,7 @@ method com.android.calendar.AllInOneActivity.onTabSelected(android.app.ActionBar
 	    0| const/4 v8, #+2 (0x00000002 | 0.000000)
 	    1| const/4 v9, #+1 (0x00000001 | 0.000000)
 	    2| const-wide/16 v2, #+32 (0x00000020 | 0.000000)
-	    4| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    6| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 1250
 	    7| const-string/jumbo v0, "AllInOneActivity"
@@ -21641,7 +21641,7 @@ method com.android.calendar.AllInOneActivity.onUserLeaveHint() : void
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 587
 	    1| iget-object v0, v9, com.android.calendar.AllInOneActivity.mController
-	    3| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    5| const-wide/16 v2, #+512 (0x00000200 | 0.000000)
 	    7| const/4 v8, #+0 (0x00000000 | 0.000000)
 	    8| move-object v1, v9
@@ -21704,7 +21704,7 @@ Label_2:
 	   53| new-instance v0, android.widget.LinearLayout$LayoutParams
 	.line 831
 	   55| iget v1, v4, com.android.calendar.AllInOneActivity.mControlsAnimateHeight
-	   57| const/4 v2, #-1 (0xffffffff | -nan)
+	   57| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 830
 	   58| invoke-direct {v0,v2,v1}, android.widget.LinearLayout$LayoutParams.<init>
 	   61| iput-object v0, v4, com.android.calendar.AllInOneActivity.mVerticalControlsParams
@@ -22311,7 +22311,7 @@ Label_1:
 	   17| cmp-long v1, v2, v4
 	   19| if-gez v1, Label_2
 	.line 96
-	   21| const/4 v1, #-1 (0xffffffff | -nan)
+	   21| const/4 v1, #-1 (0xffffffff | NaN)
 	   22| return v1
 Label_2:
 	.line 98
@@ -24408,7 +24408,7 @@ method com.android.calendar.CalendarController.<init>(android.content.Context) :
 	.src "CalendarController.java"
 	.line 309
 	.prologue_end
-	    0| const/4 v2, #-1 (0xffffffff | -nan)
+	    0| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 309
 	.line 70
 	    1| invoke-direct {v3}, java.lang.Object.<init>
@@ -24441,7 +24441,7 @@ method com.android.calendar.CalendarController.<init>(android.content.Context) :
 	.line 85
 	   41| iput v2, v3, com.android.calendar.CalendarController.mPreviousViewType
 	.line 86
-	   43| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   43| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   45| iput-wide v0, v3, com.android.calendar.CalendarController.mEventId
 	.line 87
 	   47| new-instance v0, android.text.format.Time
@@ -24575,7 +24575,7 @@ method com.android.calendar.CalendarController.launchCreateEvent(long, long, boo
 	    3| move-result-object v0
 	.line 740
 	.local v0, "intent", android.content.Intent
-	    4| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    6| iput-wide v2, v5, com.android.calendar.CalendarController.mEventId
 	.line 741
 	    8| iget-object v1, v5, com.android.calendar.CalendarController.mContext
@@ -24592,7 +24592,7 @@ method com.android.calendar.CalendarController.launchDeleteEvent(long, long, lon
 	.prologue_end
 	.line 787
 	    0| const/4 v1, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v8, #-1 (0xffffffff | -nan)
+	    1| const/4 v8, #-1 (0xffffffff | NaN)
 	    2| move-object v0, v9
 	    3| move-wide v2, v10
 	    4| move-wide v4, v12
@@ -25270,7 +25270,7 @@ Label_1:
 	.line 451
 	   38| move-object/from16 v0, v33
 	   40| iget v3, v0, com.android.calendar.CalendarController$EventInfo.viewType
-	   42| const/4 v4, #-1 (0xffffffff | -nan)
+	   42| const/4 v4, #-1 (0xffffffff | NaN)
 	   43| if-ne v3, v4, Label_11
 	.line 452
 	   45| move-object/from16 v0, v31
@@ -25590,7 +25590,7 @@ Label_17:
 Label_18:
 	.line 517
 	.line 557
-	  477| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  477| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  479| move-object/from16 v0, v31
 	  481| iput-wide v4, v0, com.android.calendar.CalendarController.mEventId
 	  483| goto/16 Label_7
@@ -25601,7 +25601,7 @@ Label_19:
 	.restart_local v23
 	  485| move-object/from16 v0, v31
 	  487| iget v3, v0, com.android.calendar.CalendarController.mDispatchInProgressCounter
-	  489| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  489| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  491| move-object/from16 v0, v31
 	  493| iput v3, v0, com.android.calendar.CalendarController.mDispatchInProgressCounter
 	.line 559
@@ -25752,7 +25752,7 @@ Label_28:
 	  680| move-object/from16 v0, v33
 	  682| iget-object v3, v0, com.android.calendar.CalendarController$EventInfo.endTime
 	  684| if-nez v3, Label_31
-	  686| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  686| const-wide/16 v6, #-1 (0xffffffff | NaN)
 Label_29:
 	.line 599
 	.local v6, "endTime", long
@@ -25943,7 +25943,7 @@ method com.android.calendar.CalendarController.sendEventRelatedEventWithExtra(ja
 	.line 346
 	.prologue_end
 	.line 346
-	    0| const-wide/16 v17, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v17, #-1 (0xffffffff | NaN)
 	    2| const/16 v16, #+0 (0x00000000 | 0.000000)
 	    4| move-object/from16 v0, v20
 	    6| move-object/from16 v1, v21
@@ -25999,7 +25999,7 @@ Label_2:
 	   39| iget-object v3, v2, com.android.calendar.CalendarController$EventInfo.startTime
 	   41| invoke-virtual {v3,v12,v13}, android.text.format.Time.set
 	.line 377
-	   44| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	   44| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	   46| cmp-long v3, v20, v4
 	   48| if-eqz v3, Label_4
 	.line 378
@@ -26568,8 +26568,8 @@ method com.android.calendar.CalendarEventModel.<init>() : void
 	.line 281
 	.prologue_end
 	    0| const/4 v6, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
-	    2| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
+	    2| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    4| const/4 v2, #+0 (0x00000000 | 0.000000)
 	    5| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 281
@@ -26716,7 +26716,7 @@ method com.android.calendar.CalendarEventModel.<init>(android.content.Context) :
 	   27| move-result v1
 	.line 297
 	.local v1, "defaultReminderMins", int
-	   28| const/4 v3, #-1 (0xffffffff | -nan)
+	   28| const/4 v3, #-1 (0xffffffff | NaN)
 	   29| if-eq v1, v3, Label_1
 	.line 299
 	   31| const/4 v3, #+1 (0x00000001 | 0.000000)
@@ -26784,31 +26784,31 @@ Label_3:
 Label_4:
 	.line 327
 	   45| const-string/jumbo v10, "availability"
-	   48| const/4 v11, #-1 (0xffffffff | -nan)
+	   48| const/4 v11, #-1 (0xffffffff | NaN)
 	   49| move-object/from16 v0, v17
 	   51| invoke-virtual {v0,v10,v11}, android.content.Intent.getIntExtra
 	   54| move-result v2
 	.line 328
 	.local v2, "availability", int
-	   55| const/4 v10, #-1 (0xffffffff | -nan)
+	   55| const/4 v10, #-1 (0xffffffff | NaN)
 	   56| if-eq v2, v10, Label_5
 	.line 329
 	   58| iput v2, v15, com.android.calendar.CalendarEventModel.mAvailability
 Label_5:
 	.line 332
 	   60| const-string/jumbo v10, "accessLevel"
-	   63| const/4 v11, #-1 (0xffffffff | -nan)
+	   63| const/4 v11, #-1 (0xffffffff | NaN)
 	   64| move-object/from16 v0, v17
 	   66| invoke-virtual {v0,v10,v11}, android.content.Intent.getIntExtra
 	   69| move-result v1
 	.line 333
 	.local v1, "accessLevel", int
-	   70| const/4 v10, #-1 (0xffffffff | -nan)
+	   70| const/4 v10, #-1 (0xffffffff | NaN)
 	   71| if-eq v1, v10, Label_7
 	.line 334
 	   73| if-lez v1, Label_6
 	.line 337
-	   75| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   75| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 Label_6:
 	.line 339
 	   77| iput v1, v15, com.android.calendar.CalendarEventModel.mAccessLevel
@@ -27341,8 +27341,8 @@ method com.android.calendar.CalendarEventModel.clear() : void
 	.line 388
 	.prologue_end
 	    0| const/4 v3, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v0, #-1 (0xffffffff | -nan)
-	    2| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    1| const/4 v0, #-1 (0xffffffff | NaN)
+	    2| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    4| const/4 v2, #+0 (0x00000000 | 0.000000)
 	    5| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 388
@@ -27768,7 +27768,7 @@ method com.android.calendar.CalendarEventModel.getEventColorKey() : int
 	   16| return v0
 Label_1:
 	.line 942
-	   17| const/4 v0, #-1 (0xffffffff | -nan)
+	   17| const/4 v0, #-1 (0xffffffff | NaN)
 	   18| return v0
 }
 
@@ -28450,7 +28450,7 @@ Label_14:
 Label_15:
 	.line 686
 	  192| iget-wide v2, v8, com.android.calendar.CalendarEventModel.mOriginalId
-	  194| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  194| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  196| cmp-long v2, v2, v4
 	  198| if-eqz v2, Label_18
 	.line 687
@@ -28508,7 +28508,7 @@ method com.android.calendar.CalendarEventModel.isValid() : boolean
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 362
 	    1| iget-wide v0, v5, com.android.calendar.CalendarEventModel.mCalendarId
-	    3| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    5| cmp-long v0, v0, v2
 	    7| if-nez v0, Label_1
 	.line 363
@@ -28549,7 +28549,7 @@ Label_1:
 	   17| iget-object v4, v6, com.android.calendar.CalendarEventModel.mReminders
 	   19| invoke-virtual {v4}, java.util.ArrayList.size
 	   22| move-result v4
-	   23| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   23| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	   25| invoke-virtual {v3,v4}, java.util.ArrayList.get
 	   28| move-result-object v2
 	   29| check-cast v2, com.android.calendar.CalendarEventModel$ReminderEntry
@@ -28558,7 +28558,7 @@ Label_1:
 	   31| iget-object v3, v6, com.android.calendar.CalendarEventModel.mReminders
 	   33| invoke-virtual {v3}, java.util.ArrayList.size
 	   36| move-result v3
-	   37| add-int/lit8 v1, v3, #-2 (0xfffffffe | -nan)
+	   37| add-int/lit8 v1, v3, #-2 (0xfffffffe | NaN)
 Label_2:
 	.local v1, "i", int
 	   39| if-ltz v1, Label_4
@@ -28581,7 +28581,7 @@ Label_3:
 	.line 892
 	   62| move-object v2, v0
 	.line 892
-	   63| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   63| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   65| goto Label_2
 Label_4:
 	.line 901
@@ -30743,12 +30743,12 @@ method com.android.calendar.ColorChipView.onDraw(android.graphics.Canvas) : void
 	.line 96
 	    2| invoke-virtual {v14}, com.android.calendar.ColorChipView.getWidth
 	    5| move-result v0
-	    6| add-int/lit8 v12, v0, #-1 (0xffffffff | -nan)
+	    6| add-int/lit8 v12, v0, #-1 (0xffffffff | NaN)
 	.line 97
 	.local v12, "right", int
 	    8| invoke-virtual {v14}, com.android.calendar.ColorChipView.getHeight
 	   11| move-result v0
-	   12| add-int/lit8 v6, v0, #-1 (0xffffffff | -nan)
+	   12| add-int/lit8 v6, v0, #-1 (0xffffffff | NaN)
 	.line 98
 	.local v6, "bottom", int
 	   14| iget-object v2, v14, com.android.calendar.ColorChipView.mPaint
@@ -31151,7 +31151,7 @@ Label_1:
 Label_2:
 	.line 213
 	   28| sget-object v2, com.android.calendar.ContactsAsyncHelper.sThreadHandler
-	   30| const/4 v3, #-1 (0xffffffff | -nan)
+	   30| const/4 v3, #-1 (0xffffffff | NaN)
 	   31| invoke-virtual {v2,v3}, android.os.Handler.obtainMessage
 	   34| move-result-object v1
 	.line 214
@@ -31202,7 +31202,7 @@ Label_2:
 Label_3:
 	.line 237
 	   30| iget v1, v0, com.android.calendar.ContactsAsyncHelper$WorkerArgs.defaultResource
-	   32| const/4 v2, #-1 (0xffffffff | -nan)
+	   32| const/4 v2, #-1 (0xffffffff | NaN)
 	   33| if-eq v1, v2, Label_1
 	.line 238
 	   35| iget-object v1, v0, com.android.calendar.ContactsAsyncHelper$WorkerArgs.view
@@ -31481,7 +31481,7 @@ method com.android.calendar.DayFragment.getSelectedTimeInMillis() : long
 	.src "DayFragment.java"
 	.line 220
 	.prologue_end
-	    0| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	.line 220
 	    2| iget-object v1, v4, com.android.calendar.DayFragment.mViewSwitcher
 	    4| if-nez v1, Label_1
@@ -31576,7 +31576,7 @@ method com.android.calendar.DayFragment.makeView() : android.view.View
 	.line 114
 	.prologue_end
 	    0| const/4 v7, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v6, #-1 (0xffffffff | -nan)
+	    1| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 114
 	    2| iget-object v1, v8, com.android.calendar.DayFragment.mTZUpdater
 	    4| invoke-interface {v1}, java.lang.Runnable.run
@@ -31779,7 +31779,7 @@ method com.android.calendar.DayFragment.onSaveInstanceState(android.os.Bundle) :
 	    6| move-result-wide v0
 	.line 144
 	.local v0, "time", long
-	    7| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    7| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    9| cmp-long v2, v0, v2
 	   11| if-eqz v2, Label_1
 	.line 145
@@ -32503,19 +32503,19 @@ Label_1:
 	   18| invoke-static {v2}, com.android.calendar.DayView.-get9
 	   21| move-result-object v2
 	.line 4967
-	   22| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	   22| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	   24| move-object/from16 v0, v18
 	   26| iget-object v3, v0, com.android.calendar.DayView$8.this$0
 	   28| invoke-virtual {v3}, com.android.calendar.DayView.getSelectedTimeInMillis
 	   31| move-result-wide v8
 	   32| const-wide/16 v10, #+0 (0x00000000 | 0.000000)
 	.line 4968
-	   34| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	   34| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	.line 4967
 	   36| const-wide/16 v4, #+1 (0x00000001 | 0.000000)
-	   38| const/4 v12, #-1 (0xffffffff | -nan)
+	   38| const/4 v12, #-1 (0xffffffff | NaN)
 	.line 4968
-	   39| const/4 v13, #-1 (0xffffffff | -nan)
+	   39| const/4 v13, #-1 (0xffffffff | NaN)
 	   40| move-object/from16 v3, v18
 	.line 4966
 	   42| invoke-virtual/range {v2..v17}, com.android.calendar.CalendarController.sendEventRelatedEventWithExtra
@@ -32762,7 +32762,7 @@ Label_2:
 	   51| invoke-static {v3}, com.android.calendar.DayView.-get25
 	   54| move-result-object v3
 	   55| iget-wide v10, v3, com.android.calendar.Event.endMillis
-	   57| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	   57| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	.line 4437
 	   59| const-wide/16 v4, #+4 (0x00000004 | 0.000000)
 	.line 4439
@@ -32806,7 +32806,7 @@ Label_4:
 	  112| invoke-static {v3}, com.android.calendar.DayView.-get25
 	  115| move-result-object v3
 	  116| iget-wide v10, v3, com.android.calendar.Event.endMillis
-	  118| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	  118| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	.line 4445
 	  120| const-wide/16 v4, #+8 (0x00000008 | 0.000000)
 	.line 4447
@@ -32826,7 +32826,7 @@ Label_5:
 	  140| iget-object v3, v0, com.android.calendar.DayView$ContextMenuHandler.this$0
 	  142| invoke-virtual {v3}, com.android.calendar.DayView.getSelectedTime
 	  145| move-result-object v6
-	  146| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	  146| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	  148| const-wide/16 v4, #+32 (0x00000020 | 0.000000)
 	  150| const/4 v7, #+0 (0x00000000 | 0.000000)
 	.line 4453
@@ -32845,7 +32845,7 @@ Label_6:
 	  168| iget-object v3, v0, com.android.calendar.DayView$ContextMenuHandler.this$0
 	  170| invoke-virtual {v3}, com.android.calendar.DayView.getSelectedTime
 	  173| move-result-object v6
-	  174| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	  174| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	  176| const-wide/16 v4, #+32 (0x00000020 | 0.000000)
 	  178| const/4 v7, #+0 (0x00000000 | 0.000000)
 	.line 4458
@@ -32870,9 +32870,9 @@ Label_7:
 	  201| iget-object v2, v0, com.android.calendar.DayView$ContextMenuHandler.this$0
 	  203| invoke-static {v2}, com.android.calendar.DayView.-get9
 	  206| move-result-object v2
-	  207| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  207| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 4465
-	  209| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	  209| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	.line 4464
 	  211| const-wide/16 v4, #+1 (0x00000001 | 0.000000)
 	.line 4465
@@ -32918,7 +32918,7 @@ Label_8:
 	  262| invoke-static {v2}, com.android.calendar.DayView.-get9
 	  265| move-result-object v12
 	.line 4475
-	  266| const-wide/16 v24, #-1 (0xffffffff | -nan)
+	  266| const-wide/16 v24, #-1 (0xffffffff | NaN)
 	.line 4474
 	  268| const-wide/16 v14, #+16 (0x00000010 | 0.000000)
 	.line 4475
@@ -33217,7 +33217,7 @@ method com.android.calendar.DayView$GotoBroadcaster.onAnimationEnd(android.view.
 	   45| move-result-object v0
 	   46| iget-object v4, v15, com.android.calendar.DayView$GotoBroadcaster.mStart
 	   48| iget-object v5, v15, com.android.calendar.DayView$GotoBroadcaster.mEnd
-	   50| const-wide/16 v7, #-1 (0xffffffff | -nan)
+	   50| const-wide/16 v7, #-1 (0xffffffff | NaN)
 	   52| const-wide/16 v2, #+32 (0x00000020 | 0.000000)
 	   54| const/4 v6, #+0 (0x00000000 | 0.000000)
 	.line 1805
@@ -34151,7 +34151,7 @@ method com.android.calendar.DayView.<init>(android.content.Context, com.android.
 	.src "DayView.java"
 	.line 654
 	.prologue_end
-	    0| const/4 v3, #-1 (0xffffffff | -nan)
+	    0| const/4 v3, #-1 (0xffffffff | NaN)
 	    1| const/4 v7, #+0 (0x00000000 | 0.000000)
 	    2| const/4 v6, #+0 (0x00000000 | 0.000000)
 	    3| const/4 v4, #+1 (0x00000001 | 0.000000)
@@ -34820,7 +34820,7 @@ Label_3:
 	  940| invoke-direct {v2,v9,v6,v5}, com.android.calendar.DeleteEventHelper.<init>
 	  943| iput-object v2, v8, com.android.calendar.DayView.mDeleteEventHelper
 	.line 758
-	  945| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  945| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  947| iput-wide v2, v8, com.android.calendar.DayView.mLastPopupEventID
 	.line 759
 	  949| iput-object v10, v8, com.android.calendar.DayView.mController
@@ -34975,7 +34975,7 @@ Label_3:
 	   84| if-lez v1, Label_5
 	.line 1968
 	   86| iget v1, v6, com.android.calendar.DayView.mFirstHour
-	   88| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   88| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   90| iput v1, v6, com.android.calendar.DayView.mFirstHour
 	.line 1969
 	   92| iget v1, v6, com.android.calendar.DayView.mViewStartY
@@ -34998,7 +34998,7 @@ Label_5:
 	  110| iget v2, v6, com.android.calendar.DayView.mFirstHour
 	  112| iget v3, v6, com.android.calendar.DayView.mNumHours
 	  114| add-int/2addr v2, v3
-	  115| add-int/lit8 v2, v2, #-3 (0xfffffffd | -nan)
+	  115| add-int/lit8 v2, v2, #-3 (0xfffffffd | NaN)
 	  117| if-le v1, v2, Label_8
 	.line 1978
 	  119| iget v1, v6, com.android.calendar.DayView.mFirstHour
@@ -35297,7 +35297,7 @@ Label_3:
 Label_4:
 	.line 3056
 	.end_local v0
-	   36| const/4 v10, #-1 (0xffffffff | -nan)
+	   36| const/4 v10, #-1 (0xffffffff | NaN)
 	.line 3057
 	.local v10, "startPosition", int
 	   37| iget-object v11, v13, com.android.calendar.DayView.mPrevSelectedEvent
@@ -35312,7 +35312,7 @@ Label_4:
 	   54| move-result v10
 Label_5:
 	.line 3060
-	   55| const/4 v4, #-1 (0xffffffff | -nan)
+	   55| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 3061
 	.local v4, "maxPosition", int
 	   56| const/4 v9, #+0 (0x00000000 | 0.000000)
@@ -35376,7 +35376,7 @@ Label_11:
 	  100| move-result v7
 	.line 3078
 	.local v7, "neighborPosition", int
-	  101| add-int/lit8 v11, v8, #-1 (0xffffffff | -nan)
+	  101| add-int/lit8 v11, v8, #-1 (0xffffffff | NaN)
 	  103| if-ne v7, v11, Label_12
 	.line 3079
 	  105| iput-object v6, v0, com.android.calendar.Event.nextUp
@@ -35554,7 +35554,7 @@ Label_9:
 	  118| aput-boolean v14, v13, v1
 	.line 2145
 	  120| add-int/lit8 v1, v1, #+1 (0x00000001 | 0.000000)
-	  122| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  122| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  124| goto Label_9
 Label_10:
 	.line 2149
@@ -35619,7 +35619,7 @@ method com.android.calendar.DayView.computeFirstHour() : void
 	    2| sget v1, com.android.calendar.DayView.mCellHeight
 	    4| add-int/2addr v0, v1
 	    5| add-int/lit8 v0, v0, #+1 (0x00000001 | 0.000000)
-	    7| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	    7| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	    9| sget v1, com.android.calendar.DayView.mCellHeight
 	   11| add-int/lit8 v1, v1, #+1 (0x00000001 | 0.000000)
 	   13| div-int/2addr v0, v1
@@ -36909,7 +36909,7 @@ Label_2:
 	   72| iget v0, v13, com.android.calendar.DayView.mViewStartY
 	   74| iget v4, v13, com.android.calendar.DayView.mViewHeight
 	   76| add-int/2addr v0, v4
-	   77| add-int/lit8 v0, v0, #-2 (0xfffffffe | -nan)
+	   77| add-int/lit8 v0, v0, #-2 (0xfffffffe | NaN)
 	   79| if-ge v9, v0, Label_3
 	   81| move-object v6, v13
 	   82| move v8, v2
@@ -37554,7 +37554,7 @@ Label_12:
 Label_13:
 	.line 4015
 	.end_local v2
-	  252| const/4 v2, #-1 (0xffffffff | -nan)
+	  252| const/4 v2, #-1 (0xffffffff | NaN)
 	.restart_local v2
 	.line 4038
 	  253| goto Label_12
@@ -37717,7 +37717,7 @@ Label_5:
 	.line 3884
 	  158| move-object/from16 v0, v50
 	  160| iget-object v4, v0, com.android.calendar.DayView.mController
-	  162| const-wide/16 v11, #-1 (0xffffffff | -nan)
+	  162| const-wide/16 v11, #-1 (0xffffffff | NaN)
 	  164| const-wide/16 v6, #+32 (0x00000020 | 0.000000)
 	  166| const/4 v8, #+0 (0x00000000 | 0.000000)
 	  167| const/4 v9, #+0 (0x00000000 | 0.000000)
@@ -37781,7 +37781,7 @@ Label_11:
 	.line 3902
 	  238| move-object/from16 v0, v50
 	  240| iget-object v12, v0, com.android.calendar.DayView.mController
-	  242| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	  242| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	.line 3903
 	  244| invoke-virtual/range {v50..v50}, com.android.calendar.DayView.getSelectedTimeInMillis
 	  247| move-result-wide v18
@@ -37795,7 +37795,7 @@ Label_11:
 	  261| float-to-int v0, v4
 	  262| move/from16 v23, v0
 	.line 3904
-	  264| const-wide/16 v26, #-1 (0xffffffff | -nan)
+	  264| const-wide/16 v26, #-1 (0xffffffff | NaN)
 	.line 3902
 	.line 3942
 	  266| const-wide/16 v14, #+1 (0x00000001 | 0.000000)
@@ -37950,7 +37950,7 @@ Label_20:
 	  456| move-object/from16 v0, v50
 	  458| iget-object v0, v0, com.android.calendar.DayView.mController
 	  460| move-object/from16 v26, v0
-	  462| const-wide/16 v32, #-1 (0xffffffff | -nan)
+	  462| const-wide/16 v32, #-1 (0xffffffff | NaN)
 	  464| const-wide/16 v28, #+32 (0x00000020 | 0.000000)
 	  466| const/16 v34, #+0 (0x00000000 | 0.000000)
 	.line 3940
@@ -38163,7 +38163,7 @@ Label_2:
 	.line 2889
 	.local v37, "y", int
 	  197| add-int v3, v39, v40
-	  199| add-int/lit8 v27, v3, #-1 (0xffffffff | -nan)
+	  199| add-int/lit8 v27, v3, #-1 (0xffffffff | NaN)
 	.line 2890
 	.local v27, "lastDay", int
 	  201| move-object/from16 v0, v38
@@ -38218,7 +38218,7 @@ Label_2:
 	.line 2906
 	  268| move-object/from16 v0, v38
 	  270| iget v3, v0, com.android.calendar.DayView.mMaxUnexpandedAlldayEventCount
-	  272| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  272| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  274| int-to-float v0, v3
 	  275| move/from16 v31, v0
 	.line 2908
@@ -38350,7 +38350,7 @@ Label_11:
 	  415| move-object/from16 v0, v38
 	  417| invoke-direct {v0,v3}, com.android.calendar.DayView.computeDayLeftPosition
 	  420| move-result v3
-	  421| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  421| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  423| int-to-float v3, v3
 	  424| iput v3, v4, com.android.calendar.Event.right
 	.line 2944
@@ -38588,7 +38588,7 @@ method com.android.calendar.DayView.drawAllDayHighlights(android.graphics.Rect, 
 	   32| iput v3, v7, android.graphics.Rect.top
 	.line 2314
 	   34| iget v3, v6, com.android.calendar.DayView.mFirstCell
-	   36| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   36| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   38| iput v3, v7, android.graphics.Rect.bottom
 	.line 2315
 	   40| iput v5, v7, android.graphics.Rect.left
@@ -38598,7 +38598,7 @@ method com.android.calendar.DayView.drawAllDayHighlights(android.graphics.Rect, 
 	.line 2317
 	   46| invoke-virtual {v8,v7,v9}, android.graphics.Canvas.drawRect
 	.line 2319
-	   49| const/4 v1, #-1 (0xffffffff | -nan)
+	   49| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 2321
 	.local v1, "startIndex", int
 	   50| iget v3, v6, com.android.calendar.DayView.mTodayJulianDay
@@ -38616,7 +38616,7 @@ Label_1:
 	   61| iput v5, v7, android.graphics.Rect.top
 	.line 2333
 	   63| iget v3, v6, com.android.calendar.DayView.mFirstCell
-	   65| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   65| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   67| iput v3, v7, android.graphics.Rect.bottom
 	.line 2334
 	   69| invoke-direct {v6,v1}, com.android.calendar.DayView.computeDayLeftPosition
@@ -38657,7 +38657,7 @@ Label_2:
 	  122| add-int/2addr v4, v5
 	  123| sget v5, com.android.calendar.DayView.ALLDAY_TOP_MARGIN
 	  125| add-int/2addr v4, v5
-	  126| add-int/lit8 v4, v4, #-2 (0xfffffffe | -nan)
+	  126| add-int/lit8 v4, v4, #-2 (0xfffffffe | NaN)
 	  128| iput v4, v3, android.graphics.Rect.bottom
 	.line 2346
 	  130| iget v3, v6, com.android.calendar.DayView.mSelectionDay
@@ -39234,7 +39234,7 @@ Label_3:
 	   42| const/16 v0, #+14 (0x0000000e | 0.000000)
 	   44| if-lt v9, v0, Label_4
 	.line 2387
-	   46| add-int/lit8 v9, v9, #-14 (0xfffffff2 | -nan)
+	   46| add-int/lit8 v9, v9, #-14 (0xfffffff2 | NaN)
 Label_4:
 	.line 2390
 	   48| sget v6, com.android.calendar.DayView.mCalendarDateBannerTextColor
@@ -40121,7 +40121,7 @@ method com.android.calendar.DayView.drawScrollLine(android.graphics.Rect, androi
 	.line 2285
 	.local v6, "right", int
 	    6| iget v0, v8, com.android.calendar.DayView.mFirstCell
-	    8| add-int/lit8 v7, v0, #-1 (0xffffffff | -nan)
+	    8| add-int/lit8 v7, v0, #-1 (0xffffffff | NaN)
 	.line 2287
 	.local v7, "y", int
 	   10| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -40230,7 +40230,7 @@ method com.android.calendar.DayView.drawSelectedRect(android.graphics.Rect, andr
 	.line 2501
 	  118| move-object/from16 v0, v17
 	  120| iget v3, v0, android.graphics.Rect.right
-	  122| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  122| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  124| move-object/from16 v0, v17
 	  126| iput v3, v0, android.graphics.Rect.right
 	.line 2502
@@ -40576,7 +40576,7 @@ method com.android.calendar.DayView.findSelectedEvent(int, int) : void
 	  106| move/from16 v1, v32
 	  108| if-le v0, v1, Label_1
 	.line 4646
-	  110| add-int/lit8 v21, v21, #-1 (0xffffffff | -nan)
+	  110| add-int/lit8 v21, v21, #-1 (0xffffffff | NaN)
 Label_1:
 	.line 4648
 	  112| move-object/from16 v0, v33
@@ -40781,7 +40781,7 @@ Label_12:
 	  346| move-object/from16 v26, v0
 	.line 4696
 	.local v26, "region", android.graphics.Rect
-	  348| add-int/lit8 v31, v34, #-10 (0xfffffff6 | -nan)
+	  348| add-int/lit8 v31, v34, #-10 (0xfffffff6 | NaN)
 	  350| move/from16 v0, v31
 	  352| move-object/from16 v1, v26
 	  354| iput v0, v1, android.graphics.Rect.left
@@ -40791,7 +40791,7 @@ Label_12:
 	  360| move-object/from16 v1, v26
 	  362| iput v0, v1, android.graphics.Rect.right
 	.line 4698
-	  364| add-int/lit8 v31, v35, #-10 (0xfffffff6 | -nan)
+	  364| add-int/lit8 v31, v35, #-10 (0xfffffff6 | NaN)
 	  366| move/from16 v0, v31
 	  368| move-object/from16 v1, v26
 	  370| iput v0, v1, android.graphics.Rect.top
@@ -40977,7 +40977,7 @@ Label_20:
 	  621| move-object/from16 v0, v31
 	  623| iget v0, v0, com.android.calendar.Event.endTime
 	  625| move/from16 v31, v0
-	  627| add-int/lit8 v31, v31, #-1 (0xffffffff | -nan)
+	  627| add-int/lit8 v31, v31, #-1 (0xffffffff | NaN)
 	  629| div-int/lit8 v12, v31, #+60 (0x0000003c | 0.000000)
 Label_21:
 	.line 4753
@@ -41843,7 +41843,7 @@ Label_1:
 	  438| move/from16 v0, v18
 	  440| if-gt v10, v0, Label_3
 	.line 841
-	  442| add-int/lit8 v11, v10, #-1 (0xffffffff | -nan)
+	  442| add-int/lit8 v11, v10, #-1 (0xffffffff | NaN)
 	.line 843
 	.local v11, "index", int
 	  444| move-object/from16 v0, v22
@@ -42075,9 +42075,9 @@ Label_3:
 	  838| move-object/from16 v18, v0
 	  840| new-instance v19, android.view.ViewGroup$LayoutParams
 	.line 883
-	  842| const/16 v20, #-1 (0xffffffff | -nan)
+	  842| const/16 v20, #-1 (0xffffffff | NaN)
 	.line 884
-	  844| const/16 v21, #-2 (0xfffffffe | -nan)
+	  844| const/16 v21, #-2 (0xfffffffe | NaN)
 	.line 882
 	  846| invoke-direct/range {v19..v21}, android.view.ViewGroup$LayoutParams.<init>
 	  849| invoke-virtual/range {v18..v19}, android.view.View.setLayoutParams
@@ -42454,7 +42454,7 @@ Label_1:
 	   27| iget v2, v4, com.android.calendar.DayView.mFirstJulianDay
 	   29| iget v3, v4, com.android.calendar.DayView.mNumDays
 	   31| add-int/2addr v2, v3
-	   32| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   34| iput v2, v4, com.android.calendar.DayView.mLastJulianDay
 	.line 1202
 	   36| iget-object v2, v4, com.android.calendar.DayView.mBaseDate
@@ -42705,7 +42705,7 @@ Label_6:
 Label_7:
 	.line 1337
 	  305| iget v8, v13, com.android.calendar.DayView.mFirstHour
-	  307| const/4 v9, #-1 (0xffffffff | -nan)
+	  307| const/4 v9, #-1 (0xffffffff | NaN)
 	  308| if-ne v8, v9, Label_8
 	.line 1338
 	  310| invoke-direct {v13}, com.android.calendar.DayView.initFirstHour
@@ -42720,7 +42720,7 @@ Label_8:
 	.line 1347
 	  323| sget v8, com.android.calendar.DayView.mCellHeight
 	  325| add-int/lit8 v8, v8, #+1 (0x00000001 | 0.000000)
-	  327| add-int/lit8 v8, v8, #-1 (0xffffffff | -nan)
+	  327| add-int/lit8 v8, v8, #-1 (0xffffffff | NaN)
 	  329| iput v8, v13, com.android.calendar.DayView.mFirstHourOffset
 Label_9:
 	.line 1349
@@ -42751,11 +42751,11 @@ Label_9:
 Label_10:
 	.line 1356
 	  370| iget-object v8, v13, com.android.calendar.DayView.mPopup
-	  372| add-int/lit8 v9, v3, #-20 (0xffffffec | -nan)
+	  372| add-int/lit8 v9, v3, #-20 (0xffffffec | NaN)
 	  374| invoke-virtual {v8,v9}, android.widget.PopupWindow.setWidth
 	.line 1357
 	  377| iget-object v8, v13, com.android.calendar.DayView.mPopup
-	  379| const/4 v9, #-2 (0xfffffffe | -nan)
+	  379| const/4 v9, #-2 (0xfffffffe | NaN)
 	  380| invoke-virtual {v8,v9}, android.widget.PopupWindow.setHeight
 	.line 1358
 	.line 1274
@@ -42854,13 +42854,13 @@ Label_2:
 	   30| iget v1, v5, com.android.calendar.DayView.mFirstHour
 	   32| iget v2, v5, com.android.calendar.DayView.mNumHours
 	   34| add-int/2addr v1, v2
-	   35| add-int/lit8 v1, v1, #-3 (0xfffffffd | -nan)
+	   35| add-int/lit8 v1, v1, #-3 (0xfffffffd | NaN)
 	   37| if-le v0, v1, Label_1
 	.line 1907
 	   39| iget v0, v5, com.android.calendar.DayView.mFirstHour
 	   41| iget v1, v5, com.android.calendar.DayView.mNumHours
 	   43| add-int/2addr v0, v1
-	   44| add-int/lit8 v0, v0, #-3 (0xfffffffd | -nan)
+	   44| add-int/lit8 v0, v0, #-3 (0xfffffffd | NaN)
 	   46| invoke-direct {v5,v0}, com.android.calendar.DayView.setSelectedHour
 	.line 1908
 	   49| invoke-direct {v5,v4}, com.android.calendar.DayView.setSelectedEvent
@@ -43253,7 +43253,7 @@ Label_2:
 	   34| if-lt v1, v6, Label_3
 	.line 4571
 	   36| iget v6, v11, com.android.calendar.DayView.mNumDays
-	   38| add-int/lit8 v1, v6, #-1 (0xffffffff | -nan)
+	   38| add-int/lit8 v1, v6, #-1 (0xffffffff | NaN)
 Label_3:
 	.line 4573
 	   40| iget v6, v11, com.android.calendar.DayView.mFirstJulianDay
@@ -43307,7 +43307,7 @@ Label_7:
 	   88| if-ge v0, v6, Label_9
 	.line 4590
 	   90| iget v6, v11, com.android.calendar.DayView.mSelectionHour
-	   92| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   92| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   94| invoke-direct {v11,v6}, com.android.calendar.DayView.setSelectedHour
 Label_8:
 	.line 4596
@@ -43618,7 +43618,7 @@ Label_5:
 	  184| iget v5, v0, android.text.format.Time.monthDay
 	  186| move-object/from16 v0, v26
 	  188| iget v7, v0, com.android.calendar.DayView.mNumDays
-	  190| add-int/lit8 v7, v7, #-1 (0xffffffff | -nan)
+	  190| add-int/lit8 v7, v7, #-1 (0xffffffff | NaN)
 	  192| add-int/2addr v5, v7
 	  193| move-object/from16 v0, v20
 	  195| iput v5, v0, android.text.format.Time.monthDay
@@ -43785,7 +43785,7 @@ method com.android.calendar.DayView.switchViews(boolean) : void
 	    8| iget-object v2, v0, com.android.calendar.DayView.mPopup
 	   10| invoke-virtual {v2}, android.widget.PopupWindow.dismiss
 	.line 1403
-	   13| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   13| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   15| move-object/from16 v0, v31
 	   17| iput-wide v2, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1404
@@ -43818,14 +43818,14 @@ Label_1:
 	.line 1418
 	   49| move-object/from16 v0, v31
 	   51| iget-object v2, v0, com.android.calendar.DayView.mController
-	   53| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	   53| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 1419
-	   55| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	   55| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	.line 1418
 	   57| const-wide/16 v4, #+1 (0x00000001 | 0.000000)
 	.line 1419
-	   59| const/4 v12, #-1 (0xffffffff | -nan)
-	   60| const/4 v13, #-1 (0xffffffff | -nan)
+	   59| const/4 v12, #-1 (0xffffffff | NaN)
+	   60| const/4 v13, #-1 (0xffffffff | NaN)
 	   61| move-object/from16 v3, v31
 	.line 1418
 	.line 1465
@@ -43940,14 +43940,14 @@ Label_8:
 	.line 1454
 	  205| move-object/from16 v0, v31
 	  207| iget-object v2, v0, com.android.calendar.DayView.mController
-	  209| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  209| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 1455
-	  211| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	  211| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	.line 1454
 	  213| const-wide/16 v4, #+1 (0x00000001 | 0.000000)
 	.line 1455
-	  215| const/4 v12, #-1 (0xffffffff | -nan)
-	  216| const/4 v13, #-1 (0xffffffff | -nan)
+	  215| const/4 v12, #-1 (0xffffffff | NaN)
+	  216| const/4 v13, #-1 (0xffffffff | NaN)
 	  217| move-object/from16 v3, v31
 	.line 1454
 	  219| invoke-virtual/range {v2..v17}, com.android.calendar.CalendarController.sendEventRelatedEventWithExtra
@@ -44185,7 +44185,7 @@ Label_1:
 	   10| const/4 v0, #+1 (0x00000001 | 0.000000)
 	   11| iput-boolean v0, v4, com.android.calendar.DayView.mPaused
 	.line 4812
-	   13| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   13| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   15| iput-wide v0, v4, com.android.calendar.DayView.mLastPopupEventID
 	.line 4813
 	   17| iget-object v0, v4, com.android.calendar.DayView.mHandler
@@ -45335,7 +45335,7 @@ Label_5:
 	   98| iget-object v3, v0, com.android.calendar.DayView.mPopup
 	  100| invoke-virtual {v3}, android.widget.PopupWindow.dismiss
 	.line 1542
-	  103| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  103| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  105| move-object/from16 v0, v28
 	  107| iput-wide v10, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1544
@@ -45353,7 +45353,7 @@ Label_5:
 	.local v8, "id", long
 	  121| move-object/from16 v0, v28
 	  123| iget-object v3, v0, com.android.calendar.DayView.mDeleteEventHelper
-	  125| const/4 v10, #-1 (0xffffffff | -nan)
+	  125| const/4 v10, #-1 (0xffffffff | NaN)
 	  126| invoke-virtual/range {v3..v10}, com.android.calendar.DeleteEventHelper.delete
 	.line 1548
 	  129| const/4 v3, #+1 (0x00000001 | 0.000000)
@@ -45402,11 +45402,11 @@ Label_10:
 	  174| iget-object v3, v0, com.android.calendar.DayView.mSelectedEvent
 	  176| if-nez v3, Label_11
 	.line 1563
-	  178| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  178| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  180| move-object/from16 v0, v28
 	  182| iput-wide v10, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1564
-	  184| add-int/lit8 v26, v26, #-1 (0xffffffff | -nan)
+	  184| add-int/lit8 v26, v26, #-1 (0xffffffff | NaN)
 Label_11:
 	.line 1566
 	.line 1618
@@ -45469,13 +45469,13 @@ Label_14:
 	  264| iget v3, v15, android.text.format.Time.monthDay
 	  266| move-object/from16 v0, v28
 	  268| iget v10, v0, com.android.calendar.DayView.mNumDays
-	  270| add-int/lit8 v10, v10, #-1 (0xffffffff | -nan)
+	  270| add-int/lit8 v10, v10, #-1 (0xffffffff | NaN)
 	  272| add-int/2addr v3, v10
 	  273| iput v3, v15, android.text.format.Time.monthDay
 	.line 1634
 	  275| move-object/from16 v0, v28
 	  277| iget-object v10, v0, com.android.calendar.DayView.mController
-	  279| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	  279| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	  281| const-wide/16 v12, #+32 (0x00000020 | 0.000000)
 	  283| const/16 v18, #+0 (0x00000000 | 0.000000)
 	  285| move-object/from16 v11, v28
@@ -45505,7 +45505,7 @@ Label_16:
 	  311| iget-object v3, v0, com.android.calendar.DayView.mSelectedEvent
 	  313| if-nez v3, Label_17
 	.line 1574
-	  315| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  315| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  317| move-object/from16 v0, v28
 	  319| iput-wide v10, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1575
@@ -45534,7 +45534,7 @@ Label_19:
 	  345| iget-object v3, v0, com.android.calendar.DayView.mSelectedEvent
 	  347| if-nez v3, Label_20
 	.line 1585
-	  349| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  349| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  351| move-object/from16 v0, v28
 	  353| iput-wide v10, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1586
@@ -45544,7 +45544,7 @@ Label_19:
 	.line 1587
 	  361| move-object/from16 v0, v28
 	  363| iget v3, v0, com.android.calendar.DayView.mSelectionHour
-	  365| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  365| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  367| move-object/from16 v0, v28
 	  369| invoke-direct {v0,v3}, com.android.calendar.DayView.setSelectedHour
 	.line 1588
@@ -45581,7 +45581,7 @@ Label_22:
 	  409| iget-object v3, v0, com.android.calendar.DayView.mSelectedEvent
 	  411| if-nez v3, Label_23
 	.line 1601
-	  413| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  413| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  415| move-object/from16 v0, v28
 	  417| iput-wide v10, v0, com.android.calendar.DayView.mLastPopupEventID
 	.line 1602
@@ -45656,7 +45656,7 @@ Label_26:
 	  499| move-object/from16 v0, v28
 	  501| iget-object v0, v0, com.android.calendar.DayView.mController
 	  503| move-object/from16 v16, v0
-	  505| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	  505| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	  507| const-wide/16 v18, #+32 (0x00000020 | 0.000000)
 	  509| const/16 v24, #+0 (0x00000000 | 0.000000)
 	  511| move-object/from16 v17, v28
@@ -46755,7 +46755,7 @@ method com.android.calendar.DayView.setSelected(android.text.format.Time, boolea
 	.local v1, "gotoY", int
 	   47| if-nez v13, Label_3
 	   49| iget v6, v11, com.android.calendar.DayView.mGridAreaHeight
-	   51| const/4 v7, #-1 (0xffffffff | -nan)
+	   51| const/4 v7, #-1 (0xffffffff | NaN)
 	   52| if-eq v6, v7, Label_3
 	.line 1020
 	   54| const/4 v2, #+0 (0x00000000 | 0.000000)
@@ -47078,7 +47078,7 @@ method com.android.calendar.DayView.updateTitle() : void
 	.local v5, "end", android.text.format.Time
 	   17| iget v0, v5, android.text.format.Time.monthDay
 	   19| iget v1, v14, com.android.calendar.DayView.mNumDays
-	   21| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   21| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   23| add-int/2addr v0, v1
 	   24| iput v0, v5, android.text.format.Time.monthDay
 	.line 1124
@@ -47105,7 +47105,7 @@ method com.android.calendar.DayView.updateTitle() : void
 Label_1:
 	.line 1138
 	   53| iget-object v0, v14, com.android.calendar.DayView.mController
-	   55| const-wide/16 v7, #-1 (0xffffffff | -nan)
+	   55| const-wide/16 v7, #-1 (0xffffffff | NaN)
 	   57| const-wide/16 v2, #+1024 (0x00000400 | 0.000000)
 	   59| const/4 v9, #+0 (0x00000000 | 0.000000)
 	   60| move-object v1, v14
@@ -47283,7 +47283,7 @@ method com.android.calendar.DeleteEventHelper$3.onClick(android.content.DialogIn
 	   21| iget-object v1, v3, com.android.calendar.DeleteEventHelper$3.this$0
 	   23| invoke-static {v1}, com.android.calendar.DeleteEventHelper.-get0
 	   26| move-result-object v1
-	   27| const/4 v2, #-1 (0xffffffff | -nan)
+	   27| const/4 v2, #-1 (0xffffffff | NaN)
 	   28| invoke-virtual {v1,v2}, android.app.AlertDialog.getButton
 	   31| move-result-object v0
 	.line 178
@@ -47323,7 +47323,7 @@ method com.android.calendar.DeleteEventHelper$4.onClick(android.content.DialogIn
 	    5| iget-object v0, v2, com.android.calendar.DeleteEventHelper$4.this$0
 	    7| invoke-static {v0}, com.android.calendar.DeleteEventHelper.-get8
 	   10| move-result v0
-	   11| const/4 v1, #-1 (0xffffffff | -nan)
+	   11| const/4 v1, #-1 (0xffffffff | NaN)
 	   12| if-eq v0, v1, Label_1
 	.line 190
 	   14| iget-object v0, v2, com.android.calendar.DeleteEventHelper$4.this$0
@@ -47835,7 +47835,7 @@ Label_12:
 	.line 419
 	  345| move-object/from16 v0, v17
 	  347| iget v3, v0, android.text.format.Time.second
-	  349| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  349| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  351| move-object/from16 v0, v17
 	  353| iput v3, v0, android.text.format.Time.second
 	.line 420
@@ -48036,7 +48036,7 @@ method com.android.calendar.DeleteEventHelper.delete(long, long, com.android.cal
 	   93| move-object/from16 v0, v19
 	   95| iget-object v14, v0, com.android.calendar.DeleteEventHelper.mDeleteNormalDialogListener
 	.line 277
-	   97| const/4 v15, #-1 (0xffffffff | -nan)
+	   97| const/4 v15, #-1 (0xffffffff | NaN)
 	   98| invoke-virtual {v4,v15,v13,v14}, android.app.AlertDialog.setButton
 Label_1:
 	.line 286
@@ -48064,7 +48064,7 @@ Label_3:
 	  127| move-object/from16 v0, v19
 	  129| iget-object v14, v0, com.android.calendar.DeleteEventHelper.mDeleteExceptionDialogListener
 	.line 282
-	  131| const/4 v15, #-1 (0xffffffff | -nan)
+	  131| const/4 v15, #-1 (0xffffffff | NaN)
 	  132| invoke-virtual {v4,v15,v13,v14}, android.app.AlertDialog.setButton
 	  135| goto Label_1
 Label_4:
@@ -48133,7 +48133,7 @@ Label_6:
 	  213| invoke-virtual {v6,v13}, java.util.ArrayList.remove
 Label_7:
 	.line 316
-	  216| const/4 v13, #-1 (0xffffffff | -nan)
+	  216| const/4 v13, #-1 (0xffffffff | NaN)
 	  217| move/from16 v0, v25
 	  219| if-eq v0, v13, Label_8
 	.line 318
@@ -48214,11 +48214,11 @@ Label_8:
 	  330| move-object/from16 v0, v19
 	  332| iput-object v4, v0, com.android.calendar.DeleteEventHelper.mAlertDialog
 	.line 333
-	  334| const/4 v13, #-1 (0xffffffff | -nan)
+	  334| const/4 v13, #-1 (0xffffffff | NaN)
 	  335| move/from16 v0, v25
 	  337| if-ne v0, v13, Label_2
 	.line 336
-	  339| const/4 v13, #-1 (0xffffffff | -nan)
+	  339| const/4 v13, #-1 (0xffffffff | NaN)
 	  340| invoke-virtual {v4,v13}, android.app.AlertDialog.getButton
 	  343| move-result-object v8
 	.line 337
@@ -48320,7 +48320,7 @@ method com.android.calendar.EditResponseHelper$1.onClick(android.content.DialogI
 	    5| iget-object v1, v3, com.android.calendar.EditResponseHelper$1.this$0
 	    7| invoke-static {v1}, com.android.calendar.EditResponseHelper.-get0
 	   10| move-result-object v1
-	   11| const/4 v2, #-1 (0xffffffff | -nan)
+	   11| const/4 v2, #-1 (0xffffffff | NaN)
 	   12| invoke-virtual {v1,v2}, android.app.AlertDialog.getButton
 	   15| move-result-object v0
 	.line 105
@@ -48353,7 +48353,7 @@ method com.android.calendar.EditResponseHelper.<init>(android.app.Activity) : vo
 	.line 31
 	    0| invoke-direct {v1}, java.lang.Object.<init>
 	.line 31
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| iput v0, v1, com.android.calendar.EditResponseHelper.mWhichEvents
 	.line 33
 	.line 98
@@ -48443,7 +48443,7 @@ method com.android.calendar.EditResponseHelper.onDismiss(android.content.DialogI
 	    3| move-result v0
 	    4| if-nez v0, Label_1
 	.line 75
-	    6| const/4 v0, #-1 (0xffffffff | -nan)
+	    6| const/4 v0, #-1 (0xffffffff | NaN)
 	    7| invoke-virtual {v1,v0}, com.android.calendar.EditResponseHelper.setWhichEvents
 Label_1:
 	.line 77
@@ -48491,7 +48491,7 @@ method com.android.calendar.EditResponseHelper.showDialog(int) : void
 	.line 126
 	.prologue_end
 	    0| const/4 v6, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v5, #-1 (0xffffffff | -nan)
+	    1| const/4 v5, #-1 (0xffffffff | NaN)
 	.line 126
 	    2| iget-object v2, v7, com.android.calendar.EditResponseHelper.mDialogListener
 	    4| if-nez v2, Label_1
@@ -48932,10 +48932,10 @@ Label_1:
 	   33| iget-boolean v6, v2, com.android.common.widget.CompositeCursorAdapter$Partition.hasHeader
 	   35| if-eqz v6, Label_2
 	.line 430
-	   37| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   37| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 Label_2:
 	.line 432
-	   39| const/4 v6, #-1 (0xffffffff | -nan)
+	   39| const/4 v6, #-1 (0xffffffff | NaN)
 	   40| if-ne v4, v6, Label_3
 	.line 433
 	   42| return-object v7
@@ -48977,7 +48977,7 @@ method com.android.common.widget.CompositeCursorAdapter.getItemId(int) : long
 	.src "CompositeCursorAdapter.java"
 	.line 451
 	.prologue_end
-	    0| const/4 v7, #-1 (0xffffffff | -nan)
+	    0| const/4 v7, #-1 (0xffffffff | NaN)
 	    1| const-wide/16 v8, #+0 (0x00000000 | 0.000000)
 	.line 451
 	    3| invoke-virtual {v10}, com.android.common.widget.CompositeCursorAdapter.ensureCacheValid
@@ -49011,7 +49011,7 @@ Label_1:
 	   35| iget-boolean v6, v2, com.android.common.widget.CompositeCursorAdapter$Partition.hasHeader
 	   37| if-eqz v6, Label_2
 	.line 458
-	   39| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   39| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 Label_2:
 	.line 460
 	   41| if-ne v4, v7, Label_3
@@ -49064,7 +49064,7 @@ method com.android.common.widget.CompositeCursorAdapter.getItemViewType(int) : i
 	.src "CompositeCursorAdapter.java"
 	.line 312
 	.prologue_end
-	    0| const/4 v6, #-1 (0xffffffff | -nan)
+	    0| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 312
 	    1| invoke-virtual {v7}, com.android.common.widget.CompositeCursorAdapter.ensureCacheValid
 	.line 313
@@ -49101,7 +49101,7 @@ Label_1:
 	   40| iget-boolean v5, v5, com.android.common.widget.CompositeCursorAdapter$Partition.hasHeader
 	   42| if-eqz v5, Label_2
 	.line 319
-	   44| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   44| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 Label_2:
 	.line 321
 	   46| if-ne v3, v6, Label_3
@@ -49249,10 +49249,10 @@ Label_1:
 	   39| iget-boolean v0, v0, com.android.common.widget.CompositeCursorAdapter$Partition.hasHeader
 	   41| if-eqz v0, Label_2
 	.line 341
-	   43| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   43| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 Label_2:
 	.line 344
-	   45| const/4 v0, #-1 (0xffffffff | -nan)
+	   45| const/4 v0, #-1 (0xffffffff | NaN)
 	   46| if-ne v3, v0, Label_4
 	.line 345
 	   48| iget-object v0, v10, com.android.common.widget.CompositeCursorAdapter.mPartitions
@@ -49604,7 +49604,7 @@ method com.android.common.contacts.BaseEmailAddressAdapter.hasDuplicates(android
 	.prologue_end
 	    0| const/4 v2, #+1 (0x00000001 | 0.000000)
 	.line 555
-	    1| const/4 v1, #-1 (0xffffffff | -nan)
+	    1| const/4 v1, #-1 (0xffffffff | NaN)
 	    2| invoke-interface {v4,v1}, android.database.Cursor.moveToPosition
 Label_1:
 	.line 556
@@ -49657,7 +49657,7 @@ Label_1:
 	.local v1, "cursor", android.database.Cursor
 	   22| if-eqz v1, Label_3
 	.line 575
-	   24| const/4 v4, #-1 (0xffffffff | -nan)
+	   24| const/4 v4, #-1 (0xffffffff | NaN)
 	   25| invoke-interface {v1,v4}, android.database.Cursor.moveToPosition
 Label_2:
 	.line 576
@@ -49786,7 +49786,7 @@ Label_2:
 	   28| invoke-direct {v3,v4}, android.database.MatrixCursor.<init>
 	.line 540
 	.local v3, "newCursor", android.database.MatrixCursor
-	   31| const/4 v4, #-1 (0xffffffff | -nan)
+	   31| const/4 v4, #-1 (0xffffffff | NaN)
 	   32| invoke-interface {v10,v4}, android.database.Cursor.moveToPosition
 Label_3:
 	.line 541
@@ -50775,7 +50775,7 @@ Label_3:
 	   40| move-result v3
 	   41| sput v3, com.android.calendar.Event.mNoColorColor
 	.line 359
-	   43| const/4 v3, #-1 (0xffffffff | -nan)
+	   43| const/4 v3, #-1 (0xffffffff | NaN)
 	   44| invoke-interface {v6,v3}, android.database.Cursor.moveToPosition
 Label_4:
 	.line 360
@@ -51259,7 +51259,7 @@ Label_3:
 	.line 323
 	.restart_local v15
 	   98| array-length v0, v15
-	   99| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   99| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	  101| const/4 v1, #+0 (0x00000000 | 0.000000)
 	  102| aget-object v1, v7, v1
 	  104| aput-object v1, v15, v0
@@ -51292,7 +51292,7 @@ method com.android.calendar.Event.loadEvents(android.content.Context, java.util.
 	.line 235
 	.line 248
 	    7| add-int v4, v23, v24
-	    9| add-int/lit8 v7, v4, #-1 (0xffffffff | -nan)
+	    9| add-int/lit8 v7, v4, #-1 (0xffffffff | NaN)
 	.try_begin_1
 	.line 248
 	.local v7, "endDay", int
@@ -51857,7 +51857,7 @@ Label_5:
 	   51| mul-int/lit8 v11, v5, #+60 (0x0000003c | 0.000000)
 	   53| if-ne v11, v6, Label_6
 	.line 85
-	   55| add-int/lit8 v5, v5, #-1 (0xffffffff | -nan)
+	   55| add-int/lit8 v5, v5, #-1 (0xffffffff | NaN)
 Label_6:
 	.line 87
 	   57| move/from16 v0, v17
@@ -52260,7 +52260,7 @@ method com.android.calendar.EventInfoActivity.onCreate(android.os.Bundle) : void
 	    7| const/4 v10, #+0 (0x00000000 | 0.000000)
 	.line 75
 	.local v10, "attendeeResponse", int
-	    8| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    8| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   10| move-object/from16 v0, v23
 	   12| iput-wide v2, v0, com.android.calendar.EventInfoActivity.mEventId
 	.line 76
@@ -52313,7 +52313,7 @@ Label_1:
 	.end_local v13
 	   79| move-object/from16 v0, v23
 	   81| iget-wide v2, v0, com.android.calendar.EventInfoActivity.mEventId
-	   83| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	   83| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	   85| cmp-long v2, v2, v4
 	   87| if-nez v2, Label_2
 	.line 122
@@ -52474,7 +52474,7 @@ Label_4:
 	.local v16, "e", java.lang.NumberFormatException
 	  314| move-object/from16 v0, v23
 	  316| iget-wide v2, v0, com.android.calendar.EventInfoActivity.mEventId
-	  318| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  318| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  320| cmp-long v2, v2, v4
 	  322| if-eqz v2, Label_1
 	.line 111
@@ -53085,7 +53085,7 @@ method com.android.calendar.EventInfoFragment$5.onDismiss(android.content.Dialog
 	.line 813
 	.prologue_end
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 813
 	    2| iget-object v2, v5, com.android.calendar.EventInfoFragment$5.this$0
 	    4| invoke-static {v2}, com.android.calendar.EventInfoFragment.-get14
@@ -53346,7 +53346,7 @@ Label_2:
 	  103| iget-object v0, v10, com.android.calendar.EventInfoFragment$7.this$0
 	  105| invoke-static {v0}, com.android.calendar.EventInfoFragment.-get38
 	  108| move-result-object v9
-	  109| const/4 v8, #-1 (0xffffffff | -nan)
+	  109| const/4 v8, #-1 (0xffffffff | NaN)
 	  110| invoke-virtual/range {v1..v9}, com.android.calendar.DeleteEventHelper.delete
 	.line 978
 	.line 973
@@ -54925,7 +54925,7 @@ method com.android.calendar.EventInfoFragment.<init>() : void
 	.line 675
 	.prologue_end
 	    0| const/4 v4, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
 	    2| const/4 v2, #+0 (0x00000000 | 0.000000)
 	.line 675
 	.line 166
@@ -54940,7 +54940,7 @@ method com.android.calendar.EventInfoFragment.<init>() : void
 	   10| const-string/jumbo v0, ""
 	   13| iput-object v0, v5, com.android.calendar.EventInfoFragment.mEventOrganizerDisplayName
 	.line 325
-	   15| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   15| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   17| iput-wide v0, v5, com.android.calendar.EventInfoFragment.mCalendarOwnerAttendeeId
 	.line 334
 	   19| iput-boolean v2, v5, com.android.calendar.EventInfoFragment.mDeleteDialogVisible
@@ -55093,7 +55093,7 @@ method com.android.calendar.EventInfoFragment.<init>(android.content.Context, an
 	    9| const-string/jumbo v1, ""
 	   12| iput-object v1, v5, com.android.calendar.EventInfoFragment.mEventOrganizerDisplayName
 	.line 325
-	   14| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   14| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   16| iput-wide v2, v5, com.android.calendar.EventInfoFragment.mCalendarOwnerAttendeeId
 	.line 334
 	   18| const/4 v1, #+0 (0x00000000 | 0.000000)
@@ -55105,7 +55105,7 @@ method com.android.calendar.EventInfoFragment.<init>(android.content.Context, an
 	   24| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   25| iput v1, v5, com.android.calendar.EventInfoFragment.mUserSetResponse
 	.line 340
-	   27| const/4 v1, #-1 (0xffffffff | -nan)
+	   27| const/4 v1, #-1 (0xffffffff | NaN)
 	   28| iput v1, v5, com.android.calendar.EventInfoFragment.mWhichEvents
 	.line 343
 	   30| const/4 v1, #+0 (0x00000000 | 0.000000)
@@ -55121,25 +55121,25 @@ method com.android.calendar.EventInfoFragment.<init>(android.content.Context, an
 	   41| invoke-direct {v1}, android.util.SparseIntArray.<init>
 	   44| iput-object v1, v5, com.android.calendar.EventInfoFragment.mDisplayColorKeyMap
 	.line 368
-	   46| const/4 v1, #-1 (0xffffffff | -nan)
+	   46| const/4 v1, #-1 (0xffffffff | NaN)
 	   47| iput v1, v5, com.android.calendar.EventInfoFragment.mOriginalColor
 	.line 369
 	   49| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   50| iput-boolean v1, v5, com.android.calendar.EventInfoFragment.mOriginalColorInitialized
 	.line 370
-	   52| const/4 v1, #-1 (0xffffffff | -nan)
+	   52| const/4 v1, #-1 (0xffffffff | NaN)
 	   53| iput v1, v5, com.android.calendar.EventInfoFragment.mCalendarColor
 	.line 371
 	   55| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   56| iput-boolean v1, v5, com.android.calendar.EventInfoFragment.mCalendarColorInitialized
 	.line 372
-	   58| const/4 v1, #-1 (0xffffffff | -nan)
+	   58| const/4 v1, #-1 (0xffffffff | NaN)
 	   59| iput v1, v5, com.android.calendar.EventInfoFragment.mCurrentColor
 	.line 373
 	   61| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   62| iput-boolean v1, v5, com.android.calendar.EventInfoFragment.mCurrentColorInitialized
 	.line 374
-	   64| const/4 v1, #-1 (0xffffffff | -nan)
+	   64| const/4 v1, #-1 (0xffffffff | NaN)
 	   65| iput v1, v5, com.android.calendar.EventInfoFragment.mCurrentColorKey
 	.line 379
 	   67| const/4 v1, #+0 (0x00000000 | 0.000000)
@@ -55204,11 +55204,11 @@ method com.android.calendar.EventInfoFragment.<init>(android.content.Context, an
 	  157| const/4 v1, #+0 (0x00000000 | 0.000000)
 	  158| iput-boolean v1, v5, com.android.calendar.EventInfoFragment.mDismissOnResume
 	.line 441
-	  160| const/4 v1, #-1 (0xffffffff | -nan)
+	  160| const/4 v1, #-1 (0xffffffff | NaN)
 	  161| iput v1, v5, com.android.calendar.EventInfoFragment.mX
 	.line 442
 	.line 1030
-	  163| const/4 v1, #-1 (0xffffffff | -nan)
+	  163| const/4 v1, #-1 (0xffffffff | NaN)
 	  164| iput v1, v5, com.android.calendar.EventInfoFragment.mY
 	.line 1030
 	.line 646
@@ -55338,7 +55338,7 @@ method com.android.calendar.EventInfoFragment.addReminder() : void
 	.prologue_end
 	.line 2143
 	    0| iget v0, v11, com.android.calendar.EventInfoFragment.mDefaultReminderMinutes
-	    2| const/4 v1, #-1 (0xffffffff | -nan)
+	    2| const/4 v1, #-1 (0xffffffff | NaN)
 	    3| if-ne v0, v1, Label_2
 	.line 2144
 	    5| iget-object v0, v11, com.android.calendar.EventInfoFragment.mActivity
@@ -55398,7 +55398,7 @@ method com.android.calendar.EventInfoFragment.applyDialogParams() : void
 	.src "EventInfoFragment.java"
 	.line 727
 	.prologue_end
-	    0| const/4 v4, #-1 (0xffffffff | -nan)
+	    0| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 727
 	    1| invoke-virtual {v5}, com.android.calendar.EventInfoFragment.getDialog
 	    4| move-result-object v1
@@ -55660,7 +55660,7 @@ method com.android.calendar.EventInfoFragment.findButtonIdForResponse(int) : int
 	    0| packed-switch v1, Label_6
 Label_1:
 	.line 1436
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 Label_2:
 	.line 1438
 	.local v0, "buttonId", int
@@ -55871,7 +55871,7 @@ method com.android.calendar.EventInfoFragment.initAttendeesCursor(android.view.V
 	    0| const/4 v0, #+0 (0x00000000 | 0.000000)
 	    1| iput v0, v12, com.android.calendar.EventInfoFragment.mOriginalAttendeeResponse
 	.line 1077
-	    3| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	    5| iput-wide v8, v12, com.android.calendar.EventInfoFragment.mCalendarOwnerAttendeeId
 	.line 1078
 	    7| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -55949,7 +55949,7 @@ Label_1:
 Label_2:
 	.line 1105
 	  108| iget-wide v8, v12, com.android.calendar.EventInfoFragment.mCalendarOwnerAttendeeId
-	  110| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  110| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  112| cmp-long v0, v8, v10
 	  114| if-nez v0, Label_5
 	.line 1106
@@ -56503,7 +56503,7 @@ Label_3:
 Label_4:
 	.line 1336
 	   29| iget-wide v0, v8, com.android.calendar.EventInfoFragment.mCalendarOwnerAttendeeId
-	   31| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   31| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   33| cmp-long v0, v0, v2
 	   35| if-nez v0, Label_5
 	.line 1337
@@ -56627,7 +56627,7 @@ Label_1:
 	   84| move-result v2
 	.line 1714
 	.local v2, "id", int
-	   85| const/4 v4, #-1 (0xffffffff | -nan)
+	   85| const/4 v4, #-1 (0xffffffff | NaN)
 	   86| if-eq v2, v4, Label_2
 	.line 1715
 	   88| invoke-virtual {v7}, com.android.calendar.EventInfoFragment.getView
@@ -58225,7 +58225,7 @@ Label_11:
 	  224| iget-object v8, v0, com.android.calendar.EventInfoFragment.mReminderMethodLabels
 	  226| move-object/from16 v0, v17
 	  228| iget-object v11, v0, com.android.calendar.EventInfoFragment.mReminderChangeListener
-	  230| const v10, #+2147483647 (0x7fffffff | nan)
+	  230| const v10, #+2147483647 (0x7fffffff | NaN)
 	  233| move-object/from16 v3, v17
 	.line 1961
 	  235| invoke-static/range {v1..v11}, com.android.calendar.event.EventViewUtils.addReminder
@@ -58597,7 +58597,7 @@ method com.android.calendar.EventInfoFragment.onCreateView(android.view.LayoutIn
 	  135| iget-object v2, v15, com.android.calendar.EventInfoFragment.mEditResponseHelper
 	.line 886
 	  137| const-string/jumbo v3, "key_response_which_events"
-	  140| const/4 v4, #-1 (0xffffffff | -nan)
+	  140| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 885
 	  141| move-object/from16 v0, v18
 	  143| invoke-virtual {v0,v3,v4}, android.os.Bundle.getInt
@@ -58618,7 +58618,7 @@ Label_1:
 	  164| if-eqz v2, Label_2
 	.line 895
 	  166| const-string/jumbo v2, "key_response_which_events"
-	  169| const/4 v3, #-1 (0xffffffff | -nan)
+	  169| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 894
 	  170| move-object/from16 v0, v18
 	  172| invoke-virtual {v0,v2,v3}, android.os.Bundle.getInt
@@ -59030,7 +59030,7 @@ Label_4:
 	   81| iget-wide v4, v10, com.android.calendar.EventInfoFragment.mEndMillis
 	   83| iget-wide v6, v10, com.android.calendar.EventInfoFragment.mEventId
 	   85| iget-object v9, v10, com.android.calendar.EventInfoFragment.onDeleteRunnable
-	   87| const/4 v8, #-1 (0xffffffff | -nan)
+	   87| const/4 v8, #-1 (0xffffffff | NaN)
 	   88| invoke-virtual/range {v1..v9}, com.android.calendar.DeleteEventHelper.delete
 	   91| goto Label_3
 Label_5:
@@ -59140,7 +59140,7 @@ Label_3:
 	   71| iget-wide v4, v10, com.android.calendar.EventInfoFragment.mEndMillis
 	   73| iget-wide v6, v10, com.android.calendar.EventInfoFragment.mEventId
 	   75| iget-object v9, v10, com.android.calendar.EventInfoFragment.onDeleteRunnable
-	   77| const/4 v8, #-1 (0xffffffff | -nan)
+	   77| const/4 v8, #-1 (0xffffffff | NaN)
 	   78| invoke-virtual/range {v1..v9}, com.android.calendar.DeleteEventHelper.delete
 Label_4:
 	.line 2100
@@ -60240,7 +60240,7 @@ Label_9:
 	  297| move-object/from16 v0, v24
 	  299| iget v0, v0, com.android.calendarcommon2.EventRecurrence.bydayCount
 	  301| move/from16 v18, v0
-	  303| add-int/lit8 v4, v18, #-1 (0xffffffff | -nan)
+	  303| add-int/lit8 v4, v18, #-1 (0xffffffff | NaN)
 	.line 81
 	.local v4, "count", int
 	  305| const/4 v12, #+0 (0x00000000 | 0.000000)
@@ -60371,7 +60371,7 @@ Label_15:
 	  489| move-object/from16 v0, v18
 	  491| iget v0, v0, android.text.format.Time.monthDay
 	  493| move/from16 v18, v0
-	  495| add-int/lit8 v18, v18, #-1 (0xffffffff | -nan)
+	  495| add-int/lit8 v18, v18, #-1 (0xffffffff | NaN)
 	  497| div-int/lit8 v7, v18, #+7 (0x00000007 | 0.000000)
 	.line 110
 	.local v7, "dayNumber", int
@@ -60651,7 +60651,7 @@ Label_4:
 	   40| goto Label_2
 Label_5:
 	.line 68
-	   41| const v0, #+2147483647 (0x7fffffff | nan)
+	   41| const v0, #+2147483647 (0x7fffffff | NaN)
 	   44| goto Label_3
 }
 
@@ -60682,7 +60682,7 @@ Label_2:
 	   21| invoke-virtual {v0,v1}, android.widget.ImageButton.setVisibility
 	.line 83
 	   24| iget-object v0, v3, com.android.calendar.ExpandableTextView.mTv
-	   26| const v1, #+2147483647 (0x7fffffff | nan)
+	   26| const v1, #+2147483647 (0x7fffffff | NaN)
 	   29| invoke-virtual {v0,v1}, android.widget.TextView.setMaxLines
 	.line 86
 	   32| invoke-super {v3,v4,v5}, android.widget.LinearLayout.onMeasure
@@ -62310,7 +62310,7 @@ Label_2:
 	.line 82
 	   26| array-length v8, v0
 	   27| sub-int/2addr v8, v7
-	   28| add-int/lit8 v6, v8, #-1 (0xffffffff | -nan)
+	   28| add-int/lit8 v6, v8, #-1 (0xffffffff | NaN)
 	.line 83
 	.local v6, "emailLen", int
 	.line 133
@@ -62335,16 +62335,16 @@ Label_4:
 	.line 88
 	.local v1, "domain", java.lang.String
 	   37| array-length v8, v0
-	   38| add-int/lit8 v8, v8, #-2 (0xfffffffe | -nan)
+	   38| add-int/lit8 v8, v8, #-2 (0xfffffffe | NaN)
 	   40| aget-byte v8, v0, v8
 	   42| const/16 v9, #+64 (0x00000040 | 0.000000)
 	   44| if-ne v8, v9, Label_5
 	.line 90
-	   46| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   46| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	.line 92
 	.line 109
 	   48| array-length v8, v0
-	   49| add-int/lit8 v8, v8, #-1 (0xffffffff | -nan)
+	   49| add-int/lit8 v8, v8, #-1 (0xffffffff | NaN)
 	   51| aget-byte v8, v0, v8
 	   53| sparse-switch v8, Label_14
 	.line 109
@@ -62356,7 +62356,7 @@ Label_4:
 	   70| move-result-object v9
 	.line 110
 	   71| array-length v10, v0
-	   72| add-int/lit8 v10, v10, #-1 (0xffffffff | -nan)
+	   72| add-int/lit8 v10, v10, #-1 (0xffffffff | NaN)
 	   74| aget-byte v10, v0, v10
 	.line 109
 	   76| invoke-virtual {v9,v10}, java.lang.StringBuilder.append
@@ -64838,7 +64838,7 @@ Label_2:
 Label_3:
 	.line 785
 	.end_local v2
-	   39| add-int/lit8 v3, v0, #-1 (0xffffffff | -nan)
+	   39| add-int/lit8 v3, v0, #-1 (0xffffffff | NaN)
 	   41| iput v3, v4, com.android.ex.chips.BaseRecipientAdapter.mRemainingDirectoryCount
 	.line 786
 	   43| iget-object v3, v4, com.android.ex.chips.BaseRecipientAdapter.mDelayedMessageHandler
@@ -64996,7 +64996,7 @@ method com.android.calendar.SearchActivity.<init>() : void
 	    0| invoke-direct {v2}, android.app.Activity.<init>
 	.line 71
 	.line 83
-	    3| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	    5| iput-wide v0, v2, com.android.calendar.SearchActivity.mCurrentEventId
 	.line 83
 	.line 96
@@ -65022,7 +65022,7 @@ method com.android.calendar.SearchActivity.deleteEvent(long, long, long) : void
 	.prologue_end
 	.line 236
 	    0| iget-object v1, v11, com.android.calendar.SearchActivity.mDeleteEventHelper
-	    2| const/4 v8, #-1 (0xffffffff | -nan)
+	    2| const/4 v8, #-1 (0xffffffff | NaN)
 	    3| move-wide v2, v14
 	    4| move-wide/from16 v4, v16
 	    6| move-wide v6, v12
@@ -65053,7 +65053,7 @@ method com.android.calendar.SearchActivity.deleteEvent(long, long, long) : void
 	   40| const/4 v1, #+0 (0x00000000 | 0.000000)
 	   41| iput-object v1, v11, com.android.calendar.SearchActivity.mEventInfoFragment
 	.line 244
-	   43| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   43| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   45| iput-wide v2, v11, com.android.calendar.SearchActivity.mCurrentEventId
 Label_1:
 	.line 246
@@ -65306,11 +65306,11 @@ Label_4:
 	  165| goto Label_1
 Label_5:
 	.line 204
-	  166| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  166| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  168| goto Label_3
 Label_6:
 	.line 206
-	  169| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	  169| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	  171| goto Label_4
 }
 
@@ -65322,7 +65322,7 @@ method com.android.calendar.SearchActivity.eventsChanged() : void
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 347
 	    1| iget-object v0, v9, com.android.calendar.SearchActivity.mController
-	    3| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    5| const-wide/16 v2, #+128 (0x00000080 | 0.000000)
 	    7| const/4 v8, #+0 (0x00000000 | 0.000000)
 	    8| move-object v1, v9
@@ -65352,7 +65352,7 @@ method com.android.calendar.SearchActivity.handleEvent(com.android.calendar.Cale
 	.line 357
 	    1| iget-object v0, v9, com.android.calendar.CalendarController$EventInfo.endTime
 	    3| if-nez v0, Label_3
-	    5| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    5| const-wide/16 v6, #-1 (0xffffffff | NaN)
 Label_1:
 	.line 358
 	.local v6, "endTime", long
@@ -65678,7 +65678,7 @@ method com.android.calendar.SearchActivity.onOptionsItemSelected(android.view.Me
 	.line 282
 	   20| move-object/from16 v0, v18
 	   22| iget-object v2, v0, com.android.calendar.SearchActivity.mController
-	   24| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	   24| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	   26| const-wide/16 v4, #+32 (0x00000020 | 0.000000)
 	   28| const/4 v7, #+0 (0x00000000 | 0.000000)
 	   29| const/4 v10, #+0 (0x00000000 | 0.000000)
@@ -65775,7 +65775,7 @@ method com.android.calendar.SearchActivity.onQueryTextSubmit(java.lang.String) :
 	    2| iput-object v14, v13, com.android.calendar.SearchActivity.mQuery
 	.line 373
 	    4| iget-object v0, v13, com.android.calendar.SearchActivity.mController
-	    6| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    6| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    8| const-wide/16 v9, #+0 (0x00000000 | 0.000000)
 	.line 374
 	   10| invoke-virtual {v13}, com.android.calendar.SearchActivity.getComponentName
@@ -65864,7 +65864,7 @@ method com.android.calendar.StickyHeaderListView.<init>(android.content.Context,
 	.src "StickyHeaderListView.java"
 	.line 199
 	.prologue_end
-	    0| const/4 v2, #-1 (0xffffffff | -nan)
+	    0| const/4 v2, #-1 (0xffffffff | NaN)
 	    1| const/4 v1, #+0 (0x00000000 | 0.000000)
 	    2| const/4 v0, #+0 (0x00000000 | 0.000000)
 	.line 199
@@ -65952,7 +65952,7 @@ Label_4:
 	   45| iput-object v4, v7, com.android.calendar.StickyHeaderListView.mDummyHeader
 	.line 387
 	   47| new-instance v2, android.widget.FrameLayout$LayoutParams
-	   49| const/4 v4, #-1 (0xffffffff | -nan)
+	   49| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 388
 	   50| const/16 v5, #+48 (0x00000030 | 0.000000)
 	.line 387
@@ -66087,7 +66087,7 @@ method com.android.calendar.StickyHeaderListView.setHeaderSeparator(int, int) : 
 	    7| iput-object v1, v3, com.android.calendar.StickyHeaderListView.mSeparatorView
 	.line 246
 	    9| new-instance v0, android.widget.FrameLayout$LayoutParams
-	   11| const/4 v1, #-1 (0xffffffff | -nan)
+	   11| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 247
 	   12| const/16 v2, #+48 (0x00000030 | 0.000000)
 	.line 246
@@ -66194,7 +66194,7 @@ Label_1:
 	   40| iget v9, v13, com.android.calendar.StickyHeaderListView.mCurrentSectionPos
 	   42| if-eq v5, v9, Label_4
 	.line 273
-	   44| const/4 v9, #-1 (0xffffffff | -nan)
+	   44| const/4 v9, #-1 (0xffffffff | NaN)
 	   45| if-ne v5, v9, Label_10
 	.line 274
 	   47| const/4 v6, #+0 (0x00000000 | 0.000000)
@@ -66229,7 +66229,7 @@ Label_4:
 	.line 301
 	   81| iget v9, v13, com.android.calendar.StickyHeaderListView.mNextSectionPosition
 	   83| sub-int/2addr v9, v14
-	   84| add-int/lit8 v4, v9, #-1 (0xffffffff | -nan)
+	   84| add-int/lit8 v4, v9, #-1 (0xffffffff | NaN)
 	.line 302
 	.local v4, "sectionLastItemPosition", int
 	   86| iget-object v9, v13, com.android.calendar.StickyHeaderListView.mStickyHeader
@@ -66306,7 +66306,7 @@ Label_7:
 	.line 333
 	  183| iget v9, v13, com.android.calendar.StickyHeaderListView.mSeparatorWidth
 	.line 332
-	  185| const/4 v10, #-1 (0xffffffff | -nan)
+	  185| const/4 v10, #-1 (0xffffffff | NaN)
 	  186| invoke-direct {v3,v10,v9}, android.widget.FrameLayout$LayoutParams.<init>
 	.line 334
 	.local v3, "params", android.widget.FrameLayout$LayoutParams
@@ -66616,7 +66616,7 @@ Label_1:
 	.line 1151
 	   15| iget v3, v6, com.android.calendar.Event.endDay
 	   17| sub-int/2addr v3, v8
-	   18| add-int/lit8 v4, v9, #-1 (0xffffffff | -nan)
+	   18| add-int/lit8 v4, v9, #-1 (0xffffffff | NaN)
 	   20| invoke-static {v3,v4}, java.lang.Math.min
 	   23| move-result v0
 	.line 1152
@@ -66746,7 +66746,7 @@ Label_4:
 	.line 1260
 	.local v6, "dayOffset", int
 	  113| add-int/lit16 v0, v6, #+1440 (0x000005a0 | 0.000000)
-	  115| add-int/lit8 v7, v0, #-1 (0xffffffff | -nan)
+	  115| add-int/lit8 v7, v0, #-1 (0xffffffff | NaN)
 	.line 1262
 	.local v7, "endOfDay", int
 	  117| iget v0, v12, com.android.calendar.Event.startTime
@@ -66803,7 +66803,7 @@ method com.android.calendar.Utils.checkForDuplicateNames(java.util.Map, android.
 	.line 788
 	    0| invoke-interface {v2}, java.util.Map.clear
 	.line 789
-	    3| const/4 v1, #-1 (0xffffffff | -nan)
+	    3| const/4 v1, #-1 (0xffffffff | NaN)
 	    4| invoke-interface {v3,v1}, android.database.Cursor.moveToPosition
 Label_1:
 	.line 790
@@ -66847,7 +66847,7 @@ method com.android.calendar.Utils.compareCursors(android.database.Cursor, androi
 	.src "Utils.java"
 	.line 496
 	.prologue_end
-	    0| const/4 v5, #-1 (0xffffffff | -nan)
+	    0| const/4 v5, #-1 (0xffffffff | NaN)
 	    1| const/4 v4, #+0 (0x00000000 | 0.000000)
 	.line 496
 	    2| if-eqz v6, Label_1
@@ -67179,7 +67179,7 @@ Label_4:
 	  206| move-object/from16 v0, v33
 	  208| array-length v5, v0
 	  209| add-int v5, v5, v28
-	  211| add-int/lit8 v21, v5, #-1 (0xffffffff | -nan)
+	  211| add-int/lit8 v21, v5, #-1 (0xffffffff | NaN)
 	.line 968
 	.local v21, "lastJulianDay", int
 	  213| new-instance v3, com.android.calendar.Event
@@ -67367,7 +67367,7 @@ Label_15:
 Label_16:
 	.line 1047
 	.local v19, "i", int
-	  452| add-int/lit8 v19, v19, #-1 (0xffffffff | -nan)
+	  452| add-int/lit8 v19, v19, #-1 (0xffffffff | NaN)
 	  454| if-ltz v19, Label_17
 	  456| move/from16 v0, v19
 	  458| invoke-virtual {v2,v0}, java.util.LinkedList.get
@@ -67402,7 +67402,7 @@ Label_19:
 	.line 1051
 	.end_local v20
 	.restart_local v19
-	  500| add-int/lit8 v19, v19, #-1 (0xffffffff | -nan)
+	  500| add-int/lit8 v19, v19, #-1 (0xffffffff | NaN)
 	  502| move/from16 v20, v19
 	.end_local v19
 	.restart_local v20
@@ -67483,7 +67483,7 @@ Label_21:
 	  614| move-object/from16 v0, v23
 	  616| iput v5, v0, com.android.calendar.Utils$DNASegment.color
 	.line 1078
-	  618| add-int/lit8 v5, v27, #-1 (0xffffffff | -nan)
+	  618| add-int/lit8 v5, v27, #-1 (0xffffffff | NaN)
 	  620| move-object/from16 v0, v23
 	  622| iput v5, v0, com.android.calendar.Utils$DNASegment.endMinute
 	.line 1079
@@ -67564,17 +67564,17 @@ Label_22:
 	  745| move-result-object v5
 	  746| check-cast v5, com.android.calendar.Utils$DNAStrand
 	  748| iget v6, v5, com.android.calendar.Utils$DNAStrand.count
-	  750| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	  750| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	  752| iput v6, v5, com.android.calendar.Utils$DNAStrand.count
 	.line 1101
 	  754| move-object/from16 v17, v26
 Label_23:
 	.line 1106
 	.end_local v26
-	  756| add-int/lit8 v5, v19, #-1 (0xffffffff | -nan)
+	  756| add-int/lit8 v5, v19, #-1 (0xffffffff | NaN)
 	  758| if-ltz v5, Label_24
 	.line 1107
-	  760| add-int/lit8 v5, v19, #-1 (0xffffffff | -nan)
+	  760| add-int/lit8 v5, v19, #-1 (0xffffffff | NaN)
 	  762| invoke-virtual {v2,v5}, java.util.LinkedList.get
 	  765| move-result-object v23
 	  766| check-cast v23, com.android.calendar.Utils$DNASegment
@@ -67594,7 +67594,7 @@ Label_23:
 	  788| iget v5, v0, com.android.calendar.Utils$DNASegment.endMinute
 	  790| move-object/from16 v0, v17
 	  792| iget v6, v0, com.android.calendar.Utils$DNASegment.startMinute
-	  794| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	  794| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	  796| if-lt v5, v6, Label_24
 	.line 1110
 	  798| move-object/from16 v0, v17
@@ -67617,12 +67617,12 @@ Label_23:
 	  830| move-result-object v5
 	  831| check-cast v5, com.android.calendar.Utils$DNAStrand
 	  833| iget v6, v5, com.android.calendar.Utils$DNAStrand.count
-	  835| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	  835| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	  837| iput v6, v5, com.android.calendar.Utils$DNAStrand.count
 	.line 1114
 	  839| move-object/from16 v17, v23
 	.line 1117
-	  841| add-int/lit8 v19, v19, #-1 (0xffffffff | -nan)
+	  841| add-int/lit8 v19, v19, #-1 (0xffffffff | NaN)
 Label_24:
 	.line 1123
 	.end_local v23
@@ -67639,7 +67639,7 @@ Label_24:
 	  862| move-result-object v5
 	  863| check-cast v5, com.android.calendar.Utils$DNAStrand
 	  865| iget v6, v5, com.android.calendar.Utils$DNAStrand.count
-	  867| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	  867| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	  869| iput v6, v5, com.android.calendar.Utils$DNAStrand.count
 	.line 1125
 	  871| sget v5, com.android.calendar.Utils.CONFLICT_COLOR
@@ -68233,7 +68233,7 @@ method com.android.calendar.Utils.findNanpMatchEnd(java.lang.CharSequence, int) 
 	.prologue_end
 	    0| const/16 v11, #+11 (0x0000000b | 0.000000)
 	    2| const/4 v10, #+7 (0x00000007 | 0.000000)
-	    3| const/4 v9, #-1 (0xffffffff | -nan)
+	    3| const/4 v9, #-1 (0xffffffff | NaN)
 	    4| const/16 v8, #+49 (0x00000031 | 0.000000)
 	.line 2004
 	    6| invoke-interface {v12}, java.lang.CharSequence.length
@@ -68382,7 +68382,7 @@ method com.android.calendar.Utils.findNanpPhoneNumbers(java.lang.CharSequence) :
 	.local v5, "startPos", int
 	    7| invoke-interface {v8}, java.lang.CharSequence.length
 	   10| move-result v6
-	   11| add-int/lit8 v6, v6, #-7 (0xfffffff9 | -nan)
+	   11| add-int/lit8 v6, v6, #-7 (0xfffffff9 | NaN)
 	   13| add-int/lit8 v0, v6, #+1 (0x00000001 | 0.000000)
 	.line 1942
 	.local v0, "endPos", int
@@ -68437,7 +68437,7 @@ Label_5:
 	.local v4, "result", int[]
 	   66| invoke-virtual {v2}, java.util.ArrayList.size
 	   69| move-result v6
-	   70| add-int/lit8 v1, v6, #-1 (0xffffffff | -nan)
+	   70| add-int/lit8 v1, v6, #-1 (0xffffffff | NaN)
 Label_6:
 	.local v1, "i", int
 	   72| if-ltz v1, Label_8
@@ -68450,7 +68450,7 @@ Label_6:
 	   84| aput v6, v4, v1
 	.line 1974
 	.line 1967
-	   86| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   86| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   88| goto Label_6
 Label_7:
 	.line 1967
@@ -68581,7 +68581,7 @@ Label_1:
 Label_2:
 	.line 1365
 	.end_local v7
-	   38| add-int/lit8 v0, v11, #-1 (0xffffffff | -nan)
+	   38| add-int/lit8 v0, v11, #-1 (0xffffffff | NaN)
 	   40| if-ne v10, v0, Label_3
 	.line 1366
 	   42| new-array v8, v1, java.lang.Object[]
@@ -68667,7 +68667,7 @@ method com.android.calendar.Utils.getDeclinedColorFromColor(int) : int
 	    2| const/high16 v8, #+16711680 (0x00ff0000 | 0.000000)
 	    4| const v7, #+65280 (0x0000ff00 | 0.000000)
 	.line 844
-	    7| const/4 v2, #-1 (0xffffffff | -nan)
+	    7| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 845
 	.local v2, "bg", int
 	    8| const/16 v0, #+102 (0x00000066 | 0.000000)
@@ -69815,7 +69815,7 @@ Label_2:
 	   20| goto Label_1
 Label_3:
 	.line 1918
-	   21| const/4 v1, #-1 (0xffffffff | -nan)
+	   21| const/4 v1, #-1 (0xffffffff | NaN)
 	   22| return v1
 }
 
@@ -69828,7 +69828,7 @@ method com.android.calendar.Utils.indexLastNonWhitespaceChar(java.lang.CharSeque
 	.line 1922
 	    0| invoke-interface {v2}, java.lang.CharSequence.length
 	    3| move-result v1
-	    4| add-int/lit8 v0, v1, #-1 (0xffffffff | -nan)
+	    4| add-int/lit8 v0, v1, #-1 (0xffffffff | NaN)
 Label_1:
 	.local v0, "i", int
 	    6| if-ltz v0, Label_3
@@ -69842,11 +69842,11 @@ Label_1:
 	   18| return v0
 Label_2:
 	.line 1922
-	   19| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   19| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   21| goto Label_1
 Label_3:
 	.line 1927
-	   22| const/4 v1, #-1 (0xffffffff | -nan)
+	   22| const/4 v1, #-1 (0xffffffff | NaN)
 	   23| return v1
 }
 
@@ -70046,7 +70046,7 @@ Label_2:
 	   22| new-array v1, v4, java.lang.String[]
 	.line 479
 	.local v1, "data", java.lang.String[]
-	   24| const/4 v5, #-1 (0xffffffff | -nan)
+	   24| const/4 v5, #-1 (0xffffffff | NaN)
 	   25| invoke-interface {v6,v5}, android.database.Cursor.moveToPosition
 Label_3:
 	.line 480
@@ -70768,7 +70768,7 @@ method com.android.calendar.Utils.timeFromIntentInMillis(android.content.Intent)
 	.src "Utils.java"
 	.line 529
 	.prologue_end
-	    0| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 529
 	    2| invoke-virtual {v8}, android.content.Intent.getData
 	    5| move-result-object v0
@@ -71784,7 +71784,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter$RowInfo.<init>(int, int) :
 	.line 470
 	   18| iput-boolean v2, v3, com.android.calendar.agenda.AgendaByDayAdapter$RowInfo.mFirstDayAfterYesterday
 	.line 471
-	   20| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   20| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   22| iput-wide v0, v3, com.android.calendar.agenda.AgendaByDayAdapter$RowInfo.mInstanceId
 	.line 472
 	   24| iput-boolean v2, v3, com.android.calendar.agenda.AgendaByDayAdapter$RowInfo.mAllDay
@@ -71936,7 +71936,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter.calculateDays(com.android.
 	    8| invoke-direct/range {v50..v50}, java.util.ArrayList.<init>
 	.line 301
 	.local_ex v50, "rowInfo", java.util.ArrayList, "Ljava/util/ArrayList<Lcom/android/calendar/agenda/AgendaByDayAdapter$RowInfo;>;"
-	   11| const/16 v47, #-1 (0xffffffff | -nan)
+	   11| const/16 v47, #-1 (0xffffffff | NaN)
 	.line 303
 	.local v47, "prevStartDay", int
 	   13| new-instance v51, android.text.format.Time
@@ -72050,7 +72050,7 @@ Label_3:
 	  165| move/from16 v1, v47
 	  167| if-eq v0, v1, Label_5
 	.line 329
-	  169| const/4 v4, #-1 (0xffffffff | -nan)
+	  169| const/4 v4, #-1 (0xffffffff | NaN)
 	  170| move/from16 v0, v47
 	  172| if-ne v0, v4, Label_8
 	.line 330
@@ -72421,10 +72421,10 @@ Label_1:
 	   20| move-result-wide v14
 	.line 513
 	.local v14, "millis", long
-	   21| const-wide/32 v16, #+2147483647 (0x7fffffff | nan)
+	   21| const-wide/32 v16, #+2147483647 (0x7fffffff | NaN)
 	.line 514
 	.local v16, "minDistance", long
-	   24| const-wide/32 v8, #+2147483647 (0x7fffffff | nan)
+	   24| const-wide/32 v8, #+2147483647 (0x7fffffff | NaN)
 	.line 515
 	.local v8, "idFoundMinDistance", long
 	   27| const/16 v18, #+0 (0x00000000 | 0.000000)
@@ -72433,10 +72433,10 @@ Label_1:
 	   29| const/4 v10, #+0 (0x00000000 | 0.000000)
 	.line 517
 	.local v10, "idFoundMinIndex", int
-	   30| const/4 v6, #-1 (0xffffffff | -nan)
+	   30| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 518
 	.local v6, "eventInTimeIndex", int
-	   31| const/4 v3, #-1 (0xffffffff | -nan)
+	   31| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 519
 	.local v3, "allDayEventInTimeIndex", int
 	   32| const/4 v2, #+0 (0x00000000 | 0.000000)
@@ -72532,7 +72532,7 @@ Label_7:
 	  139| move/from16 v20, v0
 	  141| if-eqz v20, Label_8
 	.line 556
-	  143| const/16 v20, #-1 (0xffffffff | -nan)
+	  143| const/16 v20, #-1 (0xffffffff | NaN)
 	  145| move/from16 v0, v20
 	  147| if-ne v3, v0, Label_3
 	.line 557
@@ -72543,7 +72543,7 @@ Label_7:
 	  154| goto Label_3
 Label_8:
 	.line 560
-	  155| const/16 v20, #-1 (0xffffffff | -nan)
+	  155| const/16 v20, #-1 (0xffffffff | NaN)
 	  157| move/from16 v0, v20
 	  159| if-ne v6, v0, Label_3
 	.line 561
@@ -72551,7 +72551,7 @@ Label_8:
 	  162| goto Label_3
 Label_9:
 	.line 563
-	  163| const/16 v20, #-1 (0xffffffff | -nan)
+	  163| const/16 v20, #-1 (0xffffffff | NaN)
 	  165| move/from16 v0, v20
 	  167| if-ne v6, v0, Label_3
 	.line 565
@@ -72582,14 +72582,14 @@ Label_10:
 	  196| return v10
 Label_11:
 	.line 580
-	  197| const/16 v20, #-1 (0xffffffff | -nan)
+	  197| const/16 v20, #-1 (0xffffffff | NaN)
 	  199| move/from16 v0, v20
 	  201| if-eq v6, v0, Label_12
 	.line 581
 	  203| return v6
 Label_12:
 	.line 584
-	  204| const/16 v20, #-1 (0xffffffff | -nan)
+	  204| const/16 v20, #-1 (0xffffffff | NaN)
 	  206| move/from16 v0, v20
 	  208| if-eq v3, v0, Label_13
 	  210| if-eq v13, v2, Label_13
@@ -72643,7 +72643,7 @@ Label_4:
 	   34| return v3
 Label_5:
 	.line 621
-	   35| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   35| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   37| goto Label_4
 Label_6:
 	.line 627
@@ -72730,7 +72730,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter.getHeaderItemsCount(int) :
 	    0| iget-object v2, v4, com.android.calendar.agenda.AgendaByDayAdapter.mRowInfo
 	    2| if-nez v2, Label_1
 	.line 115
-	    4| const/4 v2, #-1 (0xffffffff | -nan)
+	    4| const/4 v2, #-1 (0xffffffff | NaN)
 	    5| return v2
 Label_1:
 	.line 117
@@ -72771,7 +72771,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter.getHeaderPosition(int) : i
 	.src "AgendaByDayAdapter.java"
 	.line 100
 	.prologue_end
-	    0| const/4 v3, #-1 (0xffffffff | -nan)
+	    0| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 100
 	    1| iget-object v2, v4, com.android.calendar.agenda.AgendaByDayAdapter.mRowInfo
 	    3| if-eqz v2, Label_1
@@ -72802,7 +72802,7 @@ Label_3:
 	   31| return v0
 Label_4:
 	.line 104
-	   32| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   34| goto Label_3
 Label_5:
 	.line 109
@@ -72825,7 +72825,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter.getInstanceId(int) : long
 	   10| if-lt v3, v0, Label_2
 Label_1:
 	.line 85
-	   12| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   12| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   14| return-wide v0
 Label_2:
 	.line 87
@@ -72954,7 +72954,7 @@ method com.android.calendar.agenda.AgendaByDayAdapter.getStartTime(int) : long
 	   10| if-lt v3, v0, Label_2
 Label_1:
 	.line 92
-	   12| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   12| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   14| return-wide v0
 Label_2:
 	.line 94
@@ -73514,7 +73514,7 @@ method com.android.calendar.agenda.AgendaFragment$2.run() : void
 	   19| iget-object v0, v14, com.android.calendar.agenda.AgendaFragment$2.this$0
 	   21| invoke-static {v0}, com.android.calendar.agenda.AgendaFragment.-get0
 	   24| move-result-object v0
-	   25| const-wide/16 v7, #-1 (0xffffffff | -nan)
+	   25| const-wide/16 v7, #-1 (0xffffffff | NaN)
 	.line 476
 	   27| const-wide/16 v10, #+0 (0x00000000 | 0.000000)
 	.line 475
@@ -73591,7 +73591,7 @@ method com.android.calendar.agenda.AgendaFragment.<init>(long, boolean) : void
 	.src "AgendaFragment.java"
 	.line 96
 	.prologue_end
-	    0| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    2| const/4 v0, #+0 (0x00000000 | 0.000000)
 	    3| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 96
@@ -73611,7 +73611,7 @@ method com.android.calendar.agenda.AgendaFragment.<init>(long, boolean) : void
 	.line 73
 	   18| iput-wide v2, v5, com.android.calendar.agenda.AgendaFragment.mLastShownEventId
 	.line 79
-	   20| const/4 v0, #-1 (0xffffffff | -nan)
+	   20| const/4 v0, #-1 (0xffffffff | NaN)
 	   21| iput v0, v5, com.android.calendar.agenda.AgendaFragment.mJulianDayOnTop
 	.line 81
 	.line 362
@@ -73780,7 +73780,7 @@ Label_1:
 Label_2:
 	.line 347
 	   14| iget-object v0, v7, com.android.calendar.agenda.AgendaFragment.mAgendaListView
-	   16| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   16| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   18| iget-object v4, v7, com.android.calendar.agenda.AgendaFragment.mQuery
 	   20| const/4 v5, #+1 (0x00000001 | 0.000000)
 	   21| const/4 v6, #+0 (0x00000000 | 0.000000)
@@ -73799,7 +73799,7 @@ method com.android.calendar.agenda.AgendaFragment.showEventInfo(com.android.cale
 	.line 389
 	    0| move-object/from16 v0, v18
 	    2| iget-wide v2, v0, com.android.calendar.CalendarController$EventInfo.id
-	    4| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    6| cmp-long v2, v2, v4
 	    8| if-nez v2, Label_1
 	.line 390
@@ -74148,7 +74148,7 @@ method com.android.calendar.agenda.AgendaFragment.onCreate(android.os.Bundle) : 
 	.src "AgendaFragment.java"
 	.line 124
 	.prologue_end
-	    0| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	.line 124
 	    2| invoke-super {v6,v7}, android.app.Fragment.onCreate
 	.line 125
@@ -74245,13 +74245,13 @@ method com.android.calendar.agenda.AgendaFragment.onCreateView(android.view.Layo
 	   45| if-eqz v19, Label_1
 	.line 153
 	   47| const-string/jumbo v13, "key_restore_instance_id"
-	   50| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	   50| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	   52| move-object/from16 v0, v19
 	   54| invoke-virtual {v0,v13,v14,v15}, android.os.Bundle.getLong
 	   57| move-result-wide v6
 	.line 154
 	.local v6, "instanceId", long
-	   58| const-wide/16 v14, #-1 (0xffffffff | -nan)
+	   58| const-wide/16 v14, #-1 (0xffffffff | NaN)
 	   60| cmp-long v13, v6, v14
 	   62| if-eqz v13, Label_1
 	.line 155
@@ -74421,7 +74421,7 @@ method com.android.calendar.agenda.AgendaFragment.onResume() : void
 	.line 213
 	.prologue_end
 	    0| const/4 v5, #+1 (0x00000001 | 0.000000)
-	    1| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	    1| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	    3| const/4 v6, #+0 (0x00000000 | 0.000000)
 	.line 213
 	    4| invoke-super {v12}, android.app.Fragment.onResume
@@ -74951,7 +74951,7 @@ method com.android.calendar.agenda.AgendaListView.initView(android.content.Conte
 	   39| iput-object v0, v7, com.android.calendar.agenda.AgendaListView.mWindowAdapter
 	.line 97
 	   41| iget-object v0, v7, com.android.calendar.agenda.AgendaListView.mWindowAdapter
-	   43| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   43| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   45| invoke-virtual {v0,v2,v3}, com.android.calendar.agenda.AgendaWindowAdapter.setSelectedInstanceId
 	.line 98
 	   48| iget-object v0, v7, com.android.calendar.agenda.AgendaListView.mWindowAdapter
@@ -75438,7 +75438,7 @@ method com.android.calendar.agenda.AgendaListView.isAgendaItemVisible(android.te
 	.line 328
 	.prologue_end
 	.line 328
-	    0| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	    2| cmp-long v9, v14, v10
 	    4| if-eqz v9, Label_1
 	    6| if-nez v13, Label_2
@@ -75556,7 +75556,7 @@ method com.android.calendar.agenda.AgendaListView.onItemClick(android.widget.Ada
 	.local_ex v23, "a", android.widget.AdapterView, "Landroid/widget/AdapterView<*>;"
 	.prologue_end
 	.line 173
-	    0| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    2| cmp-long v3, v26, v4
 	    4| if-eqz v3, Label_4
 	.line 175
@@ -75731,7 +75731,7 @@ method com.android.calendar.agenda.AgendaListView.refresh(boolean) : void
 	.line 228
 	    0| iget-object v0, v7, com.android.calendar.agenda.AgendaListView.mWindowAdapter
 	    2| iget-object v1, v7, com.android.calendar.agenda.AgendaListView.mTime
-	    4| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    6| const/4 v4, #+0 (0x00000000 | 0.000000)
 	    7| const/4 v6, #+0 (0x00000000 | 0.000000)
 	    8| move v5, v8
@@ -75779,7 +75779,7 @@ method com.android.calendar.agenda.AgendaListView.shiftSelection(int) : void
 	    6| move-result v0
 	.line 374
 	.local v0, "position", int
-	    7| const/4 v1, #-1 (0xffffffff | -nan)
+	    7| const/4 v1, #-1 (0xffffffff | NaN)
 	    8| if-eq v0, v1, Label_1
 	.line 375
 	   10| add-int v1, v0, v4
@@ -76232,7 +76232,7 @@ Label_5:
 	  108| move-result v27
 	.line 997
 	.local v27, "listPositionOffset", int
-	  109| const/16 v28, #-1 (0xffffffff | -nan)
+	  109| const/16 v28, #-1 (0xffffffff | NaN)
 	.line 998
 	.local v28, "newPosition", int
 	  111| iget-object v4, v15, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.goToTime
@@ -76257,10 +76257,10 @@ Label_6:
 	  139| iget-object v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QueryHandler.this$0
 	  141| invoke-static {v4}, com.android.calendar.agenda.AgendaWindowAdapter.-get11
 	  144| move-result-wide v4
-	  145| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  145| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  147| cmp-long v4, v4, v6
 	  149| if-nez v4, Label_8
-	  151| const/4 v4, #-1 (0xffffffff | -nan)
+	  151| const/4 v4, #-1 (0xffffffff | NaN)
 	  152| move/from16 v0, v28
 	  154| if-eq v0, v4, Label_8
 	.line 1031
@@ -76269,7 +76269,7 @@ Label_6:
 	  159| if-ne v4, v5, Label_8
 	.line 1032
 	  161| iget-wide v4, v15, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.id
-	  163| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  163| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  165| cmp-long v4, v4, v6
 	  167| if-nez v4, Label_7
 	  169| iget-object v4, v15, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.goToTime
@@ -76298,14 +76298,14 @@ Label_8:
 	  207| iget-object v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QueryHandler.this$0
 	  209| invoke-static {v4}, com.android.calendar.agenda.AgendaWindowAdapter.-get11
 	  212| move-result-wide v4
-	  213| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  213| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  215| cmp-long v4, v4, v6
 	  217| if-eqz v4, Label_11
 	.line 1040
 	  219| const/16 v17, #+0 (0x00000000 | 0.000000)
 	.line 1041
 	.local v17, "found", boolean
-	  221| const/4 v4, #-1 (0xffffffff | -nan)
+	  221| const/4 v4, #-1 (0xffffffff | NaN)
 	  222| move-object/from16 v0, v44
 	  224| invoke-interface {v0,v4}, android.database.Cursor.moveToPosition
 Label_9:
@@ -76334,7 +76334,7 @@ Label_10:
 	.line 1051
 	  256| move-object/from16 v0, v41
 	  258| iget-object v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QueryHandler.this$0
-	  260| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  260| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  262| invoke-static {v4,v6,v7}, com.android.calendar.agenda.AgendaWindowAdapter.-set6
 Label_11:
 	.line 1056
@@ -76351,14 +76351,14 @@ Label_11:
 	  280| const/16 v33, #+0 (0x00000000 | 0.000000)
 	.line 1058
 	.local v33, "tempCursor", android.database.Cursor
-	  282| const/16 v36, #-1 (0xffffffff | -nan)
+	  282| const/16 v36, #-1 (0xffffffff | NaN)
 	.line 1061
 	.local v36, "tempCursorPosition", int
 	  284| move-object/from16 v0, v41
 	  286| iget-object v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QueryHandler.this$0
 	  288| invoke-static {v4}, com.android.calendar.agenda.AgendaWindowAdapter.-get11
 	  291| move-result-wide v4
-	  292| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  292| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  294| cmp-long v4, v4, v6
 	  296| if-nez v4, Label_23
 	.line 1062
@@ -76482,10 +76482,10 @@ Label_15:
 	  467| move-result-object v5
 	  468| monitor-enter v5
 	.line 1108
-	  469| const/16 v39, #-1 (0xffffffff | -nan)
+	  469| const/16 v39, #-1 (0xffffffff | NaN)
 	.line 1109
 	.local v39, "totalAgendaRangeStart", int
-	  471| const/16 v38, #-1 (0xffffffff | -nan)
+	  471| const/16 v38, #-1 (0xffffffff | NaN)
 	.line 1111
 	.local v38, "totalAgendaRangeEnd", int
 	  473| if-eqz v14, Label_27
@@ -76730,7 +76730,7 @@ Label_21:
 	  805| invoke-static {v4}, com.android.calendar.CalendarController.getInstance
 	  808| move-result-object v4
 	.line 1019
-	  809| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  809| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  811| const-wide/16 v6, #+1024 (0x00000400 | 0.000000)
 	.line 1020
 	  813| const/4 v12, #+0 (0x00000000 | 0.000000)
@@ -76750,7 +76750,7 @@ Label_22:
 	  823| goto/16 Label_12
 Label_23:
 	.line 1074
-	  825| const/4 v4, #-1 (0xffffffff | -nan)
+	  825| const/4 v4, #-1 (0xffffffff | NaN)
 	  826| move/from16 v0, v28
 	  828| if-eq v0, v4, Label_13
 	.line 1075
@@ -76843,7 +76843,7 @@ Label_27:
 	.local v26, "last", com.android.calendar.agenda.AgendaWindowAdapter$DayAdapterInfo
 	  935| move-object/from16 v0, v16
 	  937| iget v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$DayAdapterInfo.start
-	  939| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  939| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	  941| move-object/from16 v0, v32
 	  943| iget v6, v0, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.end
 	  945| if-gt v4, v6, Label_28
@@ -76929,7 +76929,7 @@ Label_33:
 	.line 1154
 	 1063| move-object/from16 v0, v32
 	 1065| iget v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.start
-	 1067| add-int/lit8 v4, v4, #-60 (0xffffffc4 | -nan)
+	 1067| add-int/lit8 v4, v4, #-60 (0xffffffc4 | NaN)
 	 1069| move-object/from16 v0, v32
 	 1071| iput v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.start
 	 1073| goto Label_31
@@ -76957,7 +76957,7 @@ Label_35:
 	.line 1163
 	 1103| move-object/from16 v0, v32
 	 1105| iget v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.start
-	 1107| add-int/lit8 v4, v4, #-30 (0xffffffe2 | -nan)
+	 1107| add-int/lit8 v4, v4, #-30 (0xffffffe2 | NaN)
 	 1109| move-object/from16 v0, v32
 	 1111| iput v4, v0, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.start
 	.line 1164
@@ -77080,7 +77080,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.<init>(int) : v
 	.line 246
 	    3| iput v3, v2, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.queryType
 	.line 247
-	    5| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	    5| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	    7| iput-wide v0, v2, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.id
 	.line 248
 	    9| return-void
@@ -77663,7 +77663,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.<init>(android.content.Co
 	   51| iput v4, v7, com.android.calendar.agenda.AgendaWindowAdapter.mListViewScrollState
 	.line 225
 	.line 532
-	   53| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   53| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   55| iput-wide v2, v7, com.android.calendar.agenda.AgendaWindowAdapter.mSelectedInstanceId
 	.line 532
 	.line 341
@@ -77773,7 +77773,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.buildAgendaItemFromCursor
 	    0| const-wide/16 v6, #+0 (0x00000000 | 0.000000)
 	    2| const/4 v3, #+0 (0x00000000 | 0.000000)
 	.line 626
-	    3| const/4 v2, #-1 (0xffffffff | -nan)
+	    3| const/4 v2, #-1 (0xffffffff | NaN)
 	    4| if-ne v10, v2, Label_5
 	.line 627
 	    6| invoke-interface {v9}, android.database.Cursor.moveToFirst
@@ -78075,7 +78075,7 @@ Label_4:
 	.restart_local v8
 	.restart_local v9
 	.restart_local v10
-	   95| add-int/lit8 v0, v10, #-1 (0xffffffff | -nan)
+	   95| add-int/lit8 v0, v10, #-1 (0xffffffff | NaN)
 	   97| iput v0, v12, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.end
 	.line 891
 	   99| iget v0, v12, com.android.calendar.agenda.AgendaWindowAdapter$QuerySpec.end
@@ -78111,7 +78111,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.findEventPositionNearestT
 	    3| move-result-object v0
 	.line 536
 	.local v0, "info", com.android.calendar.agenda.AgendaWindowAdapter$DayAdapterInfo
-	    4| const/4 v1, #-1 (0xffffffff | -nan)
+	    4| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 537
 	.local v1, "pos", int
 	    5| if-eqz v0, Label_1
@@ -78147,7 +78147,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.findInstanceIdFromPositio
 	   16| return-wide v2
 Label_1:
 	.line 1339
-	   17| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   17| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   19| return-wide v2
 }
 
@@ -78172,7 +78172,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.findStartTimeFromPosition
 	   16| return-wide v2
 Label_1:
 	.line 1347
-	   17| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   17| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   19| return-wide v2
 }
 
@@ -78317,7 +78317,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getCursorPositionByPositi
 	   16| return v1
 Label_1:
 	.line 1364
-	   17| const/4 v1, #-1 (0xffffffff | -nan)
+	   17| const/4 v1, #-1 (0xffffffff | NaN)
 	   18| return v1
 }
 
@@ -78841,7 +78841,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getAgendaItemByPosition(i
 	    3| return-object v7
 Label_1:
 	.line 596
-	    4| add-int/lit8 v4, v9, #-1 (0xffffffff | -nan)
+	    4| add-int/lit8 v4, v9, #-1 (0xffffffff | NaN)
 	.line 597
 	.local v4, "positionInAdapter", int
 	    6| invoke-virtual {v8,v4}, com.android.calendar.agenda.AgendaWindowAdapter.getAdapterInfoByPosition
@@ -78923,7 +78923,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getHeaderItemsNumber(int)
 	.src "AgendaWindowAdapter.java"
 	.line 1390
 	.prologue_end
-	    0| const/4 v2, #-1 (0xffffffff | -nan)
+	    0| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 1390
 	    1| if-ltz v4, Label_1
 	    3| iget-boolean v1, v3, com.android.calendar.agenda.AgendaWindowAdapter.mIsTabletConfig
@@ -78957,7 +78957,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getHeaderPositionFromItem
 	.src "AgendaWindowAdapter.java"
 	.line 1375
 	.prologue_end
-	    0| const/4 v2, #-1 (0xffffffff | -nan)
+	    0| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 1375
 	    1| iget-boolean v3, v5, com.android.calendar.agenda.AgendaWindowAdapter.mIsTabletConfig
 	    3| if-nez v3, Label_1
@@ -79020,7 +79020,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getItemId(int) : long
 	.src "AgendaWindowAdapter.java"
 	.line 430
 	.prologue_end
-	    0| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	.line 430
 	    2| invoke-virtual {v8,v9}, com.android.calendar.agenda.AgendaWindowAdapter.getAdapterInfoByPosition
 	    5| move-result-object v1
@@ -79095,7 +79095,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getItemViewType(int) : in
 	   16| return v1
 Label_1:
 	.line 391
-	   17| const/4 v1, #-1 (0xffffffff | -nan)
+	   17| const/4 v1, #-1 (0xffffffff | NaN)
 	   18| return v1
 }
 
@@ -79138,7 +79138,7 @@ method com.android.calendar.agenda.AgendaWindowAdapter.getView(int, android.view
 	.line 452
 	    0| move-object/from16 v0, v16
 	    2| iget v12, v0, com.android.calendar.agenda.AgendaWindowAdapter.mRowCount
-	    4| add-int/lit8 v12, v12, #-1 (0xffffffff | -nan)
+	    4| add-int/lit8 v12, v12, #-1 (0xffffffff | NaN)
 	    6| move/from16 v0, v17
 	    8| if-lt v0, v12, Label_1
 	.line 453
@@ -79612,7 +79612,7 @@ Label_3:
 	  198| invoke-static {v4}, com.android.calendar.CalendarController.getInstance
 	  201| move-result-object v4
 	.line 732
-	  202| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  202| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	.line 731
 	  204| const-wide/16 v6, #+1024 (0x00000400 | 0.000000)
 	.line 732
@@ -79637,7 +79637,7 @@ Label_6:
 	  222| add-int/lit8 v12, v11, #+7 (0x00000007 | 0.000000)
 	.line 742
 	.local v12, "endDay", int
-	  224| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	  224| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	  226| move-object/from16 v0, v28
 	  228| iput-wide v4, v0, com.android.calendar.agenda.AgendaWindowAdapter.mSelectedInstanceId
 	.line 743
@@ -79843,13 +79843,13 @@ Label_1:
 	   22| invoke-direct/range {v35..v35}, android.text.format.Time.<init>
 	.line 192
 	.local v35, "timeObj", android.text.format.Time
-	   25| const-wide v30/v31, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	   25| const-wide v30/v31, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 193
 	.local v30, "nextAlarmTime", long
 	   30| const/16 v28, #+0 (0x00000000 | 0.000000)
 	.line 194
 	.local v28, "nextAlarmEventId", int
-	   32| const/4 v4, #-1 (0xffffffff | -nan)
+	   32| const/4 v4, #-1 (0xffffffff | NaN)
 	   33| move-object/from16 v0, v37
 	   35| invoke-interface {v0,v4}, android.database.Cursor.moveToPosition
 Label_2:
@@ -80065,7 +80065,7 @@ Label_11:
 	.end_local v26
 	  310| invoke-virtual/range {v21..v21}, java.lang.StringBuilder.length
 	  313| move-result v4
-	  314| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  314| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	  316| move-object/from16 v0, v21
 	  318| invoke-virtual {v0,v4}, java.lang.StringBuilder.charAt
 	  321| move-result v4
@@ -80074,7 +80074,7 @@ Label_11:
 	.line 233
 	  326| invoke-virtual/range {v21..v21}, java.lang.StringBuilder.length
 	  329| move-result v4
-	  330| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  330| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	  332| move-object/from16 v0, v21
 	  334| invoke-virtual {v0,v4}, java.lang.StringBuilder.deleteCharAt
 Label_12:
@@ -80108,7 +80108,7 @@ Label_12:
 	  379| move-result-object v18
 	.line 244
 	.local v18, "cursor", android.database.Cursor
-	  380| const/4 v4, #-1 (0xffffffff | -nan)
+	  380| const/4 v4, #-1 (0xffffffff | NaN)
 	  381| move-object/from16 v0, v18
 	  383| invoke-interface {v0,v4}, android.database.Cursor.moveToPosition
 Label_13:
@@ -80264,7 +80264,7 @@ Label_19:
 	.end_local v18
 	.end_local v21
 	.end_local v23
-	  589| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	  589| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	  594| cmp-long v4, v30, v4
 	  596| if-gez v4, Label_20
 	.line 281
@@ -80784,7 +80784,7 @@ method com.android.calendar.alerts.AlertActivity$QueryHandler.onQueryComplete(in
 	   27| move-result-object v0
 	   28| invoke-interface {v5}, android.database.Cursor.getCount
 	   31| move-result v1
-	   32| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   34| invoke-virtual {v0,v1}, android.widget.ListView.setSelection
 	.line 162
 	   37| iget-object v0, v2, com.android.calendar.alerts.AlertActivity$QueryHandler.this$0
@@ -83316,7 +83316,7 @@ Label_6:
 	  209| move-result v5
 	  210| if-eqz v5, Label_14
 	.line 494
-	  212| const/4 v5, #-2 (0xfffffffe | -nan)
+	  212| const/4 v5, #-2 (0xfffffffe | NaN)
 	  213| move-object/from16 v0, v25
 	  215| invoke-virtual {v0,v5}, android.app.Notification$Builder.setPriority
 	.line 496
@@ -83713,7 +83713,7 @@ method com.android.calendar.alerts.AlertReceiver.onReceive(android.content.Conte
 	.src "AlertReceiver.java"
 	.line 103
 	.prologue_end
-	    0| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	.line 103
 	    2| const-string/jumbo v7, "AlertReceiver"
 	    5| new-instance v8, java.lang.StringBuilder
@@ -84034,7 +84034,7 @@ method com.android.calendar.alerts.AlertService$NotificationPrefs.<init>(android
 	.src "AlertService.java"
 	.line 973
 	.prologue_end
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	.line 973
 	.line 967
 	    1| invoke-direct {v1}, java.lang.Object.<init>
@@ -84508,7 +84508,7 @@ method com.android.calendar.alerts.AlertService.generateAlerts(android.content.C
 	   75| return v4
 Label_1:
 	.line 327
-	   76| const-wide v42/v43, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	   76| const-wide v42/v43, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 328
 	.local v42, "nextRefreshTime", long
 	   81| const/16 v17, #+1 (0x00000001 | 0.000000)
@@ -84590,7 +84590,7 @@ Label_5:
 	.restart_local v37
 	  159| invoke-virtual {v9}, java.util.ArrayList.size
 	  162| move-result v4
-	  163| add-int/lit8 v37, v4, #-1 (0xffffffff | -nan)
+	  163| add-int/lit8 v37, v4, #-1 (0xffffffff | NaN)
 	  165| move/from16 v24, v17
 Label_6:
 	.end_local v17
@@ -84633,7 +84633,7 @@ Label_6:
 	  214| invoke-static {v0,v1,v4,v5}, java.lang.Math.min
 	  217| move-result-wide v42
 	.line 357
-	  218| add-int/lit8 v37, v37, #-1 (0xffffffff | -nan)
+	  218| add-int/lit8 v37, v37, #-1 (0xffffffff | NaN)
 	  220| move/from16 v24, v17
 	.end_local v17
 	.restart_local v24
@@ -84686,7 +84686,7 @@ Label_7:
 	  273| const/16 v34, #+0 (0x00000000 | 0.000000)
 	  275| const/16 v35, #+0 (0x00000000 | 0.000000)
 	.line 383
-	  277| const/16 v36, #-2 (0xfffffffe | -nan)
+	  277| const/16 v36, #-2 (0xfffffffe | NaN)
 	  279| move-object/from16 v25, v47
 	  281| move-object/from16 v27, v12
 	.line 380
@@ -84770,7 +84770,7 @@ Label_9:
 	  403| invoke-static {v4,v5}, android.util.Log.d
 Label_10:
 	.line 421
-	  406| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	  406| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	  411| cmp-long v4, v42, v4
 	  413| if-gez v4, Label_14
 	  415| cmp-long v4, v42, v52
@@ -84975,7 +84975,7 @@ method com.android.calendar.alerts.AlertService.getNextRefreshTime(com.android.c
 Label_1:
 	.line 525
 	.end_local v8
-	   33| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	   33| const-wide v4/v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 527
 	.local v4, "nextRefreshTime", long
 	   38| iget-boolean v9, v13, com.android.calendar.alerts.AlertService$NotificationInfo.allDay
@@ -85100,7 +85100,7 @@ Label_4:
 	   69| if-lez v3, Label_5
 	   71| invoke-virtual {v0}, java.lang.StringBuilder.length
 	   74| move-result v3
-	   75| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   75| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   77| invoke-virtual {v0,v3}, java.lang.StringBuilder.charAt
 	   80| move-result v3
 	   81| const/16 v4, #+44 (0x0000002c | 0.000000)
@@ -85108,7 +85108,7 @@ Label_4:
 	.line 505
 	   85| invoke-virtual {v0}, java.lang.StringBuilder.length
 	   88| move-result v3
-	   89| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   89| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   91| invoke-virtual {v0,v3}, java.lang.StringBuilder.setLength
 Label_5:
 	.line 507
@@ -85709,7 +85709,7 @@ Label_12:
 	  575| invoke-direct/range {v64..v64}, android.content.ContentValues.<init>
 	.line 692
 	.local v64, "values", android.content.ContentValues
-	  578| const/16 v41, #-1 (0xffffffff | -nan)
+	  578| const/16 v41, #-1 (0xffffffff | NaN)
 	.line 693
 	.local v41, "newState", int
 	  580| const/16 v23, #+0 (0x00000000 | 0.000000)
@@ -85748,7 +85748,7 @@ Label_15:
 	  615| invoke-virtual {v0,v5,v1}, android.content.ContentValues.put
 Label_16:
 	.line 730
-	  618| const/4 v5, #-1 (0xffffffff | -nan)
+	  618| const/4 v5, #-1 (0xffffffff | NaN)
 	  619| move/from16 v0, v41
 	  621| if-eq v0, v5, Label_17
 	.line 731
@@ -86340,7 +86340,7 @@ Label_1:
 	   85| move-result-object v3
 	   86| invoke-static {v2,v3}, android.util.Log.d
 	.line 1068
-	   89| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	   89| const-wide/16 v8, #-1 (0xffffffff | NaN)
 Label_2:
 	.try_begin_1
 	.line 1070
@@ -87658,7 +87658,7 @@ method com.android.calendar.alerts.DismissAlarmsService.onHandleIntent(android.c
 	   44| invoke-static {v5,v0}, android.util.Log.d
 	.line 65
 	   47| const-string/jumbo v5, "eventid"
-	   50| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	   50| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	   52| move-object/from16 v0, v27
 	   54| move-wide/from16 v1, v22
 	   56| invoke-virtual {v0,v5,v1,v2}, android.content.Intent.getLongExtra
@@ -87666,7 +87666,7 @@ method com.android.calendar.alerts.DismissAlarmsService.onHandleIntent(android.c
 	.line 66
 	.local v6, "eventId", long
 	   60| const-string/jumbo v5, "eventstart"
-	   63| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	   63| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	   65| move-object/from16 v0, v27
 	   67| move-wide/from16 v1, v22
 	   69| invoke-virtual {v0,v5,v1,v2}, android.content.Intent.getLongExtra
@@ -87674,7 +87674,7 @@ method com.android.calendar.alerts.DismissAlarmsService.onHandleIntent(android.c
 	.line 67
 	.local v8, "eventStart", long
 	   73| const-string/jumbo v5, "eventend"
-	   76| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	   76| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	   78| move-object/from16 v0, v27
 	   80| move-wide/from16 v1, v22
 	   82| invoke-virtual {v0,v5,v1,v2}, android.content.Intent.getLongExtra
@@ -87694,7 +87694,7 @@ method com.android.calendar.alerts.DismissAlarmsService.onHandleIntent(android.c
 	.line 70
 	.local v13, "eventStarts", long[]
 	  104| const-string/jumbo v5, "notificationid"
-	  107| const/16 v22, #-1 (0xffffffff | -nan)
+	  107| const/16 v22, #-1 (0xffffffff | NaN)
 	  109| move-object/from16 v0, v27
 	  111| move/from16 v1, v22
 	  113| invoke-virtual {v0,v5,v1}, android.content.Intent.getIntExtra
@@ -87708,7 +87708,7 @@ method com.android.calendar.alerts.DismissAlarmsService.onHandleIntent(android.c
 	  122| sget-object v20, android.provider.CalendarContract$CalendarAlerts.CONTENT_URI
 	.line 77
 	.local v20, "uri", android.net.Uri
-	  124| const-wide/16 v22, #-1 (0xffffffff | -nan)
+	  124| const-wide/16 v22, #-1 (0xffffffff | NaN)
 	  126| cmp-long v5, v6, v22
 	  128| if-eqz v5, Label_4
 	.line 78
@@ -87759,7 +87759,7 @@ Label_1:
 	  202| move-object/from16 v3, v19
 	  204| invoke-virtual {v0,v1,v2,v3,v5}, android.content.ContentResolver.update
 	.line 100
-	  207| const/4 v5, #-1 (0xffffffff | -nan)
+	  207| const/4 v5, #-1 (0xffffffff | NaN)
 	  208| move/from16 v0, v17
 	  210| if-eq v0, v5, Label_2
 	.line 102
@@ -88586,7 +88586,7 @@ method com.android.calendar.alerts.GlobalDismissManager.lookupCalendarToAccountM
 	   25| move-result-object v8
 	.line 456
 	.local v8, "calendarCursor", android.database.Cursor
-	   26| const/4 v1, #-1 (0xffffffff | -nan)
+	   26| const/4 v1, #-1 (0xffffffff | NaN)
 	.try_begin_1
 	   27| invoke-interface {v8,v1}, android.database.Cursor.moveToPosition
 	.line 457
@@ -88605,11 +88605,11 @@ method com.android.calendar.alerts.GlobalDismissManager.lookupCalendarToAccountM
 	   50| move-result v7
 	.line 460
 	.local v7, "account_type_idx", int
-	   51| const/4 v1, #-1 (0xffffffff | -nan)
+	   51| const/4 v1, #-1 (0xffffffff | NaN)
 	   52| if-eq v9, v1, Label_3
-	   54| const/4 v1, #-1 (0xffffffff | -nan)
+	   54| const/4 v1, #-1 (0xffffffff | NaN)
 	   55| if-eq v6, v1, Label_3
-	   57| const/4 v1, #-1 (0xffffffff | -nan)
+	   57| const/4 v1, #-1 (0xffffffff | NaN)
 	   58| if-eq v7, v1, Label_3
 Label_1:
 	.line 461
@@ -88671,7 +88671,7 @@ method com.android.calendar.alerts.GlobalDismissManager.lookupEventToCalendarMap
 	.local_ex v12, "eventIds", java.util.Set, "Ljava/util/Set<Ljava/lang/Long;>;"
 	.prologue_end
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v10, #-1 (0xffffffff | -nan)
+	    1| const/4 v10, #-1 (0xffffffff | NaN)
 	.line 421
 	    2| new-instance v9, java.util.HashMap
 	    4| invoke-direct {v9}, java.util.HashMap.<init>
@@ -88693,7 +88693,7 @@ method com.android.calendar.alerts.GlobalDismissManager.lookupEventToCalendarMap
 	   26| move-result-object v7
 	.line 427
 	.local v7, "eventCursor", android.database.Cursor
-	   27| const/4 v1, #-1 (0xffffffff | -nan)
+	   27| const/4 v1, #-1 (0xffffffff | NaN)
 	.try_begin_1
 	   28| invoke-interface {v7,v1}, android.database.Cursor.moveToPosition
 	.line 428
@@ -89007,7 +89007,7 @@ Label_1:
 	.local v14, "event_id_idx", int
 	   94| invoke-interface {v10}, android.database.Cursor.moveToFirst
 	.line 497
-	   97| const/4 v4, #-1 (0xffffffff | -nan)
+	   97| const/4 v4, #-1 (0xffffffff | NaN)
 	   98| if-eq v14, v4, Label_2
 	  100| invoke-interface {v10}, android.database.Cursor.isAfterLast
 	  103| move-result v4
@@ -89244,7 +89244,7 @@ Label_3:
 	  131| move-result-object v12
 	.line 303
 	.local v12, "cursor", android.database.Cursor
-	  132| const/4 v4, #-1 (0xffffffff | -nan)
+	  132| const/4 v4, #-1 (0xffffffff | NaN)
 	.try_begin_2
 	  133| invoke-interface {v12,v4}, android.database.Cursor.moveToPosition
 	.line 304
@@ -89253,7 +89253,7 @@ Label_3:
 	  142| move-result v22
 	.line 305
 	.local v22, "sync_id_idx", int
-	  143| const/4 v4, #-1 (0xffffffff | -nan)
+	  143| const/4 v4, #-1 (0xffffffff | NaN)
 	  144| move/from16 v0, v22
 	  146| if-eq v0, v4, Label_6
 Label_4:
@@ -89608,7 +89608,7 @@ method com.android.calendar.alerts.QuickResponseActivity.onCreate(android.os.Bun
 	.src "QuickResponseActivity.java"
 	.line 50
 	.prologue_end
-	    0| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 50
 	    2| invoke-super {v8,v9}, android.app.ListActivity.onCreate
 	.line 52
@@ -89698,7 +89698,7 @@ method com.android.calendar.alerts.QuickResponseActivity.onItemClick(android.wid
 	    3| if-eqz v1, Label_1
 	    5| iget-object v1, v4, com.android.calendar.alerts.QuickResponseActivity.mResponses
 	    7| array-length v1, v1
-	    8| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	    8| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   10| if-ge v7, v1, Label_1
 	.line 88
 	   12| iget-object v1, v4, com.android.calendar.alerts.QuickResponseActivity.mResponses
@@ -89763,7 +89763,7 @@ method com.android.calendar.alerts.SnoozeAlarmsService.onHandleIntent(android.co
 	.prologue_end
 	.line 51
 	    0| const-string/jumbo v12, "eventid"
-	    3| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	    5| move-object/from16 v0, v25
 	    7| move-wide/from16 v1, v20
 	    9| invoke-virtual {v0,v12,v1,v2}, android.content.Intent.getLongExtra
@@ -89771,7 +89771,7 @@ method com.android.calendar.alerts.SnoozeAlarmsService.onHandleIntent(android.co
 	.line 52
 	.local v4, "eventId", long
 	   13| const-string/jumbo v12, "eventstart"
-	   16| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	   16| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	   18| move-object/from16 v0, v25
 	   20| move-wide/from16 v1, v20
 	   22| invoke-virtual {v0,v12,v1,v2}, android.content.Intent.getLongExtra
@@ -89779,7 +89779,7 @@ method com.android.calendar.alerts.SnoozeAlarmsService.onHandleIntent(android.co
 	.line 53
 	.local v6, "eventStart", long
 	   26| const-string/jumbo v12, "eventend"
-	   29| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	   29| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	   31| move-object/from16 v0, v25
 	   33| move-wide/from16 v1, v20
 	   35| invoke-virtual {v0,v12,v1,v2}, android.content.Intent.getLongExtra
@@ -89796,7 +89796,7 @@ method com.android.calendar.alerts.SnoozeAlarmsService.onHandleIntent(android.co
 	   51| move-result v15
 	.line 60
 	.local v15, "notificationId", int
-	   52| const-wide/16 v20, #-1 (0xffffffff | -nan)
+	   52| const-wide/16 v20, #-1 (0xffffffff | NaN)
 	   54| cmp-long v12, v4, v20
 	   56| if-eqz v12, Label_2
 	.line 61
@@ -90291,7 +90291,7 @@ Label_7:
 	.line 340
 	  118| if-nez v10, Label_8
 	.line 341
-	  120| add-int/lit8 v1, v11, #-1 (0xffffffff | -nan)
+	  120| add-int/lit8 v1, v11, #-1 (0xffffffff | NaN)
 	  122| move-object/from16 v0, v16
 	  124| invoke-virtual {v0,v1}, com.android.calendar.event.AttendeesView.getChildAt
 	  127| move-result-object v12
@@ -90755,7 +90755,7 @@ Label_11:
 	.line 188
 	  169| invoke-virtual {v4}, android.widget.TextView.getPaintFlags
 	  172| move-result v6
-	  173| and-int/lit8 v6, v6, #-17 (0xffffffef | -nan)
+	  173| and-int/lit8 v6, v6, #-17 (0xffffffef | NaN)
 	  175| invoke-virtual {v4,v6}, android.widget.TextView.setPaintFlags
 	  178| goto/16 Label_2
 Label_12:
@@ -91126,7 +91126,7 @@ method com.android.calendar.event.CreateEventDialogFragment$2.onClick(android.co
 	    4| invoke-static {v2}, com.android.calendar.event.CreateEventDialogFragment.-get1
 	    7| move-result-object v2
 	.line 163
-	    8| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    8| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	   10| move-object/from16 v0, v21
 	   12| iget-object v3, v0, com.android.calendar.event.CreateEventDialogFragment$2.this$0
 	   14| invoke-static {v3}, com.android.calendar.event.CreateEventDialogFragment.-get2
@@ -91139,7 +91139,7 @@ method com.android.calendar.event.CreateEventDialogFragment$2.onClick(android.co
 	   26| const-wide/32 v10, #+86400000 (0x05265c00 | 0.000000)
 	   29| add-long/2addr v10, v4
 	.line 165
-	   30| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	   30| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	.line 166
 	   32| move-object/from16 v0, v21
 	   34| iget-object v3, v0, com.android.calendar.event.CreateEventDialogFragment$2.this$0
@@ -91310,7 +91310,7 @@ method com.android.calendar.event.CreateEventDialogFragment.<init>() : void
 	    0| invoke-direct {v2}, android.app.DialogFragment.<init>
 	.line 83
 	.line 106
-	    3| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	    5| iput-wide v0, v2, com.android.calendar.event.CreateEventDialogFragment.mCalendarId
 	.line 106
 	    7| return-void
@@ -91327,7 +91327,7 @@ method com.android.calendar.event.CreateEventDialogFragment.<init>(android.text.
 	    0| invoke-direct {v2}, android.app.DialogFragment.<init>
 	.line 83
 	.line 109
-	    3| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	    3| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	    5| iput-wide v0, v2, com.android.calendar.event.CreateEventDialogFragment.mCalendarId
 	.line 109
 	    7| invoke-virtual {v2,v3}, com.android.calendar.event.CreateEventDialogFragment.setDay
@@ -91557,7 +91557,7 @@ Label_3:
 	  100| move-result v1
 	.line 281
 	.local v1, "accountTypeIndex", int
-	  101| const/4 v7, #-1 (0xffffffff | -nan)
+	  101| const/4 v7, #-1 (0xffffffff | NaN)
 	  102| invoke-interface {v12,v7}, android.database.Cursor.moveToPosition
 Label_4:
 	.line 282
@@ -91843,7 +91843,7 @@ method com.android.calendar.event.CreateEventDialogFragment.onResume() : void
 	    6| if-nez v1, Label_2
 	.line 181
 	    8| iget-object v1, v3, com.android.calendar.event.CreateEventDialogFragment.mAlertDialog
-	   10| const/4 v2, #-1 (0xffffffff | -nan)
+	   10| const/4 v2, #-1 (0xffffffff | NaN)
 	   11| invoke-virtual {v1,v2}, android.app.AlertDialog.getButton
 	   14| move-result-object v1
 	   15| iput-object v1, v3, com.android.calendar.event.CreateEventDialogFragment.mButtonAddEvent
@@ -91949,7 +91949,7 @@ method com.android.calendar.event.EditEventActivity.getEventInfoFromIntent(andro
 	    2| invoke-direct {v5}, com.android.calendar.CalendarController$EventInfo.<init>
 	.line 121
 	.local v5, "info", com.android.calendar.CalendarController$EventInfo
-	    5| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	    5| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	.line 122
 	.local v8, "eventId", long
 	    7| invoke-virtual {v14}, com.android.calendar.event.EditEventActivity.getIntent
@@ -91978,18 +91978,18 @@ Label_1:
 	.line 138
 	.local v0, "allDay", boolean
 	   33| const-string/jumbo v11, "beginTime"
-	   36| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	   36| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	   38| invoke-virtual {v10,v11,v12,v13}, android.content.Intent.getLongExtra
 	   41| move-result-wide v2
 	.line 139
 	.local v2, "begin", long
 	   42| const-string/jumbo v11, "endTime"
-	   45| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	   45| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	   47| invoke-virtual {v10,v11,v12,v13}, android.content.Intent.getLongExtra
 	   50| move-result-wide v6
 	.line 140
 	.local v6, "end", long
-	   51| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	   51| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	   53| cmp-long v11, v6, v12
 	   55| if-eqz v11, Label_3
 	.line 141
@@ -92008,7 +92008,7 @@ Label_2:
 	   75| invoke-virtual {v11,v6,v7}, android.text.format.Time.set
 Label_3:
 	.line 147
-	   78| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	   78| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	   80| cmp-long v11, v2, v12
 	   82| if-eqz v11, Label_5
 	.line 148
@@ -92035,7 +92035,7 @@ Label_5:
 	  114| iput-object v11, v5, com.android.calendar.CalendarController$EventInfo.eventTitle
 	.line 156
 	  116| const-string/jumbo v11, "calendar_id"
-	  119| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	  119| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	  121| invoke-virtual {v10,v11,v12,v13}, android.content.Intent.getLongExtra
 	  124| move-result-wide v12
 	  125| iput-wide v12, v5, com.android.calendar.CalendarController$EventInfo.calendarId
@@ -92106,7 +92106,7 @@ method com.android.calendar.event.EditEventActivity.onCreate(android.os.Bundle) 
 	.src "EditEventActivity.java"
 	.line 67
 	.prologue_end
-	    0| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	    2| const v8, #+2131755235 (0x7f1000e3 | 191413435500007914627334452706411544576.000000)
 	    5| const/4 v5, #+0 (0x00000000 | 0.000000)
 	.line 67
@@ -92133,7 +92133,7 @@ method com.android.calendar.event.EditEventActivity.onCreate(android.os.Bundle) 
 	   40| invoke-virtual {v12}, com.android.calendar.event.EditEventActivity.getIntent
 	   43| move-result-object v0
 	   44| const-string/jumbo v1, "event_color"
-	   47| const/4 v2, #-1 (0xffffffff | -nan)
+	   47| const/4 v2, #-1 (0xffffffff | NaN)
 	   48| invoke-virtual {v0,v1,v2}, android.content.Intent.getIntExtra
 	   51| move-result v0
 	   52| iput v0, v12, com.android.calendar.event.EditEventActivity.mEventColor
@@ -92547,7 +92547,7 @@ method com.android.calendar.event.EditEventFragment$Done.<init>(com.android.cale
 	    0| iput-object v2, v1, com.android.calendar.event.EditEventFragment$Done.this$0
 	    2| invoke-direct {v1}, java.lang.Object.<init>
 	.line 782
-	    5| const/4 v0, #-1 (0xffffffff | -nan)
+	    5| const/4 v0, #-1 (0xffffffff | NaN)
 	    6| iput v0, v1, com.android.calendar.event.EditEventFragment$Done.mCode
 	.line 781
 	    8| return-void
@@ -92703,7 +92703,7 @@ Label_4:
 	  216| iget-wide v6, v8, com.android.calendar.CalendarEventModel.mEnd
 	.line 830
 	.local v6, "end", long
-	  218| const/4 v9, #-1 (0xffffffff | -nan)
+	  218| const/4 v9, #-1 (0xffffffff | NaN)
 	.line 831
 	.local v9, "which", int
 	.line 842
@@ -92828,7 +92828,7 @@ Label_7:
 	  393| move-result-object v8
 	  394| invoke-static {v8}, com.android.calendar.CalendarController.getInstance
 	  397| move-result-object v11
-	  398| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	  398| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	.line 869
 	  400| const/16 v18, #+0 (0x00000000 | 0.000000)
 	  402| move-wide/from16 v16, v6
@@ -92970,7 +92970,7 @@ method com.android.calendar.event.EditEventFragment$EventBundle.<init>() : void
 	.src "EditEventFragment.java"
 	.line 976
 	.prologue_end
-	    0| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	.line 976
 	    2| invoke-direct {v2}, java.lang.Object.<init>
 	.line 978
@@ -93196,7 +93196,7 @@ Label_8:
 	  281| iget-object v6, v6, com.android.calendar.event.EditEventFragment.mModel
 	  283| iget-boolean v6, v6, com.android.calendar.CalendarEventModel.mHasAttendeeData
 	  285| if-eqz v6, Label_12
-	  287| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	  287| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	  289| cmp-long v6, v44, v6
 	  291| if-eqz v6, Label_12
 	.line 206
@@ -93703,7 +93703,7 @@ Label_26:
 	  946| iget-object v6, v0, com.android.calendar.event.EditEventFragment$QueryHandler.this$0
 	  948| iget-object v6, v6, com.android.calendar.event.EditEventFragment.mModel
 	  950| iget-wide v6, v6, com.android.calendar.CalendarEventModel.mId
-	  952| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	  952| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	  954| cmp-long v6, v6, v10
 	  956| if-nez v6, Label_30
 	.line 331
@@ -94052,7 +94052,7 @@ method com.android.calendar.event.EditEventFragment.<init>() : void
 	    0| const/4 v3, #+0 (0x00000000 | 0.000000)
 	    1| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 434
-	    2| const/4 v4, #-1 (0xffffffff | -nan)
+	    2| const/4 v4, #-1 (0xffffffff | NaN)
 	    3| move-object v0, v7
 	    4| move-object v2, v1
 	    5| move v5, v3
@@ -94082,7 +94082,7 @@ method com.android.calendar.event.EditEventFragment.<init>(com.android.calendar.
 	.line 121
 	   11| iput-boolean v2, v4, com.android.calendar.event.EditEventFragment.mEventColorInitialized
 	.line 125
-	   13| const-wide/16 v0, #-1 (0xffffffff | -nan)
+	   13| const-wide/16 v0, #-1 (0xffffffff | NaN)
 	   15| iput-wide v0, v4, com.android.calendar.event.EditEventFragment.mCalendarId
 	.line 130
 	   17| new-instance v0, com.android.calendar.event.EditEventFragment$Done
@@ -94189,7 +94189,7 @@ Label_5:
 	   69| if-eqz v0, Label_6
 	   71| iget-object v0, v5, com.android.calendar.event.EditEventFragment.mModel
 	   73| iget-wide v0, v0, com.android.calendar.CalendarEventModel.mId
-	   75| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   75| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   77| cmp-long v0, v0, v2
 	   79| if-eqz v0, Label_6
 	.line 669
@@ -94414,7 +94414,7 @@ method com.android.calendar.event.EditEventFragment.startQuery() : void
 	.line 462
 	.prologue_end
 	    0| const/4 v3, #+0 (0x00000000 | 0.000000)
-	    1| const-wide/16 v12, #-1 (0xffffffff | -nan)
+	    1| const-wide/16 v12, #-1 (0xffffffff | NaN)
 	    3| const/4 v1, #+1 (0x00000001 | 0.000000)
 	    4| const/4 v2, #+0 (0x00000000 | 0.000000)
 	.line 462
@@ -95706,7 +95706,7 @@ method com.android.calendar.event.EditEventHelper.canModifyCalendar(com.android.
 	    5| if-ge v1, v2, Label_1
 	.line 1164
 	    7| iget-wide v2, v6, com.android.calendar.CalendarEventModel.mCalendarId
-	    9| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    9| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	   11| cmp-long v1, v2, v4
 	   13| if-nez v1, Label_2
 Label_1:
@@ -95798,7 +95798,7 @@ method com.android.calendar.event.EditEventHelper.extractDomain(java.lang.String
 	    5| move-result v0
 	.line 1381
 	.local v0, "separator", int
-	    6| const/4 v1, #-1 (0xffffffff | -nan)
+	    6| const/4 v1, #-1 (0xffffffff | NaN)
 	    7| if-eq v0, v1, Label_1
 	    9| add-int/lit8 v0, v0, #+1 (0x00000001 | 0.000000)
 	   11| invoke-virtual {v2}, java.lang.String.length
@@ -95969,7 +95969,7 @@ Label_4:
 	   41| return-void
 Label_5:
 	.line 1330
-	   42| const v2, #+2147483647 (0x7fffffff | nan)
+	   42| const v2, #+2147483647 (0x7fffffff | NaN)
 	.line 1331
 	.local v2, "closestWeekday", int
 	   45| iget-object v12, v14, com.android.calendar.event.EditEventHelper.mEventRecurrence
@@ -96013,7 +96013,7 @@ Label_9:
 	   85| move v2, v3
 Label_10:
 	.line 1350
-	   86| const v12, #+2147483647 (0x7fffffff | nan)
+	   86| const v12, #+2147483647 (0x7fffffff | NaN)
 	   89| if-eq v2, v12, Label_11
 	   91| if-ge v2, v10, Label_12
 Label_11:
@@ -96282,7 +96282,7 @@ Label_1:
 Label_2:
 	.line 1119
 	   16| iget-wide v2, v6, com.android.calendar.CalendarEventModel.mCalendarId
-	   18| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	   18| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	   20| cmp-long v2, v2, v4
 	   22| if-nez v2, Label_3
 	.line 1120
@@ -96301,7 +96301,7 @@ Label_3:
 	   38| return v0
 Label_4:
 	.line 1129
-	   39| const/4 v2, #-1 (0xffffffff | -nan)
+	   39| const/4 v2, #-1 (0xffffffff | NaN)
 	   40| invoke-interface {v7,v2}, android.database.Cursor.moveToPosition
 Label_5:
 	.line 1130
@@ -96546,7 +96546,7 @@ Label_8:
 	.line 1083
 	  219| if-lez v0, Label_9
 	.line 1087
-	  221| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	  221| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 Label_9:
 	.line 1089
 	  223| iput v0, v11, com.android.calendar.CalendarEventModel.mAccessLevel
@@ -96837,7 +96837,7 @@ Label_9:
 	  196| invoke-virtual {v8,v10,v11}, android.text.format.Time.set
 	.line 1016
 	  199| iget v9, v8, android.text.format.Time.monthDay
-	  201| add-int/lit8 v9, v9, #-1 (0xffffffff | -nan)
+	  201| add-int/lit8 v9, v9, #-1 (0xffffffff | NaN)
 	  203| div-int/lit8 v9, v9, #+7 (0x00000007 | 0.000000)
 	  205| add-int/lit8 v4, v9, #+1 (0x00000001 | 0.000000)
 	.line 1017
@@ -96845,7 +96845,7 @@ Label_9:
 	  207| const/4 v9, #+5 (0x00000005 | 0.000000)
 	  208| if-ne v4, v9, Label_10
 	.line 1018
-	  210| const/4 v4, #-1 (0xffffffff | -nan)
+	  210| const/4 v4, #-1 (0xffffffff | NaN)
 Label_10:
 	.line 1020
 	  211| const/4 v9, #+0 (0x00000000 | 0.000000)
@@ -97594,7 +97594,7 @@ Label_5:
 	   72| invoke-direct {v7}, java.util.ArrayList.<init>
 	.line 303
 	.local_ex v7, "ops", java.util.ArrayList, "Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
-	   75| const/16 v29, #-1 (0xffffffff | -nan)
+	   75| const/16 v29, #-1 (0xffffffff | NaN)
 	.line 305
 	.local v29, "eventIdIndex", int
 	   77| invoke-virtual/range {v47..v48}, com.android.calendar.event.EditEventHelper.getContentValuesFromModel
@@ -97682,7 +97682,7 @@ Label_8:
 Label_9:
 	.line 422
 	.end_local v25
-	  191| const/4 v13, #-1 (0xffffffff | -nan)
+	  191| const/4 v13, #-1 (0xffffffff | NaN)
 	  192| move/from16 v0, v29
 	  194| if-eq v0, v13, Label_35
 	  196| const/16 v35, #+1 (0x00000001 | 0.000000)
@@ -97710,7 +97710,7 @@ Label_12:
 	  217| if-eqz v30, Label_39
 	  219| move-object/from16 v0, v48
 	  221| iget v13, v0, com.android.calendar.CalendarEventModel.mOwnerAttendeeId
-	  223| const/4 v14, #-1 (0xffffffff | -nan)
+	  223| const/4 v14, #-1 (0xffffffff | NaN)
 	  224| if-ne v13, v14, Label_39
 	.line 444
 	  226| move-object/from16 v0, v48
@@ -98221,7 +98221,7 @@ Label_39:
 	.line 467
 	  956| move-object/from16 v0, v48
 	  958| iget v13, v0, com.android.calendar.CalendarEventModel.mOwnerAttendeeId
-	  960| const/4 v14, #-1 (0xffffffff | -nan)
+	  960| const/4 v14, #-1 (0xffffffff | NaN)
 	  961| if-eq v13, v14, Label_14
 	.line 471
 	  963| sget-object v13, android.provider.CalendarContract$Attendees.CONTENT_URI
@@ -98275,7 +98275,7 @@ Label_41:
 	.line 501
 	.restart_local v34
 	.restart_local v44
-	 1033| const-wide/16 v8, #-1 (0xffffffff | -nan)
+	 1033| const-wide/16 v8, #-1 (0xffffffff | NaN)
 	.restart_local v8
 	.line 515
 	 1035| goto/16 Label_18
@@ -98800,7 +98800,7 @@ method com.android.calendar.event.EditEventView$3.onItemSelected(android.widget.
 	    0| iget-object v0, v2, com.android.calendar.event.EditEventView$3.this$0
 	    2| invoke-static {v0}, com.android.calendar.event.EditEventView.-get2
 	    5| move-result v0
-	    6| const/4 v1, #-1 (0xffffffff | -nan)
+	    6| const/4 v1, #-1 (0xffffffff | NaN)
 	    7| if-ne v0, v1, Label_1
 	.line 853
 	    9| iget-object v0, v2, com.android.calendar.event.EditEventView$3.this$0
@@ -100052,7 +100052,7 @@ method com.android.calendar.event.EditEventView.<init>(android.app.Activity, and
 	.line 839
 	  505| iput-boolean v7, v9, com.android.calendar.event.EditEventView.mAllDayChangingAvailability
 	.line 840
-	  507| const/4 v5, #-1 (0xffffffff | -nan)
+	  507| const/4 v5, #-1 (0xffffffff | NaN)
 	  508| iput v5, v9, com.android.calendar.event.EditEventView.mAvailabilityCurrentlySelected
 	.line 841
 	  510| iget-object v5, v9, com.android.calendar.event.EditEventView.mAvailabilitySpinner
@@ -100362,7 +100362,7 @@ Label_4:
 	   54| move-result v2
 	.line 1278
 	.local v2, "id", int
-	   55| const/4 v8, #-1 (0xffffffff | -nan)
+	   55| const/4 v8, #-1 (0xffffffff | NaN)
 	   56| if-eq v2, v8, Label_3
 	.line 1279
 	   58| invoke-virtual {v12,v2}, android.view.View.findViewById
@@ -100443,7 +100443,7 @@ method com.android.calendar.event.EditEventView.addReminder() : void
 	    0| const/4 v10, #+0 (0x00000000 | 0.000000)
 	.line 1549
 	    1| iget v0, v11, com.android.calendar.event.EditEventView.mDefaultReminderMinutes
-	    3| const/4 v1, #-1 (0xffffffff | -nan)
+	    3| const/4 v1, #-1 (0xffffffff | NaN)
 	    4| if-ne v0, v1, Label_2
 	.line 1550
 	    6| iget-object v0, v11, com.android.calendar.event.EditEventView.mActivity
@@ -100826,7 +100826,7 @@ method com.android.calendar.event.EditEventView.findDefaultCalendarPosition(andr
 	.line 1487
 	.prologue_end
 	    0| const/4 v10, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v9, #-1 (0xffffffff | -nan)
+	    1| const/4 v9, #-1 (0xffffffff | NaN)
 	    2| const/4 v6, #+0 (0x00000000 | 0.000000)
 	.line 1487
 	    3| invoke-interface {v12}, android.database.Cursor.getCount
@@ -100920,7 +100920,7 @@ method com.android.calendar.event.EditEventView.findSelectedCalendarPosition(and
 	.line 1469
 	.prologue_end
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 1469
 	    2| invoke-interface {v7}, android.database.Cursor.getCount
 	    5| move-result v2
@@ -101470,7 +101470,7 @@ Label_5:
 	.line 1034
 	  218| move-object/from16 v0, v17
 	  220| iget-object v8, v0, com.android.calendar.event.EditEventView.mReminderMethodLabels
-	  222| const v10, #+2147483647 (0x7fffffff | nan)
+	  222| const v10, #+2147483647 (0x7fffffff | NaN)
 	  225| const/4 v11, #+0 (0x00000000 | 0.000000)
 	  226| move-object/from16 v3, v17
 	.line 1032
@@ -102447,7 +102447,7 @@ method com.android.calendar.event.EditEventView.onClick(android.content.DialogIn
 	   10| iget-object v2, v4, com.android.calendar.event.EditEventView.mDone
 	   12| invoke-interface {v2}, com.android.calendar.event.EditEventHelper$EditDoneRunnable.run
 	.line 659
-	   15| const/4 v2, #-1 (0xffffffff | -nan)
+	   15| const/4 v2, #-1 (0xffffffff | NaN)
 	   16| if-ne v6, v2, Label_1
 	.line 660
 	   18| new-instance v1, android.content.Intent
@@ -102895,7 +102895,7 @@ method com.android.calendar.event.EditEventView.setAllDayViewsVisibility(boolean
 	.line 1645
 	   22| iget-object v5, v10, com.android.calendar.event.EditEventView.mEndTime
 	   24| iget v6, v5, android.text.format.Time.monthDay
-	   26| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   26| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   28| iput v6, v5, android.text.format.Time.monthDay
 Label_1:
 	.line 1648
@@ -103101,7 +103101,7 @@ Label_3:
 Label_4:
 	.line 1354
 	.end_local v1
-	   74| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	   74| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	   76| cmp-long v4, v10, v4
 	   78| if-eqz v4, Label_8
 	.line 1355
@@ -103680,7 +103680,7 @@ Label_15:
 	  704| move-result v5
 	.line 1179
 	.local v5, "availIndex", int
-	  705| const/16 v19, #-1 (0xffffffff | -nan)
+	  705| const/16 v19, #-1 (0xffffffff | NaN)
 	  707| move/from16 v0, v19
 	  709| if-eq v5, v0, Label_16
 	.line 1180
@@ -104404,7 +104404,7 @@ method com.android.calendar.event.EventColorPickerDialog.onCreateDialog(android.
 	   17| new-instance v3, com.android.calendar.event.EventColorPickerDialog$1
 	   19| invoke-direct {v3,v5}, com.android.calendar.event.EventColorPickerDialog$1.<init>
 	.line 70
-	   22| const/4 v4, #-3 (0xfffffffd | -nan)
+	   22| const/4 v4, #-3 (0xfffffffd | NaN)
 	   23| invoke-virtual {v1,v4,v2,v3}, android.app.AlertDialog.setButton
 	.line 80
 	   26| return-object v0
@@ -105105,7 +105105,7 @@ method com.android.calendar.event.EventLocationAdapter.processLocationsQueryResu
 	    5| invoke-direct {v2,v4}, java.util.TreeSet.<init>
 	.line 457
 	.local_ex v2, "locations", java.util.TreeSet, "Ljava/util/TreeSet<Ljava/lang/String;>;"
-	    8| const/4 v4, #-1 (0xffffffff | -nan)
+	    8| const/4 v4, #-1 (0xffffffff | NaN)
 	    9| invoke-interface {v7,v4}, android.database.Cursor.moveToPosition
 Label_1:
 	.line 460
@@ -105237,7 +105237,7 @@ Label_1:
 	   91| invoke-direct {v14}, java.util.HashMap.<init>
 	.line 374
 	.local_ex v14, "nameToAddresses", java.util.Map, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/android/calendar/event/EventLocationAdapter$Result;>;>;"
-	   94| const/4 v2, #-1 (0xffffffff | -nan)
+	   94| const/4 v2, #-1 (0xffffffff | NaN)
 	   95| invoke-interface {v11,v2}, android.database.Cursor.moveToPosition
 Label_2:
 	.line 375
@@ -105677,7 +105677,7 @@ method com.android.calendar.event.EventViewUtils.addMinutesToList(android.conten
 	    7| move-result v1
 	.line 138
 	.local v1, "index", int
-	    8| const/4 v4, #-1 (0xffffffff | -nan)
+	    8| const/4 v4, #-1 (0xffffffff | NaN)
 	    9| if-eq v1, v4, Label_1
 	.line 139
 	   11| return-void
@@ -105919,7 +105919,7 @@ method com.android.calendar.event.EventViewUtils.findMethodInReminderList(java.u
 	    7| move-result v0
 	.line 99
 	.local v0, "index", int
-	    8| const/4 v1, #-1 (0xffffffff | -nan)
+	    8| const/4 v1, #-1 (0xffffffff | NaN)
 	    9| if-ne v0, v1, Label_1
 	.line 102
 	   11| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -105942,7 +105942,7 @@ method com.android.calendar.event.EventViewUtils.findMinutesInReminderList(java.
 	    7| move-result v0
 	.line 77
 	.local v0, "index", int
-	    8| const/4 v1, #-1 (0xffffffff | -nan)
+	    8| const/4 v1, #-1 (0xffffffff | NaN)
 	    9| if-ne v0, v1, Label_1
 	.line 79
 	   11| const-string/jumbo v1, "EventViewUtils"
@@ -106038,7 +106038,7 @@ Label_3:
 	.end_local v4
 	   75| invoke-virtual {v9}, java.util.ArrayList.size
 	   78| move-result v6
-	   79| add-int/lit8 v2, v6, #-1 (0xffffffff | -nan)
+	   79| add-int/lit8 v2, v6, #-1 (0xffffffff | NaN)
 Label_4:
 	   81| if-ltz v2, Label_9
 	.line 185
@@ -106050,7 +106050,7 @@ Label_4:
 	.line 188
 	.local v5, "val", int
 	   93| array-length v6, v1
-	   94| add-int/lit8 v3, v6, #-1 (0xffffffff | -nan)
+	   94| add-int/lit8 v3, v6, #-1 (0xffffffff | NaN)
 Label_5:
 	.local v3, "j", int
 	   96| if-ltz v3, Label_6
@@ -106067,11 +106067,11 @@ Label_6:
 	  107| invoke-virtual {v10,v2}, java.util.ArrayList.remove
 Label_7:
 	.line 184
-	  110| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	  110| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	  112| goto Label_4
 Label_8:
 	.line 188
-	  113| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  113| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  115| goto Label_5
 Label_9:
 	.line 198
@@ -106504,7 +106504,7 @@ method com.android.calendar.month.SimpleWeeksAdapter.<init>(android.content.Cont
 	.local v0, "cal", java.util.Calendar
 	   28| invoke-virtual {v0}, java.util.Calendar.getFirstDayOfWeek
 	   31| move-result v1
-	   32| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   34| iput v1, v3, com.android.calendar.month.SimpleWeeksAdapter.mFirstDayOfWeek
 	.line 107
 	   36| sget v1, com.android.calendar.month.SimpleWeeksAdapter.mScale
@@ -106588,7 +106588,7 @@ method com.android.calendar.month.SimpleWeeksAdapter.getView(int, android.view.V
 	.line 208
 	.prologue_end
 	    0| const/4 v4, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v6, #-1 (0xffffffff | -nan)
+	    1| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 208
 	    2| const/4 v0, #+0 (0x00000000 | 0.000000)
 	.line 209
@@ -106613,7 +106613,7 @@ Label_2:
 	.line 225
 	   21| invoke-virtual {v0}, java.util.HashMap.clear
 	.line 227
-	   24| const/4 v2, #-1 (0xffffffff | -nan)
+	   24| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 228
 	.local v2, "selectedDay", int
 	   25| iget v5, v8, com.android.calendar.month.SimpleWeeksAdapter.mSelectedWeek
@@ -107351,8 +107351,8 @@ Label_1:
 	.line 193
 	    9| new-instance v4, android.widget.AbsListView$LayoutParams
 	.line 194
-	   11| const/4 v7, #-1 (0xffffffff | -nan)
-	   12| const/4 v8, #-1 (0xffffffff | -nan)
+	   11| const/4 v7, #-1 (0xffffffff | NaN)
+	   12| const/4 v8, #-1 (0xffffffff | NaN)
 	.line 193
 	   13| invoke-direct {v4,v7,v8}, android.widget.AbsListView$LayoutParams.<init>
 	.line 195
@@ -107412,7 +107412,7 @@ Label_3:
 	.line 228
 	   75| invoke-virtual {v6,v12}, com.android.calendar.month.MonthWeekEventsView.setOnTouchListener
 	.line 230
-	   78| const/4 v5, #-1 (0xffffffff | -nan)
+	   78| const/4 v5, #-1 (0xffffffff | NaN)
 	.line 231
 	.local v5, "selectedDay", int
 	   79| iget v7, v12, com.android.calendar.month.MonthByWeekAdapter.mSelectedWeek
@@ -107592,7 +107592,7 @@ method com.android.calendar.month.MonthByWeekAdapter.onDayTapped(android.text.fo
 	.line 289
 	.prologue_end
 	    0| const-wide/16 v2, #+32 (0x00000020 | 0.000000)
-	    2| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    2| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    4| const/4 v11, #+0 (0x00000000 | 0.000000)
 	.line 289
 	    5| invoke-direct {v13,v14}, com.android.calendar.month.MonthByWeekAdapter.setDayParameters
@@ -107622,7 +107622,7 @@ Label_3:
 	   30| iget-object v0, v13, com.android.calendar.month.MonthByWeekAdapter.mController
 	   32| iget-object v1, v13, com.android.calendar.month.MonthByWeekAdapter.mContext
 	.line 298
-	   34| const/4 v8, #-1 (0xffffffff | -nan)
+	   34| const/4 v8, #-1 (0xffffffff | NaN)
 	.line 299
 	   35| const-wide/16 v9, #+5 (0x00000005 | 0.000000)
 	   37| move-object v4, v14
@@ -108300,7 +108300,7 @@ method com.android.calendar.month.SimpleDayPickerFragment.<clinit>() : void
 	.prologue_end
 	.line 72
 	.line 102
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	    1| sput v0, com.android.calendar.month.SimpleDayPickerFragment.LIST_TOP_OFFSET
 	.line 102
 	.line 56
@@ -108491,7 +108491,7 @@ Label_10:
 	   77| if-nez v5, Label_11
 	   79| if-ne v2, v8, Label_11
 	.line 534
-	   81| const/4 v3, #-1 (0xffffffff | -nan)
+	   81| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 533
 	.restart_local v3
 	   82| goto Label_6
@@ -108525,7 +108525,7 @@ method com.android.calendar.month.SimpleDayPickerFragment.doResumeUpdates() : vo
 	.local v0, "cal", java.util.Calendar
 	    9| invoke-virtual {v0}, java.util.Calendar.getFirstDayOfWeek
 	   12| move-result v1
-	   13| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   13| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   15| iput v1, v7, com.android.calendar.month.SimpleDayPickerFragment.mFirstDayOfWeek
 	.line 305
 	   17| iput-boolean v4, v7, com.android.calendar.month.SimpleDayPickerFragment.mShowWeekNumber
@@ -108558,7 +108558,7 @@ method com.android.calendar.month.SimpleDayPickerFragment.goTo(long, boolean, bo
 	.line 379
 	.prologue_end
 	.line 379
-	    0| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	    2| cmp-long v9, v14, v10
 	    4| if-nez v9, Label_1
 	.line 380
@@ -108647,13 +108647,13 @@ Label_7:
 	.local v1, "firstPosition", int
 	  103| iget v9, v13, com.android.calendar.month.SimpleDayPickerFragment.mNumWeeks
 	  105| add-int/2addr v9, v1
-	  106| add-int/lit8 v4, v9, #-1 (0xffffffff | -nan)
+	  106| add-int/lit8 v4, v9, #-1 (0xffffffff | NaN)
 	.line 429
 	.local v4, "lastPosition", int
 	  108| iget v9, v13, com.android.calendar.month.SimpleDayPickerFragment.BOTTOM_BUFFER
 	  110| if-le v8, v9, Label_8
 	.line 430
-	  112| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  112| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 Label_8:
 	.line 433
 	  114| if-eqz v17, Label_9
@@ -108746,7 +108746,7 @@ Label_12:
 	  240| const-string/jumbo v11, "child at "
 	  243| invoke-virtual {v10,v11}, java.lang.StringBuilder.append
 	  246| move-result-object v10
-	  247| add-int/lit8 v11, v3, #-1 (0xffffffff | -nan)
+	  247| add-int/lit8 v11, v3, #-1 (0xffffffff | NaN)
 	  249| invoke-virtual {v10,v11}, java.lang.StringBuilder.append
 	  252| move-result-object v10
 	  253| const-string/jumbo v11, " has top "
@@ -109278,7 +109278,7 @@ Label_1:
 	    6| if-gt v0, v4, Label_2
 	.line 251
 	    8| iget-object v1, v5, com.android.calendar.month.SimpleDayPickerFragment.mDayLabels
-	   10| add-int/lit8 v2, v0, #-1 (0xffffffff | -nan)
+	   10| add-int/lit8 v2, v0, #-1 (0xffffffff | NaN)
 	.line 252
 	   12| const/16 v3, #+50 (0x00000032 | 0.000000)
 	.line 251
@@ -109361,7 +109361,7 @@ method com.android.calendar.month.SimpleDayPickerFragment.updateHeader() : void
 Label_1:
 	.line 324
 	   21| iget v4, v8, com.android.calendar.month.SimpleDayPickerFragment.mFirstDayOfWeek
-	   23| add-int/lit8 v2, v4, #-1 (0xffffffff | -nan)
+	   23| add-int/lit8 v2, v4, #-1 (0xffffffff | NaN)
 	.line 325
 	.local v2, "offset", int
 	   25| const/4 v0, #+1 (0x00000001 | 0.000000)
@@ -109639,7 +109639,7 @@ method com.android.calendar.month.MonthByWeekFragment.updateLoadedDays() : void
 	   13| return-void
 Label_1:
 	.line 202
-	   14| add-int/lit8 v6, v5, #-2 (0xfffffffe | -nan)
+	   14| add-int/lit8 v6, v5, #-2 (0xfffffffe | NaN)
 	   16| invoke-interface {v4,v6}, java.util.List.get
 	   19| move-result-object v6
 	   20| check-cast v6, java.lang.String
@@ -109647,7 +109647,7 @@ Label_1:
 	   25| move-result-wide v0
 	.line 203
 	.local v0, "first", long
-	   26| add-int/lit8 v6, v5, #-1 (0xffffffff | -nan)
+	   26| add-int/lit8 v6, v5, #-1 (0xffffffff | NaN)
 	   28| invoke-interface {v4,v6}, java.util.List.get
 	   31| move-result-object v6
 	   32| check-cast v6, java.lang.String
@@ -109702,7 +109702,7 @@ Label_1:
 	.end_local v4
 	   18| iget-object v5, v10, com.android.calendar.month.MonthByWeekFragment.mTempTime
 	   20| iget v8, v10, com.android.calendar.month.MonthByWeekFragment.mFirstLoadedJulianDay
-	   22| add-int/lit8 v8, v8, #-1 (0xffffffff | -nan)
+	   22| add-int/lit8 v8, v8, #-1 (0xffffffff | NaN)
 	   24| invoke-virtual {v5,v8}, android.text.format.Time.setJulianDay
 	.line 182
 	   27| iget-object v5, v10, com.android.calendar.month.MonthByWeekFragment.mTempTime
@@ -110510,7 +110510,7 @@ Label_3:
 Label_4:
 	.line 479
 	.end_local v18
-	  117| const-wide/16 v9, #-1 (0xffffffff | -nan)
+	  117| const-wide/16 v9, #-1 (0xffffffff | NaN)
 	.line 480
 	  119| const-wide/16 v12, #+52 (0x00000034 | 0.000000)
 	.line 479
@@ -110695,7 +110695,7 @@ Label_2:
 	   14| if-gt v0, v4, Label_3
 	.line 337
 	   16| iget-object v1, v5, com.android.calendar.month.MonthByWeekFragment.mDayLabels
-	   18| add-int/lit8 v2, v0, #-1 (0xffffffff | -nan)
+	   18| add-int/lit8 v2, v0, #-1 (0xffffffff | NaN)
 	.line 338
 	   20| const/16 v3, #+20 (0x00000014 | 0.000000)
 	.line 337
@@ -111107,14 +111107,14 @@ method com.android.calendar.month.MonthListView.getUpperRightJulianDay() : int
 	.local v0, "child", com.android.calendar.month.SimpleWeekView
 	    7| if-nez v0, Label_1
 	.line 193
-	    9| const/4 v1, #-1 (0xffffffff | -nan)
+	    9| const/4 v1, #-1 (0xffffffff | NaN)
 	   10| return v1
 Label_1:
 	.line 195
 	   11| invoke-virtual {v0}, com.android.calendar.month.SimpleWeekView.getFirstJulianDay
 	   14| move-result v1
 	   15| add-int/lit8 v1, v1, #+7 (0x00000007 | 0.000000)
-	   17| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   17| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   19| return v1
 }
 
@@ -111510,7 +111510,7 @@ method com.android.calendar.month.SimpleWeekView.<init>(android.content.Context)
 	.line 170
 	.prologue_end
 	    0| const/4 v3, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v2, #-1 (0xffffffff | -nan)
+	    1| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 170
 	.line 111
 	    2| invoke-direct {v4,v5}, android.view.View.<init>
@@ -111715,7 +111715,7 @@ method com.android.calendar.month.SimpleWeekView.drawBackground(android.graphics
 	.line 414
 	   23| iget-object v0, v3, com.android.calendar.month.SimpleWeekView.r
 	   25| iget v1, v3, com.android.calendar.month.SimpleWeekView.mHeight
-	   27| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   27| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   29| iput v1, v0, android.graphics.Rect.bottom
 	.line 415
 	   31| iget-object v0, v3, com.android.calendar.month.SimpleWeekView.r
@@ -111767,7 +111767,7 @@ method com.android.calendar.month.SimpleWeekView.drawDaySeparators(android.graph
 	.line 476
 	    9| iget-object v0, v7, com.android.calendar.month.SimpleWeekView.r
 	   11| iget v1, v7, com.android.calendar.month.SimpleWeekView.mHeight
-	   13| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   13| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   15| iput v1, v0, android.graphics.Rect.bottom
 	.line 477
 	   17| iget-object v0, v7, com.android.calendar.month.SimpleWeekView.r
@@ -111777,7 +111777,7 @@ method com.android.calendar.month.SimpleWeekView.drawDaySeparators(android.graph
 	.line 478
 	   25| iget-object v0, v7, com.android.calendar.month.SimpleWeekView.r
 	   27| iget v1, v7, com.android.calendar.month.SimpleWeekView.mSelectedRight
-	   29| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   29| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   31| iput v1, v0, android.graphics.Rect.right
 	.line 479
 	   33| iget-object v0, v7, com.android.calendar.month.SimpleWeekView.p
@@ -112368,7 +112368,7 @@ Label_2:
 Label_3:
 	.line 228
 	   81| iget v6, v10, com.android.calendar.month.SimpleWeekView.mSelectedDay
-	   83| const/4 v7, #-1 (0xffffffff | -nan)
+	   83| const/4 v7, #-1 (0xffffffff | NaN)
 	   84| if-eq v6, v7, Label_17
 	   86| const/4 v6, #+1 (0x00000001 | 0.000000)
 Label_4:
@@ -112517,7 +112517,7 @@ Label_11:
 	  290| const/4 v6, #+0 (0x00000000 | 0.000000)
 	  291| iput-boolean v6, v10, com.android.calendar.month.SimpleWeekView.mHasToday
 	.line 280
-	  293| const/4 v6, #-1 (0xffffffff | -nan)
+	  293| const/4 v6, #-1 (0xffffffff | NaN)
 	  294| iput v6, v10, com.android.calendar.month.SimpleWeekView.mToday
 	.line 282
 	  296| const-string/jumbo v6, "focus_month"
@@ -112616,7 +112616,7 @@ Label_20:
 	.restart_local v3
 	.restart_local v4
 	.restart_local v5
-	  402| const/4 v1, #-1 (0xffffffff | -nan)
+	  402| const/4 v1, #-1 (0xffffffff | NaN)
 	.restart_local v1
 	  403| goto Label_12
 Label_21:
@@ -112637,7 +112637,7 @@ Label_23:
 	  415| if-ne v6, v7, Label_24
 	.line 306
 	  417| iget v6, v4, android.text.format.Time.monthDay
-	  419| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	  419| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	  421| iput v6, v4, android.text.format.Time.monthDay
 	.line 307
 	  423| const/4 v6, #+1 (0x00000001 | 0.000000)
@@ -112776,7 +112776,7 @@ method com.android.calendar.month.MonthWeekEventsView.<clinit>() : void
 	   40| const/high16 v0, #-16777216 (0xff000000 | -170141183460469231731687303715884105728.000000)
 	   42| sput v0, com.android.calendar.month.MonthWeekEventsView.CONFLICT_COLOR
 	.line 80
-	   44| const/4 v0, #-1 (0xffffffff | -nan)
+	   44| const/4 v0, #-1 (0xffffffff | NaN)
 	   45| sput v0, com.android.calendar.month.MonthWeekEventsView.EVENT_TEXT_COLOR
 	.line 82
 	   47| sput v2, com.android.calendar.month.MonthWeekEventsView.DEFAULT_EDGE_SPACING
@@ -112855,7 +112855,7 @@ method com.android.calendar.month.MonthWeekEventsView.<init>(android.content.Con
 	.line 251
 	.prologue_end
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
 	    2| const/4 v2, #+0 (0x00000000 | 0.000000)
 	.line 251
 	.line 108
@@ -112942,7 +112942,7 @@ method com.android.calendar.month.MonthWeekEventsView.drawClick(android.graphics
 	.prologue_end
 	.line 661
 	    0| iget v1, v3, com.android.calendar.month.MonthWeekEventsView.mClickedDayIndex
-	    2| const/4 v2, #-1 (0xffffffff | -nan)
+	    2| const/4 v2, #-1 (0xffffffff | NaN)
 	    3| if-eq v1, v2, Label_1
 	.line 662
 	    5| iget-object v1, v3, com.android.calendar.month.MonthWeekEventsView.p
@@ -112997,7 +112997,7 @@ method com.android.calendar.month.MonthWeekEventsView.clearClickedDay() : void
 	.line 1107
 	.prologue_end
 	.line 1107
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	    1| iput v0, v1, com.android.calendar.month.MonthWeekEventsView.mClickedDayIndex
 	.line 1108
 	    3| invoke-virtual {v1}, com.android.calendar.month.MonthWeekEventsView.invalidate
@@ -113218,12 +113218,12 @@ Label_6:
 	  111| iget-object v2, v4, com.android.calendar.month.MonthWeekEventsView.mOddMonth
 	  113| iget-object v3, v4, com.android.calendar.month.MonthWeekEventsView.mOddMonth
 	  115| array-length v3, v3
-	  116| add-int/lit8 v0, v3, #-1 (0xffffffff | -nan)
+	  116| add-int/lit8 v0, v3, #-1 (0xffffffff | NaN)
 	  118| aget-boolean v2, v2, v0
 	  120| if-nez v2, Label_4
 Label_7:
 	.line 642
-	  122| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	  122| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	  124| if-lt v0, v1, Label_8
 	  126| iget-object v2, v4, com.android.calendar.month.MonthWeekEventsView.mOddMonth
 	  128| aget-boolean v2, v2, v0
@@ -113927,7 +113927,7 @@ method com.android.calendar.month.MonthWeekEventsView.drawEvents(android.graphic
 	    6| return-void
 Label_1:
 	.line 725
-	    7| const/16 v20, #-1 (0xffffffff | -nan)
+	    7| const/16 v20, #-1 (0xffffffff | NaN)
 	.line 726
 	.local v20, "day", int
 	    9| move-object/from16 v0, v27
@@ -114261,7 +114261,7 @@ method com.android.calendar.month.MonthWeekEventsView.drawWeekNums(android.graph
 	    1| const/4 v0, #+0 (0x00000000 | 0.000000)
 	.line 679
 	.local v0, "i", int
-	    2| const/4 v4, #-1 (0xffffffff | -nan)
+	    2| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 680
 	.local v4, "offset", int
 	    3| iget v5, v13, com.android.calendar.month.MonthWeekEventsView.mTodayIndex
@@ -114409,7 +114409,7 @@ method com.android.calendar.month.MonthWeekEventsView.getDayFromLocation(float) 
 	    8| move-result v1
 	.line 1033
 	.local v1, "dayPosition", int
-	    9| const/4 v3, #-1 (0xffffffff | -nan)
+	    9| const/4 v3, #-1 (0xffffffff | NaN)
 	   10| if-ne v1, v3, Label_1
 	.line 1034
 	   12| const/4 v3, #+0 (0x00000000 | 0.000000)
@@ -114475,7 +114475,7 @@ Label_1:
 	   23| if-lez v1, Label_4
 Label_2:
 	.line 1024
-	   25| const/4 v1, #-1 (0xffffffff | -nan)
+	   25| const/4 v1, #-1 (0xffffffff | NaN)
 	   26| return v1
 Label_3:
 	.line 1022
@@ -115787,7 +115787,7 @@ Label_2:
 	.line 530
 	   52| iput-boolean v6, v8, com.android.calendar.month.MonthWeekEventsView.mHasToday
 	.line 531
-	   54| const/4 v1, #-1 (0xffffffff | -nan)
+	   54| const/4 v1, #-1 (0xffffffff | NaN)
 	   55| iput v1, v8, com.android.calendar.month.MonthWeekEventsView.mTodayIndex
 	   57| goto Label_1
 }
@@ -116269,7 +116269,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog$2.onChange(i
 	    0| iget-object v0, v2, com.android.calendar.recurrencepicker.RecurrencePickerDialog$2.this$0
 	    2| invoke-static {v0}, com.android.calendar.recurrencepicker.RecurrencePickerDialog.-get5
 	    5| move-result v0
-	    6| const/4 v1, #-1 (0xffffffff | -nan)
+	    6| const/4 v1, #-1 (0xffffffff | NaN)
 	    7| if-eq v0, v1, Label_1
 	    9| iget-object v0, v2, com.android.calendar.recurrencepicker.RecurrencePickerDialog$2.this$0
 	   11| invoke-static {v0}, com.android.calendar.recurrencepicker.RecurrencePickerDialog.-get4
@@ -116405,7 +116405,7 @@ Label_1:
 	   67| move-result-object v2
 	.line 1236
 	   68| new-instance v3, android.widget.TableLayout$LayoutParams
-	   70| const/4 v4, #-2 (0xfffffffe | -nan)
+	   70| const/4 v4, #-2 (0xfffffffe | NaN)
 	   71| const/high16 v5, #+1065353216 (0x3f800000 | 1.000000)
 	   73| invoke-direct {v3,v6,v4,v5}, android.widget.TableLayout$LayoutParams.<init>
 	.line 1235
@@ -116481,7 +116481,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog$EndSpinnerAd
 	.src "RecurrencePickerDialog.java"
 	.line 1244
 	.prologue_end
-	    0| const/4 v9, #-1 (0xffffffff | -nan)
+	    0| const/4 v9, #-1 (0xffffffff | NaN)
 	    1| const/4 v8, #+0 (0x00000000 | 0.000000)
 	.line 1244
 	    2| if-nez v12, Label_3
@@ -116630,13 +116630,13 @@ Label_10:
 	  191| invoke-virtual {v5,v8}, android.widget.TextView.setVisibility
 Label_11:
 	.line 1291
-	  194| add-int/lit8 v5, v2, #-1 (0xffffffff | -nan)
+	  194| add-int/lit8 v5, v2, #-1 (0xffffffff | NaN)
 	  196| invoke-virtual {v0,v5}, java.lang.String.charAt
 	  199| move-result v5
 	  200| const/16 v6, #+32 (0x00000020 | 0.000000)
 	  202| if-ne v5, v6, Label_12
 	.line 1292
-	  204| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	  204| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 Label_12:
 	.line 1294
 	.line 1252
@@ -116984,7 +116984,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog.<init>() : v
 	   27| fill-array-data v0, Label_1
 	   30| iput-object v0, v3, com.android.calendar.recurrencepicker.RecurrencePickerDialog.TIME_DAY_TO_CALENDAR_DAY
 	.line 317
-	   32| const/4 v0, #-1 (0xffffffff | -nan)
+	   32| const/4 v0, #-1 (0xffffffff | NaN)
 	   33| iput v0, v3, com.android.calendar.recurrencepicker.RecurrencePickerDialog.mIntervalResId
 	.line 325
 	   35| new-instance v0, java.util.ArrayList
@@ -117605,7 +117605,7 @@ Label_23:
 	  332| if-eqz v2, Label_24
 	.line 604
 	  334| iget-object v2, v8, com.android.calendarcommon2.EventRecurrence.bydayNum
-	  336| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	  336| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	  338| aput v4, v2, v0
 	.line 605
 	  340| iget-object v2, v8, com.android.calendarcommon2.EventRecurrence.byday
@@ -117615,7 +117615,7 @@ Label_23:
 Label_24:
 	.line 602
 	.line 596
-	  348| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	  348| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	  350| goto Label_23
 Label_25:
 	.line 596
@@ -117658,7 +117658,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog.isSupportedM
 Label_1:
 	    7| return v0
 Label_2:
-	    8| const/4 v2, #-1 (0xffffffff | -nan)
+	    8| const/4 v2, #-1 (0xffffffff | NaN)
 	    9| if-eq v3, v2, Label_1
 	   11| move v0, v1
 	   12| goto Label_1
@@ -117898,7 +117898,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog.updateEndCou
 	   22| move-result v2
 	.line 1050
 	.local v2, "markerStart", int
-	   23| const/4 v4, #-1 (0xffffffff | -nan)
+	   23| const/4 v4, #-1 (0xffffffff | NaN)
 	   24| if-eq v2, v4, Label_1
 	.line 1051
 	   26| if-nez v2, Label_2
@@ -117936,7 +117936,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog.updateInterv
 	.src "RecurrencePickerDialog.java"
 	.line 1024
 	.prologue_end
-	    0| const/4 v7, #-1 (0xffffffff | -nan)
+	    0| const/4 v7, #-1 (0xffffffff | NaN)
 	.line 1024
 	    1| iget v4, v8, com.android.calendar.recurrencepicker.RecurrencePickerDialog.mIntervalResId
 	    3| if-ne v4, v7, Label_1
@@ -118028,7 +118028,7 @@ method com.android.calendar.recurrencepicker.RecurrencePickerDialog.onCheckedCha
 	.line 1121
 	.prologue_end
 	.line 1121
-	    0| const/4 v1, #-1 (0xffffffff | -nan)
+	    0| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 1122
 	.local v1, "itemIdx", int
 	    1| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -118037,7 +118037,7 @@ Label_1:
 	    2| const/4 v2, #+7 (0x00000007 | 0.000000)
 	    3| if-ge v0, v2, Label_3
 	.line 1123
-	    5| const/4 v2, #-1 (0xffffffff | -nan)
+	    5| const/4 v2, #-1 (0xffffffff | NaN)
 	    6| if-ne v1, v2, Label_2
 	    8| iget-object v2, v3, com.android.calendar.recurrencepicker.RecurrencePickerDialog.mWeekByDayButtons
 	   10| aget-object v2, v2, v0
@@ -119394,7 +119394,7 @@ Label_13:
 	  212| if-lt v6, v8, Label_14
 	.line 954
 	  214| iget-object v6, v12, com.android.calendar.recurrencepicker.RecurrencePickerDialog.mModel
-	  216| const/4 v8, #-1 (0xffffffff | -nan)
+	  216| const/4 v8, #-1 (0xffffffff | NaN)
 	  217| iput v8, v6, com.android.calendar.recurrencepicker.RecurrencePickerDialog$RecurrenceModel.monthlyByNthDayOfWeek
 Label_14:
 	.line 956
@@ -119418,7 +119418,7 @@ Label_15:
 Label_16:
 	.line 966
 	.local v5, "msgIndex", int
-	  242| add-int/lit8 v6, v5, #-1 (0xffffffff | -nan)
+	  242| add-int/lit8 v6, v5, #-1 (0xffffffff | NaN)
 	  244| aget-object v6, v4, v6
 	.line 965
 	  246| iput-object v6, v12, com.android.calendar.recurrencepicker.RecurrencePickerDialog.mMonthRepeatByDayOfWeekStr
@@ -120454,7 +120454,7 @@ Label_2:
 	   99| new-array v1, v1, com.android.calendar.selectcalendars.SelectCalendarsSimpleAdapter$CalendarRow[]
 	  101| iput-object v1, v7, com.android.calendar.selectcalendars.SelectCalendarsSimpleAdapter.mData
 	.line 196
-	  103| const/4 v1, #-1 (0xffffffff | -nan)
+	  103| const/4 v1, #-1 (0xffffffff | NaN)
 	  104| invoke-interface {v8,v1}, android.database.Cursor.moveToPosition
 	.line 197
 	  107| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -120569,7 +120569,7 @@ Label_2:
 	.line 343
 	   12| iget-object v1, v4, com.android.calendar.selectcalendars.SelectCalendarsSimpleAdapter.mData
 	   14| array-length v1, v1
-	   15| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   15| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   17| if-ne v5, v1, Label_7
 	   19| const/4 v1, #+4 (0x00000004 | 0.000000)
 Label_3:
@@ -120577,7 +120577,7 @@ Label_3:
 	.line 344
 	   21| if-lez v5, Label_4
 	   23| iget-object v1, v4, com.android.calendar.selectcalendars.SelectCalendarsSimpleAdapter.mData
-	   25| add-int/lit8 v3, v5, #-1 (0xffffffff | -nan)
+	   25| add-int/lit8 v3, v5, #-1 (0xffffffff | NaN)
 	   27| aget-object v1, v1, v3
 	   29| iget-boolean v1, v1, com.android.calendar.selectcalendars.SelectCalendarsSimpleAdapter$CalendarRow.selected
 	   31| if-eqz v1, Label_4
@@ -120874,7 +120874,7 @@ Label_4:
 	  318| move/from16 v0, v19
 	  320| invoke-virtual {v13,v0}, android.widget.TextView.setVisibility
 	.line 302
-	  323| const/16 v19, #-2 (0xfffffffe | -nan)
+	  323| const/16 v19, #-2 (0xfffffffe | NaN)
 	  325| move/from16 v0, v19
 	  327| iput v0, v9, android.view.ViewGroup$LayoutParams.height
 Label_5:
@@ -120927,7 +120927,7 @@ Label_10:
 	  355| move/from16 v0, v19
 	  357| invoke-virtual {v13,v0}, android.widget.TextView.setVisibility
 	.line 305
-	  360| const/16 v19, #-1 (0xffffffff | -nan)
+	  360| const/16 v19, #-1 (0xffffffff | NaN)
 	  362| move/from16 v0, v19
 	  364| iput v0, v9, android.view.ViewGroup$LayoutParams.height
 	  366| goto Label_5
@@ -120966,7 +120966,7 @@ Label_12:
 	  416| move-object/from16 v0, v19
 	  418| array-length v0, v0
 	  419| move/from16 v19, v0
-	  421| add-int/lit8 v19, v19, #-1 (0xffffffff | -nan)
+	  421| add-int/lit8 v19, v19, #-1 (0xffffffff | NaN)
 	  423| move/from16 v0, v23
 	  425| move/from16 v1, v19
 	  427| if-ne v0, v1, Label_15
@@ -121469,7 +121469,7 @@ Label_1:
 	   71| new-array v3, v3, com.android.calendar.selectcalendars.SelectCalendarsSyncAdapter$CalendarRow[]
 	   73| iput-object v3, v7, com.android.calendar.selectcalendars.SelectCalendarsSyncAdapter.mData
 	.line 121
-	   75| const/4 v3, #-1 (0xffffffff | -nan)
+	   75| const/4 v3, #-1 (0xffffffff | NaN)
 	   76| invoke-interface {v8,v3}, android.database.Cursor.moveToPosition
 	.line 122
 	   79| const/4 v2, #+0 (0x00000000 | 0.000000)
@@ -124292,7 +124292,7 @@ method com.android.calendar.selectcalendars.SelectVisibleCalendarsActivity$1.onC
 	    1| iget-object v0, v9, com.android.calendar.selectcalendars.SelectVisibleCalendarsActivity$1.this$0
 	    3| invoke-static {v0}, com.android.calendar.selectcalendars.SelectVisibleCalendarsActivity.-get0
 	    6| move-result-object v0
-	    7| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    7| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	    9| const-wide/16 v2, #+128 (0x00000080 | 0.000000)
 	   11| const/4 v8, #+0 (0x00000000 | 0.000000)
 	   12| move-object v1, v9
@@ -125479,7 +125479,7 @@ method com.android.calendar.widget.CalendarAppWidgetModel.<init>(android.content
 	.line 256
 	   29| iget v1, v7, com.android.calendar.widget.CalendarAppWidgetModel.mTodayJulianDay
 	   31| add-int/lit8 v1, v1, #+7 (0x00000007 | 0.000000)
-	   33| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   33| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   35| iput v1, v7, com.android.calendar.widget.CalendarAppWidgetModel.mMaxJulianDay
 	.line 257
 	   37| new-instance v1, java.util.ArrayList
@@ -125756,7 +125756,7 @@ Label_3:
 	   85| iput-object v4, v0, com.android.calendar.widget.CalendarAppWidgetModel.mHomeTZName
 Label_4:
 	.line 277
-	   87| const/4 v4, #-1 (0xffffffff | -nan)
+	   87| const/4 v4, #-1 (0xffffffff | NaN)
 	   88| move-object/from16 v0, v35
 	   90| invoke-interface {v0,v4}, android.database.Cursor.moveToPosition
 	.line 278
@@ -126708,7 +126708,7 @@ method com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory$3.ru
 	   12| if-nez v1, Label_2
 	.line 586
 	   14| iget-object v1, v5, com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory$3.this$1
-	   16| const/4 v2, #-1 (0xffffffff | -nan)
+	   16| const/4 v2, #-1 (0xffffffff | NaN)
 	   17| invoke-static {v1,v2}, com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.-set0
 	.line 587
 	.line 598
@@ -126847,7 +126847,7 @@ method com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.<ini
 	.line 128
 	    0| invoke-direct {v1}, android.content.BroadcastReceiver.<init>
 	.line 128
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| iput v0, v1, com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.mLastSerialNum
 	.line 130
 	    6| new-instance v0, android.os.Handler
@@ -126876,7 +126876,7 @@ method com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.<ini
 	.line 128
 	    0| invoke-direct {v2}, android.content.BroadcastReceiver.<init>
 	.line 128
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| iput v0, v2, com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.mLastSerialNum
 	.line 130
 	    6| new-instance v0, android.os.Handler
@@ -128041,7 +128041,7 @@ Label_9:
 	.local v14, "widgetManager", android.appwidget.AppWidgetManager
 	  274| move-object/from16 v0, v22
 	  276| iget v15, v0, com.android.calendar.widget.CalendarAppWidgetService$CalendarFactory.mAppWidgetId
-	  278| const/16 v17, #-1 (0xffffffff | -nan)
+	  278| const/16 v17, #-1 (0xffffffff | NaN)
 	  280| move/from16 v0, v17
 	  282| if-ne v15, v0, Label_15
 	.line 549
@@ -128420,7 +128420,7 @@ Label_1:
 	   28| const/16 v4, #+45 (0x0000002d | 0.000000)
 	   30| if-ne v0, v4, Label_3
 	.line 66
-	   32| const/4 v4, #-1 (0xffffffff | -nan)
+	   32| const/4 v4, #-1 (0xffffffff | NaN)
 	   33| iput v4, v7, com.android.calendarcommon2.Duration.sign
 	.line 67
 	   35| const/4 v1, #+1 (0x00000001 | 0.000000)
@@ -128492,7 +128492,7 @@ Label_7:
 	.line 93
 	  115| mul-int/lit8 v3, v3, #+10 (0x0000000a | 0.000000)
 	.line 94
-	  117| add-int/lit8 v4, v0, #-48 (0xffffffd0 | -nan)
+	  117| add-int/lit8 v4, v0, #-48 (0xffffffd0 | NaN)
 	  119| add-int/2addr v3, v4
 Label_8:
 	.line 90
@@ -128758,7 +128758,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseByDay.parseWday(java.lan
 	.line 831
 	    1| invoke-virtual {v8}, java.lang.String.length
 	    4| move-result v5
-	    5| add-int/lit8 v4, v5, #-2 (0xfffffffe | -nan)
+	    5| add-int/lit8 v4, v5, #-2 (0xfffffffe | NaN)
 	.line 834
 	.local v4, "wdayStrStart", int
 	    7| if-lez v4, Label_2
@@ -128767,7 +128767,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseByDay.parseWday(java.lan
 	   12| move-result-object v1
 	.line 837
 	.local v1, "numPart", java.lang.String
-	   13| const/16 v5, #-53 (0xffffffcb | -nan)
+	   13| const/16 v5, #-53 (0xffffffcb | NaN)
 	   15| const/16 v6, #+53 (0x00000035 | 0.000000)
 	   17| invoke-static {v1,v5,v6,v7}, com.android.calendarcommon2.EventRecurrence$ParseByDay.parseIntRange
 	   20| move-result v0
@@ -129046,7 +129046,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseByMonthDay.parsePart(jav
 	.line 854
 	.prologue_end
 	.line 854
-	    0| const/16 v1, #-31 (0xffffffe1 | -nan)
+	    0| const/16 v1, #-31 (0xffffffe1 | NaN)
 	    2| const/16 v2, #+31 (0x0000001f | 0.000000)
 	    4| const/4 v3, #+0 (0x00000000 | 0.000000)
 	    5| invoke-static {v5,v1,v2,v3}, com.android.calendarcommon2.EventRecurrence$ParseByMonthDay.parseNumberList
@@ -129133,7 +129133,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseBySetPos.parsePart(java.
 	.prologue_end
 	.line 890
 	    0| const/high16 v1, #-2147483648 (0x80000000 | -0.000000)
-	    2| const v2, #+2147483647 (0x7fffffff | nan)
+	    2| const v2, #+2147483647 (0x7fffffff | NaN)
 	    5| const/4 v3, #+1 (0x00000001 | 0.000000)
 	    6| invoke-static {v5,v1,v2,v3}, com.android.calendarcommon2.EventRecurrence$ParseBySetPos.parseNumberList
 	    9| move-result-object v0
@@ -129175,7 +129175,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseByWeekNo.parsePart(java.
 	.line 872
 	.prologue_end
 	.line 872
-	    0| const/16 v1, #-53 (0xffffffcb | -nan)
+	    0| const/16 v1, #-53 (0xffffffcb | NaN)
 	    2| const/16 v2, #+53 (0x00000035 | 0.000000)
 	    4| const/4 v3, #+0 (0x00000000 | 0.000000)
 	    5| invoke-static {v5,v1,v2,v3}, com.android.calendarcommon2.EventRecurrence$ParseByWeekNo.parseNumberList
@@ -129218,7 +129218,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseByYearDay.parsePart(java
 	.line 863
 	.prologue_end
 	.line 863
-	    0| const/16 v1, #-366 (0xfffffe92 | -nan)
+	    0| const/16 v1, #-366 (0xfffffe92 | NaN)
 	    2| const/16 v2, #+366 (0x0000016e | 0.000000)
 	    4| const/4 v3, #+0 (0x00000000 | 0.000000)
 	    5| invoke-static {v5,v1,v2,v3}, com.android.calendarcommon2.EventRecurrence$ParseByYearDay.parseNumberList
@@ -129263,7 +129263,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseCount.parsePart(java.lan
 	    0| const/4 v3, #+1 (0x00000001 | 0.000000)
 	.line 754
 	    1| const/high16 v0, #-2147483648 (0x80000000 | -0.000000)
-	    3| const v1, #+2147483647 (0x7fffffff | nan)
+	    3| const v1, #+2147483647 (0x7fffffff | NaN)
 	    6| invoke-static {v5,v0,v1,v3}, com.android.calendarcommon2.EventRecurrence$ParseCount.parseIntRange
 	    9| move-result v0
 	   10| iput v0, v6, com.android.calendarcommon2.EventRecurrence.count
@@ -129378,7 +129378,7 @@ method com.android.calendarcommon2.EventRecurrence$ParseInterval.parsePart(java.
 	    0| const/4 v3, #+1 (0x00000001 | 0.000000)
 	.line 765
 	    1| const/high16 v0, #-2147483648 (0x80000000 | -0.000000)
-	    3| const v1, #+2147483647 (0x7fffffff | nan)
+	    3| const v1, #+2147483647 (0x7fffffff | NaN)
 	    6| invoke-static {v5,v0,v1,v3}, com.android.calendarcommon2.EventRecurrence$ParseInterval.parseIntRange
 	    9| move-result v0
 	   10| iput v0, v6, com.android.calendarcommon2.EventRecurrence.interval
@@ -129773,7 +129773,7 @@ method com.android.calendarcommon2.EventRecurrence.appendNumbers(java.lang.Strin
 	.line 299
 	    2| invoke-virtual {v2,v3}, java.lang.StringBuilder.append
 	.line 300
-	    5| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	    5| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	.line 301
 	    7| const/4 v0, #+0 (0x00000000 | 0.000000)
 Label_1:
@@ -130633,7 +130633,7 @@ Label_5:
 	  118| const-string/jumbo v3, ";BYDAY="
 	  121| invoke-virtual {v2,v3}, java.lang.StringBuilder.append
 	.line 379
-	  124| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	  124| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	.line 380
 	  126| const/4 v1, #+0 (0x00000000 | 0.000000)
 Label_6:
@@ -130781,7 +130781,7 @@ Label_1:
 	   13| const/16 v10, #+8 (0x00000008 | 0.000000)
 	   15| if-lt v7, v10, Label_2
 	.line 512
-	   17| add-int/lit8 v7, v7, #-7 (0xfffffff9 | -nan)
+	   17| add-int/lit8 v7, v7, #-7 (0xfffffff9 | NaN)
 	   19| goto Label_1
 Label_2:
 	.line 514
@@ -130848,7 +130848,7 @@ Label_8:
 	.restart_local v9
 	   65| if-lez v9, Label_10
 	.line 544
-	   67| add-int/lit8 v10, v9, #-1 (0xffffffff | -nan)
+	   67| add-int/lit8 v10, v9, #-1 (0xffffffff | NaN)
 	   69| mul-int/lit8 v10, v10, #+7 (0x00000007 | 0.000000)
 	   71| add-int/2addr v7, v10
 	.line 545
@@ -131059,7 +131059,7 @@ method com.android.calendarcommon2.RecurrenceProcessor$DaySet.setRecurrence(com.
 	    0| const/4 v0, #+0 (0x00000000 | 0.000000)
 	    1| iput v0, v1, com.android.calendarcommon2.RecurrenceProcessor$DaySet.mYear
 	.line 426
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| iput v0, v1, com.android.calendarcommon2.RecurrenceProcessor$DaySet.mMonth
 	.line 427
 	    6| iput-object v2, v1, com.android.calendarcommon2.RecurrenceProcessor$DaySet.mR
@@ -131361,7 +131361,7 @@ Label_11:
 	  206| if-lez v6, Label_16
 	.line 288
 	  208| iget v6, v10, com.android.calendarcommon2.EventRecurrence.bydayCount
-	  210| add-int/lit8 v4, v6, #-1 (0xffffffff | -nan)
+	  210| add-int/lit8 v4, v6, #-1 (0xffffffff | NaN)
 Label_12:
 	.restart_local v4
 	  212| if-ltz v4, Label_15
@@ -131397,7 +131397,7 @@ Label_13:
 Label_14:
 	.line 288
 	.restart_local v4
-	  258| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	  258| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	  260| goto Label_12
 Label_15:
 	.line 296
@@ -131514,7 +131514,7 @@ Label_6:
 	.line 365
 	.end_local v1
 	   59| iget v10, v14, com.android.calendarcommon2.EventRecurrence.bysetposCount
-	   61| add-int/lit8 v6, v10, #-1 (0xffffffff | -nan)
+	   61| add-int/lit8 v6, v10, #-1 (0xffffffff | NaN)
 Label_7:
 	   63| if-ltz v6, Label_12
 	.line 366
@@ -131527,11 +131527,11 @@ Label_7:
 	   71| if-le v7, v4, Label_9
 Label_8:
 	.line 365
-	   73| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   73| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   75| goto Label_7
 Label_9:
 	.line 371
-	   76| add-int/lit8 v10, v7, #-1 (0xffffffff | -nan)
+	   76| add-int/lit8 v10, v7, #-1 (0xffffffff | NaN)
 	   78| aget v10, v2, v10
 	   80| iget v11, v15, android.text.format.Time.monthDay
 	   82| if-ne v10, v11, Label_8
@@ -131795,7 +131795,7 @@ method com.android.calendarcommon2.RecurrenceProcessor.unsafeNormalize(android.t
 	.line 1146
 	.local v10, "year", int
 	   14| if-gez v9, Label_6
-	   16| add-int/lit8 v13, v9, #-59 (0xffffffc5 | -nan)
+	   16| add-int/lit8 v13, v9, #-59 (0xffffffc5 | NaN)
 Label_1:
 	   18| div-int/lit8 v2, v13, #+60 (0x0000003c | 0.000000)
 	.line 1147
@@ -131806,7 +131806,7 @@ Label_1:
 	   23| add-int/2addr v5, v2
 	.line 1149
 	   24| if-gez v5, Label_7
-	   26| add-int/lit8 v13, v5, #-59 (0xffffffc5 | -nan)
+	   26| add-int/lit8 v13, v5, #-59 (0xffffffc5 | NaN)
 Label_2:
 	   28| div-int/lit8 v1, v13, #+60 (0x0000003c | 0.000000)
 	.line 1150
@@ -131817,7 +131817,7 @@ Label_2:
 	   33| add-int/2addr v4, v1
 	.line 1152
 	   34| if-gez v4, Label_8
-	   36| add-int/lit8 v13, v4, #-23 (0xffffffe9 | -nan)
+	   36| add-int/lit8 v13, v4, #-23 (0xffffffe9 | NaN)
 Label_3:
 	   38| div-int/lit8 v0, v13, #+24 (0x00000018 | 0.000000)
 	.line 1153
@@ -131839,7 +131839,7 @@ Label_5:
 	.local v3, "days", int
 	   53| add-int/2addr v7, v3
 	.line 1169
-	   54| add-int/lit8 v10, v10, #-1 (0xffffffff | -nan)
+	   54| add-int/lit8 v10, v10, #-1 (0xffffffff | NaN)
 	   56| goto Label_4
 Label_6:
 	.end_local v0
@@ -131864,7 +131864,7 @@ Label_8:
 Label_9:
 	.line 1167
 	.restart_local v0
-	   63| add-int/lit8 v13, v10, #-1 (0xffffffff | -nan)
+	   63| add-int/lit8 v13, v10, #-1 (0xffffffff | NaN)
 	   65| invoke-static {v13}, com.android.calendarcommon2.RecurrenceProcessor.yearLength
 	   68| move-result v3
 	.restart_local v3
@@ -131876,7 +131876,7 @@ Label_10:
 	.line 1173
 	   72| add-int/lit8 v13, v6, #+1 (0x00000001 | 0.000000)
 	   74| div-int/lit8 v13, v13, #+12 (0x0000000c | 0.000000)
-	   76| add-int/lit8 v12, v13, #-1 (0xffffffff | -nan)
+	   76| add-int/lit8 v12, v13, #-1 (0xffffffff | NaN)
 	.line 1174
 	.local v12, "years", int
 	   78| add-int/2addr v10, v12
@@ -131912,7 +131912,7 @@ Label_12:
 	.line 1196
 	  102| if-lt v6, v14, Label_11
 	.line 1197
-	  104| add-int/lit8 v6, v6, #-12 (0xfffffff4 | -nan)
+	  104| add-int/lit8 v6, v6, #-12 (0xfffffff4 | NaN)
 	.line 1198
 	.line 1176
 	  106| add-int/lit8 v10, v10, #+1 (0x00000001 | 0.000000)
@@ -131985,11 +131985,11 @@ method com.android.calendarcommon2.RecurrenceProcessor.weekDay(int, int, int) : 
 	.line 1266
 	    3| add-int/lit8 v3, v3, #+12 (0x0000000c | 0.000000)
 	.line 1267
-	    5| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	    5| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 Label_1:
 	.line 1269
 	    7| mul-int/lit8 v0, v3, #+13 (0x0000000d | 0.000000)
-	    9| add-int/lit8 v0, v0, #-14 (0xfffffff2 | -nan)
+	    9| add-int/lit8 v0, v0, #-14 (0xfffffff2 | NaN)
 	   11| div-int/lit8 v0, v0, #+5 (0x00000005 | 0.000000)
 	   13| add-int/2addr v0, v4
 	   14| add-int/2addr v0, v2
@@ -132013,7 +132013,7 @@ method com.android.calendarcommon2.RecurrenceProcessor.yearDay(int, int, int) : 
 	    0| sget-object v1, com.android.calendarcommon2.RecurrenceProcessor.DAYS_IN_YEAR_PRECEDING_MONTH
 	    2| aget v1, v1, v3
 	    4| add-int/2addr v1, v4
-	    5| add-int/lit8 v0, v1, #-1 (0xffffffff | -nan)
+	    5| add-int/lit8 v0, v1, #-1 (0xffffffff | NaN)
 	.line 1282
 	.local v0, "yearDay", int
 	    7| const/4 v1, #+2 (0x00000002 | 0.000000)
@@ -132109,7 +132109,7 @@ Label_1:
 	   60| move-object/from16 v1, v61
 	   62| invoke-virtual {v0,v1}, com.android.calendarcommon2.RecurrenceProcessor$DaySet.setRecurrence
 	.line 767
-	   65| const-wide v56/v57, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	   65| const-wide v56/v57, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	   70| cmp-long v56, v64, v56
 	   72| if-nez v56, Label_3
 	   74| move-object/from16 v0, v61
@@ -132535,7 +132535,7 @@ Label_23:
 	.restart_local v50
 	.restart_local v51
 	.restart_local v53
-	  595| const-wide v46/v47, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	  595| const-wide v46/v47, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.restart_local v46
 	.line 877
 	  600| goto/16 Label_12
@@ -132589,7 +132589,7 @@ Label_25:
 Label_26:
 	.line 895
 	.local v9, "month", int
-	  656| add-int/lit8 v9, v9, #-1 (0xffffffff | -nan)
+	  656| add-int/lit8 v9, v9, #-1 (0xffffffff | NaN)
 	.line 898
 	  658| const/16 v16, #+1 (0x00000001 | 0.000000)
 	.line 899
@@ -133086,7 +133086,7 @@ method com.android.calendarcommon2.RecurrenceProcessor.expand(android.text.forma
 	   40| move-result-wide v6
 	.line 652
 	.local v6, "rangeStartDateValue", long
-	   41| const-wide/16 v16, #-1 (0xffffffff | -nan)
+	   41| const-wide/16 v16, #-1 (0xffffffff | NaN)
 	   43| cmp-long v3, v36, v16
 	   45| if-eqz v3, Label_3
 	.line 653
@@ -133137,7 +133137,7 @@ Label_3:
 	.end_local v5
 	.end_local v8
 	.end_local v11
-	  102| const-wide v8/v9, #+9223372036854775807 (0x7fffffffffffffff | nan)
+	  102| const-wide v8/v9, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.restart_local v8
 	.line 667
 	  107| goto Label_1
@@ -133550,7 +133550,7 @@ method com.android.calendarcommon2.RecurrenceSet.parseRecurrenceDates(java.lang.
 	   10| move-result v7
 	.line 155
 	.local v7, "tzidx", int
-	   11| const/4 v8, #-1 (0xffffffff | -nan)
+	   11| const/4 v8, #-1 (0xffffffff | NaN)
 	   12| if-eq v7, v8, Label_1
 	.line 156
 	   14| invoke-virtual {v11,v10,v7}, java.lang.String.substring
@@ -133750,7 +133750,7 @@ method com.android.colorpicker.ColorPickerPalette.createTableRow() : android.wid
 	.src "ColorPickerPalette.java"
 	.line 74
 	.prologue_end
-	    0| const/4 v3, #-2 (0xfffffffe | -nan)
+	    0| const/4 v3, #-2 (0xfffffffe | NaN)
 	.line 74
 	    1| new-instance v1, android.widget.TableRow
 	    3| invoke-virtual {v4}, com.android.colorpicker.ColorPickerPalette.getContext
@@ -134280,7 +134280,7 @@ Label_1:
 	   44| cmpl-float v8, v2, v3
 	   46| if-lez v8, Label_2
 	.line 45
-	   48| const/4 v8, #-1 (0xffffffff | -nan)
+	   48| const/4 v8, #-1 (0xffffffff | NaN)
 	   49| return v8
 Label_2:
 	.line 47
@@ -134294,7 +134294,7 @@ Label_3:
 	   56| cmpl-float v8, v4, v5
 	   58| if-lez v8, Label_4
 	.line 50
-	   60| const/4 v8, #-1 (0xffffffff | -nan)
+	   60| const/4 v8, #-1 (0xffffffff | NaN)
 	   61| return v8
 Label_4:
 	.line 52
@@ -134308,7 +134308,7 @@ Label_5:
 	   68| cmpl-float v8, v6, v7
 	   70| if-lez v8, Label_6
 	.line 55
-	   72| const/4 v8, #-1 (0xffffffff | -nan)
+	   72| const/4 v8, #-1 (0xffffffff | NaN)
 	   73| return v8
 Label_6:
 	.line 59
@@ -134423,7 +134423,7 @@ Label_3:
 	.local v1, "dotFound", boolean
 	   17| if-lez v3, Label_9
 	.line 46
-	   19| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   19| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   21| invoke-interface {v11,v3}, android.text.Spanned.charAt
 	   24| move-result v0
 	.line 47
@@ -135986,7 +135986,7 @@ method com.android.datetimepicker.date.DatePickerDialog.<init>() : void
 	   11| invoke-direct {v0}, java.util.HashSet.<init>
 	   14| iput-object v0, v1, com.android.datetimepicker.date.DatePickerDialog.mListeners
 	.line 95
-	   16| const/4 v0, #-1 (0xffffffff | -nan)
+	   16| const/4 v0, #-1 (0xffffffff | NaN)
 	   17| iput v0, v1, com.android.datetimepicker.date.DatePickerDialog.mCurrentView
 	.line 97
 	   19| iget-object v0, v1, com.android.datetimepicker.date.DatePickerDialog.mCalendar
@@ -136564,7 +136564,7 @@ method com.android.datetimepicker.date.DatePickerDialog.onCreateView(android.vie
 	   83| iget-object v8, v12, com.android.datetimepicker.date.DatePickerDialog.mYearView
 	   85| invoke-virtual {v8,v12}, android.widget.TextView.setOnClickListener
 	.line 211
-	   88| const/4 v4, #-1 (0xffffffff | -nan)
+	   88| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 212
 	.local v4, "listPosition", int
 	   89| const/4 v5, #+0 (0x00000000 | 0.000000)
@@ -136700,7 +136700,7 @@ Label_1:
 	.line 261
 	  290| invoke-direct {v12,v3}, com.android.datetimepicker.date.DatePickerDialog.setCurrentView
 	.line 263
-	  293| const/4 v8, #-1 (0xffffffff | -nan)
+	  293| const/4 v8, #-1 (0xffffffff | NaN)
 	  294| if-eq v4, v8, Label_2
 	.line 264
 	  296| if-nez v3, Label_3
@@ -136825,7 +136825,7 @@ method com.android.datetimepicker.date.DatePickerDialog.onSaveInstanceState(andr
 	   69| iget v2, v5, com.android.datetimepicker.date.DatePickerDialog.mCurrentView
 	   71| invoke-virtual {v6,v1,v2}, android.os.Bundle.putInt
 	.line 185
-	   74| const/4 v0, #-1 (0xffffffff | -nan)
+	   74| const/4 v0, #-1 (0xffffffff | NaN)
 	.line 186
 	.local v0, "listPosition", int
 	   75| iget v1, v5, com.android.datetimepicker.date.DatePickerDialog.mCurrentView
@@ -137141,7 +137141,7 @@ Label_4:
 	  125| iget-object v8, v12, com.android.datetimepicker.date.DayPickerView$ScrollStateRunnable.this$0
 	  127| invoke-virtual {v8}, com.android.datetimepicker.date.DayPickerView.getCount
 	  130| move-result v8
-	  131| add-int/lit8 v8, v8, #-1 (0xffffffff | -nan)
+	  131| add-int/lit8 v8, v8, #-1 (0xffffffff | NaN)
 	  133| if-eq v4, v8, Label_7
 	  135| const/4 v6, #+1 (0x00000001 | 0.000000)
 Label_5:
@@ -137220,7 +137220,7 @@ method com.android.datetimepicker.date.DayPickerView.<clinit>() : void
 	.line 59
 	.prologue_end
 	.line 59
-	    0| const/4 v0, #-1 (0xffffffff | -nan)
+	    0| const/4 v0, #-1 (0xffffffff | NaN)
 	    1| sput v0, com.android.datetimepicker.date.DayPickerView.LIST_TOP_OFFSET
 	.line 65
 	.line 45
@@ -137614,7 +137614,7 @@ Label_8:
 	  133| const-string/jumbo v8, "child at "
 	  136| invoke-virtual {v7,v8}, java.lang.StringBuilder.append
 	  139| move-result-object v7
-	  140| add-int/lit8 v8, v2, #-1 (0xffffffff | -nan)
+	  140| add-int/lit8 v8, v2, #-1 (0xffffffff | NaN)
 	  142| invoke-virtual {v7,v8}, java.lang.StringBuilder.append
 	  145| move-result-object v7
 	  146| const-string/jumbo v8, " has top "
@@ -137661,7 +137661,7 @@ method com.android.datetimepicker.date.DayPickerView.init(android.content.Contex
 	.src "DayPickerView.java"
 	.line 114
 	.prologue_end
-	    0| const/4 v1, #-1 (0xffffffff | -nan)
+	    0| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 114
 	    1| new-instance v0, android.os.Handler
 	    3| invoke-direct {v0}, android.os.Handler.<init>
@@ -137743,7 +137743,7 @@ method com.android.datetimepicker.date.DayPickerView.onInitializeAccessibilityEv
 	.line 436
 	    0| invoke-super {v1,v2}, android.widget.ListView.onInitializeAccessibilityEvent
 	.line 437
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| invoke-virtual {v2,v0}, android.view.accessibility.AccessibilityEvent.setItemCount
 	.line 438
 	    7| return-void
@@ -137825,7 +137825,7 @@ method com.android.datetimepicker.date.DayPickerView.performAccessibilityAction(
 	.prologue_end
 	    0| const/16 v11, #+8192 (0x00002000 | 0.000000)
 	    2| const/16 v10, #+4096 (0x00001000 | 0.000000)
-	    4| const/4 v9, #-1 (0xffffffff | -nan)
+	    4| const/4 v9, #-1 (0xffffffff | NaN)
 	    5| const/4 v8, #+0 (0x00000000 | 0.000000)
 	    6| const/4 v7, #+1 (0x00000001 | 0.000000)
 	.line 468
@@ -137898,7 +137898,7 @@ Label_3:
 	   84| if-lt v5, v9, Label_2
 	.line 493
 	   86| iget v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.month
-	   88| add-int/lit8 v5, v5, #-1 (0xffffffff | -nan)
+	   88| add-int/lit8 v5, v5, #-1 (0xffffffff | NaN)
 	   90| iput v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.month
 	.line 494
 	   92| iget v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.month
@@ -137908,7 +137908,7 @@ Label_3:
 	   98| iput v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.month
 	.line 496
 	  100| iget v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.year
-	  102| add-int/lit8 v5, v5, #-1 (0xffffffff | -nan)
+	  102| add-int/lit8 v5, v5, #-1 (0xffffffff | NaN)
 	  104| iput v5, v0, com.android.datetimepicker.date.MonthAdapter$CalendarDay.year
 	  106| goto Label_2
 }
@@ -138280,7 +138280,7 @@ method com.android.datetimepicker.date.MonthAdapter.getView(int, android.view.Vi
 	.src "MonthAdapter.java"
 	.line 172
 	.prologue_end
-	    0| const/4 v7, #-1 (0xffffffff | -nan)
+	    0| const/4 v7, #-1 (0xffffffff | NaN)
 	.line 172
 	    1| const/4 v0, #+0 (0x00000000 | 0.000000)
 	.line 173
@@ -138315,7 +138315,7 @@ Label_2:
 	   33| add-int v5, v6, v7
 	.line 194
 	.local v5, "year", int
-	   35| const/4 v3, #-1 (0xffffffff | -nan)
+	   35| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 195
 	.local v3, "selectedDay", int
 	   36| invoke-direct {v8,v5,v1}, com.android.datetimepicker.date.MonthAdapter.isSelectedDayInMonth
@@ -138537,7 +138537,7 @@ method com.android.datetimepicker.date.MonthView$MonthViewTouchHelper.getItemBou
 	   29| div-int v1, v9, v10
 	.line 779
 	.local v1, "cellWidth", int
-	   31| add-int/lit8 v9, v12, #-1 (0xffffffff | -nan)
+	   31| add-int/lit8 v9, v12, #-1 (0xffffffff | NaN)
 	   33| iget-object v10, v11, com.android.datetimepicker.date.MonthView$MonthViewTouchHelper.this$0
 	   35| invoke-virtual {v10}, com.android.datetimepicker.date.MonthView.findDayOffset
 	   38| move-result v10
@@ -138802,7 +138802,7 @@ method com.android.datetimepicker.date.MonthView.<init>(android.content.Context,
 	.prologue_end
 	    0| const/4 v4, #+1 (0x00000001 | 0.000000)
 	    1| const/4 v3, #+0 (0x00000000 | 0.000000)
-	    2| const/4 v2, #-1 (0xffffffff | -nan)
+	    2| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 195
 	.line 127
 	    3| invoke-direct {v5,v6,v7}, android.view.View.<init>
@@ -139528,7 +139528,7 @@ method com.android.datetimepicker.date.MonthView.getDayFromLocation(float, float
 	    9| if-le v0, v1, Label_2
 Label_1:
 	.line 536
-	   11| const/4 v1, #-1 (0xffffffff | -nan)
+	   11| const/4 v1, #-1 (0xffffffff | NaN)
 	   12| return v1
 Label_2:
 	.line 538
@@ -139556,7 +139556,7 @@ method com.android.datetimepicker.date.MonthView.getInternalDayFromLocation(floa
 	   15| if-lez v4, Label_2
 Label_1:
 	.line 551
-	   17| const/4 v4, #-1 (0xffffffff | -nan)
+	   17| const/4 v4, #-1 (0xffffffff | NaN)
 	   18| return v4
 Label_2:
 	.line 554
@@ -140042,7 +140042,7 @@ Label_3:
 	  133| const/4 v3, #+0 (0x00000000 | 0.000000)
 	  134| iput-boolean v3, v7, com.android.datetimepicker.date.MonthView.mHasToday
 	.line 365
-	  136| const/4 v3, #-1 (0xffffffff | -nan)
+	  136| const/4 v3, #-1 (0xffffffff | NaN)
 	  137| iput v3, v7, com.android.datetimepicker.date.MonthView.mToday
 	.line 367
 	  139| iget-object v3, v7, com.android.datetimepicker.date.MonthView.mCalendar
@@ -140557,9 +140557,9 @@ method com.android.datetimepicker.date.YearPickerView.<init>(android.content.Con
 	    7| invoke-interface {v2,v4}, com.android.datetimepicker.date.DatePickerController.registerOnDateChangedListener
 	.line 56
 	   10| new-instance v0, android.view.ViewGroup$LayoutParams
-	   12| const/4 v2, #-1 (0xffffffff | -nan)
+	   12| const/4 v2, #-1 (0xffffffff | NaN)
 	.line 57
-	   13| const/4 v3, #-2 (0xfffffffe | -nan)
+	   13| const/4 v3, #-2 (0xfffffffe | NaN)
 	.line 56
 	   14| invoke-direct {v0,v2,v3}, android.view.ViewGroup$LayoutParams.<init>
 	.line 58
@@ -140841,7 +140841,7 @@ method com.android.datetimepicker.time.AmPmCirclesView.getIsTouchingAmOrPm(float
 	.src "AmPmCirclesView.java"
 	.line 128
 	.prologue_end
-	    0| const/4 v6, #-1 (0xffffffff | -nan)
+	    0| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 128
 	    1| iget-boolean v3, v7, com.android.datetimepicker.time.AmPmCirclesView.mDrawValuesReady
 	    3| if-nez v3, Label_1
@@ -140996,7 +140996,7 @@ Label_1:
 	.line 95
 	  117| invoke-virtual {v8,v10}, com.android.datetimepicker.time.AmPmCirclesView.setAmOrPm
 	.line 96
-	  120| const/4 v4, #-1 (0xffffffff | -nan)
+	  120| const/4 v4, #-1 (0xffffffff | NaN)
 	  121| iput v4, v8, com.android.datetimepicker.time.AmPmCirclesView.mAmOrPmPressed
 	.line 98
 	  123| iput-boolean v6, v8, com.android.datetimepicker.time.AmPmCirclesView.mIsInitialized
@@ -141654,7 +141654,7 @@ method com.android.datetimepicker.time.RadialPickerLayout.<init>(android.content
 	.line 101
 	.prologue_end
 	    0| const/4 v4, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v3, #-1 (0xffffffff | -nan)
+	    1| const/4 v3, #-1 (0xffffffff | NaN)
 	.line 101
 	.line 85
 	    2| invoke-direct {v5,v6,v7}, android.widget.FrameLayout.<init>
@@ -141788,7 +141788,7 @@ Label_1:
 	   14| return v1
 Label_2:
 	.line 280
-	   15| const/4 v1, #-1 (0xffffffff | -nan)
+	   15| const/4 v1, #-1 (0xffffffff | NaN)
 	   16| return v1
 }
 
@@ -141820,7 +141820,7 @@ Label_1:
 	   22| return v1
 Label_2:
 	.line 503
-	   23| const/4 v1, #-1 (0xffffffff | -nan)
+	   23| const/4 v1, #-1 (0xffffffff | NaN)
 	   24| return v1
 }
 
@@ -141913,7 +141913,7 @@ method com.android.datetimepicker.time.RadialPickerLayout.reselectSelector(int, 
 	.prologue_end
 	    0| const/16 v8, #+360 (0x00000168 | 0.000000)
 	    2| const/4 v7, #+1 (0x00000001 | 0.000000)
-	    3| const/4 v6, #-1 (0xffffffff | -nan)
+	    3| const/4 v6, #-1 (0xffffffff | NaN)
 	    4| const/4 v5, #+0 (0x00000000 | 0.000000)
 	.line 435
 	    5| if-ne v10, v6, Label_1
@@ -142139,12 +142139,12 @@ Label_1:
 	   12| return v5
 Label_2:
 	.line 405
-	   13| const/4 v3, #-1 (0xffffffff | -nan)
+	   13| const/4 v3, #-1 (0xffffffff | NaN)
 	   14| if-ne v6, v3, Label_4
 	.line 406
 	   16| if-ne v5, v1, Label_3
 	.line 407
-	   18| add-int/lit8 v1, v1, #-30 (0xffffffe2 | -nan)
+	   18| add-int/lit8 v1, v1, #-30 (0xffffffe2 | NaN)
 Label_3:
 	.line 409
 	   20| move v5, v1
@@ -142173,7 +142173,7 @@ method com.android.datetimepicker.time.RadialPickerLayout.snapPrefer30s(int) : i
 	    0| iget-object v0, v1, com.android.datetimepicker.time.RadialPickerLayout.mSnapPrefer30sMap
 	    2| if-nez v0, Label_1
 	.line 385
-	    4| const/4 v0, #-1 (0xffffffff | -nan)
+	    4| const/4 v0, #-1 (0xffffffff | NaN)
 	    5| return v0
 Label_1:
 	.line 387
@@ -142271,7 +142271,7 @@ method com.android.datetimepicker.time.RadialPickerLayout.getCurrentItemShowing(
 	   33| move-result-object v1
 	   34| invoke-static {v0,v1}, android.util.Log.e
 	.line 513
-	   37| const/4 v0, #-1 (0xffffffff | -nan)
+	   37| const/4 v0, #-1 (0xffffffff | NaN)
 	   38| return v0
 Label_1:
 	.line 515
@@ -142311,7 +142311,7 @@ Label_1:
 	   15| return v0
 Label_2:
 	.line 290
-	   16| const/4 v0, #-1 (0xffffffff | -nan)
+	   16| const/4 v0, #-1 (0xffffffff | NaN)
 	   17| return v0
 }
 
@@ -142720,7 +142720,7 @@ Label_3:
 	.line 578
 	   36| iput v5, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownY
 	.line 580
-	   38| const/4 v10, #-1 (0xffffffff | -nan)
+	   38| const/4 v10, #-1 (0xffffffff | NaN)
 	   39| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mLastValueSelected
 	.line 581
 	   41| const/4 v10, #+0 (0x00000000 | 0.000000)
@@ -142748,7 +142748,7 @@ Label_5:
 	   68| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mHapticFeedbackController
 	   70| invoke-virtual {v10}, com.android.datetimepicker.HapticFeedbackController.tryVibrate
 	.line 593
-	   73| const/4 v10, #-1 (0xffffffff | -nan)
+	   73| const/4 v10, #-1 (0xffffffff | NaN)
 	   74| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownDegrees
 	.line 594
 	   76| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mHandler
@@ -142769,7 +142769,7 @@ Label_6:
 Label_7:
 	.line 587
 	.line 604
-	   91| const/4 v10, #-1 (0xffffffff | -nan)
+	   91| const/4 v10, #-1 (0xffffffff | NaN)
 	   92| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mIsTouchingAmOrPm
 	   94| goto Label_4
 Label_8:
@@ -142784,7 +142784,7 @@ Label_8:
 	  105| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownDegrees
 	.line 607
 	  107| iget v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownDegrees
-	  109| const/4 v11, #-1 (0xffffffff | -nan)
+	  109| const/4 v11, #-1 (0xffffffff | NaN)
 	  110| if-eq v10, v11, Label_6
 	.line 610
 	  112| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mHapticFeedbackController
@@ -142859,20 +142859,20 @@ Label_12:
 	  203| if-eq v8, v10, Label_1
 	.line 646
 	  205| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mAmPmCirclesView
-	  207| const/4 v11, #-1 (0xffffffff | -nan)
+	  207| const/4 v11, #-1 (0xffffffff | NaN)
 	  208| invoke-virtual {v10,v11}, com.android.datetimepicker.time.AmPmCirclesView.setAmOrPmPressed
 	.line 647
 	  211| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mAmPmCirclesView
 	  213| invoke-virtual {v10}, com.android.datetimepicker.time.AmPmCirclesView.invalidate
 	.line 648
-	  216| const/4 v10, #-1 (0xffffffff | -nan)
+	  216| const/4 v10, #-1 (0xffffffff | NaN)
 	  217| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mIsTouchingAmOrPm
 	  219| goto/16 Label_1
 Label_13:
 	.line 653
 	.end_local v8
 	  221| iget v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownDegrees
-	  223| const/4 v11, #-1 (0xffffffff | -nan)
+	  223| const/4 v11, #-1 (0xffffffff | NaN)
 	  224| if-eq v10, v11, Label_1
 	.line 659
 	  226| const/4 v10, #+1 (0x00000001 | 0.000000)
@@ -142887,7 +142887,7 @@ Label_13:
 	  239| move-result v3
 	.line 662
 	.local v3, "degrees", int
-	  240| const/4 v10, #-1 (0xffffffff | -nan)
+	  240| const/4 v10, #-1 (0xffffffff | NaN)
 	  241| if-eq v3, v10, Label_14
 	.line 663
 	  243| const/4 v10, #+0 (0x00000000 | 0.000000)
@@ -142960,7 +142960,7 @@ Label_17:
 	.line 685
 	.restart_local v8
 	  326| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mAmPmCirclesView
-	  328| const/4 v11, #-1 (0xffffffff | -nan)
+	  328| const/4 v11, #-1 (0xffffffff | NaN)
 	  329| invoke-virtual {v10,v11}, com.android.datetimepicker.time.AmPmCirclesView.setAmOrPmPressed
 	.line 686
 	  332| iget-object v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mAmPmCirclesView
@@ -142986,14 +142986,14 @@ Label_17:
 	  362| invoke-direct {v14,v10,v8}, com.android.datetimepicker.time.RadialPickerLayout.setValueForItem
 Label_18:
 	.line 695
-	  365| const/4 v10, #-1 (0xffffffff | -nan)
+	  365| const/4 v10, #-1 (0xffffffff | NaN)
 	  366| iput v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mIsTouchingAmOrPm
 	  368| goto/16 Label_1
 Label_19:
 	.line 700
 	.end_local v8
 	  370| iget v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDownDegrees
-	  372| const/4 v11, #-1 (0xffffffff | -nan)
+	  372| const/4 v11, #-1 (0xffffffff | NaN)
 	  373| if-eq v10, v11, Label_21
 	.line 701
 	  375| iget-boolean v10, v14, com.android.datetimepicker.time.RadialPickerLayout.mDoingMove
@@ -143001,7 +143001,7 @@ Label_19:
 	  380| move-result v3
 	.line 702
 	.restart_local v3
-	  381| const/4 v10, #-1 (0xffffffff | -nan)
+	  381| const/4 v10, #-1 (0xffffffff | NaN)
 	  382| if-eq v3, v10, Label_21
 	.line 703
 	  384| const/4 v10, #+0 (0x00000000 | 0.000000)
@@ -143165,7 +143165,7 @@ Label_6:
 	   62| const/16 v7, #+8192 (0x00002000 | 0.000000)
 	   64| if-ne v11, v7, Label_2
 	.line 787
-	   66| const/4 v0, #-1 (0xffffffff | -nan)
+	   66| const/4 v0, #-1 (0xffffffff | NaN)
 	   67| goto Label_2
 Label_7:
 	.line 796
@@ -143537,7 +143537,7 @@ method com.android.datetimepicker.time.RadialSelectorView.getDegreesFromCoords(f
 	    4| move/from16 v19, v0
 	    6| if-nez v19, Label_1
 	.line 198
-	    8| const/16 v19, #-1 (0xffffffff | -nan)
+	    8| const/16 v19, #-1 (0xffffffff | NaN)
 	   10| return v19
 Label_1:
 	.line 202
@@ -143822,7 +143822,7 @@ Label_9:
 	  402| goto/16 Label_3
 Label_10:
 	.line 233
-	  404| const/16 v19, #-1 (0xffffffff | -nan)
+	  404| const/16 v19, #-1 (0xffffffff | NaN)
 	  406| return v19
 Label_11:
 	.line 240
@@ -143863,7 +143863,7 @@ Label_11:
 	  455| if-le v4, v10, Label_3
 	.line 246
 	.line 257
-	  457| const/16 v19, #-1 (0xffffffff | -nan)
+	  457| const/16 v19, #-1 (0xffffffff | NaN)
 	  459| return v19
 Label_12:
 	.line 257
@@ -144194,7 +144194,7 @@ method com.android.datetimepicker.time.RadialSelectorView.initialize(android.con
 	.src "RadialSelectorView.java"
 	.line 96
 	.prologue_end
-	    0| const/4 v3, #-1 (0xffffffff | -nan)
+	    0| const/4 v3, #-1 (0xffffffff | NaN)
 	    1| const/high16 v6, #+1065353216 (0x3f800000 | 1.000000)
 	    3| const/4 v4, #+1 (0x00000001 | 0.000000)
 	.line 96
@@ -145191,7 +145191,7 @@ method com.android.datetimepicker.time.RadialTextsView.initialize(android.conten
 	.src "RadialTextsView.java"
 	.line 84
 	.prologue_end
-	    0| const/4 v5, #-1 (0xffffffff | -nan)
+	    0| const/4 v5, #-1 (0xffffffff | NaN)
 	    1| const/4 v3, #+0 (0x00000000 | 0.000000)
 	    2| const/high16 v9, #+1065353216 (0x3f800000 | 1.000000)
 	    4| const/4 v8, #+7 (0x00000007 | 0.000000)
@@ -146087,7 +146087,7 @@ Label_4:
 	   91| iget-object v2, v8, com.android.datetimepicker.time.TimePickerDialog.mTypedTimes
 	   93| invoke-virtual {v2}, java.util.ArrayList.size
 	   96| move-result v2
-	   97| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   97| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   99| invoke-static {v7}, java.lang.Integer.valueOf
 	  102| move-result-object v3
 	  103| invoke-virtual {v1,v2,v3}, java.util.ArrayList.add
@@ -146096,7 +146096,7 @@ Label_4:
 	  108| iget-object v2, v8, com.android.datetimepicker.time.TimePickerDialog.mTypedTimes
 	  110| invoke-virtual {v2}, java.util.ArrayList.size
 	  113| move-result v2
-	  114| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	  114| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	  116| invoke-static {v7}, java.lang.Integer.valueOf
 	  119| move-result-object v3
 	  120| invoke-virtual {v1,v2,v3}, java.util.ArrayList.add
@@ -146119,7 +146119,7 @@ method com.android.datetimepicker.time.TimePickerDialog.deleteLastTypedKey() : i
 	    2| iget-object v2, v3, com.android.datetimepicker.time.TimePickerDialog.mTypedTimes
 	    4| invoke-virtual {v2}, java.util.ArrayList.size
 	    7| move-result v2
-	    8| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	    8| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   10| invoke-virtual {v1,v2}, java.util.ArrayList.remove
 	   13| move-result-object v1
 	   14| check-cast v1, java.lang.Integer
@@ -147365,7 +147365,7 @@ method com.android.datetimepicker.time.TimePickerDialog.getAmOrPmKeyCode(int) : 
 	    0| const/4 v10, #+2 (0x00000002 | 0.000000)
 	    1| const/4 v9, #+1 (0x00000001 | 0.000000)
 	    2| const/4 v8, #+0 (0x00000000 | 0.000000)
-	    3| const/4 v7, #-1 (0xffffffff | -nan)
+	    3| const/4 v7, #-1 (0xffffffff | NaN)
 	.line 776
 	    4| iget v5, v11, com.android.datetimepicker.time.TimePickerDialog.mAmKeyCode
 	    6| if-eq v5, v7, Label_1
@@ -147485,7 +147485,7 @@ method com.android.datetimepicker.time.TimePickerDialog.getEnteredTime(java.lang
 	    0| const/4 v11, #+1 (0x00000001 | 0.000000)
 	    1| const/4 v10, #+0 (0x00000000 | 0.000000)
 	.line 735
-	    2| const/4 v0, #-1 (0xffffffff | -nan)
+	    2| const/4 v0, #-1 (0xffffffff | NaN)
 	.line 736
 	.local v0, "amOrPm", int
 	    3| const/4 v6, #+1 (0x00000001 | 0.000000)
@@ -147501,7 +147501,7 @@ method com.android.datetimepicker.time.TimePickerDialog.getEnteredTime(java.lang
 	   16| iget-object v9, v12, com.android.datetimepicker.time.TimePickerDialog.mTypedTimes
 	   18| invoke-virtual {v9}, java.util.ArrayList.size
 	   21| move-result v9
-	   22| add-int/lit8 v9, v9, #-1 (0xffffffff | -nan)
+	   22| add-int/lit8 v9, v9, #-1 (0xffffffff | NaN)
 	   24| invoke-virtual {v8,v9}, java.util.ArrayList.get
 	   27| move-result-object v8
 	   28| check-cast v8, java.lang.Integer
@@ -147520,10 +147520,10 @@ Label_1:
 Label_2:
 	.line 746
 	.end_local v3
-	   42| const/4 v4, #-1 (0xffffffff | -nan)
+	   42| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 747
 	.local v4, "minute", int
-	   43| const/4 v1, #-1 (0xffffffff | -nan)
+	   43| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 748
 	.local v1, "hour", int
 	   44| move v2, v6
@@ -147636,7 +147636,7 @@ method com.android.datetimepicker.time.TimePickerDialog.getValFromKeyCode(int) :
 	    0| packed-switch v1, Label_11
 	.line 722
 	.line 702
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| return v0
 Label_1:
 	.line 702
@@ -148249,7 +148249,7 @@ method com.android.datetimepicker.time.TimePickerDialog.tryStartingKbMode(int) :
 	    6| move-result v0
 	    7| if-eqz v0, Label_2
 	.line 565
-	    9| const/4 v0, #-1 (0xffffffff | -nan)
+	    9| const/4 v0, #-1 (0xffffffff | NaN)
 	   10| if-eq v3, v0, Label_1
 	   12| invoke-direct {v2,v3}, com.android.datetimepicker.time.TimePickerDialog.addKeyIfLegal
 	   15| move-result v0
@@ -148422,7 +148422,7 @@ Label_7:
 	.local v5, "minuteFormat", java.lang.String
 	  109| const/4 v8, #+0 (0x00000000 | 0.000000)
 	  110| aget v8, v7, v8
-	  112| const/4 v9, #-1 (0xffffffff | -nan)
+	  112| const/4 v9, #-1 (0xffffffff | NaN)
 	  113| if-ne v8, v9, Label_12
 	  115| iget-object v3, v12, com.android.datetimepicker.time.TimePickerDialog.mDoublePlaceholderText
 Label_8:
@@ -148430,7 +148430,7 @@ Label_8:
 	.local v3, "hourStr", java.lang.String
 	  117| const/4 v8, #+1 (0x00000001 | 0.000000)
 	  118| aget v8, v7, v8
-	  120| const/4 v9, #-1 (0xffffffff | -nan)
+	  120| const/4 v9, #-1 (0xffffffff | NaN)
 	  121| if-ne v8, v9, Label_13
 	  123| iget-object v6, v12, com.android.datetimepicker.time.TimePickerDialog.mDoublePlaceholderText
 Label_9:
@@ -148878,8 +148878,8 @@ Label_3:
 	.line 273
 	  455| new-instance v20, android.widget.RelativeLayout$LayoutParams
 	.line 274
-	  457| const/4 v2, #-2 (0xfffffffe | -nan)
-	  458| const/4 v3, #-2 (0xfffffffe | -nan)
+	  457| const/4 v2, #-2 (0xfffffffe | NaN)
+	  458| const/4 v3, #-2 (0xfffffffe | NaN)
 	.line 273
 	  459| move-object/from16 v0, v20
 	  461| invoke-direct {v0,v2,v3}, android.widget.RelativeLayout$LayoutParams.<init>
@@ -148941,10 +148941,10 @@ Label_4:
 	  545| move-object/from16 v0, v26
 	  547| iput-char v2, v0, com.android.datetimepicker.time.TimePickerDialog.mPlaceholderText
 	.line 305
-	  549| const/4 v2, #-1 (0xffffffff | -nan)
+	  549| const/4 v2, #-1 (0xffffffff | NaN)
 	  550| move-object/from16 v0, v26
 	  552| iput v2, v0, com.android.datetimepicker.time.TimePickerDialog.mPmKeyCode
-	  554| const/4 v2, #-1 (0xffffffff | -nan)
+	  554| const/4 v2, #-1 (0xffffffff | NaN)
 	  555| move-object/from16 v0, v26
 	  557| iput v2, v0, com.android.datetimepicker.time.TimePickerDialog.mAmKeyCode
 	.line 306
@@ -148961,7 +148961,7 @@ Label_4:
 	  577| move-object/from16 v0, v26
 	  579| iput-object v2, v0, com.android.datetimepicker.time.TimePickerDialog.mTypedTimes
 	.line 309
-	  581| const/4 v2, #-1 (0xffffffff | -nan)
+	  581| const/4 v2, #-1 (0xffffffff | NaN)
 	  582| move-object/from16 v0, v26
 	  584| invoke-direct {v0,v2}, com.android.datetimepicker.time.TimePickerDialog.tryStartingKbMode
 	.line 310
@@ -150104,7 +150104,7 @@ Label_4:
 	   63| iget-object v3, v10, com.android.ex.chips.BaseRecipientAdapter$DirectoryFilter.this$0
 	   65| invoke-static {v3}, com.android.ex.chips.BaseRecipientAdapter.-get3
 	   68| move-result v4
-	   69| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   69| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	   71| invoke-static {v3,v4}, com.android.ex.chips.BaseRecipientAdapter.-set3
 	.line 478
 	   74| iget-object v3, v10, com.android.ex.chips.BaseRecipientAdapter$DirectoryFilter.this$0
@@ -150716,7 +150716,7 @@ method com.android.ex.chips.CopyDialog.onClick(android.content.DialogInterface, 
 	.line 45
 	.prologue_end
 	.line 45
-	    0| const/4 v1, #-1 (0xffffffff | -nan)
+	    0| const/4 v1, #-1 (0xffffffff | NaN)
 	    1| if-ne v5, v1, Label_1
 	.line 47
 	    3| invoke-virtual {v3}, com.android.ex.chips.CopyDialog.getActivity
@@ -150896,7 +150896,7 @@ Label_5:
 	   66| invoke-virtual {v9,v7}, java.io.InputStream.read
 	   69| move-result v11
 	.local v11, "size", int
-	   70| const/4 v0, #-1 (0xffffffff | -nan)
+	   70| const/4 v0, #-1 (0xffffffff | NaN)
 	   71| if-eq v11, v0, Label_8
 	.line 116
 	   73| const/4 v0, #+0 (0x00000000 | 0.000000)
@@ -151651,7 +151651,7 @@ Label_1:
 	.line 314
 	.local v0, "indicatorIcon", android.graphics.drawable.Drawable
 	   26| sget-object v1, android.graphics.PorterDuff$Mode.SRC_IN
-	   28| const/4 v2, #-1 (0xffffffff | -nan)
+	   28| const/4 v2, #-1 (0xffffffff | NaN)
 	   29| invoke-virtual {v0,v2,v1}, android.graphics.drawable.Drawable.setColorFilter
 Label_2:
 	.line 318
@@ -152223,7 +152223,7 @@ Label_4:
 	   35| move-result v3
 	.line 500
 	.local v3, "index", int
-	   36| const/4 v7, #-1 (0xffffffff | -nan)
+	   36| const/4 v7, #-1 (0xffffffff | NaN)
 	   37| if-eq v3, v7, Label_5
 	.line 501
 	   39| invoke-static {v4}, android.text.SpannableStringBuilder.valueOf
@@ -152804,7 +152804,7 @@ method com.android.ex.chips.RecipientAlternatesAdapter.<init>(android.content.Co
 	   13| invoke-direct {v10,v11,v2,v3}, android.widget.CursorAdapter.<init>
 	.line 56
 	.line 385
-	   16| const/4 v2, #-1 (0xffffffff | -nan)
+	   16| const/4 v2, #-1 (0xffffffff | NaN)
 	   17| iput v2, v10, com.android.ex.chips.RecipientAlternatesAdapter.mCheckedItemPosition
 	.line 385
 	   19| move-wide/from16 v0, v16
@@ -153256,7 +153256,7 @@ Label_3:
 	   66| move-object/from16 v0, v16
 	   68| invoke-virtual {v0,v2}, java.lang.StringBuilder.append
 	.line 112
-	   71| add-int/lit8 v2, v15, #-1 (0xffffffff | -nan)
+	   71| add-int/lit8 v2, v15, #-1 (0xffffffff | NaN)
 	   73| move/from16 v0, v18
 	   75| if-ge v0, v2, Label_4
 	.line 113
@@ -153944,7 +153944,7 @@ method com.android.ex.chips.RecipientAlternatesAdapter.removeUndesiredDestinatio
 	   22| const/4 v5, #+0 (0x00000000 | 0.000000)
 	.line 478
 	.local v5, "defaultDisplayNameSource", int
-	   23| const/4 v15, #-1 (0xffffffff | -nan)
+	   23| const/4 v15, #-1 (0xffffffff | NaN)
 	   24| move-object/from16 v0, v18
 	   26| invoke-interface {v0,v15}, android.database.Cursor.moveToPosition
 Label_1:
@@ -153985,7 +153985,7 @@ Label_2:
 	.end_local v4
 	.end_local v6
 	.end_local v10
-	   73| const/4 v15, #-1 (0xffffffff | -nan)
+	   73| const/4 v15, #-1 (0xffffffff | NaN)
 	   74| move-object/from16 v0, v18
 	   76| invoke-interface {v0,v15}, android.database.Cursor.moveToPosition
 Label_3:
@@ -154282,7 +154282,7 @@ method com.android.ex.chips.RecipientAlternatesAdapter.getItemId(int) : long
 	   11| invoke-interface {v0,v1}, android.database.Cursor.getLong
 Label_1:
 	.line 567
-	   14| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   14| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	   16| return-wide v2
 }
 
@@ -154438,7 +154438,7 @@ method com.android.ex.chips.RecipientEditTextView$10.compare(com.android.ex.chip
 	.local v1, "secondStart", int
 	   12| if-ge v0, v1, Label_1
 	.line 2099
-	   14| const/4 v2, #-1 (0xffffffff | -nan)
+	   14| const/4 v2, #-1 (0xffffffff | NaN)
 	   15| return v2
 Label_1:
 	.line 2100
@@ -155075,7 +155075,7 @@ method com.android.ex.chips.RecipientEditTextView$9.onPostExecute(android.widget
 	.line 1811
 	.prologue_end
 	    0| const/4 v7, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v6, #-1 (0xffffffff | -nan)
+	    1| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 1811
 	    2| iget-object v3, v8, com.android.ex.chips.RecipientEditTextView$9.this$0
 	    4| invoke-static {v3}, com.android.ex.chips.RecipientEditTextView.-get4
@@ -155287,7 +155287,7 @@ Label_1:
 	   39| move-result-object v3
 	   40| invoke-interface {v3,v1}, android.text.Spannable.getSpanStart
 	   43| move-result v3
-	   44| const/4 v4, #-1 (0xffffffff | -nan)
+	   44| const/4 v4, #-1 (0xffffffff | NaN)
 	   45| if-eq v3, v4, Label_1
 	.line 3022
 	   47| iget-object v3, v6, com.android.ex.chips.RecipientEditTextView$IndividualReplacementTask$1.this$1
@@ -155744,7 +155744,7 @@ Label_1:
 	   48| move-result-object v4
 	   49| invoke-interface {v4,v2}, android.text.Spannable.getSpanStart
 	   52| move-result v4
-	   53| const/4 v5, #-1 (0xffffffff | -nan)
+	   53| const/4 v5, #-1 (0xffffffff | NaN)
 	   54| if-eq v4, v5, Label_2
 	.line 2899
 	   56| iget-object v4, v7, com.android.ex.chips.RecipientEditTextView$RecipientReplacementTask$1.this$1
@@ -155831,7 +155831,7 @@ Label_1:
 	   51| move-result-object v3
 	   52| invoke-interface {v3,v1}, android.text.Spannable.getSpanStart
 	   55| move-result v3
-	   56| const/4 v4, #-1 (0xffffffff | -nan)
+	   56| const/4 v4, #-1 (0xffffffff | NaN)
 	   57| if-eq v3, v4, Label_3
 	.line 2922
 	   59| invoke-interface {v1}, com.android.ex.chips.recipientchip.DrawableRecipientChip.getEntry
@@ -155948,7 +155948,7 @@ Label_2:
 	   63| move-result v9
 	.line 2958
 	.local v9, "start", int
-	   64| const/4 v11, #-1 (0xffffffff | -nan)
+	   64| const/4 v11, #-1 (0xffffffff | NaN)
 	   65| if-eq v9, v11, Label_3
 	.line 2962
 	   67| invoke-interface {v10,v0}, android.text.Editable.getSpanEnd
@@ -155989,7 +155989,7 @@ Label_2:
 	.local v2, "displayText", android.text.SpannableString
 	  125| invoke-virtual {v2}, android.text.SpannableString.length
 	  128| move-result v11
-	  129| add-int/lit8 v11, v11, #-1 (0xffffffff | -nan)
+	  129| add-int/lit8 v11, v11, #-1 (0xffffffff | NaN)
 	.line 2969
 	  131| const/4 v12, #+0 (0x00000000 | 0.000000)
 	.line 2971
@@ -156318,7 +156318,7 @@ Label_2:
 	   76| move-result-object v5
 	   77| invoke-interface {v5,v0}, android.text.Spannable.getSpanStart
 	   80| move-result v5
-	   81| const/4 v6, #-1 (0xffffffff | -nan)
+	   81| const/4 v6, #-1 (0xffffffff | NaN)
 	   82| if-eq v5, v6, Label_3
 	.line 2857
 	   84| invoke-interface {v0}, com.android.ex.chips.recipientchip.DrawableRecipientChip.getEntry
@@ -156495,7 +156495,7 @@ Label_9:
 	  152| iget-object v10, v13, com.android.ex.chips.RecipientEditTextView$RecipientTextWatcher.this$0
 	  154| invoke-virtual {v10}, com.android.ex.chips.RecipientEditTextView.length
 	  157| move-result v10
-	  158| add-int/lit8 v4, v10, #-1 (0xffffffff | -nan)
+	  158| add-int/lit8 v4, v10, #-1 (0xffffffff | NaN)
 	.line 2606
 	.local v4, "len", int
 	  160| if-eq v2, v4, Label_13
@@ -156561,7 +156561,7 @@ Label_12:
 	  232| iget-object v10, v13, com.android.ex.chips.RecipientEditTextView$RecipientTextWatcher.this$0
 	  234| invoke-virtual {v10}, com.android.ex.chips.RecipientEditTextView.getSelectionEnd
 	  237| move-result v10
-	  238| add-int/lit8 v2, v10, #-1 (0xffffffff | -nan)
+	  238| add-int/lit8 v2, v10, #-1 (0xffffffff | NaN)
 	.restart_local v2
 	  240| goto Label_9
 Label_13:
@@ -157420,7 +157420,7 @@ method com.android.ex.chips.RecipientEditTextView.commitChip(int, int, android.t
 	.prologue_end
 	    0| const/4 v11, #+1 (0x00000001 | 0.000000)
 	    1| const/4 v10, #+0 (0x00000000 | 0.000000)
-	    2| const/4 v9, #-1 (0xffffffff | -nan)
+	    2| const/4 v9, #-1 (0xffffffff | NaN)
 	.line 1517
 	    3| invoke-direct {v12}, com.android.ex.chips.RecipientEditTextView.positionOfFirstEntryWithTypePerson
 	    6| move-result v3
@@ -157716,7 +157716,7 @@ Label_1:
 	.line 1988
 	   12| invoke-virtual {v2}, java.lang.String.length
 	   15| move-result v5
-	   16| add-int/lit8 v4, v5, #-1 (0xffffffff | -nan)
+	   16| add-int/lit8 v4, v5, #-1 (0xffffffff | NaN)
 	.line 1989
 	.local v4, "textLength", int
 	   18| new-instance v1, android.text.SpannableString
@@ -158298,7 +158298,7 @@ Label_1:
 	   12| if-nez v2, Label_3
 	   14| invoke-virtual {v7}, com.android.ex.chips.RecipientEntry.getContactId
 	   17| move-result-wide v2
-	   18| const-wide/16 v4, #-2 (0xfffffffe | -nan)
+	   18| const-wide/16 v4, #-2 (0xfffffffe | NaN)
 	   20| cmp-long v2, v2, v4
 	   22| if-nez v2, Label_3
 	.line 2072
@@ -158486,7 +158486,7 @@ method com.android.ex.chips.RecipientEditTextView.expand() : void
 	    2| iget-boolean v1, v4, com.android.ex.chips.RecipientEditTextView.mShouldShrink
 	    4| if-eqz v1, Label_1
 	.line 736
-	    6| const v1, #+2147483647 (0x7fffffff | nan)
+	    6| const v1, #+2147483647 (0x7fffffff | NaN)
 	    9| invoke-virtual {v4,v1}, com.android.ex.chips.RecipientEditTextView.setMaxLines
 Label_1:
 	.line 738
@@ -158597,7 +158597,7 @@ method com.android.ex.chips.RecipientEditTextView.findText(android.text.Editable
 	    8| return v3
 Label_1:
 	.line 1918
-	    9| const/4 v0, #-1 (0xffffffff | -nan)
+	    9| const/4 v0, #-1 (0xffffffff | NaN)
 	   10| return v0
 }
 
@@ -158704,7 +158704,7 @@ method com.android.ex.chips.RecipientEditTextView.handleEdit(int, int) : void
 	.src "RecipientEditTextView.java"
 	.line 1629
 	.prologue_end
-	    0| const/4 v6, #-1 (0xffffffff | -nan)
+	    0| const/4 v6, #-1 (0xffffffff | NaN)
 	.line 1629
 	    1| if-eq v8, v6, Label_1
 	    3| if-ne v9, v6, Label_2
@@ -158893,7 +158893,7 @@ method com.android.ex.chips.RecipientEditTextView.loadAvatarIcon(com.android.ex.
 	.src "RecipientEditTextView.java"
 	.line 893
 	.prologue_end
-	    0| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    0| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 893
 	    2| invoke-virtual {v9}, com.android.ex.chips.RecipientEntry.getContactId
 	    5| move-result-wide v0
@@ -158940,7 +158940,7 @@ Label_4:
 	   40| cmp-long v5, v0, v6
 	   42| if-eqz v5, Label_6
 	.line 897
-	   44| const-wide/16 v6, #-2 (0xfffffffe | -nan)
+	   44| const-wide/16 v6, #-2 (0xfffffffe | NaN)
 	   46| cmp-long v5, v0, v6
 	   48| if-eqz v5, Label_5
 	   50| const/4 v2, #+1 (0x00000001 | 0.000000)
@@ -159012,7 +159012,7 @@ Label_4:
 	   24| goto Label_2
 Label_5:
 	.line 1575
-	   25| const/4 v3, #-1 (0xffffffff | -nan)
+	   25| const/4 v3, #-1 (0xffffffff | NaN)
 	   26| return v3
 }
 
@@ -159082,7 +159082,7 @@ method com.android.ex.chips.RecipientEditTextView.putOffsetInRange(int) : int
 	    9| move v4, v2
 	.line 1893
 	.local v4, "realLength", int
-	   10| add-int/lit8 v1, v2, #-1 (0xffffffff | -nan)
+	   10| add-int/lit8 v1, v2, #-1 (0xffffffff | NaN)
 Label_1:
 	.local v1, "i", int
 	   12| if-ltz v1, Label_2
@@ -159092,9 +159092,9 @@ Label_1:
 	   18| const/16 v7, #+32 (0x00000020 | 0.000000)
 	   20| if-ne v6, v7, Label_2
 	.line 1895
-	   22| add-int/lit8 v4, v4, #-1 (0xffffffff | -nan)
+	   22| add-int/lit8 v4, v4, #-1 (0xffffffff | NaN)
 	.line 1893
-	   24| add-int/lit8 v1, v1, #-1 (0xffffffff | -nan)
+	   24| add-int/lit8 v1, v1, #-1 (0xffffffff | NaN)
 	   26| goto Label_1
 Label_2:
 	.line 1903
@@ -159111,13 +159111,13 @@ Label_4:
 	   34| if-ltz v3, Label_5
 	   36| invoke-static {v0,v3}, com.android.ex.chips.RecipientEditTextView.findText
 	   39| move-result v6
-	   40| const/4 v7, #-1 (0xffffffff | -nan)
+	   40| const/4 v7, #-1 (0xffffffff | NaN)
 	   41| if-ne v6, v7, Label_5
 	   43| invoke-direct {v8,v3}, com.android.ex.chips.RecipientEditTextView.findChip
 	   46| move-result-object v6
 	   47| if-nez v6, Label_5
 	.line 1909
-	   49| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	   49| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	   51| goto Label_4
 Label_5:
 	.line 1911
@@ -159160,7 +159160,7 @@ method com.android.ex.chips.RecipientEditTextView.selectChip(com.android.ex.chip
 	   29| sub-int v6, v2, v3
 	   31| invoke-interface {v0}, android.text.Editable.length
 	   34| move-result v7
-	   35| add-int/lit8 v7, v7, #-1 (0xffffffff | -nan)
+	   35| add-int/lit8 v7, v7, #-1 (0xffffffff | NaN)
 	   37| if-ne v6, v7, Label_1
 	.line 2321
 	   39| add-int/lit8 v2, v2, #+1 (0x00000001 | 0.000000)
@@ -159213,7 +159213,7 @@ Label_3:
 	.line 2341
 	   97| invoke-interface {v11}, com.android.ex.chips.recipientchip.DrawableRecipientChip.getContactId
 	  100| move-result-wide v6
-	  101| const-wide/16 v8, #-2 (0xfffffffe | -nan)
+	  101| const-wide/16 v8, #-2 (0xfffffffe | NaN)
 	  103| cmp-long v6, v6, v8
 	  105| if-eqz v6, Label_5
 	.line 2342
@@ -159275,7 +159275,7 @@ method com.android.ex.chips.RecipientEditTextView.setChipDimensions(android.cont
 	.prologue_end
 	    0| const/4 v8, #+0 (0x00000000 | 0.000000)
 	    1| const/high16 v7, #-1082130432 (0xbf800000 | -1.000000)
-	    3| const/4 v6, #-1 (0xffffffff | -nan)
+	    3| const/4 v6, #-1 (0xffffffff | NaN)
 	    4| const/4 v5, #+0 (0x00000000 | 0.000000)
 	.line 1053
 	    5| sget-object v3, com.android.ex.chips.R$styleable.RecipientEditTextView
@@ -159549,14 +159549,14 @@ method com.android.ex.chips.RecipientEditTextView.shouldShowEditableText(com.and
 	    5| move-result-wide v0
 	.line 2377
 	.local v0, "contactId", long
-	    6| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    6| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    8| cmp-long v4, v0, v4
 	   10| if-eqz v4, Label_1
 	.line 2378
 	   12| invoke-virtual {v6}, com.android.ex.chips.RecipientEditTextView.isPhoneQuery
 	   15| move-result v4
 	   16| if-nez v4, Label_2
-	   18| const-wide/16 v4, #-2 (0xfffffffe | -nan)
+	   18| const-wide/16 v4, #-2 (0xfffffffe | NaN)
 	   20| cmp-long v4, v0, v4
 	   22| if-nez v4, Label_2
 Label_1:
@@ -159712,14 +159712,14 @@ Label_2:
 	.local v2, "contactId", long
 	   19| iget-object v9, v12, com.android.ex.chips.RecipientEditTextView.mSelectedChip
 	   21| if-eqz v9, Label_5
-	   23| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	   23| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	   25| cmp-long v9, v2, v10
 	   27| if-eqz v9, Label_5
 	.line 682
 	   29| invoke-virtual {v12}, com.android.ex.chips.RecipientEditTextView.isPhoneQuery
 	   32| move-result v9
 	   33| if-nez v9, Label_5
-	   35| const-wide/16 v10, #-2 (0xfffffffe | -nan)
+	   35| const-wide/16 v10, #-2 (0xfffffffe | NaN)
 	   37| cmp-long v9, v2, v10
 	   39| if-eqz v9, Label_5
 	.line 683
@@ -159734,7 +159734,7 @@ Label_3:
 Label_4:
 	.line 680
 	.end_local v2
-	   48| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	   48| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	.restart_local v2
 	   50| goto Label_2
 Label_5:
@@ -159894,7 +159894,7 @@ method com.android.ex.chips.RecipientEditTextView.submitItemAtPosition(int) : in
 	.local v3, "entry", com.android.ex.chips.RecipientEntry
 	   12| if-nez v3, Label_1
 	.line 2044
-	   14| const/4 v5, #-1 (0xffffffff | -nan)
+	   14| const/4 v5, #-1 (0xffffffff | NaN)
 	   15| return v5
 Label_1:
 	.line 2046
@@ -159956,7 +159956,7 @@ method com.android.ex.chips.RecipientEditTextView.supportConvertToLocalHorizonta
 	   15| invoke-virtual {v2}, com.android.ex.chips.RecipientEditTextView.getTotalPaddingRight
 	   18| move-result v1
 	   19| sub-int/2addr v0, v1
-	   20| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   20| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   22| int-to-float v0, v0
 	   23| invoke-static {v0,v3}, java.lang.Math.min
 	   26| move-result v3
@@ -159990,7 +159990,7 @@ method com.android.ex.chips.RecipientEditTextView.supportGetLineAtCoordinate(flo
 	   15| invoke-virtual {v2}, com.android.ex.chips.RecipientEditTextView.getTotalPaddingBottom
 	   18| move-result v1
 	   19| sub-int/2addr v0, v1
-	   20| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   20| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   22| int-to-float v0, v0
 	   23| invoke-static {v0,v3}, java.lang.Math.min
 	   26| move-result v3
@@ -160035,7 +160035,7 @@ method com.android.ex.chips.RecipientEditTextView.supportGetOffsetForPosition(fl
 	    0| invoke-virtual {v2}, com.android.ex.chips.RecipientEditTextView.getLayout
 	    3| move-result-object v1
 	    4| if-nez v1, Label_1
-	    6| const/4 v1, #-1 (0xffffffff | -nan)
+	    6| const/4 v1, #-1 (0xffffffff | NaN)
 	    7| return v1
 Label_1:
 	.line 3094
@@ -160080,7 +160080,7 @@ method com.android.ex.chips.RecipientEditTextView.unselectChip(com.android.ex.ch
 	.line 2411
 	.prologue_end
 	    0| const/4 v5, #+0 (0x00000000 | 0.000000)
-	    1| const/4 v4, #-1 (0xffffffff | -nan)
+	    1| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 2411
 	    2| invoke-direct {v6,v7}, com.android.ex.chips.RecipientEditTextView.getChipStart
 	    5| move-result v3
@@ -160372,7 +160372,7 @@ Label_3:
 	.line 1961
 	   58| invoke-virtual {v5}, java.lang.String.length
 	   61| move-result v6
-	   62| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   62| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   64| if-ge v2, v6, Label_7
 	   66| iget-object v6, v9, com.android.ex.chips.RecipientEditTextView.mTokenizer
 	   68| invoke-interface {v6,v5}, android.widget.MultiAutoCompleteTextView$Tokenizer.terminateToken
@@ -160589,7 +160589,7 @@ Label_5:
 	   97| array-length v8, v10
 	.line 2222
 	.local v8, "numRecipients", int
-	   98| add-int/lit8 v9, v8, #-2 (0xfffffffe | -nan)
+	   98| add-int/lit8 v9, v8, #-2 (0xfffffffe | NaN)
 	.line 2223
 	.local v9, "overage", int
 	  100| move-object/from16 v0, v23
@@ -160639,7 +160639,7 @@ Label_7:
 	.line 2233
 	  159| array-length v0, v10
 	  160| move/from16 v19, v0
-	  162| add-int/lit8 v19, v19, #-1 (0xffffffff | -nan)
+	  162| add-int/lit8 v19, v19, #-1 (0xffffffff | NaN)
 	  164| move/from16 v0, v19
 	  166| if-ne v6, v0, Label_8
 	.line 2234
@@ -160800,7 +160800,7 @@ Label_2:
 	   27| move-result v6
 	.line 2173
 	.local v6, "tokenCount", int
-	   28| add-int/lit8 v7, v6, #-2 (0xfffffffe | -nan)
+	   28| add-int/lit8 v7, v6, #-2 (0xfffffffe | NaN)
 	   30| invoke-direct {v10,v7}, com.android.ex.chips.RecipientEditTextView.createMoreSpan
 	   33| move-result-object v3
 	.line 2174
@@ -160857,16 +160857,16 @@ Label_1:
 	   24| move-result v2
 	.line 1312
 	.local v2, "commitCharIndex", int
-	   25| const/4 v7, #-1 (0xffffffff | -nan)
+	   25| const/4 v7, #-1 (0xffffffff | NaN)
 	   26| if-eq v2, v7, Label_2
 	   28| invoke-virtual {v6}, java.lang.String.length
 	   31| move-result v7
-	   32| add-int/lit8 v7, v7, #-1 (0xffffffff | -nan)
+	   32| add-int/lit8 v7, v7, #-1 (0xffffffff | NaN)
 	   34| if-ne v2, v7, Label_2
 	.line 1313
 	   36| invoke-virtual {v6}, java.lang.String.length
 	   39| move-result v7
-	   40| add-int/lit8 v7, v7, #-1 (0xffffffff | -nan)
+	   40| add-int/lit8 v7, v7, #-1 (0xffffffff | NaN)
 	   42| const/4 v8, #+0 (0x00000000 | 0.000000)
 	   43| invoke-virtual {v6,v8,v7}, java.lang.String.substring
 	   46| move-result-object v5
@@ -161232,7 +161232,7 @@ method com.android.ex.chips.RecipientEditTextView.getLastChip() : com.android.ex
 	    8| if-lez v2, Label_1
 	.line 457
 	   10| array-length v2, v0
-	   11| add-int/lit8 v2, v2, #-1 (0xffffffff | -nan)
+	   11| add-int/lit8 v2, v2, #-1 (0xffffffff | NaN)
 	   13| aget-object v1, v0, v2
 Label_1:
 	.line 459
@@ -161692,14 +161692,14 @@ Label_3:
 	   52| invoke-virtual {v0}, java.lang.String.length
 	   55| move-result v5
 	   56| add-int/2addr v5, v4
-	   57| add-int/lit8 v3, v5, #-1 (0xffffffff | -nan)
+	   57| add-int/lit8 v3, v5, #-1 (0xffffffff | NaN)
 	.line 1212
 	.local v3, "tokenEnd", int
 	   59| if-ltz v4, Label_6
 	.line 1215
 	   61| invoke-interface {v1}, android.text.Editable.length
 	   64| move-result v5
-	   65| add-int/lit8 v5, v5, #-2 (0xfffffffe | -nan)
+	   65| add-int/lit8 v5, v5, #-2 (0xfffffffe | NaN)
 	   67| if-ge v3, v5, Label_4
 	.line 1216
 	   69| invoke-interface {v1,v3}, android.text.Editable.charAt
@@ -161721,7 +161721,7 @@ Label_6:
 	.line 1222
 	.line 1207
 	   88| iget v5, v13, com.android.ex.chips.RecipientEditTextView.mPendingChipsCount
-	   90| add-int/lit8 v5, v5, #-1 (0xffffffff | -nan)
+	   90| add-int/lit8 v5, v5, #-1 (0xffffffff | NaN)
 	   92| iput v5, v13, com.android.ex.chips.RecipientEditTextView.mPendingChipsCount
 	.line 1207
 	.line 1219
@@ -161903,7 +161903,7 @@ Label_1:
 	.line 1735
 	   37| invoke-virtual {v3}, java.lang.String.length
 	   40| move-result v6
-	   41| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   41| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   43| invoke-virtual {v3,v6}, java.lang.String.charAt
 	   46| move-result v0
 	.line 1736
@@ -161936,14 +161936,14 @@ method com.android.ex.chips.RecipientEditTextView.isGeneratedContact(com.android
 	    5| move-result-wide v0
 	.line 2685
 	.local v0, "contactId", long
-	    6| const-wide/16 v4, #-1 (0xffffffff | -nan)
+	    6| const-wide/16 v4, #-1 (0xffffffff | NaN)
 	    8| cmp-long v4, v0, v4
 	   10| if-eqz v4, Label_1
 	.line 2686
 	   12| invoke-virtual {v6}, com.android.ex.chips.RecipientEditTextView.isPhoneQuery
 	   15| move-result v4
 	   16| if-nez v4, Label_2
-	   18| const-wide/16 v4, #-2 (0xfffffffe | -nan)
+	   18| const-wide/16 v4, #-2 (0xfffffffe | NaN)
 	   20| cmp-long v4, v0, v4
 	   22| if-nez v4, Label_2
 Label_1:
@@ -162003,7 +162003,7 @@ Label_1:
 	.local v0, "end", int
 	    9| invoke-virtual {v6}, com.android.ex.chips.RecipientEditTextView.length
 	   12| move-result v5
-	   13| add-int/lit8 v2, v5, #-1 (0xffffffff | -nan)
+	   13| add-int/lit8 v2, v5, #-1 (0xffffffff | NaN)
 	.line 2675
 	.local v2, "len", int
 	   15| if-eq v0, v2, Label_5
@@ -162027,7 +162027,7 @@ Label_4:
 	.end_local v2
 	   30| invoke-virtual {v6}, com.android.ex.chips.RecipientEditTextView.getSelectionEnd
 	   33| move-result v5
-	   34| add-int/lit8 v0, v5, #-1 (0xffffffff | -nan)
+	   34| add-int/lit8 v0, v5, #-1 (0xffffffff | NaN)
 	.restart_local v0
 	   36| goto Label_1
 Label_5:
@@ -162118,7 +162118,7 @@ method com.android.ex.chips.RecipientEditTextView.onAttachedToWindow() : void
 	    9| move-result v0
 	.line 399
 	.local v0, "anchorId", int
-	   10| const/4 v1, #-1 (0xffffffff | -nan)
+	   10| const/4 v1, #-1 (0xffffffff | NaN)
 	   11| if-eq v0, v1, Label_1
 	.line 400
 	   13| invoke-virtual {v2}, com.android.ex.chips.RecipientEditTextView.getRootView
@@ -162491,7 +162491,7 @@ Label_3:
 	   35| move-result v0
 	.line 2035
 	.local v0, "charactersTyped", int
-	   36| const/4 v2, #-1 (0xffffffff | -nan)
+	   36| const/4 v2, #-1 (0xffffffff | NaN)
 	   37| if-le v0, v2, Label_4
 	   39| iget-object v2, v4, com.android.ex.chips.RecipientEditTextView.mRecipientEntryItemClickedListener
 	   41| if-eqz v2, Label_4
@@ -163212,7 +163212,7 @@ Label_1:
 Label_2:
 	.line 2277
 	   38| array-length v9, v6
-	   39| add-int/lit8 v9, v9, #-1 (0xffffffff | -nan)
+	   39| add-int/lit8 v9, v9, #-1 (0xffffffff | NaN)
 	   41| aget-object v9, v6, v9
 	   43| invoke-interface {v7,v9}, android.text.Spannable.getSpanEnd
 	   46| move-result v5
@@ -163256,7 +163256,7 @@ Label_3:
 	.local v2, "chipEnd", int
 	   96| move v5, v2
 	.line 2292
-	   97| const/4 v9, #-1 (0xffffffff | -nan)
+	   97| const/4 v9, #-1 (0xffffffff | NaN)
 	   98| if-eq v3, v9, Label_3
 	.line 2294
 	  100| const/16 v9, #+33 (0x00000021 | 0.000000)
@@ -163304,7 +163304,7 @@ method com.android.ex.chips.RecipientEditTextView.replaceChip(com.android.ex.chi
 	.prologue_end
 	    0| const/4 v9, #+0 (0x00000000 | 0.000000)
 	    1| const/4 v8, #+0 (0x00000000 | 0.000000)
-	    2| const/4 v7, #-1 (0xffffffff | -nan)
+	    2| const/4 v7, #-1 (0xffffffff | NaN)
 	.line 2502
 	    3| iget-object v6, v10, com.android.ex.chips.RecipientEditTextView.mSelectedChip
 	    5| if-ne v11, v6, Label_6
@@ -163435,7 +163435,7 @@ Label_1:
 	   12| if-lez v6, Label_6
 	.line 1591
 	   14| array-length v6, v3
-	   15| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   15| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   17| aget-object v2, v3, v6
 	.line 1592
 	.local v2, "last", com.android.ex.chips.recipientchip.DrawableRecipientChip
@@ -163447,7 +163447,7 @@ Label_1:
 	   22| if-le v6, v7, Label_2
 	.line 1594
 	   24| array-length v6, v3
-	   25| add-int/lit8 v6, v6, #-2 (0xfffffffe | -nan)
+	   25| add-int/lit8 v6, v6, #-2 (0xfffffffe | NaN)
 	   27| aget-object v0, v3, v6
 Label_2:
 	.line 1596
@@ -163472,11 +163472,11 @@ Label_2:
 	   51| move-result-object v5
 	.line 1601
 	.local v5, "text", android.text.Editable
-	   52| const/4 v6, #-1 (0xffffffff | -nan)
+	   52| const/4 v6, #-1 (0xffffffff | NaN)
 	   53| if-eq v4, v6, Label_3
 	   55| invoke-interface {v5}, android.text.Editable.length
 	   58| move-result v6
-	   59| add-int/lit8 v6, v6, #-1 (0xffffffff | -nan)
+	   59| add-int/lit8 v6, v6, #-1 (0xffffffff | NaN)
 	   61| if-le v4, v6, Label_4
 Label_3:
 	.line 1603
@@ -163678,7 +163678,7 @@ method com.android.ex.chips.RecipientEditTextView.setDropDownAnchor(int) : void
 	.line 406
 	    0| invoke-super {v1,v2}, android.widget.MultiAutoCompleteTextView.setDropDownAnchor
 	.line 407
-	    3| const/4 v0, #-1 (0xffffffff | -nan)
+	    3| const/4 v0, #-1 (0xffffffff | NaN)
 	    4| if-eq v2, v0, Label_1
 	.line 408
 	    6| invoke-virtual {v1}, com.android.ex.chips.RecipientEditTextView.getRootView
@@ -163847,13 +163847,13 @@ Label_1:
 	.local v3, "tokenizedAddress", java.lang.String
 	   16| new-instance v1, com.android.ex.chips.RecipientEntry
 	.line 149
-	   18| const-wide/16 v7, #-1 (0xffffffff | -nan)
+	   18| const-wide/16 v7, #-1 (0xffffffff | NaN)
 	.line 150
-	   20| const-wide/16 v10, #-1 (0xffffffff | -nan)
+	   20| const-wide/16 v10, #-1 (0xffffffff | NaN)
 	.line 148
 	   22| const/4 v2, #+0 (0x00000000 | 0.000000)
 	.line 149
-	   23| const/4 v5, #-1 (0xffffffff | -nan)
+	   23| const/4 v5, #-1 (0xffffffff | NaN)
 	   24| const/4 v6, #+0 (0x00000000 | 0.000000)
 	   25| const/4 v9, #+0 (0x00000000 | 0.000000)
 	.line 150
@@ -163883,13 +163883,13 @@ method com.android.ex.chips.RecipientEntry.constructFakePhoneEntry(java.lang.Str
 	.line 158
 	    0| new-instance v0, com.android.ex.chips.RecipientEntry
 	.line 159
-	    2| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	    2| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 160
-	    4| const-wide/16 v9, #-1 (0xffffffff | -nan)
+	    4| const-wide/16 v9, #-1 (0xffffffff | NaN)
 	.line 158
 	    6| const/4 v1, #+0 (0x00000000 | 0.000000)
 	.line 159
-	    7| const/4 v4, #-1 (0xffffffff | -nan)
+	    7| const/4 v4, #-1 (0xffffffff | NaN)
 	    8| const/4 v5, #+0 (0x00000000 | 0.000000)
 	    9| const/4 v8, #+0 (0x00000000 | 0.000000)
 	.line 160
@@ -163914,11 +163914,11 @@ method com.android.ex.chips.RecipientEntry.constructGeneratedEntry(java.lang.Str
 	.line 170
 	    0| new-instance v0, com.android.ex.chips.RecipientEntry
 	.line 171
-	    2| const-wide/16 v6, #-2 (0xfffffffe | -nan)
-	    4| const-wide/16 v9, #-2 (0xfffffffe | -nan)
+	    2| const-wide/16 v6, #-2 (0xfffffffe | NaN)
+	    4| const-wide/16 v9, #-2 (0xfffffffe | NaN)
 	.line 170
 	    6| const/4 v1, #+0 (0x00000000 | 0.000000)
-	    7| const/4 v4, #-1 (0xffffffff | -nan)
+	    7| const/4 v4, #-1 (0xffffffff | NaN)
 	.line 171
 	    8| const/4 v5, #+0 (0x00000000 | 0.000000)
 	    9| const/4 v8, #+0 (0x00000000 | 0.000000)
@@ -163950,10 +163950,10 @@ method com.android.ex.chips.RecipientEntry.constructPermissionEntry(java.lang.St
 	.line 213
 	    8| const-string/jumbo v5, ""
 	.line 214
-	   11| const-wide/16 v6, #-1 (0xffffffff | -nan)
+	   11| const-wide/16 v6, #-1 (0xffffffff | NaN)
 	.line 216
 	.line 209
-	   13| const-wide/16 v9, #-1 (0xffffffff | -nan)
+	   13| const-wide/16 v9, #-1 (0xffffffff | NaN)
 	.line 209
 	   15| const/4 v1, #+1 (0x00000001 | 0.000000)
 	.line 212
@@ -164067,10 +164067,10 @@ method com.android.ex.chips.RecipientEntry.isCreatedRecipient(long) : boolean
 	.prologue_end
 	    0| const/4 v0, #+1 (0x00000001 | 0.000000)
 	.line 136
-	    1| const-wide/16 v2, #-1 (0xffffffff | -nan)
+	    1| const-wide/16 v2, #-1 (0xffffffff | NaN)
 	    3| cmp-long v1, v4, v2
 	    5| if-eqz v1, Label_1
-	    7| const-wide/16 v2, #-2 (0xfffffffe | -nan)
+	    7| const-wide/16 v2, #-2 (0xfffffffe | NaN)
 	    9| cmp-long v1, v4, v2
 	   11| if-nez v1, Label_2
 Label_1:
@@ -165283,7 +165283,7 @@ Label_1:
 	   54| if-lez v5, Label_2
 	.line 2749
 	   56| array-length v5, v2
-	   57| add-int/lit8 v5, v5, #-1 (0xffffffff | -nan)
+	   57| add-int/lit8 v5, v5, #-1 (0xffffffff | NaN)
 	   59| aget-object v5, v2, v5
 	   61| invoke-virtual {v5}, android.text.style.ForegroundColorSpan.getForegroundColor
 	   64| move-result v5
@@ -165381,7 +165381,7 @@ Label_1:
 	.line 2724
 	   37| if-le v7, v2, Label_2
 	.line 2725
-	   39| add-int/lit8 v7, v7, #-20 (0xffffffec | -nan)
+	   39| add-int/lit8 v7, v7, #-20 (0xffffffec | NaN)
 Label_2:
 	.line 2727
 	   41| iput v7, v6, com.android.ex.editstyledtext.EditStyledText$EditStyledTextSpans$HorizontalLineDrawable.mWidth
@@ -165886,7 +165886,7 @@ Label_1:
 	.local v0, "pos", int
 	    1| if-lez v0, Label_2
 	.line 1746
-	    3| add-int/lit8 v1, v0, #-1 (0xffffffff | -nan)
+	    3| add-int/lit8 v1, v0, #-1 (0xffffffff | NaN)
 	    5| invoke-interface {v5,v1}, android.text.Editable.charAt
 	    8| move-result v1
 	    9| const/16 v2, #+10 (0x0000000a | 0.000000)
@@ -165921,7 +165921,7 @@ Label_2:
 	   65| return v0
 Label_3:
 	.line 1745
-	   66| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   66| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   68| goto Label_1
 }
 
@@ -166994,7 +166994,7 @@ Label_7:
 	  202| iget-object v12, v15, com.android.ex.editstyledtext.EditStyledText$EditorManager.mEST
 	  204| invoke-virtual {v12}, com.android.ex.editstyledtext.EditStyledText.getText
 	  207| move-result-object v12
-	  208| add-int/lit8 v13, v2, #-1 (0xffffffff | -nan)
+	  208| add-int/lit8 v13, v2, #-1 (0xffffffff | NaN)
 	  210| invoke-interface {v12,v13}, android.text.Editable.charAt
 	  213| move-result v12
 	  214| const/16 v13, #+10 (0x0000000a | 0.000000)
@@ -168557,7 +168557,7 @@ Label_3:
 Label_4:
 	.line 528
 	.end_local v1
-	   48| const/4 v3, #-1 (0xffffffff | -nan)
+	   48| const/4 v3, #-1 (0xffffffff | NaN)
 	   49| return v3
 }
 
@@ -168668,7 +168668,7 @@ Label_1:
 	.local v14, "newTzId", java.lang.String
 	   71| array-length v0, v8
 	   72| move/from16 v22, v0
-	   74| add-int/lit8 v22, v22, #-1 (0xffffffff | -nan)
+	   74| add-int/lit8 v22, v22, #-1 (0xffffffff | NaN)
 	   76| aget-object v15, v8, v22
 	.line 338
 	.local v15, "oldTzId", java.lang.String
@@ -169042,7 +169042,7 @@ Label_18:
 	  443| move-result v21
 	.line 424
 	.local v21, "tzToOverride", int
-	  444| const/16 v22, #-1 (0xffffffff | -nan)
+	  444| const/16 v22, #-1 (0xffffffff | NaN)
 	  446| move/from16 v0, v21
 	  448| move/from16 v1, v22
 	  450| if-ne v0, v1, Label_21
@@ -169071,7 +169071,7 @@ Label_19:
 	  483| move-result v9
 	.line 448
 	.local v9, "identicalTzIdx", int
-	  484| const/16 v22, #-1 (0xffffffff | -nan)
+	  484| const/16 v22, #-1 (0xffffffff | NaN)
 	  486| move/from16 v0, v22
 	  488| if-ne v9, v0, Label_20
 	.line 453
@@ -169276,7 +169276,7 @@ Label_2:
 Label_3:
 	.line 115
 	.end_local v1
-	   31| const/4 v3, #-1 (0xffffffff | -nan)
+	   31| const/4 v3, #-1 (0xffffffff | NaN)
 	   32| return v3
 }
 
@@ -169429,7 +169429,7 @@ Label_4:
 	   82| move-object/from16 v0, v18
 	   84| invoke-direct {v0,v12}, com.android.timezonepicker.TimeZoneData.getIdenticalTimeZoneInTheCountry
 	   87| move-result v15
-	   88| const/16 v16, #-1 (0xffffffff | -nan)
+	   88| const/16 v16, #-1 (0xffffffff | NaN)
 	   90| move/from16 v0, v16
 	   92| if-ne v15, v0, Label_2
 	.line 153
@@ -169693,7 +169693,7 @@ Label_1:
 Label_2:
 	.line 308
 	.end_local v1
-	   54| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	   54| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	   56| goto Label_1
 Label_3:
 	.line 316
@@ -169723,7 +169723,7 @@ Label_3:
 Label_4:
 	.line 320
 	.end_local v1
-	   99| mul-int/lit8 v8, v8, #-1 (0xffffffff | -nan)
+	   99| mul-int/lit8 v8, v8, #-1 (0xffffffff | NaN)
 Label_5:
 	.line 323
 	  101| if-nez v9, Label_9
@@ -169754,13 +169754,13 @@ Label_5:
 Label_6:
 	.line 329
 	.end_local v1
-	  147| const/4 v2, #-1 (0xffffffff | -nan)
+	  147| const/4 v2, #-1 (0xffffffff | NaN)
 	  148| if-ne v8, v2, Label_9
 	.line 330
-	  150| const/16 v0, #-10 (0xfffffff6 | -nan)
+	  150| const/16 v0, #-10 (0xfffffff6 | NaN)
 Label_7:
 	.restart_local v0
-	  152| const/16 v2, #-19 (0xffffffed | -nan)
+	  152| const/16 v2, #-19 (0xffffffed | NaN)
 	  154| if-lt v0, v2, Label_9
 	.line 331
 	  156| iget-object v2, v6, com.android.timezonepicker.TimeZoneFilterTypeAdapter$ArrayFilter.this$0
@@ -169788,7 +169788,7 @@ Label_7:
 Label_8:
 	.line 330
 	.end_local v1
-	  198| add-int/lit8 v0, v0, #-1 (0xffffffff | -nan)
+	  198| add-int/lit8 v0, v0, #-1 (0xffffffff | NaN)
 	  200| goto Label_7
 Label_9:
 	.line 338
@@ -169926,7 +169926,7 @@ Label_1:
 	   23| return v7
 Label_2:
 	.line 356
-	   24| const/4 v3, #-1 (0xffffffff | -nan)
+	   24| const/4 v3, #-1 (0xffffffff | NaN)
 Label_3:
 	.line 359
 	   25| invoke-virtual {v9}, java.lang.String.length
@@ -170342,7 +170342,7 @@ Label_4:
 	   50| return-void
 Label_5:
 	.line 408
-	   51| const/4 v0, #-1 (0xffffffff | -nan)
+	   51| const/4 v0, #-1 (0xffffffff | NaN)
 	.restart_local v0
 	   52| goto Label_2
 Label_6:
@@ -170747,7 +170747,7 @@ method com.android.timezonepicker.TimeZoneInfo.compareTo(com.android.timezonepic
 	.line 253
 	.prologue_end
 	    0| const/4 v2, #+1 (0x00000001 | 0.000000)
-	    1| const/4 v1, #-1 (0xffffffff | -nan)
+	    1| const/4 v1, #-1 (0xffffffff | NaN)
 	.line 253
 	    2| invoke-virtual {v5}, com.android.timezonepicker.TimeZoneInfo.getNowOffsetMillis
 	    5| move-result v3
@@ -170965,7 +170965,7 @@ Label_4:
 	.line 176
 	.local v20, "spannableText", android.text.Spannable
 	  151| new-instance v4, android.text.style.ForegroundColorSpan
-	  153| const v5, #-7829368 (0xff888888 | -nan)
+	  153| const v5, #-7829368 (0xff888888 | NaN)
 	  156| invoke-direct {v4,v5}, android.text.style.ForegroundColorSpan.<init>
 	.line 177
 	  159| const/16 v5, #+33 (0x00000021 | 0.000000)
@@ -170977,7 +170977,7 @@ Label_4:
 	  168| if-eqz v17, Label_5
 	.line 180
 	  170| new-instance v4, android.text.style.ForegroundColorSpan
-	  172| const v5, #-4210753 (0xffbfbfbf | -nan)
+	  172| const v5, #-4210753 (0xffbfbfbf | NaN)
 	  175| invoke-direct {v4,v5}, android.text.style.ForegroundColorSpan.<init>
 	.line 181
 	  178| const/16 v5, #+33 (0x00000021 | 0.000000)
@@ -171676,7 +171676,7 @@ Label_2:
 	   85| if-eqz v16, Label_3
 	.line 109
 	   87| new-instance v10, android.text.style.ForegroundColorSpan
-	   89| const v11, #-7829368 (0xff888888 | -nan)
+	   89| const v11, #-7829368 (0xff888888 | NaN)
 	   92| invoke-direct {v10,v11}, android.text.style.ForegroundColorSpan.<init>
 	.line 110
 	   95| const/16 v11, #+33 (0x00000021 | 0.000000)
@@ -171689,7 +171689,7 @@ Label_3:
 	  104| if-eqz v10, Label_4
 	.line 113
 	  106| new-instance v10, android.text.style.ForegroundColorSpan
-	  108| const v11, #-4210753 (0xffbfbfbf | -nan)
+	  108| const v11, #-4210753 (0xffbfbfbf | NaN)
 	  111| invoke-direct {v10,v11}, android.text.style.ForegroundColorSpan.<init>
 	.line 114
 	  114| const/16 v11, #+33 (0x00000021 | 0.000000)
@@ -172163,7 +172163,7 @@ method com.android.timezonepicker.TimeZonePickerView.getLastFilterTime() : int
 Label_1:
 	   10| return v0
 Label_2:
-	   11| const/4 v0, #-1 (0xffffffff | -nan)
+	   11| const/4 v0, #-1 (0xffffffff | NaN)
 	   12| goto Label_1
 }
 
@@ -172181,7 +172181,7 @@ method com.android.timezonepicker.TimeZonePickerView.getLastFilterType() : int
 Label_1:
 	   10| return v0
 Label_2:
-	   11| const/4 v0, #-1 (0xffffffff | -nan)
+	   11| const/4 v0, #-1 (0xffffffff | NaN)
 	   12| goto Label_1
 }
 
@@ -172488,7 +172488,7 @@ method com.android.timezonepicker.TimeZoneResultAdapter.getView(int, android.vie
 	.local v2, "v", android.view.View
 	    2| iget-object v4, v7, com.android.timezonepicker.TimeZoneResultAdapter.mFilteredTimeZoneIndices
 	    4| aget v4, v4, v8
-	    6| const/16 v5, #-100 (0xffffff9c | -nan)
+	    6| const/16 v5, #-100 (0xffffff9c | NaN)
 	    8| if-ne v4, v5, Label_1
 	.line 271
 	   10| iget-object v4, v7, com.android.timezonepicker.TimeZoneResultAdapter.mInflater
@@ -172672,7 +172672,7 @@ Label_1:
 	   45| move/from16 v0, v17
 	   47| move-object/from16 v1, v18
 	   49| iput v0, v1, com.android.timezonepicker.TimeZoneResultAdapter.mFilteredTimeZoneLength
-	   51| const/16 v17, #-100 (0xffffff9c | -nan)
+	   51| const/16 v17, #-100 (0xffffff9c | NaN)
 	   53| aput v17, v15, v16
 Label_2:
 	.line 183
@@ -172696,7 +172696,7 @@ Label_4:
 	   77| move-result v2
 	.line 139
 	.local v2, "defaultTzIndex", int
-	   78| const/4 v15, #-1 (0xffffffff | -nan)
+	   78| const/4 v15, #-1 (0xffffffff | NaN)
 	   79| if-eq v2, v15, Label_5
 	.line 140
 	   81| move-object/from16 v0, v18
@@ -172738,7 +172738,7 @@ Label_5:
 	.line 149
 	.local v10, "recents", java.lang.String[]
 	  138| array-length v15, v10
-	  139| add-int/lit8 v3, v15, #-1 (0xffffffff | -nan)
+	  139| add-int/lit8 v3, v15, #-1 (0xffffffff | NaN)
 Label_6:
 	.local v3, "i", int
 	  141| if-ltz v3, Label_2
@@ -172768,7 +172768,7 @@ Label_6:
 	  182| move-result v7
 	.line 153
 	.local v7, "index", int
-	  183| const/4 v15, #-1 (0xffffffff | -nan)
+	  183| const/4 v15, #-1 (0xffffffff | NaN)
 	  184| if-eq v7, v15, Label_7
 	.line 154
 	.line 149
@@ -172786,7 +172786,7 @@ Label_7:
 	.line 149
 	.end_local v7
 	.line 162
-	  206| add-int/lit8 v3, v3, #-1 (0xffffffff | -nan)
+	  206| add-int/lit8 v3, v3, #-1 (0xffffffff | NaN)
 	  208| goto Label_6
 Label_8:
 	.line 162
