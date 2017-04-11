@@ -1,6 +1,4 @@
 
-Running experiment 'full_rewrite' ... 
-
 method android.support.annotation.IntDef.value() : long[]
 {
 }
@@ -36740,7 +36738,7 @@ method com.android.calendar.DayView.distanceInfluenceForSnapDuration(float) : fl
 	    2| sub-float/2addr v5, v0
 	.line 5035
 	    3| float-to-double v0:v1, v5
-	    4| const-wide v2:v3, #-4087534775453706041 (0xc74628c7460698c7 | -2.30115e+35)
+	    4| const-wide v2:v3, #+4602160705557665991 (0x3fde28c7460698c7 | 0.471239)
 	    9| mul-double/2addr v0:v1, v2:v3
 	   10| double-to-float v5, v0:v1
 	.line 5036
@@ -79863,7 +79861,7 @@ Label_1:
 	   22| invoke-direct/range {v35..v35}, android.text.format.Time.<init>
 	.line 192
 	.local v35, "timeObj", android.text.format.Time
-	   25| const-wide v30:v31, #-1 (0xffffffffffffffff | NaN)
+	   25| const-wide v30:v31, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 193
 	.local v30, "nextAlarmTime", long
 	   30| const/16 v28, #+0 (0x00000000 | 0.00000)
@@ -80284,7 +80282,7 @@ Label_19:
 	.end_local v18
 	.end_local v21
 	.end_local v23
-	  589| const-wide v4:v5, #-1 (0xffffffffffffffff | NaN)
+	  589| const-wide v4:v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	  594| cmp-long v4, v30:v31, v4:v5
 	  596| if-gez v4, Label_20
 	.line 281
@@ -84529,7 +84527,7 @@ method com.android.calendar.alerts.AlertService.generateAlerts(android.content.C
 	   75| return v4
 Label_1:
 	.line 327
-	   76| const-wide v42:v43, #-1 (0xffffffffffffffff | NaN)
+	   76| const-wide v42:v43, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 328
 	.local v42, "nextRefreshTime", long
 	   81| const/16 v17, #+1 (0x00000001 | 1.40130e-45)
@@ -84791,7 +84789,7 @@ Label_9:
 	  406| invoke-static {v4,v5}, android.util.Log.d
 Label_10:
 	.line 421
-	  409| const-wide v4:v5, #-1 (0xffffffffffffffff | NaN)
+	  409| const-wide v4:v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	  414| cmp-long v4, v42:v43, v4:v5
 	  416| if-gez v4, Label_14
 	  418| cmp-long v4, v42:v43, v52:v53
@@ -84996,7 +84994,7 @@ method com.android.calendar.alerts.AlertService.getNextRefreshTime(com.android.c
 Label_1:
 	.line 525
 	.end_local v8
-	   33| const-wide v4:v5, #-1 (0xffffffffffffffff | NaN)
+	   33| const-wide v4:v5, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.line 527
 	.local v4, "nextRefreshTime", long
 	   38| iget-boolean v9, v13, com.android.calendar.alerts.AlertService$NotificationInfo.allDay
@@ -132137,7 +132135,7 @@ Label_1:
 	   60| move-object/from16 v1, v61
 	   62| invoke-virtual {v0,v1}, com.android.calendarcommon2.RecurrenceProcessor$DaySet.setRecurrence
 	.line 767
-	   65| const-wide v56:v57, #-1 (0xffffffffffffffff | NaN)
+	   65| const-wide v56:v57, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	   70| cmp-long v56, v64:v65, v56:v57
 	   72| if-nez v56, Label_3
 	   74| move-object/from16 v0, v61
@@ -132563,7 +132561,7 @@ Label_23:
 	.restart_local v50
 	.restart_local v51
 	.restart_local v53
-	  595| const-wide v46:v47, #-1 (0xffffffffffffffff | NaN)
+	  595| const-wide v46:v47, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.restart_local v46
 	.line 877
 	  600| goto/16 Label_12
@@ -133165,7 +133163,7 @@ Label_3:
 	.end_local v5
 	.end_local v8
 	.end_local v11
-	  103| const-wide v8:v9, #-1 (0xffffffffffffffff | NaN)
+	  103| const-wide v8:v9, #+9223372036854775807 (0x7fffffffffffffff | NaN)
 	.restart_local v8
 	.line 667
 	  108| goto/16 Label_1
@@ -143700,9 +143698,9 @@ Label_3:
 	  193| move-result-wide v16:v17
 	.line 254
 	.local v16, "radians", double
-	  194| const-wide v20:v21, #+140737488355328 (0x0000800000000000 | 6.95336e-310)
+	  194| const-wide v20:v21, #+4640537203540230144 (0x4066800000000000 | 180.000)
 	  199| mul-double v20:v21, v20:v21, v16:v17
-	  201| const-wide v22:v23, #-336606708811682536 (0xfb5421fb54442d18 | -1.19751e+286)
+	  201| const-wide v22:v23, #+4614256656552045848 (0x400921fb54442d18 | 3.14159)
 	  206| div-double v20:v21, v20:v21, v22:v23
 	  208| move-wide/from16 v0:v1, v20:v21
 	  210| double-to-int v2, v0:v1
@@ -144578,9 +144576,9 @@ method com.android.datetimepicker.time.RadialSelectorView.setSelection(int, bool
 	    0| iput v5, v4, com.android.datetimepicker.time.RadialSelectorView.mSelectionDegrees
 	.line 168
 	    2| int-to-double v0:v1, v5
-	    3| const-wide v2:v3, #-336606708811682536 (0xfb5421fb54442d18 | -1.19751e+286)
+	    3| const-wide v2:v3, #+4614256656552045848 (0x400921fb54442d18 | 3.14159)
 	    8| mul-double/2addr v0:v1, v2:v3
-	    9| const-wide v2:v3, #+140737488355328 (0x0000800000000000 | 6.95336e-310)
+	    9| const-wide v2:v3, #+4640537203540230144 (0x4066800000000000 | 180.000)
 	   14| div-double/2addr v0:v1, v2:v3
 	   15| iput-wide v0:v1, v4, com.android.datetimepicker.time.RadialSelectorView.mSelectionRadians
 	.line 169
@@ -171295,28 +171293,28 @@ Label_1:
 	.line 219
 	   97| invoke-virtual {v1,v6}, java.lang.StringBuilder.append
 	.line 222
-	  100| const-wide v4:v5, #+4320360774573458944 (0x3bf5013bf5fb8600 | 7.11671e-20)
+	  100| const-wide v4:v5, #+1357041600000 (0x0000013bf5fb8600 | 6.70468e-312)
 	  105| invoke-virtual {v8,v4,v5}, com.android.timezonepicker.TimeZoneInfo.getLocalTime
 	  108| move-result-object v3
 	  109| invoke-virtual {v1,v3}, java.lang.StringBuilder.append
 	.line 223
 	  112| invoke-virtual {v1,v6}, java.lang.StringBuilder.append
 	.line 226
-	  115| const-wide v4:v5, #+4426195372123865600 (0x3d6d013d6debc200 | 8.24367e-13)
+	  115| const-wide v4:v5, #+1363348800000 (0x0000013d6debc200 | 6.73584e-312)
 	  120| invoke-virtual {v8,v4,v5}, com.android.timezonepicker.TimeZoneInfo.getLocalTime
 	  123| move-result-object v3
 	  124| invoke-virtual {v1,v3}, java.lang.StringBuilder.append
 	.line 227
 	  127| invoke-virtual {v1,v6}, java.lang.StringBuilder.append
 	.line 230
-	  130| const-wide v4:v5, #+4582976943482900992 (0x3f9a013f9a1a9200 | 0.0253954)
+	  130| const-wide v4:v5, #+1372680000000 (0x0000013f9a1a9200 | 6.78194e-312)
 	  135| invoke-virtual {v8,v4,v5}, com.android.timezonepicker.TimeZoneInfo.getLocalTime
 	  138| move-result-object v3
 	  139| invoke-virtual {v1,v3}, java.lang.StringBuilder.append
 	.line 231
 	  142| invoke-virtual {v1,v6}, java.lang.StringBuilder.append
 	.line 234
-	  145| const-wide v4:v5, #+4761150614367946240 (0x421301421388c600 | 2.04064e+10)
+	  145| const-wide v4:v5, #+1383307200000 (0x000001421388c600 | 6.83445e-312)
 	  150| invoke-virtual {v8,v4,v5}, com.android.timezonepicker.TimeZoneInfo.getLocalTime
 	  153| move-result-object v3
 	  154| invoke-virtual {v1,v3}, java.lang.StringBuilder.append
