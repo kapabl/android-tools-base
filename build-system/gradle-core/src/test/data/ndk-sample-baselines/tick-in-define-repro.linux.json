@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "example-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/ndk-build-meet-cdep/app/build/intermediates/ndkBuild/debug/obj/local/armeabi-v7a/libexample.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/ndk-build-meet-cdep/app/build/intermediates/ndkBuild/debug/obj/local/armeabi-v7a/libexample.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "example",
@@ -53,8 +67,13 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "cleanCommandsComponents": [],
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {},
       "toolchains": {},
       "cFileExtensions": [],

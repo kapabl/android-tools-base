@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "shared_cpp_code-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libshared_cpp_code.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libshared_cpp_code.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "shared_cpp_code",
@@ -29,7 +43,12 @@
           }
         },
         "DifferentName-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libDifferentName.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libDifferentName.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "DifferentName",
@@ -70,13 +89,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "shared_cpp_code-release-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libshared_cpp_code.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libshared_cpp_code.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "shared_cpp_code",
@@ -93,7 +126,12 @@
           }
         },
         "DifferentName-release-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libDifferentName.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/bug-214626/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libDifferentName.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "DifferentName",

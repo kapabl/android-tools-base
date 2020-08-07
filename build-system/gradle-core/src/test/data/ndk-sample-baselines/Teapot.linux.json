@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "android_native_app_glue-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "android_native_app_glue",
@@ -29,7 +43,12 @@
           }
         },
         "ndk_helper-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libndk_helper.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "ndk_helper",
@@ -94,7 +113,12 @@
           }
         },
         "cpufeatures-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "cpufeatures",
@@ -111,7 +135,12 @@
           }
         },
         "ndk_helper-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libndk_helper.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "ndk_helper",
@@ -176,7 +205,12 @@
           }
         },
         "android_native_app_glue-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "android_native_app_glue",
@@ -193,7 +227,12 @@
           }
         },
         "cpufeatures-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "cpufeatures",
@@ -210,7 +249,12 @@
           }
         },
         "TeapotNativeActivity-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "TeapotNativeActivity",
@@ -299,7 +343,12 @@
           }
         },
         "TeapotNativeActivity-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "TeapotNativeActivity",
@@ -388,7 +437,12 @@
           }
         },
         "cpufeatures-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "cpufeatures",
@@ -405,7 +459,12 @@
           }
         },
         "TeapotNativeActivity-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "TeapotNativeActivity",
@@ -494,7 +553,12 @@
           }
         },
         "android_native_app_glue-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "android_native_app_glue",
@@ -511,7 +575,12 @@
           }
         },
         "android_native_app_glue-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "android_native_app_glue",
@@ -528,7 +597,12 @@
           }
         },
         "ndk_helper-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libndk_helper.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "ndk_helper",
@@ -593,7 +667,12 @@
           }
         },
         "TeapotNativeActivity-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "TeapotNativeActivity",
@@ -682,7 +761,12 @@
           }
         },
         "ndk_helper-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libndk_helper.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "ndk_helper",
@@ -747,7 +831,12 @@
           }
         },
         "ndk_helper-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libndk_helper.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "ndk_helper",
@@ -812,7 +901,12 @@
           }
         },
         "cpufeatures-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "cpufeatures",
@@ -829,7 +923,12 @@
           }
         },
         "ndk_helper-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libndk_helper.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "ndk_helper",
@@ -894,7 +993,12 @@
           }
         },
         "cpufeatures-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "cpufeatures",
@@ -911,7 +1015,12 @@
           }
         },
         "TeapotNativeActivity-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "TeapotNativeActivity",
@@ -1000,7 +1109,12 @@
           }
         },
         "android_native_app_glue-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "android_native_app_glue",
@@ -1017,7 +1131,12 @@
           }
         },
         "cpufeatures-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "cpufeatures",
@@ -1034,7 +1153,12 @@
           }
         },
         "TeapotNativeActivity-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "TeapotNativeActivity",
@@ -1123,7 +1247,12 @@
           }
         },
         "android_native_app_glue-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "android_native_app_glue",
@@ -1140,7 +1269,12 @@
           }
         },
         "android_native_app_glue-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "android_native_app_glue",
@@ -1157,7 +1291,12 @@
           }
         },
         "ndk_helper-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libndk_helper.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "ndk_helper",
@@ -1222,7 +1361,12 @@
           }
         },
         "cpufeatures-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "cpufeatures",
@@ -1239,7 +1383,12 @@
           }
         },
         "TeapotNativeActivity-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "TeapotNativeActivity",
@@ -1399,13 +1548,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "ndk_helper-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libndk_helper.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "ndk_helper",
@@ -1470,7 +1633,12 @@
           }
         },
         "android_native_app_glue-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "android_native_app_glue",
@@ -1487,7 +1655,12 @@
           }
         },
         "ndk_helper-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libndk_helper.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "ndk_helper",
@@ -1552,7 +1725,12 @@
           }
         },
         "cpufeatures-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "cpufeatures",
@@ -1569,7 +1747,12 @@
           }
         },
         "ndk_helper-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libndk_helper.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "ndk_helper",
@@ -1634,7 +1817,12 @@
           }
         },
         "android_native_app_glue-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "android_native_app_glue",
@@ -1651,7 +1839,12 @@
           }
         },
         "cpufeatures-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "cpufeatures",
@@ -1668,7 +1861,12 @@
           }
         },
         "ndk_helper-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libndk_helper.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "ndk_helper",
@@ -1733,7 +1931,12 @@
           }
         },
         "cpufeatures-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "cpufeatures",
@@ -1750,7 +1953,12 @@
           }
         },
         "cpufeatures-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "cpufeatures",
@@ -1767,7 +1975,12 @@
           }
         },
         "android_native_app_glue-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "android_native_app_glue",
@@ -1784,7 +1997,12 @@
           }
         },
         "TeapotNativeActivity-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "TeapotNativeActivity",
@@ -1873,7 +2091,12 @@
           }
         },
         "android_native_app_glue-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "android_native_app_glue",
@@ -1890,7 +2113,12 @@
           }
         },
         "TeapotNativeActivity-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "TeapotNativeActivity",
@@ -1979,7 +2207,12 @@
           }
         },
         "ndk_helper-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libndk_helper.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "ndk_helper",
@@ -2044,7 +2277,12 @@
           }
         },
         "TeapotNativeActivity-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "TeapotNativeActivity",
@@ -2133,7 +2371,12 @@
           }
         },
         "android_native_app_glue-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "android_native_app_glue",
@@ -2150,7 +2393,12 @@
           }
         },
         "ndk_helper-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libndk_helper.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "ndk_helper",
@@ -2215,7 +2463,12 @@
           }
         },
         "TeapotNativeActivity-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "TeapotNativeActivity",
@@ -2304,7 +2557,12 @@
           }
         },
         "cpufeatures-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "cpufeatures",
@@ -2321,7 +2579,12 @@
           }
         },
         "cpufeatures-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "cpufeatures",
@@ -2338,7 +2601,12 @@
           }
         },
         "cpufeatures-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "cpufeatures",
@@ -2355,7 +2623,12 @@
           }
         },
         "TeapotNativeActivity-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "TeapotNativeActivity",
@@ -2444,7 +2717,12 @@
           }
         },
         "TeapotNativeActivity-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "TeapotNativeActivity",
@@ -2533,7 +2811,12 @@
           }
         },
         "ndk_helper-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libndk_helper.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/armeabi-v7a/libndk_helper.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "ndk_helper",
@@ -2598,7 +2881,12 @@
           }
         },
         "TeapotNativeActivity-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libTeapotNativeActivity.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/arm64-v8a/libTeapotNativeActivity.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "TeapotNativeActivity",
@@ -2687,7 +2975,12 @@
           }
         },
         "android_native_app_glue-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/x86_64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/x86_64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "android_native_app_glue",
@@ -2704,7 +2997,12 @@
           }
         },
         "android_native_app_glue-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/Teapot/obj/local/mips64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/Teapot/obj/local/mips64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "android_native_app_glue",

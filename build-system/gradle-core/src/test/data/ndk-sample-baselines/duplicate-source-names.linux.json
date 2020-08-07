@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "hello-jni-debug-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libhello-jni.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "hello-jni",
@@ -41,7 +55,12 @@
           }
         },
         "apple-debug-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libapple.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "apple",
@@ -58,7 +77,12 @@
           }
         },
         "hello-jni-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libhello-jni.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "hello-jni",
@@ -87,7 +111,12 @@
           }
         },
         "banana-debug-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libbanana.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "banana",
@@ -104,7 +133,12 @@
           }
         },
         "hello-jni-debug-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libhello-jni.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "hello-jni",
@@ -133,7 +167,12 @@
           }
         },
         "hello-jni-debug-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libhello-jni.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "hello-jni",
@@ -162,7 +201,12 @@
           }
         },
         "banana-debug-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libbanana.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "banana",
@@ -179,7 +223,12 @@
           }
         },
         "apple-debug-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libapple.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "apple",
@@ -196,7 +245,12 @@
           }
         },
         "apple-debug-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi/libapple.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "apple",
@@ -213,7 +267,12 @@
           }
         },
         "banana-debug-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libbanana.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "banana",
@@ -230,7 +289,12 @@
           }
         },
         "banana-debug-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libbanana.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "banana",
@@ -247,7 +311,12 @@
           }
         },
         "hello-jni-debug-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libhello-jni.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "hello-jni",
@@ -276,7 +345,12 @@
           }
         },
         "banana-debug-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips/libbanana.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "banana",
@@ -293,7 +367,12 @@
           }
         },
         "apple-debug-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/mips64/libapple.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "apple",
@@ -310,7 +389,12 @@
           }
         },
         "apple-debug-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libapple.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "apple",
@@ -327,7 +411,12 @@
           }
         },
         "banana-debug-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libbanana.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "banana",
@@ -344,7 +433,12 @@
           }
         },
         "hello-jni-debug-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/arm64-v8a/libhello-jni.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "hello-jni",
@@ -373,7 +467,12 @@
           }
         },
         "hello-jni-debug-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86/libhello-jni.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "hello-jni",
@@ -402,7 +501,12 @@
           }
         },
         "banana-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libbanana.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "banana",
@@ -419,7 +523,12 @@
           }
         },
         "apple-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/armeabi-v7a/libapple.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "apple",
@@ -436,7 +545,12 @@
           }
         },
         "apple-debug-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/debug/obj/local/x86_64/libapple.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "apple",
@@ -501,13 +615,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "apple-release-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libapple.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "apple",
@@ -524,7 +652,12 @@
           }
         },
         "banana-release-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libbanana.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "banana",
@@ -541,7 +674,12 @@
           }
         },
         "apple-release-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libapple.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "apple",
@@ -558,7 +696,12 @@
           }
         },
         "apple-release-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libapple.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "apple",
@@ -575,7 +718,12 @@
           }
         },
         "banana-release-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libbanana.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "banana",
@@ -592,7 +740,12 @@
           }
         },
         "hello-jni-release-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libhello-jni.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "hello-jni",
@@ -621,7 +774,12 @@
           }
         },
         "apple-release-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libapple.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "apple",
@@ -638,7 +796,12 @@
           }
         },
         "hello-jni-release-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libhello-jni.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "hello-jni",
@@ -667,7 +830,12 @@
           }
         },
         "banana-release-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libbanana.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "banana",
@@ -684,7 +852,12 @@
           }
         },
         "hello-jni-release-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi/libhello-jni.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "hello-jni",
@@ -713,7 +886,12 @@
           }
         },
         "apple-release-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libapple.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "apple",
@@ -730,7 +908,12 @@
           }
         },
         "hello-jni-release-x86": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86/libhello-jni.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "hello-jni",
@@ -759,7 +942,12 @@
           }
         },
         "hello-jni-release-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libhello-jni.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "hello-jni",
@@ -788,7 +976,12 @@
           }
         },
         "banana-release-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libbanana.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "banana",
@@ -805,7 +998,12 @@
           }
         },
         "apple-release-arm64-v8a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/arm64-v8a/libapple.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "apple",
@@ -822,7 +1020,12 @@
           }
         },
         "banana-release-mips64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips64/libbanana.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "banana",
@@ -839,7 +1042,12 @@
           }
         },
         "hello-jni-release-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libhello-jni.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "hello-jni",
@@ -868,7 +1076,12 @@
           }
         },
         "apple-release-armeabi-v7a": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libapple.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/armeabi-v7a/libapple.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "apple",
@@ -885,7 +1098,12 @@
           }
         },
         "banana-release-x86_64": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/x86_64/libbanana.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "banana",
@@ -902,7 +1120,12 @@
           }
         },
         "hello-jni-release-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libhello-jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libhello-jni.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "hello-jni",
@@ -931,7 +1154,12 @@
           }
         },
         "banana-release-mips": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libbanana.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/repro-216676/probable-umbrella/app/.externalNativeBuild/ndkBuild/release/obj/local/mips/libbanana.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "banana",

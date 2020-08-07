@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "sanangeles-debug-armeabi": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "sanangeles",
@@ -41,7 +55,12 @@
           }
         },
         "sanangeles-debug-arm64-v8a": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\arm64-v8a\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\arm64-v8a\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sanangeles",
@@ -70,7 +89,12 @@
           }
         },
         "sanangeles-debug-mips": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "sanangeles",
@@ -99,7 +123,12 @@
           }
         },
         "sanangeles-debug-mips64": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips64\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips64\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "sanangeles",
@@ -128,7 +157,12 @@
           }
         },
         "sanangeles-debug-armeabi-v7a": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi-v7a\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi-v7a\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "sanangeles",
@@ -157,7 +191,12 @@
           }
         },
         "sanangeles-debug-x86_64": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86_64\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86_64\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "sanangeles",
@@ -186,7 +225,12 @@
           }
         },
         "sanangeles-debug-x86": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "sanangeles",
@@ -263,13 +307,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "sanangeles-release-x86": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "sanangeles",
@@ -298,7 +356,12 @@
           }
         },
         "sanangeles-release-arm64-v8a": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\arm64-v8a\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\arm64-v8a\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sanangeles",
@@ -327,7 +390,12 @@
           }
         },
         "sanangeles-release-mips": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "sanangeles",
@@ -356,7 +424,12 @@
           }
         },
         "sanangeles-release-armeabi": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "sanangeles",
@@ -385,7 +458,12 @@
           }
         },
         "sanangeles-release-mips64": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips64\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\mips64\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "sanangeles",
@@ -414,7 +492,12 @@
           }
         },
         "sanangeles-release-armeabi-v7a": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi-v7a\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\armeabi-v7a\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "sanangeles",
@@ -443,7 +526,12 @@
           }
         },
         "sanangeles-release-x86_64": {
-          "buildCommand": "echo build command c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86_64\\libsanangeles.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "c:\\{ndkPath}\\samples\\san-angeles\\obj\\local\\x86_64\\libsanangeles.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "sanangeles",

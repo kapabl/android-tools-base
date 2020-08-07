@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "test-libstl-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/arm64-v8a/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/arm64-v8a/test-libstl"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "test-libstl",
@@ -29,7 +43,12 @@
           }
         },
         "test-libstl-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/x86_64/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/x86_64/test-libstl"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "test-libstl",
@@ -46,7 +65,12 @@
           }
         },
         "test-libstl-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/armeabi/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/armeabi/test-libstl"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "test-libstl",
@@ -63,7 +87,12 @@
           }
         },
         "test-libstl-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/mips64/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/mips64/test-libstl"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "test-libstl",
@@ -80,7 +109,12 @@
           }
         },
         "test-libstl-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/x86/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/x86/test-libstl"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "test-libstl",
@@ -97,7 +131,12 @@
           }
         },
         "test-libstl-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/mips/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/mips/test-libstl"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "test-libstl",
@@ -114,7 +153,12 @@
           }
         },
         "test-libstl-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/armeabi-v7a/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/armeabi-v7a/test-libstl"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "test-libstl",
@@ -179,13 +223,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "test-libstl-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/x86_64/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/x86_64/test-libstl"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "test-libstl",
@@ -202,7 +260,12 @@
           }
         },
         "test-libstl-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/x86/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/x86/test-libstl"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "test-libstl",
@@ -219,7 +282,12 @@
           }
         },
         "test-libstl-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/arm64-v8a/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/arm64-v8a/test-libstl"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "test-libstl",
@@ -236,7 +304,12 @@
           }
         },
         "test-libstl-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/armeabi-v7a/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/armeabi-v7a/test-libstl"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "test-libstl",
@@ -253,7 +326,12 @@
           }
         },
         "test-libstl-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/armeabi/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/armeabi/test-libstl"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "test-libstl",
@@ -270,7 +348,12 @@
           }
         },
         "test-libstl-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/mips/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/mips/test-libstl"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "test-libstl",
@@ -287,7 +370,12 @@
           }
         },
         "test-libstl-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/test-libstdc++/obj/local/mips64/test-libstl",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/test-libstdc++/obj/local/mips64/test-libstl"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "test-libstl",

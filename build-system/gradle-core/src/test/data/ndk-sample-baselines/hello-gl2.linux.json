@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "gl2jni-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/arm64-v8a/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/arm64-v8a/libgl2jni.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "gl2jni",
@@ -29,7 +43,12 @@
           }
         },
         "gl2jni-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/armeabi-v7a/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/armeabi-v7a/libgl2jni.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "gl2jni",
@@ -46,7 +65,12 @@
           }
         },
         "gl2jni-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/mips/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/mips/libgl2jni.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "gl2jni",
@@ -63,7 +87,12 @@
           }
         },
         "gl2jni-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/mips64/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/mips64/libgl2jni.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "gl2jni",
@@ -80,7 +109,12 @@
           }
         },
         "gl2jni-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/x86_64/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/x86_64/libgl2jni.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "gl2jni",
@@ -97,7 +131,12 @@
           }
         },
         "gl2jni-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/x86/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/x86/libgl2jni.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "gl2jni",
@@ -114,7 +153,12 @@
           }
         },
         "gl2jni-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/armeabi/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/armeabi/libgl2jni.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "gl2jni",
@@ -179,13 +223,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "gl2jni-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/mips/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/mips/libgl2jni.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "gl2jni",
@@ -202,7 +260,12 @@
           }
         },
         "gl2jni-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/x86/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/x86/libgl2jni.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "gl2jni",
@@ -219,7 +282,12 @@
           }
         },
         "gl2jni-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/x86_64/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/x86_64/libgl2jni.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "gl2jni",
@@ -236,7 +304,12 @@
           }
         },
         "gl2jni-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/mips64/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/mips64/libgl2jni.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "gl2jni",
@@ -253,7 +326,12 @@
           }
         },
         "gl2jni-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/armeabi/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/armeabi/libgl2jni.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "gl2jni",
@@ -270,7 +348,12 @@
           }
         },
         "gl2jni-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/armeabi-v7a/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/armeabi-v7a/libgl2jni.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "gl2jni",
@@ -287,7 +370,12 @@
           }
         },
         "gl2jni-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/hello-gl2/obj/local/arm64-v8a/libgl2jni.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/hello-gl2/obj/local/arm64-v8a/libgl2jni.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "gl2jni",

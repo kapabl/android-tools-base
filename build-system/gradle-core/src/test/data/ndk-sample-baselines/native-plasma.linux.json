@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "android_native_app_glue-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "android_native_app_glue",
@@ -29,7 +43,12 @@
           }
         },
         "native-plasma-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "native-plasma",
@@ -52,7 +71,12 @@
           }
         },
         "android_native_app_glue-debug-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "android_native_app_glue",
@@ -69,7 +93,12 @@
           }
         },
         "native-plasma-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "native-plasma",
@@ -92,7 +121,12 @@
           }
         },
         "android_native_app_glue-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "android_native_app_glue",
@@ -109,7 +143,12 @@
           }
         },
         "android_native_app_glue-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "android_native_app_glue",
@@ -126,7 +165,12 @@
           }
         },
         "android_native_app_glue-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86_64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86_64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "android_native_app_glue",
@@ -143,7 +187,12 @@
           }
         },
         "native-plasma-debug-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "native-plasma",
@@ -166,7 +215,12 @@
           }
         },
         "native-plasma-debug-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "native-plasma",
@@ -189,7 +243,12 @@
           }
         },
         "native-plasma-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "native-plasma",
@@ -212,7 +271,12 @@
           }
         },
         "native-plasma-debug-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86_64/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86_64/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "native-plasma",
@@ -235,7 +299,12 @@
           }
         },
         "android_native_app_glue-debug-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "android_native_app_glue",
@@ -252,7 +321,12 @@
           }
         },
         "android_native_app_glue-debug-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "android_native_app_glue",
@@ -269,7 +343,12 @@
           }
         },
         "native-plasma-debug-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips64/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips64/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "native-plasma",
@@ -340,13 +419,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "native-plasma-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "native-plasma",
@@ -369,7 +462,12 @@
           }
         },
         "android_native_app_glue-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "android_native_app_glue",
@@ -386,7 +484,12 @@
           }
         },
         "android_native_app_glue-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "android_native_app_glue",
@@ -403,7 +506,12 @@
           }
         },
         "native-plasma-release-mips": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-mips",
           "abi": "mips",
           "artifactName": "native-plasma",
@@ -426,7 +534,12 @@
           }
         },
         "native-plasma-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "native-plasma",
@@ -449,7 +562,12 @@
           }
         },
         "native-plasma-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86_64/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86_64/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "native-plasma",
@@ -472,7 +590,12 @@
           }
         },
         "android_native_app_glue-release-armeabi": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "android_native_app_glue",
@@ -489,7 +612,12 @@
           }
         },
         "native-plasma-release-armeabi-v7a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/armeabi-v7a/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-armeabi-v7a",
           "abi": "armeabi-v7a",
           "artifactName": "native-plasma",
@@ -512,7 +640,12 @@
           }
         },
         "android_native_app_glue-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "android_native_app_glue",
@@ -529,7 +662,12 @@
           }
         },
         "native-plasma-release-arm64-v8a": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/arm64-v8a/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "native-plasma",
@@ -552,7 +690,12 @@
           }
         },
         "native-plasma-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips64/libnative-plasma.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips64/libnative-plasma.so"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "native-plasma",
@@ -575,7 +718,12 @@
           }
         },
         "android_native_app_glue-release-x86_64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86_64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86_64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86_64",
           "abi": "x86_64",
           "artifactName": "android_native_app_glue",
@@ -592,7 +740,12 @@
           }
         },
         "android_native_app_glue-release-mips64": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/mips64/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/mips64/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-mips64",
           "abi": "mips64",
           "artifactName": "android_native_app_glue",
@@ -609,7 +762,12 @@
           }
         },
         "android_native_app_glue-release-x86": {
-          "buildCommand": "echo build command /{ndkPath}/samples/native-plasma/obj/local/x86/libandroid_native_app_glue.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/{ndkPath}/samples/native-plasma/obj/local/x86/libandroid_native_app_glue.a"
+          ],
           "toolchain": "toolchain-x86",
           "abi": "x86",
           "artifactName": "android_native_app_glue",

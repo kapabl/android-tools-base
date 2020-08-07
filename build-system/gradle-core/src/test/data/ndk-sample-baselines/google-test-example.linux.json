@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "sample1-debug-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libsample1.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libsample1.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sample1",
@@ -29,7 +43,12 @@
           }
         },
         "googletest_main-debug-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libgoogletest_main.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libgoogletest_main.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "googletest_main",
@@ -46,7 +65,12 @@
           }
         },
         "sample1_unittest-debug-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/sample1_unittest",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/sample1_unittest"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sample1_unittest",
@@ -117,7 +141,12 @@
           }
         },
         "googletest_static-debug-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libgoogletest_static.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libgoogletest_static.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "googletest_static",
@@ -188,13 +217,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "sample1_unittest-release-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/sample1_unittest",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/sample1_unittest"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sample1_unittest",
@@ -265,7 +308,12 @@
           }
         },
         "googletest_main-release-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libgoogletest_main.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libgoogletest_main.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "googletest_main",
@@ -282,7 +330,12 @@
           }
         },
         "googletest_static-release-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libgoogletest_static.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libgoogletest_static.a"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "googletest_static",
@@ -335,7 +388,12 @@
           }
         },
         "sample1-release-arm64-v8a": {
-          "buildCommand": "echo build command {NDK}/debug/obj/local/arm64-v8a/libsample1.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "{NDK}/debug/obj/local/arm64-v8a/libsample1.so"
+          ],
           "toolchain": "toolchain-arm64-v8a",
           "abi": "arm64-v8a",
           "artifactName": "sample1",

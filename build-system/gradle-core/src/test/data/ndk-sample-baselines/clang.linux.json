@@ -6,13 +6,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "cpufeatures-debug-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "cpufeatures",
@@ -29,7 +43,12 @@
           }
         },
         "helloneon-debug-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libhelloneon.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libhelloneon.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "helloneon",
@@ -70,13 +89,27 @@
           "path": "{testPath}"
         }
       ],
-      "cleanCommands": [
-        "echo clean command"
+      "cleanCommandsComponents": [
+        [
+          "echo",
+          "clean",
+          "command"
+        ]
       ],
-      "buildTargetsCommand": "echo build command {LIST_OF_TARGETS_TO_BUILD}",
+      "buildTargetsCommandComponents": [
+        "echo",
+        "build",
+        "command",
+        "{LIST_OF_TARGETS_TO_BUILD}"
+      ],
       "libraries": {
         "cpufeatures-release-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libcpufeatures.a",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libcpufeatures.a"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "cpufeatures",
@@ -93,7 +126,12 @@
           }
         },
         "helloneon-release-armeabi": {
-          "buildCommand": "echo build command /usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libhelloneon.so",
+          "buildCommandComponents": [
+            "echo",
+            "build",
+            "command",
+            "/usr/local/google/home/jomof/projects/hello-neon1/app/build/intermediates/ndkBuild/debug/obj/local/armeabi/libhelloneon.so"
+          ],
           "toolchain": "toolchain-armeabi",
           "abi": "armeabi",
           "artifactName": "helloneon",
