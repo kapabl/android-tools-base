@@ -1,0 +1,249 @@
+/**
+ * AGP Build Model Extraction Init Script
+ *
+ * Extracts the complete build model from AGP including:
+ * - Compile and runtime classpaths
+ * - Source sets
+ * - Annotation processors and their arguments
+ * - Compiler options
+ * - Variant configuration
+ *
+ * Usage:
+ *   ./gradlew extractBuildModel --init-script init-extract-model.gradle
+ *
+ * Output:
+ *   build/agp-build-model.json - Complete build model in JSON format
+ */
+
+initscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    plugins.withId("com.android.application") {
+        afterEvaluate { project ->
+            def outputFile = project.file("${project.buildDir}/agp-build-model.json")
+
+            project.task("extractBuildModel") {
+                group = "build analysis"
+                description = "Extracts AGP build model to JSON for external build systems"
+
+                doLast {
+                    def buildModel = [:]
+
+                    project.android.applicationVariants.all { variant ->
+                        println "[ExtractModel] Processing variant: ${variant.name}"
+
+                        // Resolve configurations to get actual JAR files
+                        def compileJars = []
+                        def runtimeJars = []
+                        def annotationProcessorJars = []
+
+                        try {
+                            // Compile classpath
+                            variant.compileConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                compileJars.add([
+                                    file: artifact.file.absolutePath,
+                                    group: artifact.moduleVersion.id.group,
+                                    module: artifact.moduleVersion.id.name,
+                                    version: artifact.moduleVersion.id.version
+                                ])
+                            }
+
+                            // Runtime classpath
+                            variant.runtimeConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                runtimeJars.add([
+                                    file: artifact.file.absolutePath,
+                                    group: artifact.moduleVersion.id.group,
+                                    module: artifact.moduleVersion.id.name,
+                                    version: artifact.moduleVersion.id.version
+                                ])
+                            }
+
+                            // Annotation processors
+                            if (variant.annotationProcessorConfiguration) {
+                                variant.annotationProcessorConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                    annotationProcessorJars.add([
+                                        file: artifact.file.absolutePath,
+                                        group: artifact.moduleVersion.id.group,
+                                        module: artifact.moduleVersion.id.name,
+                                        version: artifact.moduleVersion.id.version
+                                    ])
+                                }
+                            }
+                        } catch (Exception e) {
+                            println "[ExtractModel] Warning: Failed to resolve some dependencies: ${e.message}"
+                        }
+
+                        // Collect source directories
+                        def javaSourceDirs = []
+                        def kotlinSourceDirs = []
+                        def generatedSourceDirs = []
+
+                        variant.sourceSets.each { sourceSet ->
+                            javaSourceDirs.addAll(sourceSet.javaDirectories.collect { it.absolutePath })
+                            // Kotlin source dirs (if Kotlin plugin is applied)
+                            if (sourceSet.hasProperty('kotlinDirectories')) {
+                                kotlinSourceDirs.addAll(sourceSet.kotlinDirectories.collect { it.absolutePath })
+                            }
+                        }
+
+                        // Generated sources
+                        generatedSourceDirs.addAll(variant.getGeneratedSourceFolders().collect { it.absolutePath })
+
+                        // Annotation processor arguments
+                        def annotationProcessorArgs = [:]
+                        try {
+                            def javaCompileTask = project.tasks.findByName("compile${variant.name.capitalize()}JavaWithJavac")
+                            if (javaCompileTask) {
+                                javaCompileTask.options.compilerArgs.each { arg ->
+                                    if (arg.startsWith('-A')) {
+                                        def parts = arg.substring(2).split('=', 2)
+                                        if (parts.length == 2) {
+                                            annotationProcessorArgs[parts[0]] = parts[1]
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (Exception e) {
+                            println "[ExtractModel] Warning: Failed to extract annotation processor args: ${e.message}"
+                        }
+
+                        // Build variant model
+                        def variantModel = [
+                            name: variant.name,
+                            applicationId: variant.applicationId,
+                            buildType: variant.buildType.name,
+                            productFlavors: variant.productFlavors.collect { it.name },
+
+                            // SDK versions
+                            minSdkVersion: variant.minSdkVersion.apiLevel,
+                            targetSdkVersion: variant.targetSdkVersion.apiLevel,
+                            compileSdkVersion: project.android.compileSdkVersion,
+
+                            // Compiler options
+                            sourceCompatibility: project.android.compileOptions.sourceCompatibility.toString(),
+                            targetCompatibility: project.android.compileOptions.targetCompatibility.toString(),
+
+                            // Classpaths
+                            compileClasspath: compileJars,
+                            runtimeClasspath: runtimeJars,
+                            annotationProcessors: annotationProcessorJars,
+                            annotationProcessorArguments: annotationProcessorArgs,
+
+                            // Source sets
+                            javaSourceDirs: javaSourceDirs.unique(),
+                            kotlinSourceDirs: kotlinSourceDirs.unique(),
+                            generatedSourceDirs: generatedSourceDirs.unique(),
+
+                            // Output directories
+                            outputDir: variant.javaCompileProvider.get().destinationDirectory.get().asFile.absolutePath,
+                            dexOutputDir: "${project.buildDir}/intermediates/dex/${variant.name}",
+
+                            // Build features
+                            dataBindingEnabled: variant.buildFeatures.dataBinding,
+                            viewBindingEnabled: variant.buildFeatures.viewBinding,
+
+                            // Additional properties
+                            debuggable: variant.buildType.debuggable,
+                            minifyEnabled: variant.buildType.minifyEnabled,
+                            multiDexEnabled: variant.multiDexEnabled,
+                            testVariantName: variant.testVariant?.name
+                        ]
+
+                        buildModel[variant.name] = variantModel
+
+                        println "[ExtractModel] Extracted ${compileJars.size()} compile dependencies"
+                        println "[ExtractModel] Extracted ${annotationProcessorJars.size()} annotation processors"
+                    }
+
+                    // Write to JSON file
+                    outputFile.parentFile.mkdirs()
+                    outputFile.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(buildModel))
+
+                    println ""
+                    println "======================================"
+                    println "Build model extracted successfully!"
+                    println "Location: ${outputFile.absolutePath}"
+                    println "Variants: ${buildModel.keySet().join(', ')}"
+                    println "======================================"
+                }
+            }
+        }
+    }
+
+    plugins.withId("com.android.library") {
+        afterEvaluate { project ->
+            def outputFile = project.file("${project.buildDir}/agp-build-model.json")
+
+            project.task("extractBuildModel") {
+                group = "build analysis"
+                description = "Extracts AGP library build model to JSON"
+
+                doLast {
+                    def buildModel = [:]
+
+                    project.android.libraryVariants.all { variant ->
+                        println "[ExtractModel] Processing library variant: ${variant.name}"
+
+                        def compileJars = []
+                        def runtimeJars = []
+
+                        try {
+                            variant.compileConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                compileJars.add([
+                                    file: artifact.file.absolutePath,
+                                    group: artifact.moduleVersion.id.group,
+                                    module: artifact.moduleVersion.id.name,
+                                    version: artifact.moduleVersion.id.version
+                                ])
+                            }
+
+                            variant.runtimeConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                runtimeJars.add([
+                                    file: artifact.file.absolutePath,
+                                    group: artifact.moduleVersion.id.group,
+                                    module: artifact.moduleVersion.id.name,
+                                    version: artifact.moduleVersion.id.version
+                                ])
+                            }
+                        } catch (Exception e) {
+                            println "[ExtractModel] Warning: Failed to resolve dependencies: ${e.message}"
+                        }
+
+                        def variantModel = [
+                            name: variant.name,
+                            buildType: variant.buildType.name,
+                            isLibrary: true,
+
+                            minSdkVersion: variant.minSdkVersion.apiLevel,
+                            targetSdkVersion: variant.targetSdkVersion.apiLevel,
+
+                            sourceCompatibility: project.android.compileOptions.sourceCompatibility.toString(),
+                            targetCompatibility: project.android.compileOptions.targetCompatibility.toString(),
+
+                            compileClasspath: compileJars,
+                            runtimeClasspath: runtimeJars,
+
+                            outputDir: variant.javaCompileProvider.get().destinationDirectory.get().asFile.absolutePath
+                        ]
+
+                        buildModel[variant.name] = variantModel
+                    }
+
+                    outputFile.parentFile.mkdirs()
+                    outputFile.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(buildModel))
+
+                    println ""
+                    println "======================================"
+                    println "Library build model extracted!"
+                    println "Location: ${outputFile.absolutePath}"
+                    println "======================================"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,315 @@
+/**
+ * AGP Compilation and Dexing Bypass Init Script
+ *
+ * This script replaces AGP's Java/Kotlin compilation and dexing with external build system outputs (Buck2).
+ * Designed for CI/CD environments where modifying build.gradle is not allowed.
+ *
+ * CRITICAL: This is for build system integration, NOT for local development!
+ *
+ * How it works:
+ * 1. Disables JavaCompile and Kotlin compilation tasks
+ * 2. Disables DexArchiveBuilder and dexing tasks
+ * 3. Injects pre-compiled classes/JARs from Buck2
+ * 4. Injects pre-dexed files from Buck2
+ * 5. Allows AGP to continue with packaging (resources, native libs, signing)
+ *
+ * Environment Variables Required:
+ *   BUCK2_OUTPUT_DIR - Directory containing Buck2 build outputs
+ *   AGP_VARIANT - Variant to build (e.g., "debug", "release")
+ *
+ * Usage:
+ *   export BUCK2_OUTPUT_DIR=/path/to/buck2-out
+ *   export AGP_VARIANT=debug
+ *   ./gradlew assembleDebug --init-script init-bypass-compile-dex.gradle
+ *
+ * Buck2 Output Structure Expected:
+ *   $BUCK2_OUTPUT_DIR/
+ *     ├── ${variant}/
+ *     │   ├── classes.jar          # Compiled classes from Buck2
+ *     │   ├── dex/
+ *     │   │   ├── classes.dex       # Primary DEX file
+ *     │   │   ├── classes2.dex      # Additional DEX files (if multi-dex)
+ *     │   │   └── classes3.dex
+ *     │   └── kotlin-classes/       # Kotlin compiled classes (if applicable)
+ */
+
+initscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    plugins.withId("com.android.application") {
+        afterEvaluate { project ->
+
+            // Get configuration from environment
+            def buck2OutputDir = System.getenv("BUCK2_OUTPUT_DIR")
+            def targetVariant = System.getenv("AGP_VARIANT") ?: "debug"
+
+            if (!buck2OutputDir) {
+                println "[Buck2Bypass] WARNING: BUCK2_OUTPUT_DIR not set. Buck2 bypass will NOT be applied."
+                println "[Buck2Bypass] Set environment variable: export BUCK2_OUTPUT_DIR=/path/to/buck2-out"
+                return
+            }
+
+            println ""
+            println "========================================"
+            println "  AGP Compilation/Dexing Bypass Active"
+            println "========================================"
+            println "Buck2 output: ${buck2OutputDir}"
+            println "Target variant: ${targetVariant}"
+            println "========================================"
+            println ""
+
+            project.android.applicationVariants.all { variant ->
+                if (variant.name != targetVariant) {
+                    return // Only process the target variant
+                }
+
+                def variantName = variant.name.capitalize()
+                def buck2VariantDir = new File(buck2OutputDir, variant.name)
+
+                // Validate Buck2 outputs exist
+                def buck2ClassesJar = new File(buck2VariantDir, "classes.jar")
+                def buck2DexDir = new File(buck2VariantDir, "dex")
+
+                println "[Buck2Bypass] Processing variant: ${variant.name}"
+                println "[Buck2Bypass] Expected Buck2 classes: ${buck2ClassesJar}"
+                println "[Buck2Bypass] Expected Buck2 dex: ${buck2DexDir}"
+
+                // ===================================================================
+                // STEP 1: Bypass Java Compilation
+                // ===================================================================
+
+                def javaCompileTaskName = "compile${variantName}JavaWithJavac"
+                project.tasks.whenTaskAdded { task ->
+                    if (task.name == javaCompileTaskName) {
+                        println "[Buck2Bypass] Configuring ${task.name} bypass..."
+
+                        task.doFirst {
+                            println "[Buck2Bypass] Skipping Java compilation (using Buck2 output)"
+                        }
+
+                        // Mark outputs as up-to-date to skip execution
+                        task.outputs.upToDateWhen { true }
+                        task.enabled = false
+
+                        // Create injection task
+                        def injectTaskName = "inject${variantName}Buck2Classes"
+                        if (!project.tasks.findByName(injectTaskName)) {
+                            project.task(injectTaskName) {
+                                description = "Injects Buck2-compiled classes into AGP build"
+                                group = "buck2 integration"
+
+                                inputs.file(buck2ClassesJar)
+                                outputs.dir(variant.javaCompileProvider.get().destinationDirectory)
+
+                                doLast {
+                                    def agpClassesDir = variant.javaCompileProvider.get().destinationDirectory.get().asFile
+
+                                    println "[Buck2Bypass] Injecting classes from: ${buck2ClassesJar}"
+                                    println "[Buck2Bypass] Into AGP classes dir: ${agpClassesDir}"
+
+                                    if (!buck2ClassesJar.exists()) {
+                                        throw new GradleException(
+                                            "Buck2 classes JAR not found: ${buck2ClassesJar}\\n" +
+                                            "Build with Buck2 first: buck2 build //app:compile_${variant.name}"
+                                        )
+                                    }
+
+                                    // Clear existing classes
+                                    project.delete(agpClassesDir)
+                                    agpClassesDir.mkdirs()
+
+                                    // Extract Buck2 JAR into AGP classes directory
+                                    project.copy {
+                                        from project.zipTree(buck2ClassesJar)
+                                        into agpClassesDir
+                                        exclude 'META-INF/**' // Exclude META-INF to avoid conflicts
+                                    }
+
+                                    println "[Buck2Bypass] Injected ${agpClassesDir.listFiles()?.length ?: 0} class files"
+                                }
+                            }
+
+                            // Inject classes after the disabled compile task
+                            task.finalizedBy(injectTaskName)
+                        }
+                    }
+                }
+
+                // ===================================================================
+                // STEP 2: Bypass Kotlin Compilation (if Kotlin plugin present)
+                // ===================================================================
+
+                def kotlinCompileTaskName = "compile${variantName}Kotlin"
+                project.tasks.whenTaskAdded { task ->
+                    if (task.name == kotlinCompileTaskName) {
+                        println "[Buck2Bypass] Configuring ${task.name} bypass..."
+
+                        task.outputs.upToDateWhen { true }
+                        task.enabled = false
+
+                        task.doFirst {
+                            println "[Buck2Bypass] Skipping Kotlin compilation (using Buck2 output)"
+                        }
+
+                        // Kotlin classes are included in the same classes.jar from Buck2
+                        // So the same inject task handles both Java and Kotlin
+                    }
+                }
+
+                // ===================================================================
+                // STEP 3: Bypass Dexing (DexArchiveBuilder)
+                // ===================================================================
+
+                def dexBuilderTaskName = "dexBuilder${variantName}"
+                project.tasks.whenTaskAdded { task ->
+                    if (task.name == dexBuilderTaskName) {
+                        println "[Buck2Bypass] Configuring ${task.name} bypass..."
+
+                        task.outputs.upToDateWhen { true }
+                        task.enabled = false
+
+                        task.doFirst {
+                            println "[Buck2Bypass] Skipping dexing (using Buck2 DEX output)"
+                        }
+
+                        // Create DEX injection task
+                        def injectDexTaskName = "inject${variantName}Buck2Dex"
+                        if (!project.tasks.findByName(injectDexTaskName)) {
+                            project.task(injectDexTaskName) {
+                                description = "Injects Buck2-generated DEX files into AGP build"
+                                group = "buck2 integration"
+
+                                inputs.dir(buck2DexDir)
+
+                                // AGP expects DEX files in specific locations
+                                def agpProjectDexDir = project.layout.buildDirectory.dir(
+                                    "intermediates/dex/${variant.name}/out/project"
+                                ).get().asFile
+
+                                outputs.dir(agpProjectDexDir)
+
+                                doLast {
+                                    println "[Buck2Bypass] Injecting DEX from: ${buck2DexDir}"
+                                    println "[Buck2Bypass] Into AGP DEX dir: ${agpProjectDexDir}"
+
+                                    if (!buck2DexDir.exists() || !buck2DexDir.isDirectory()) {
+                                        throw new GradleException(
+                                            "Buck2 DEX directory not found: ${buck2DexDir}\\n" +
+                                            "Build with Buck2 first: buck2 build //app:dex_${variant.name}"
+                                        )
+                                    }
+
+                                    // Clear existing DEX files
+                                    project.delete(agpProjectDexDir)
+                                    agpProjectDexDir.mkdirs()
+
+                                    // Copy DEX files from Buck2
+                                    project.copy {
+                                        from buck2DexDir
+                                        into agpProjectDexDir
+                                        include '*.dex'
+                                    }
+
+                                    def dexFiles = agpProjectDexDir.listFiles()?.findAll { it.name.endsWith('.dex') }
+                                    println "[Buck2Bypass] Injected ${dexFiles?.size() ?: 0} DEX files"
+
+                                    if (!dexFiles || dexFiles.isEmpty()) {
+                                        throw new GradleException(
+                                            "No DEX files found in Buck2 output: ${buck2DexDir}"
+                                        )
+                                    }
+                                }
+                            }
+
+                            task.finalizedBy(injectDexTaskName)
+                        }
+                    }
+                }
+
+                // ===================================================================
+                // STEP 4: Bypass DEX Merging (if applicable)
+                // ===================================================================
+
+                def dexMergeTaskName = "mergeDex${variantName}"
+                def mergeProjectDexTaskName = "mergeProject${variantName}DexForApplication"
+                def mergeExtDexTaskName = "mergeExtDex${variantName}"
+                def mergeLibDexTaskName = "mergeLibDex${variantName}"
+
+                [dexMergeTaskName, mergeProjectDexTaskName, mergeExtDexTaskName, mergeLibDexTaskName].each { taskName ->
+                    project.tasks.whenTaskAdded { task ->
+                        if (task.name == taskName) {
+                            println "[Buck2Bypass] Configuring ${task.name} bypass..."
+                            task.outputs.upToDateWhen { true }
+                            task.enabled = false
+                            task.doFirst {
+                                println "[Buck2Bypass] Skipping DEX merging (Buck2 output is pre-merged)"
+                            }
+                        }
+                    }
+                }
+
+                // ===================================================================
+                // STEP 5: Bypass R8/ProGuard (if minification is enabled)
+                // ===================================================================
+
+                def r8TaskName = "minify${variantName}WithR8"
+                project.tasks.whenTaskAdded { task ->
+                    if (task.name == r8TaskName) {
+                        println "[Buck2Bypass] WARNING: R8/minification detected"
+                        println "[Buck2Bypass] You must handle minification in Buck2!"
+                        println "[Buck2Bypass] Disabling R8 task: ${task.name}"
+
+                        task.outputs.upToDateWhen { true }
+                        task.enabled = false
+                    }
+                }
+
+                // ===================================================================
+                // VERIFICATION: Ensure packaging tasks still run
+                // ===================================================================
+
+                def packageTaskName = "package${variantName}"
+                project.tasks.whenTaskAdded { task ->
+                    if (task.name == packageTaskName) {
+                        println "[Buck2Bypass] Packaging task will run: ${task.name}"
+                        println "[Buck2Bypass] This task will use Buck2 DEX + AGP resources"
+                    }
+                }
+
+                println "[Buck2Bypass] Bypass configuration complete for variant: ${variant.name}"
+            }
+        }
+    }
+}
+
+// ===================================================================
+// Post-execution verification
+// ===================================================================
+
+gradle.buildFinished { buildResult ->
+    if (buildResult.failure) {
+        println ""
+        println "========================================"
+        println "  Build Failed - Check Buck2 Outputs"
+        println "========================================"
+        println "Ensure Buck2 has built:"
+        println "  1. classes.jar"
+        println "  2. dex/classes.dex (and classes2.dex, etc.)"
+        println "========================================"
+    } else {
+        println ""
+        println "========================================"
+        println "  Build Successful with Buck2 Bypass"
+        println "========================================"
+        println "APK packaged with:"
+        println "  - Buck2-compiled classes"
+        println "  - Buck2-generated DEX files"
+        println "  - AGP-processed resources"
+        println "========================================"
+    }
+}
