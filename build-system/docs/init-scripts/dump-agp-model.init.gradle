@@ -1,0 +1,111 @@
+import com.android.build.gradle.BasePlugin
+import com.android.build.gradle.internal.model.ModelBuilder
+import com.android.build.gradle.internal.model.NativeLibraryFactoryImpl
+import groovy.json.JsonOutput
+
+import java.io.FileOutputStream
+import java.io.ObjectOutputStream
+
+/**
+ * Usage:
+ *   ./gradlew -I build-system/docs/init-scripts/dump-agp-model.init.gradle dumpAgpBuildModel \
+ *     -PagpModelOutDir=$PWD/build/agp-model
+ */
+
+def outDir = new File(gradle.startParameter.projectProperties.get('agpModelOutDir') ?: 'build/agp-model')
+
+gradle.projectsEvaluated {
+    def root = gradle.rootProject
+
+    root.tasks.register('dumpAgpBuildModel') {
+        group = 'verification'
+        description = 'Dumps AGP AndroidProject tooling model for each Android project as .bin + summary.json'
+
+        doLast {
+            outDir.mkdirs()
+            def index = []
+
+            root.allprojects.each { p ->
+                def basePlugin = p.plugins.find { it instanceof BasePlugin } as BasePlugin
+                if (basePlugin == null) {
+                    return
+                }
+
+                def readField = { obj, String name ->
+                    def f = BasePlugin.getDeclaredField(name)
+                    f.accessible = true
+                    f.get(obj)
+                }
+
+                def androidBuilder = readField(basePlugin, 'androidBuilder')
+                def variantManager = readField(basePlugin, 'variantManager')
+                def taskManager = readField(basePlugin, 'taskManager')
+                def extension = readField(basePlugin, 'extension')
+                def extraModelInfo = readField(basePlugin, 'extraModelInfo')
+                def ndkHandler = readField(basePlugin, 'ndkHandler')
+                def isLibrary = p.plugins.hasPlugin('com.android.library')
+
+                def mb = new ModelBuilder(
+                        androidBuilder,
+                        variantManager,
+                        taskManager,
+                        extension,
+                        extraModelInfo,
+                        ndkHandler,
+                        new NativeLibraryFactoryImpl(ndkHandler),
+                        isLibrary)
+
+                def model = mb.buildAll('com.android.builder.model.AndroidProject', p)
+
+                def safeName = p.path.replace(':', '_').replaceAll('^_', '') ?: 'root'
+                def modelBin = new File(outDir, "${safeName}.AndroidProject.bin")
+                modelBin.withOutputStream { os ->
+                    new ObjectOutputStream(os).withCloseable { oos ->
+                        oos.writeObject(model)
+                    }
+                }
+
+                def variants = model.variants.collect { v ->
+                    def main = v.mainArtifact
+                    [
+                            name             : v.name,
+                            applicationId    : main.applicationId,
+                            compileTask      : main.compileTaskName,
+                            assembleTask     : main.assembleTaskName,
+                            classesFolder    : main.classesFolder?.absolutePath,
+                            generatedSources : main.generatedSourceFolders*.absolutePath,
+                            generatedResources: main.generatedResourceFolders*.absolutePath,
+                            javaLibCount     : main.dependencies?.javaLibraries?.size() ?: 0,
+                            androidLibCount  : main.dependencies?.libraries?.size() ?: 0,
+                            projectDepCount  : main.dependencies?.projects?.size() ?: 0,
+                    ]
+                }
+
+                def summary = [
+                        projectPath    : p.path,
+                        modelVersion   : model.modelVersion,
+                        apiVersion     : model.apiVersion,
+                        pluginIsLibrary: model.libraryProject,
+                        bootClasspath  : model.bootClasspath,
+                        variants       : variants,
+                ]
+
+                def summaryFile = new File(outDir, "${safeName}.summary.json")
+                summaryFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(summary))
+
+                index << [
+                        projectPath: p.path,
+                        modelBin   : modelBin.absolutePath,
+                        summaryJson: summaryFile.absolutePath,
+                        variantCount: variants.size(),
+                ]
+
+                println "[dumpAgpBuildModel] ${p.path} -> ${modelBin} (${variants.size()} variants)"
+            }
+
+            def indexFile = new File(outDir, 'index.json')
+            indexFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(index))
+            println "[dumpAgpBuildModel] Wrote ${indexFile}"
+        }
+    }
+}
