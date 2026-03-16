@@ -1,4 +1,12 @@
-# Claude Code Search Methodology
+# Claude Code Guidelines
+
+## Critical Rules
+
+**BE PRECISE. DO NOT INVENT.**
+- Do not assume files, directories, or configurations exist
+- Do not add things to documentation/code unless explicitly confirmed
+- If unsure, ask or verify first
+- Example: Do not add `.buckconfig` to repo layout without confirming it exists
 
 ## Mandatory Search Tool Order
 

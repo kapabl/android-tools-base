@@ -2,24 +2,49 @@
  * AGP Build Model Extraction Init Script
  *
  * Extracts the complete build model from AGP including:
- * - Compile and runtime classpaths
+ * - Compile and runtime classpaths (with SHA256 hashes for Buck2 CAS)
  * - Source sets
  * - Annotation processors and their arguments
  * - Compiler options
  * - Variant configuration
  *
+ * This script is designed for Buck2 integration where:
+ * 1. Gradle downloads all dependencies (offline mode)
+ * 2. JARs are stored in Buck2 CAS (content-addressable storage)
+ * 3. Buck2 references JARs by SHA256 hash for hermetic builds
+ *
  * Usage:
  *   ./gradlew extractBuildModel --init-script init-extract-model.gradle
  *
  * Output:
- *   build/agp-build-model.json - Complete build model in JSON format
+ *   build/agp-build-model.json - Complete build model with SHA256 hashes
  */
+
+import java.security.MessageDigest
 
 initscript {
     repositories {
         google()
         mavenCentral()
     }
+}
+
+// Helper function to compute SHA256 hash for Buck2 CAS
+def computeSHA256(File file) {
+    if (!file.exists()) {
+        return null
+    }
+
+    MessageDigest digest = MessageDigest.getInstance("SHA-256")
+    file.withInputStream { stream ->
+        byte[] buffer = new byte[8192]
+        int bytesRead
+        while ((bytesRead = stream.read(buffer)) != -1) {
+            digest.update(buffer, 0, bytesRead)
+        }
+    }
+
+    return digest.digest().encodeHex().toString()
 }
 
 allprojects {
@@ -45,32 +70,41 @@ allprojects {
                         try {
                             // Compile classpath
                             variant.compileConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                def jarFile = artifact.file
                                 compileJars.add([
-                                    file: artifact.file.absolutePath,
+                                    file: jarFile.absolutePath,
                                     group: artifact.moduleVersion.id.group,
                                     module: artifact.moduleVersion.id.name,
-                                    version: artifact.moduleVersion.id.version
+                                    version: artifact.moduleVersion.id.version,
+                                    sha256: computeSHA256(jarFile),  // For Buck2 CAS reference
+                                    size: jarFile.length()
                                 ])
                             }
 
                             // Runtime classpath
                             variant.runtimeConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                def jarFile = artifact.file
                                 runtimeJars.add([
-                                    file: artifact.file.absolutePath,
+                                    file: jarFile.absolutePath,
                                     group: artifact.moduleVersion.id.group,
                                     module: artifact.moduleVersion.id.name,
-                                    version: artifact.moduleVersion.id.version
+                                    version: artifact.moduleVersion.id.version,
+                                    sha256: computeSHA256(jarFile),
+                                    size: jarFile.length()
                                 ])
                             }
 
                             // Annotation processors
                             if (variant.annotationProcessorConfiguration) {
                                 variant.annotationProcessorConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                    def jarFile = artifact.file
                                     annotationProcessorJars.add([
-                                        file: artifact.file.absolutePath,
+                                        file: jarFile.absolutePath,
                                         group: artifact.moduleVersion.id.group,
                                         module: artifact.moduleVersion.id.name,
-                                        version: artifact.moduleVersion.id.version
+                                        version: artifact.moduleVersion.id.version,
+                                        sha256: computeSHA256(jarFile),
+                                        size: jarFile.length()
                                     ])
                                 }
                             }
@@ -94,7 +128,7 @@ allprojects {
                         // Generated sources
                         generatedSourceDirs.addAll(variant.getGeneratedSourceFolders().collect { it.absolutePath })
 
-                        // Annotation processor arguments
+                        // Annotation processor arguments (Java AP)
                         def annotationProcessorArgs = [:]
                         try {
                             def javaCompileTask = project.tasks.findByName("compile${variant.name.capitalize()}JavaWithJavac")
@@ -110,6 +144,57 @@ allprojects {
                             }
                         } catch (Exception e) {
                             println "[ExtractModel] Warning: Failed to extract annotation processor args: ${e.message}"
+                        }
+
+                        // KAPT (Kotlin Annotation Processing) arguments and dependencies
+                        def kaptArgs = [:]
+                        def kaptDependencies = []
+                        def kotlinOptions = [:]
+                        def hasKotlin = false
+
+                        try {
+                            // Check if Kotlin plugin is applied
+                            if (project.plugins.hasPlugin('kotlin-android') || project.plugins.hasPlugin('org.jetbrains.kotlin.android')) {
+                                hasKotlin = true
+
+                                // Try to extract Kotlin compile task options
+                                def kotlinCompileTask = project.tasks.findByName("compile${variant.name.capitalize()}Kotlin")
+                                if (kotlinCompileTask) {
+                                    kotlinOptions = [
+                                        jvmTarget: kotlinCompileTask.kotlinOptions?.jvmTarget ?: "1.8",
+                                        apiVersion: kotlinCompileTask.kotlinOptions?.apiVersion ?: null,
+                                        languageVersion: kotlinCompileTask.kotlinOptions?.languageVersion ?: null,
+                                        freeCompilerArgs: kotlinCompileTask.kotlinOptions?.freeCompilerArgs ?: []
+                                    ]
+                                }
+
+                                // Check for KAPT
+                                if (project.plugins.hasPlugin('kotlin-kapt') || project.plugins.hasPlugin('org.jetbrains.kotlin.kapt')) {
+                                    // Extract KAPT arguments
+                                    def kaptExtension = project.extensions.findByName('kapt')
+                                    if (kaptExtension) {
+                                        kaptArgs = kaptExtension.arguments ?: [:]
+                                    }
+
+                                    // KAPT dependencies (separate from regular annotation processors)
+                                    def kaptConfig = project.configurations.findByName("kapt${variant.name.capitalize()}")
+                                    if (kaptConfig) {
+                                        kaptConfig.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                            def jarFile = artifact.file
+                                            kaptDependencies.add([
+                                                file: jarFile.absolutePath,
+                                                group: artifact.moduleVersion.id.group,
+                                                module: artifact.moduleVersion.id.name,
+                                                version: artifact.moduleVersion.id.version,
+                                                sha256: computeSHA256(jarFile),
+                                                size: jarFile.length()
+                                            ])
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (Exception e) {
+                            println "[ExtractModel] Warning: Failed to extract Kotlin/KAPT info: ${e.message}"
                         }
 
                         // Build variant model
@@ -133,6 +218,12 @@ allprojects {
                             runtimeClasspath: runtimeJars,
                             annotationProcessors: annotationProcessorJars,
                             annotationProcessorArguments: annotationProcessorArgs,
+
+                            // Kotlin/KAPT information
+                            hasKotlin: hasKotlin,
+                            kotlinOptions: kotlinOptions,
+                            kaptDependencies: kaptDependencies,
+                            kaptArguments: kaptArgs,
 
                             // Source sets
                             javaSourceDirs: javaSourceDirs.unique(),
@@ -194,20 +285,26 @@ allprojects {
 
                         try {
                             variant.compileConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                def jarFile = artifact.file
                                 compileJars.add([
-                                    file: artifact.file.absolutePath,
+                                    file: jarFile.absolutePath,
                                     group: artifact.moduleVersion.id.group,
                                     module: artifact.moduleVersion.id.name,
-                                    version: artifact.moduleVersion.id.version
+                                    version: artifact.moduleVersion.id.version,
+                                    sha256: computeSHA256(jarFile),
+                                    size: jarFile.length()
                                 ])
                             }
 
                             variant.runtimeConfiguration.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                                def jarFile = artifact.file
                                 runtimeJars.add([
-                                    file: artifact.file.absolutePath,
-                                    group: artifact.moduleVersion.id.group,
+                                    file: jarFile.absolutePath,
+                                    group: jarFile.moduleVersion.id.group,
                                     module: artifact.moduleVersion.id.name,
-                                    version: artifact.moduleVersion.id.version
+                                    version: artifact.moduleVersion.id.version,
+                                    sha256: computeSHA256(jarFile),
+                                    size: jarFile.length()
                                 ])
                             }
                         } catch (Exception e) {
