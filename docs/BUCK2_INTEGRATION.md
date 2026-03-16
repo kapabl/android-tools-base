@@ -6,8 +6,10 @@ Buck2 for compilation/dexing. AGP for resources/packaging. No build.gradle chang
 
 ## Repository Layout
 
+This is an example structure for your Android project with Buck2 integration:
+
 ```
-root/
+your-android-project/
 ├── BUCK                                    # Filegroups exposing Android sources
 ├── android/
 │   ├── app/                                # AGP module
@@ -19,10 +21,16 @@ root/
 │       ├── BUCK                            # Native build rules
 │       └── buck2/                          # Buck2 Android compilation
 │           ├── BUCK                        # Generated Buck2 targets
-│           └── generate-buck.py            # Generator script
+│           ├── generate-android-build-targets.py
+│           └── gradle/
+│               └── init-scripts/
+│                   ├── init-extract-model.gradle
+│                   └── init-bypass-compile-dex.gradle
 ```
 
 **Key:** `android/app/` and `android/build/` are parallel dirs. Root BUCK exposes sources via filegroups.
+
+**Sample files:** See `docs/sample-repo-structure/` in this repo for example scripts and init-scripts.
 
 ---
 
@@ -31,20 +39,20 @@ root/
 ```bash
 # 1. Extract AGP build model
 cd android/app
-../../gradlew extractBuildModel --init-script ../../docs/init-scripts/init-extract-model.gradle
+../../gradlew extractBuildModel --init-script ../../build/buck2/gradle/init-scripts/init-extract-model.gradle
 
 # 2. Generate Buck2 targets
 cd ../../android/build/buck2
-python3 generate-buck.py ../../app/build/agp-build-model.json > BUCK
+python3 generate-android-build-targets.py ../../app/build/agp-build-model.json > BUCK
 
 # 3. Build with Buck2 (from repo root)
 cd ../../../
-buck2 build //android/build/buck2:android_app //android/build/buck2:android_dex
+buck2 build //android/build/buck2:app_classes //android/build/buck2:app_dex
 
 # 4. Package APK with AGP
 cd android/app
 export BUCK2_OUTPUT_DIR=../../buck2-out/gen/android/build/buck2
-../../gradlew assembleDebug --init-script ../../docs/init-scripts/init-bypass-compile-dex.gradle
+../../gradlew assembleDebug --init-script ../../build/buck2/gradle/init-scripts/init-bypass-compile-dex.gradle
 ```
 
 **Output:** `android/app/build/outputs/apk/debug/app-debug.apk`
@@ -124,11 +132,13 @@ filegroup(
 
 ## Build Model Extraction
 
-**File:** `docs/init-scripts/init-extract-model.gradle`
+**Init-script:** `android/build/buck2/gradle/init-scripts/init-extract-model.gradle`
+
+**Sample:** `docs/sample-repo-structure/android/build/buck2/gradle/init-scripts/init-extract-model.gradle`
 
 ```bash
 cd android/app
-../../gradlew extractBuildModel --init-script ../../docs/init-scripts/init-extract-model.gradle
+../../gradlew extractBuildModel --init-script ../../build/buck2/gradle/init-scripts/init-extract-model.gradle
 ```
 
 **Output:** `android/app/build/agp-build-model.json`
@@ -157,6 +167,7 @@ cd android/app
 ```
 
 **SHA256 for Buck2 CAS:**
+
 - Init-script computes SHA256 for every JAR
 - Upload to Buck2 CAS: `buck2 cas upload ~/.gradle/.../androidx.core-1.9.0.jar`
 - CAS deduplicates by content hash
@@ -165,94 +176,66 @@ cd android/app
 
 ## Generate Buck2 Targets
 
-**Script:** `android/build/buck2/generate-buck.py`
+**Script:** `android/build/buck2/generate-android-build-targets.py`
 
-```python
-#!/usr/bin/env python3
-import json, sys
+**Sample:** `docs/sample-repo-structure/android/build/buck2/generate-android-build-targets.py`
 
-with open(sys.argv[1]) as f:
-    model = json.load(f)
+Reads AGP build model and generates:
 
-# Use first variant (debug/release/etc)
-variant_name = list(model.keys())[0]
-variant = model[variant_name]
-
-print("# Generated Buck2 targets from AGP build model")
-print(f"# Variant: {variant_name}\n")
-
-# Generate prebuilt_jar for each dependency
-for dep in variant['compileClasspath']:
-    name = f"{dep['group']}_{dep['module']}_{dep['version']}".replace('.', '_').replace('-', '_')
-    jar_path = dep['file']
-    print(f'prebuilt_jar(')
-    print(f'    name = "{name}",')
-    print(f'    binary_jar = "{jar_path}",')
-    print(f')\n')
-
-# Generate java_library
-deps = [f':{dep["group"]}_{dep["module"]}_{dep["version"]}'.replace('.', '_').replace('-', '_')
-        for dep in variant['compileClasspath']]
-
-print(f'java_library(')
-print(f'    name = "android_app",')
-print(f'    srcs = [')
-print(f'        "//:app_java_sources",')
-if variant.get('hasKotlin'):
-    print(f'        "//:app_kotlin_sources",')
-print(f'        "//:app_generated_sources",')
-print(f'    ],')
-print(f'    deps = {deps},')
-print(f')\n')
-
-# Generate dex rule
-print(f'genrule(')
-print(f'    name = "android_dex",')
-print(f'    srcs = [":android_app"],')
-print(f'    out = "dex",')
-print(f'    cmd = "d8 --lib $$ANDROID_HOME/platforms/android-33/android.jar --min-api 21 --output $$OUT $$(location :android_app)",')
-print(f')')
-```
+1. `gradle_deps` - Downloads all maven dependencies via gradle
+2. `app_classes` - Compiles Java/Kotlin sources
+3. `app_dex` - Converts compiled classes to Android DEX format
 
 **Usage:**
+
 ```bash
 cd android/build/buck2
-python3 generate-buck.py ../../app/build/agp-build-model.json > BUCK
+python3 generate-android-build-targets.py ../../app/build/agp-build-model.json > BUCK
 ```
 
 **Generated output:**
+
 ```python
-# android/build/buck2/BUCK
+# Generated Buck2 targets from AGP build model
+# Variant: debug
+# Source: ../../app/build/agp-build-model.json
 
-prebuilt_jar(
-    name = "androidx_core_core_1_9_0",
-    binary_jar = "~/.gradle/caches/.../androidx.core-1.9.0.jar",
-)
-
-prebuilt_jar(
-    name = "androidx_appcompat_appcompat_1_6_1",
-    binary_jar = "~/.gradle/caches/.../androidx.appcompat-1.6.1.jar",
+gradle_deps(
+    name = "deps",
+    gradle_files = "//:gradle_config_files",
 )
 
 java_library(
-    name = "android_app",
+    name = "app_classes",
     srcs = [
         "//:app_java_sources",
         "//:app_kotlin_sources",
         "//:app_generated_sources",
     ],
-    deps = [
-        ":androidx_core_core_1_9_0",
-        ":androidx_appcompat_appcompat_1_6_1",
-    ],
+    deps = [":deps"],
+    source = "11",
+    target = "11",
 )
 
-genrule(
-    name = "android_dex",
-    srcs = [":android_app"],
-    out = "dex",
-    cmd = "d8 --lib $ANDROID_HOME/platforms/android-33/android.jar --min-api 21 --output $OUT $(location :android_app)",
+android_dex(
+    name = "app_dex",
+    classes = [":app_classes"],
+    deps = [":deps"],
+    d8_version = "33.0.0",
+    platform_version = "33",
+    min_sdk = 21,
+    multi_dex = False,
+    debug = True,
+    enable_desugaring = True,
 )
+
+# Build model summary:
+#   Variant: debug
+#   Has Kotlin: true
+#   Compile dependencies: 150
+#   Runtime dependencies: 180
+#   Annotation processors: 2
+#   KAPT dependencies: 1
 ```
 
 ---
@@ -262,12 +245,14 @@ genrule(
 **CRITICAL:** KAPT → Kotlin → Java
 
 **Pre-compilation (before javac):**
+
 1. **R.java** - `aapt2 link` → `build/generated/source/r/debug/R.java`
 2. **BuildConfig.java** → `build/generated/source/buildConfig/debug/`
 3. **AIDL** - `.aidl` → Java IPC interfaces (`IMyService.aidl` → `IMyService.java`)
 4. **KAPT** - Kotlin stubs → annotation processors → generated Java (Room `@Entity` → `UserDao_Impl.java`)
 
 **Compilation order:**
+
 ```
 KAPT → Kotlin (.kt + .java → .class) → Java (pure .java → .class)
 ```
@@ -282,35 +267,43 @@ KAPT → Kotlin (.kt + .java → .class) → Java (pure .java → .class)
 ## Init-Scripts
 
 ### 1. Extract Build Model
-**File:** `docs/init-scripts/init-extract-model.gradle`
+
+**Init-script:** `android/build/buck2/gradle/init-scripts/init-extract-model.gradle`
+
+**Sample:** `docs/sample-repo-structure/android/build/buck2/gradle/init-scripts/init-extract-model.gradle`
 
 **What it does:**
+
 - Extracts all dependencies with SHA256 hashes
 - Extracts annotation processors (Java AP + KAPT)
 - Extracts source directories
 - Extracts compiler options
 
 **Usage:**
+
 ```bash
 cd android/app
-../../gradlew extractBuildModel --init-script ../../docs/init-scripts/init-extract-model.gradle
+../../gradlew extractBuildModel --init-script ../../build/buck2/gradle/init-scripts/init-extract-model.gradle
 ```
 
 **Output:** `android/app/build/agp-build-model.json`
 
 ### 2. Bypass Compile/Dex
-**File:** `docs/init-scripts/init-bypass-compile-dex.gradle`
+
+**File:** `android/build/buck2/gradle/init-scripts/init-bypass-compile-dex.gradle`
 
 **What it does:**
+
 - Disables `compileJavaWithJavac`, `compileKotlin`, `dexBuilder`, `mergeDex`
 - Injects Buck2-compiled classes.jar + DEX files
 - AGP continues with resources/packaging/signing
 
 **Usage:**
+
 ```bash
 cd android/app
 export BUCK2_OUTPUT_DIR=../../buck2-out/gen/android/build/buck2
-../../gradlew assembleDebug --init-script ../../docs/init-scripts/init-bypass-compile-dex.gradle
+../../gradlew assembleDebug --init-script ../../build/buck2/gradle/init-scripts/init-bypass-compile-dex.gradle
 ```
 
 ---
@@ -325,20 +318,20 @@ set -e
 
 # 1. Extract AGP build model
 cd android/app
-../../gradlew extractBuildModel --init-script ../../docs/init-scripts/init-extract-model.gradle
+../../gradlew extractBuildModel --init-script ../../build/buck2/gradle/init-scripts/init-extract-model.gradle
 
 # 2. Generate Buck2 targets
 cd ../../android/build/buck2
-python3 generate-buck.py ../../app/build/agp-build-model.json > BUCK
+python3 generate-android-build-targets.py ../../app/build/agp-build-model.json > BUCK
 
 # 3. Build with Buck2 (from root)
 cd ../../../
-buck2 build //android/build/buck2:android_app //android/build/buck2:android_dex
+buck2 build //android/build/buck2:app_classes //android/build/buck2:app_dex
 
 # 4. Package APK with AGP
 cd android/app
 export BUCK2_OUTPUT_DIR=../../buck2-out/gen/android/build/buck2
-../../gradlew assembleDebug --init-script ../../docs/init-scripts/init-bypass-compile-dex.gradle
+../../gradlew assembleDebug --init-script ../../build/buck2/gradle/init-scripts/init-bypass-compile-dex.gradle
 
 echo "APK: build/outputs/apk/debug/app-debug.apk"
 ```
@@ -351,31 +344,31 @@ name: Build with Buck2
 on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
+            - name: Set up JDK 11
+              uses: actions/setup-java@v3
+              with:
+                  java-version: "11"
 
-      - name: Install Buck2
-        run: |
-          wget https://github.com/facebook/buck2/releases/download/latest/buck2-x86_64-unknown-linux-gnu.zst
-          unzstd buck2-x86_64-unknown-linux-gnu.zst -o buck2
-          chmod +x buck2
-          sudo mv buck2 /usr/local/bin/
+            - name: Install Buck2
+              run: |
+                  wget https://github.com/facebook/buck2/releases/download/latest/buck2-x86_64-unknown-linux-gnu.zst
+                  unzstd buck2-x86_64-unknown-linux-gnu.zst -o buck2
+                  chmod +x buck2
+                  sudo mv buck2 /usr/local/bin/
 
-      - name: Build with Buck2 + AGP
-        run: bash .ci/build-with-buck2.sh
+            - name: Build with Buck2 + AGP
+              run: bash .ci/build-with-buck2.sh
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+            - name: Upload APK
+              uses: actions/upload-artifact@v3
+              with:
+                  name: app-debug
+                  path: android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ---
@@ -385,47 +378,32 @@ jobs:
 ### 1. "Buck2 JAR not found"
 
 **Solution:**
+
 ```bash
-buck2 build //android/build/buck2:android_app --show-output
-ls -lh buck2-out/gen/android/build/buck2/android_app/android_app.jar
+buck2 build //android/build/buck2:app_classes --show-output
+ls -lh buck2-out/gen/android/build/buck2/app_classes/
 ```
 
 ### 2. "DEX files not found"
 
 **Solution:**
-```bash
-# Test D8 manually
-d8 --lib $ANDROID_HOME/platforms/android-33/android.jar \
-   --min-api 21 \
-   --output test-dex \
-   buck2-out/gen/android/build/buck2/android_app/android_app.jar
 
-ls -la test-dex/
+```bash
+buck2 build //android/build/buck2:app_dex --show-output
+ls -la buck2-out/gen/android/build/buck2/app_dex/dex/
 ```
 
 ### 3. "AGP packaging fails"
 
 **Solution:**
+
 ```bash
 # Verify Buck2 outputs exist
 ls -la buck2-out/gen/android/build/buck2/
 
 # Check init-script logs
 cd android/app
-../../gradlew assembleDebug --init-script ../../docs/init-scripts/init-bypass-compile-dex.gradle --info | grep Buck2
-```
-
-### 4. "Filegroup not found"
-
-**Cause:** Root BUCK file missing or filegroup name wrong
-
-**Solution:**
-```bash
-# Verify root/BUCK exists
-cat BUCK
-
-# Check Buck2 can see filegroups
-buck2 query "//:app_java_sources"
+../../gradlew assembleDebug --init-script ../../build/buck2/gradle/init-scripts/init-bypass-compile-dex.gradle --info | grep Buck2
 ```
 
 ---
@@ -433,23 +411,27 @@ buck2 query "//:app_java_sources"
 ## Performance
 
 **Traditional AGP:**
+
 ```
 ./gradlew assembleDebug
 Total: 45s (Java: 18s, Kotlin: 12s, Dex: 10s, Packaging: 5s)
 ```
 
 **Buck2 + AGP:**
+
 ```
 buck2 build + AGP packaging
 Total: 28s (Compile: 8s, Dex: 6s, Package: 4s, Overhead: 10s)
 ```
 
 **Incremental (1 file changed):**
+
 ```
 Buck2: 6s (Recompile: 3s, Re-dex: 2s, Package: 1s)
 ```
 
 **Buck2 CAS cache hit rates:**
+
 - ~90% on dependency JARs (cross-branch)
 - ~70% on project classes (same developer)
 - ~50% on project classes (CI, different commits)
