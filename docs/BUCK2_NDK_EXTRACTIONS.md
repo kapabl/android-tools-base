@@ -450,7 +450,29 @@ filegroup(
     visibility = ["PUBLIC"],
 )
 
-# Shared headers (platform-independent — pick any host, they're identical)
+# Compiler builtins — per target ABI, drop ABIs you don't build for
+# These are under lib/clang/19/lib/linux/{arch}/ — 32-38MB each
+filegroup(
+    name = "builtins_arm64",
+    srcs = glob(["toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/aarch64/**"]),
+    visibility = ["PUBLIC"],
+)
+
+filegroup(
+    name = "builtins_x86_64",
+    srcs = glob(["toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/x86_64/**"]),
+    visibility = ["PUBLIC"],
+)
+
+# Builtin headers (always needed, 15MB)
+filegroup(
+    name = "builtin_headers",
+    srcs = glob(["toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/**"]),
+    visibility = ["PUBLIC"],
+)
+
+# Shared sysroot headers (platform-independent — pick any host, they're identical)
+# Keep all 24MB — not worth slicing (headers #include each other transitively)
 filegroup(
     name = "sysroot_headers",
     srcs = glob(["toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/**"]),
@@ -509,32 +531,159 @@ filegroup(
 )
 ```
 
-### Usage: Compile Native Code
+### ABI-Aware NDK Rule (`ndk_toolchain.bzl`)
+
+This `.bzl` rule ensures only the needed ABI's builtins + sysroot are sent to the executor:
 
 ```python
-# Example: compile a C++ shared library for arm64-v8a
-genrule(
-    name = "hello_arm64",
-    srcs = ["hello.cpp"],
-    out = "libhello.so",
-    cmd = """
-        $(exe //android-ndk:clang++) \
-            --target=aarch64-linux-android21 \
-            --sysroot=$(location //android-ndk:sysroot_headers)/.. \
-            -shared -o $OUT $SRCS
-    """,
+# ndk_toolchain.bzl
+
+# ABI → compiler builtin dir mapping
+_ABI_BUILTIN_ARCH = {
+    "arm64-v8a": "aarch64",
+    "armeabi-v7a": "arm",
+    "x86_64": "x86_64",
+    "x86": "i386",
+    "riscv64": "riscv64",
+}
+
+# ABI → sysroot triple mapping
+_ABI_TRIPLE = {
+    "arm64-v8a": "aarch64-linux-android",
+    "armeabi-v7a": "arm-linux-androideabi",
+    "x86_64": "x86_64-linux-android",
+    "x86": "i686-linux-android",
+    "riscv64": "riscv64-linux-android",
+}
+
+# ABI → clang target flag
+_ABI_TARGET = {
+    "arm64-v8a": "aarch64-linux-android",
+    "armeabi-v7a": "armv7a-linux-androideabi",
+    "x86_64": "x86_64-linux-android",
+    "x86": "i686-linux-android",
+    "riscv64": "riscv64-linux-android",
+}
+
+# Size per ABI builtin (measured from NDK r28b):
+#   aarch64: 35MB, arm: 32MB, i386: 32MB, x86_64: 33MB, riscv64: 38MB
+# Total all 5: 370MB. Picking 1 ABI saves ~135MB, picking 2 saves ~102MB.
+
+def ndk_cc_toolchain(
+    name,
+    abi,                    # e.g. "arm64-v8a"
+    api_level = 21,         # minimum Android API
+    ndk_path = "//android-ndk",
+):
+    """Defines a C/C++ toolchain for a single Android ABI.
+
+    Only the builtins and sysroot for the specified ABI are included
+    as inputs, so Buck2 only sends what the executor needs.
+    """
+    arch = _ABI_BUILTIN_ARCH[abi]
+    triple = _ABI_TRIPLE[abi]
+    target = _ABI_TARGET[abi]
+
+    native.cxx_toolchain(
+        name = name,
+        compiler = ndk_path + ":clang",
+        compiler_type = "clang",
+        cxx_compiler = ndk_path + ":clang++",
+        linker = ndk_path + ":lld",
+        archiver = ndk_path + ":llvm_ar",
+        strip = ndk_path + ":llvm_strip",
+
+        # Only this ABI's builtins are sent to executor (~32-38MB, not all 370MB)
+        compiler_flags = [
+            "--target={}{}".format(target, api_level),
+            "--sysroot=$(location {}:sysroot_headers)/..".format(ndk_path),
+        ],
+
+        # Inputs sent to executor — this is the key slicing:
+        additional_inputs = [
+            # Host tools (executor-specific, selected by select() in BUCK)
+            ndk_path + ":clang",
+            ndk_path + ":clang++",
+            ndk_path + ":lld",
+
+            # Builtin headers (15MB, always needed)
+            ndk_path + ":builtin_headers",
+
+            # THIS ABI's builtins only (32-38MB instead of 370MB)
+            ndk_path + ":builtins_{}".format(abi.replace("-", "_")),
+
+            # Sysroot headers (24MB, all included — not worth slicing)
+            ndk_path + ":sysroot_headers",
+
+            # THIS ABI's platform libs only (~664KB for single API level)
+            ndk_path + ":sysroot_{}_{}".format(abi.replace("-", "_"), api_level),
+        ],
+    )
+```
+
+### BUCK file using the rule
+
+```python
+# BUCK
+
+load(":ndk_toolchain.bzl", "ndk_cc_toolchain")
+
+# Only arm64-v8a + x86_64: sends ~325MB to executor
+# vs all 5 ABIs: would send ~560MB
+ndk_cc_toolchain(
+    name = "ndk_arm64",
+    abi = "arm64-v8a",
+    api_level = 21,
+)
+
+ndk_cc_toolchain(
+    name = "ndk_x86_64",
+    abi = "x86_64",
+    api_level = 21,
+)
+
+# Build a native library — Buck2 only sends arm64 builtins + sysroot to executor
+cxx_library(
+    name = "mylib",
+    srcs = ["jni/hello.cpp"],
+    default_target_platform = "//platforms:android_arm64",
+    deps = [],
 )
 ```
 
-### Slice Summary
+### What Gets Sent to Each Executor
 
-| Slice | Variants | Size | What Varies |
-|---|---|---|---|
-| **Host toolchain** | 3 (linux, darwin, windows) | 747MB–1.3GB each | Binary format, `.exe` suffix, symlinks vs copies |
-| **Headers** | 1 (shared) | part of 256MB sysroot | 8 netfilter headers Linux-only (irrelevant) |
-| **Platform libs** | per ABI × API level | part of 256MB sysroot | Nothing — 100% identical across hosts |
-| **Build support** | 1 (shared) | <1MB | cmake toolchain, abis.json |
-| **Shader tools** | 3 (per host) | ~20MB each | `.exe` on Windows |
+```
+Executor receives (arm64-v8a build on Linux):
+├── bin/clang, bin/ld.lld, bin/llvm-ar           # 204MB (executor-specific)
+├── lib/clang/19/include/                         # 15MB  (builtin headers)
+├── lib/clang/19/lib/linux/aarch64/               # 35MB  (THIS ABI only, not 370MB)
+├── sysroot/usr/include/                          # 24MB  (all headers)
+└── sysroot/usr/lib/aarch64-linux-android/21/     # 664KB (THIS ABI + API only)
+                                            TOTAL: ~279MB
+
+NOT sent (savings):
+├── lib/clang/19/lib/linux/arm/                   # SKIPPED: 32MB
+├── lib/clang/19/lib/linux/i386/                  # SKIPPED: 32MB
+├── lib/clang/19/lib/linux/x86_64/                # SKIPPED: 33MB
+├── lib/clang/19/lib/linux/riscv64/               # SKIPPED: 38MB
+├── sysroot/usr/lib/arm-linux-androideabi/         # SKIPPED: 32MB
+├── sysroot/usr/lib/i686-linux-android/            # SKIPPED: 33MB
+├── sysroot/usr/lib/x86_64-linux-android/          # SKIPPED: 46MB
+├── sysroot/usr/lib/riscv64-linux-android/         # SKIPPED: 74MB
+├── bin/* (170+ unused tools)                      # SKIPPED: ~540MB
+├── musl/, python3/, simpleperf/, shader-tools/    # SKIPPED: ~170MB
+                                     NOT SENT: ~1.03GB
+```
+
+### Savings Table
+
+| Configuration | Input to Executor | vs Full NDK (Linux 2.2GB) |
+|---|---|---|
+| All 5 ABIs (no slicing) | ~560MB | 4x reduction |
+| 2 ABIs (arm64 + x86_64) | ~325MB | **6.8x reduction** |
+| 1 ABI (arm64 only) | ~279MB | **7.9x reduction** |
+| Full NDK (no extraction) | 2,200MB | baseline |
 
 ### What Buck2 Actually Needs (minimum viable slice)
 
@@ -544,12 +693,97 @@ For compiling + linking a `.so` for a single ABI on a single executor:
 |---|---|
 | `bin/clang-19` (or `clang.exe`) | YES |
 | `bin/ld.lld` (or `ld.lld.exe`) | YES (invoked by clang) |
-| `lib/clang/*/lib/linux/{abi}/` | YES (compiler builtins) |
-| `sysroot/usr/include/` | YES (headers) |
-| `sysroot/usr/lib/{triple}/{api}/` | YES (CRT + platform libs) |
+| `lib/clang/*/lib/linux/{abi}/` | YES (compiler builtins — **only for target ABI**) |
+| `sysroot/usr/include/` | YES (all 24MB — not worth slicing, see below) |
+| `sysroot/usr/lib/{triple}/{api}/` | YES (CRT + platform libs — **only for target ABI**) |
 | `bin/llvm-strip` | RELEASE ONLY |
 | `bin/llvm-objcopy` | DEBUG INFO ONLY |
 | Everything else | NO |
+
+---
+
+## Minimum Input Size Per Executor
+
+### Measured sizes (single ABI = arm64-v8a, API 21)
+
+| Component | Linux | macOS | Windows | Shared? |
+|---|---|---|---|---|
+| `clang` (compiler) | 130MB | 165MB (universal) | 246MB (clang.exe + clang++.exe*) | per executor |
+| `ld.lld` (linker) | 59MB | 111MB | 72MB | per executor |
+| `llvm-ar` | 15MB | 26MB | 16MB | per executor |
+| `llvm-strip` | 5.7MB | 8.9MB | 5.7MB | per executor |
+| `llvm-objcopy` | 5.7MB | 8.9MB | 5.7MB | per executor |
+| Compiler builtins (1 ABI) | 35MB | 35MB | 35MB | per target ABI |
+| Builtin headers (`lib/clang/19/include/`) | 15MB | 15MB | 15MB | identical |
+| Sysroot headers (`sysroot/usr/include/`) | 24MB | 24MB | 24MB | identical |
+| Platform libs (1 ABI, 1 API level) | 664KB | 664KB | 664KB | identical |
+| **MINIMUM TOTAL** | **~290MB** | **~395MB** | **~420MB** | |
+
+*Windows: `clang.exe` and `clang++.exe` are **separate files** (different inodes, 123MB each — not symlinks). On Linux/macOS, `clang++` is a symlink to `clang` (0 bytes extra).
+
+### Where the savings are: Drop unused ABI builtins
+
+Compiler builtins (`lib/clang/19/lib/linux/{arch}/`) are **35MB per ABI** and the NDK ships all 5:
+
+| ABI builtin dir | Size |
+|---|---|
+| `lib/clang/19/lib/linux/aarch64/` (arm64-v8a) | 35MB |
+| `lib/clang/19/lib/linux/arm/` (armeabi-v7a) | 32MB |
+| `lib/clang/19/lib/linux/i386/` (x86) | 32MB |
+| `lib/clang/19/lib/linux/x86_64/` (x86_64) | 33MB |
+| `lib/clang/19/lib/linux/riscv64/` (riscv64) | 38MB |
+| **Total all ABIs** | **370MB** |
+
+**If you only build for `arm64-v8a`: drop the other 4 ABI dirs and save ~135MB.**
+
+Typical production setup (arm64-v8a + x86_64 for emulator): keep 2, drop 3, save ~102MB.
+
+### Why NOT to slice headers
+
+Sysroot headers are only 24MB total (6-8% of minimum input). Breakdown:
+
+| Category | Size | Can skip? |
+|---|---|---|
+| C core (bits/, sys/, root .h, asm-generic/) | 6.2MB | NO — always needed |
+| C++ libc++ (c++/v1/) | 9.5MB | Only if pure C |
+| Linux kernel UAPI (linux/, drm/, sound/, etc.) | 5.4MB | NO — pulled transitively by C core |
+| Android NDK APIs (android/, camera/, media/) | 2.3MB | Technically yes |
+| Graphics (vulkan/, GLES*/, EGL/) | 2.0MB | Technically yes |
+| Per-ABI asm headers (only need 1 of 5) | 180-344KB each | Save ~1MB |
+
+Headers `#include` each other transitively. Slicing them saves ~13MB max (dropping C++, graphics, unused ABI asm) but creates a fragile build that breaks when code adds an `#include`. **Not worth the complexity for 3-4% of total input.**
+
+### Per-ABI sysroot platform libs
+
+These are also per-ABI but very small — not the bottleneck:
+
+| ABI (all API levels) | Size |
+|---|---|
+| `aarch64-linux-android/` | 49MB |
+| `arm-linux-androideabi/` | 32MB |
+| `i686-linux-android/` | 33MB |
+| `x86_64-linux-android/` | 46MB |
+| `riscv64-linux-android/` | 74MB |
+| **Total** | **232MB** |
+| Single ABI, single API level | **~664KB** |
+
+For a single API level build, you only need the specific `{triple}/{api}/` subdir (~664KB) plus the ABI-root STL lib. But these are shared across executors so the savings don't multiply.
+
+### Summary: Practical minimum per executor
+
+**Most common case:** CI on Linux, building arm64-v8a + x86_64:
+
+| What to include | Size |
+|---|---|
+| `bin/clang`, `bin/ld.lld`, `bin/llvm-ar`, `bin/llvm-strip`, `bin/llvm-objcopy` | ~216MB |
+| `lib/clang/19/include/` (builtin headers) | 15MB |
+| `lib/clang/19/lib/linux/aarch64/` + `lib/clang/19/lib/linux/x86_64/` (2 ABIs only) | 68MB |
+| `sysroot/usr/include/` (all headers) | 24MB |
+| `sysroot/usr/lib/aarch64-linux-android/21/` + `sysroot/usr/lib/x86_64-linux-android/21/` | ~1.3MB |
+| `build/cmake/android.toolchain.cmake` + `meta/abis.json` | <1MB |
+| **TOTAL** | **~325MB** |
+
+**vs full Linux NDK: 2.2GB (6.8x reduction)**
 
 ---
 
