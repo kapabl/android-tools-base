@@ -174,6 +174,39 @@ usr/include/linux/netfilter/xt_TCPMSS.h        (vs xt_tcpmss.h)
 
 These can't coexist on case-insensitive filesystems (macOS HFS+/APFS default, Windows NTFS).
 
+#### Sharing Headers Across Executors (Linux ↔ macOS hybrid builds)
+
+The 8 uppercase headers are **not a problem** for sharing a single header set across all executors. Verified:
+
+1. **No NDK header `#include`s the uppercase files.** Searched all 2611 headers — zero results. They are never referenced by the NDK's own include graph.
+
+2. **The uppercase headers are just compat wrappers** that redirect to the lowercase versions:
+   ```c
+   // xt_DSCP.h — just includes the lowercase version
+   #include <linux/netfilter/xt_dscp.h>
+
+   // xt_CONNMARK.h — same pattern
+   #include <linux/netfilter/xt_connmark.h>
+   ```
+   Only `ipt_ECN.h`, `ipt_TTL.h`, `ip6t_HL.h`, and `xt_RATEEST.h` contain their own definitions (for legacy Linux netfilter userspace APIs — not relevant to Android app development).
+
+3. **Linux has BOTH uppercase and lowercase.** The lowercase headers exist on all 3 platforms and contain the actual definitions. The uppercase ones are extras.
+
+4. **If user code `#include`s an uppercase header, it would fail on macOS/Windows anyway** — this is a known Linux kernel UAPI quirk, not an NDK portability expectation.
+
+**Solution: Use the macOS/Darwin header set (2603 files) as the shared baseline for all executors.** It is a strict subset of Linux's set. No wrappers, symlinks, or case-folding needed.
+
+```python
+# In Buck2: one shared header filegroup works for ALL executors
+# Use darwin (or windows) as source — they have the portable 2603-file set
+# Linux executors work fine because all actual definitions are in lowercase headers
+filegroup(
+    name = "sysroot_headers",
+    srcs = glob(["sysroot/usr/include/**"]),  # 2603 files, works on linux/mac/win
+    visibility = ["PUBLIC"],
+)
+```
+
 ### Sysroot Platform Libs (`sysroot/usr/lib/`)
 
 | | Linux | macOS | Windows |
